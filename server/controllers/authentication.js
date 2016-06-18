@@ -1,33 +1,5 @@
 const jwt = require('jwt-simple');
 const User = require('../models/user');
-<<<<<<< HEAD
-const config = require('../congif');
-
-function tokenForUser(user) {
-  const timeStamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timeStamp }, config.secret);
-}
-
-exports.signin = function(req, res, next) {
-  res.send({ token: tokenForUser(req.user) });
-}
-
-exports.signup = function(req, res, next) {
-  const email = req.email;
-  const password = req.password;
-
-  if (!email || !password) {
-    return res.status(422).send({ error: 'You must provide email and passowrd'});
-  }
-
-  User.findOne({ email: email }, function(err, existingUser) {
-    if (err) { return next(err); }
-
-    if (existingUser) {
-      return res.status(422).send({ error: 'Email is in use'});
-    }
-
-=======
 const config = require('../config');
 
 function tokenForUser(user) {
@@ -58,7 +30,6 @@ exports.signup = function(req, res, next) {
     }
 
     //if user new, create and save user record
->>>>>>> origin/master
     const user = new User({
       email: email,
       password: password
@@ -68,10 +39,7 @@ exports.signup = function(req, res, next) {
       if (err) { return next(err); }
     });
 
-<<<<<<< HEAD
-=======
     //respond to requesr indicating was created
->>>>>>> origin/master
     res.json({ token: tokenForUser(user) });
   });
 }

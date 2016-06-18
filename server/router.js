@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-const passport = requre('passport');
-const Authentication = require('./controllers/authentication');
-const passportService = require('./services/password');
-
-module.exports = function(app) {
-  app.post('/signin', requireSignin, Authentication.signin);
-=======
 const Authentication = require('./controllers/authentication');
 const passportService = require('./services/passport');
 const passport = require('passport');
@@ -19,6 +11,5 @@ module.exports = function(app) {
   });
 
   app.post('/signin', requireSignin, Authentication.signin)
->>>>>>> origin/master
   app.post('/signup', Authentication.signup);
 }
