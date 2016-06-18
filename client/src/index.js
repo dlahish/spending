@@ -10,6 +10,7 @@ import reducers from './reducers';
 import App from './components/app';
 import Home from './components/home';
 import Signup from './components/auth/signup';
+import Signin from './components/auth/signin';
 import SecurePage from './components/securepage';
 
 const middlewares = [ReduxThunk];
@@ -26,6 +27,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
         <Route path="signup" component={Signup} />
+        <Route path="signin" component={Signin} />
         <Route path="securepage" component={SecurePage} />
 
       </Route>

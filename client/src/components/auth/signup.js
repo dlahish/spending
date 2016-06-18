@@ -29,12 +29,12 @@ class Signup extends Component {
         </fieldset>
         <fieldset>
           <label>Password:</label>
-          <input {...password} />
+          <input type="password" {...password} />
           {password.touched && password.error && <div className="error">{password.error}</div>}
         </fieldset>
         <fieldset>
           <label>Confirm Password:</label>
-          <input {...passwordConfirm} />
+          <input type="password" {...passwordConfirm} />
           {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
         </fieldset>
         {this.renderError()}
