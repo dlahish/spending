@@ -13,6 +13,9 @@ export default class Header extends Component {
       </li>,
       <li key="3">
         <Link to="/securepage">Secure Page</Link>
+      </li>,
+      <li key="4">
+        <Link to="/signout">Sign Out</Link>
       </li>
     ];
   }
