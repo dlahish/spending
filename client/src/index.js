@@ -6,6 +6,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import ReduxThunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import reducers from './reducers';
+import RequireAuth from './components/auth/require_auth';
 
 import App from './components/app';
 import Home from './components/home';
@@ -14,6 +15,8 @@ import Signin from './components/auth/signin';
 import SecurePage from './components/securepage';
 import Signout from './components/auth/signout';
 
+import { AUTH_USER } from './actions/types';
+
 const middlewares = [ReduxThunk];
 if (process.env.NODE_ENV !== 'production') {
   middlewares.push(createLogger());
@@ -21,6 +24,11 @@ if (process.env.NODE_ENV !== 'production') {
 
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
 const store = createStoreWithMiddleware(reducers);
+const token = localStorage.getItem('token');
+
+if (token) {
+  store.dispatch({ type: AUTH_USER });
+}
 
 ReactDOM.render(
   <Provider store={store}>
@@ -30,7 +38,7 @@ ReactDOM.render(
         <Route path="signup" component={Signup} />
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
-        <Route path="securepage" component={SecurePage} />
+        <Route path="securepage" component={RequireAuth(SecurePage)} />
 
       </Route>
     </Router>

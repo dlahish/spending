@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-export default class Header extends Component {
+class Header extends Component {
   renderLinks() {
+    console.log('renderLinks');
+    if (this.props.authenticated) {
+      return [
+        <li key="4">
+          <Link to="/signout">Sign Out</Link>
+        </li>,
+        <li key="3">
+          <Link to="/securepage">Secure Page</Link>
+        </li>
+      ];
+    }
+
     return [
       <li key="1">
         <Link to="/signin">Sign In</Link>
@@ -11,12 +23,6 @@ export default class Header extends Component {
       <li key="2">
         <Link to="/signup">Sign Up</Link>
       </li>,
-      <li key="3">
-        <Link to="/securepage">Secure Page</Link>
-      </li>,
-      <li key="4">
-        <Link to="/signout">Sign Out</Link>
-      </li>
     ];
   }
 
@@ -31,3 +37,9 @@ export default class Header extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return { authenticated: state.auth.authenticated };
+}
+
+export default connect(mapStateToProps)(Header);
