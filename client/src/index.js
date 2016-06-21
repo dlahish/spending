@@ -14,6 +14,7 @@ import Signup from './components/auth/signup';
 import Signin from './components/auth/signin';
 import SecurePage from './components/securepage';
 import Signout from './components/auth/signout';
+import UploadFile from './components/upload';
 
 import { AUTH_USER } from './actions/types';
 
@@ -39,6 +40,7 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="securepage" component={RequireAuth(SecurePage)} />
+        <Route path="upload" component={RequireAuth(UploadFile)} />
 
       </Route>
     </Router>

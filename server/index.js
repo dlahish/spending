@@ -11,7 +11,8 @@ mongoose.connect('mongodb://localhost:spending/spending');
 
 app.use(morgan('combined'));
 app.use(cors());
-app.use(bodyParser.json({ type: '*/*' }));
+// app.use(bodyParser.json({ type: '*/*' }));
+app.use(bodyParser.json());
 router(app);
 
 const port = process.env.PORT || 3090;

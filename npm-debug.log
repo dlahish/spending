@@ -1,0 +1,658 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'node-fetch' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.1
+4 verbose install initial load of /Users/nadavlachish/Documents/node/spending/package.json
+5 warn package.json spending@1.0.0 No description
+6 warn package.json spending@1.0.0 No repository field.
+7 warn package.json spending@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/axios/package.json
+9 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-core/package.json
+10 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-loader/package.json
+11 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-es2015/package.json
+12 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-react/package.json
+13 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-stage-1/package.json
+14 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/bcrypt-nodejs/package.json
+15 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/bluebird/package.json
+16 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/body-parser/package.json
+17 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/chai/package.json
+18 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/chai-jquery/package.json
+19 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/cors/package.json
+20 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/express/package.json
+21 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/package.json
+22 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/form-data/package.json
+23 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jquery/package.json
+24 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jsdom/package.json
+25 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jwt-simple/package.json
+26 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/lodash/package.json
+27 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/mocha/package.json
+28 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/mongoose/package.json
+29 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/morgan/package.json
+30 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/multer/package.json
+31 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/multiparty/package.json
+32 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport/package.json
+33 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport-jwt/package.json
+34 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport-local/package.json
+35 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react/package.json
+36 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-addons-test-utils/package.json
+37 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-dom/package.json
+38 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-dropzone/package.json
+39 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-redux/package.json
+40 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-router/package.json
+41 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux/package.json
+42 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-form/package.json
+43 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-logger/package.json
+44 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-thunk/package.json
+45 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/superagent/package.json
+46 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/superagent-bluebird-promise/package.json
+47 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/webpack/package.json
+48 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/webpack-dev-server/package.json
+49 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/whatwg-fetch/package.json
+50 info package.json bcrypt-nodejs@0.0.3 No license field.
+51 info package.json chai-jquery@2.0.0 No license field.
+52 info package.json passport-local@1.0.0 No license field.
+53 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/package.json
+54 silly cache add args [ 'node-fetch', null ]
+55 verbose cache add spec node-fetch
+56 silly cache add parsed spec Result {
+56 silly cache add   raw: 'node-fetch',
+56 silly cache add   scope: null,
+56 silly cache add   name: 'node-fetch',
+56 silly cache add   rawSpec: '',
+56 silly cache add   spec: 'latest',
+56 silly cache add   type: 'tag' }
+57 silly addNamed node-fetch@latest
+58 verbose addNamed "latest" is being treated as a dist-tag for node-fetch
+59 info addNameTag [ 'node-fetch', 'latest' ]
+60 silly mapToRegistry name node-fetch
+61 silly mapToRegistry using default registry
+62 silly mapToRegistry registry https://registry.npmjs.org/
+63 silly mapToRegistry uri https://registry.npmjs.org/node-fetch
+64 verbose addNameTag registry:https://registry.npmjs.org/node-fetch not in flight; fetching
+65 verbose request uri https://registry.npmjs.org/node-fetch
+66 verbose request no auth needed
+67 info attempt registry request try #1 at 3:24:15 PM
+68 verbose request id 7a0d68b0a44b0220
+69 verbose etag "30PMR9YJBWAUZCDO5ZWUREOMT"
+70 http request GET https://registry.npmjs.org/node-fetch
+71 http 304 https://registry.npmjs.org/node-fetch
+72 verbose headers { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+72 verbose headers   via: '1.1 varnish',
+72 verbose headers   'cache-control': 'max-age=300',
+72 verbose headers   etag: '"30PMR9YJBWAUZCDO5ZWUREOMT"',
+72 verbose headers   age: '178',
+72 verbose headers   connection: 'keep-alive',
+72 verbose headers   'x-served-by': 'cache-fra1221-FRA',
+72 verbose headers   'x-cache': 'HIT',
+72 verbose headers   'x-cache-hits': '5',
+72 verbose headers   'x-timer': 'S1466515455.681687,VS0,VE0',
+72 verbose headers   vary: 'Accept-Encoding' }
+73 silly get cb [ 304,
+73 silly get   { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+73 silly get     via: '1.1 varnish',
+73 silly get     'cache-control': 'max-age=300',
+73 silly get     etag: '"30PMR9YJBWAUZCDO5ZWUREOMT"',
+73 silly get     age: '178',
+73 silly get     connection: 'keep-alive',
+73 silly get     'x-served-by': 'cache-fra1221-FRA',
+73 silly get     'x-cache': 'HIT',
+73 silly get     'x-cache-hits': '5',
+73 silly get     'x-timer': 'S1466515455.681687,VS0,VE0',
+73 silly get     vary: 'Accept-Encoding' } ]
+74 verbose etag https://registry.npmjs.org/node-fetch from cache
+75 verbose get saving node-fetch to /Users/nadavlachish/.npm/registry.npmjs.org/node-fetch/.cache.json
+76 silly addNameTag next cb for node-fetch with tag latest
+77 silly addNamed node-fetch@1.5.3
+78 verbose addNamed "1.5.3" is a plain semver version for node-fetch
+79 silly cache afterAdd node-fetch@1.5.3
+80 verbose afterAdd /Users/nadavlachish/.npm/node-fetch/1.5.3/package/package.json not in flight; writing
+81 verbose afterAdd /Users/nadavlachish/.npm/node-fetch/1.5.3/package/package.json written
+82 silly install resolved [ { name: 'node-fetch',
+82 silly install resolved     version: '1.5.3',
+82 silly install resolved     description: 'A light-weight module that brings window.fetch to node.js and io.js',
+82 silly install resolved     main: 'index.js',
+82 silly install resolved     scripts:
+82 silly install resolved      { test: 'mocha test/test.js',
+82 silly install resolved        report: 'istanbul cover _mocha -- -R spec test/test.js',
+82 silly install resolved        coverage: 'istanbul cover _mocha --report lcovonly -- -R spec test/test.js && cat ./coverage/lcov.info | coveralls' },
+82 silly install resolved     repository:
+82 silly install resolved      { type: 'git',
+82 silly install resolved        url: 'git+https://github.com/bitinn/node-fetch.git' },
+82 silly install resolved     keywords: [ 'fetch', 'http', 'promise' ],
+82 silly install resolved     author: { name: 'David Frank' },
+82 silly install resolved     license: 'MIT',
+82 silly install resolved     bugs: { url: 'https://github.com/bitinn/node-fetch/issues' },
+82 silly install resolved     homepage: 'https://github.com/bitinn/node-fetch',
+82 silly install resolved     devDependencies:
+82 silly install resolved      { bluebird: '^3.3.4',
+82 silly install resolved        chai: '^3.5.0',
+82 silly install resolved        'chai-as-promised': '^5.2.0',
+82 silly install resolved        coveralls: '^2.11.2',
+82 silly install resolved        'form-data': '^1.0.0-rc1',
+82 silly install resolved        istanbul: '^0.4.2',
+82 silly install resolved        mocha: '^2.1.0',
+82 silly install resolved        parted: '^0.1.1',
+82 silly install resolved        promise: '^7.1.1',
+82 silly install resolved        resumer: '0.0.0' },
+82 silly install resolved     dependencies: { encoding: '^0.1.11', 'is-stream': '^1.0.1' },
+82 silly install resolved     gitHead: 'b46c5ea9ee6692676a2824334e24f9d3b95d3b78',
+82 silly install resolved     _id: 'node-fetch@1.5.3',
+82 silly install resolved     _shasum: 'f28d8b95ca8d45b433745dd319361e36402baef0',
+82 silly install resolved     _from: 'node-fetch@latest',
+82 silly install resolved     _npmVersion: '3.7.3',
+82 silly install resolved     _nodeVersion: '5.9.0',
+82 silly install resolved     _npmUser: { name: 'bitinn', email: 'bitinn@gmail.com' },
+82 silly install resolved     maintainers: [ [Object] ],
+82 silly install resolved     dist:
+82 silly install resolved      { shasum: 'f28d8b95ca8d45b433745dd319361e36402baef0',
+82 silly install resolved        tarball: 'https://registry.npmjs.org/node-fetch/-/node-fetch-1.5.3.tgz' },
+82 silly install resolved     _npmOperationalInternal:
+82 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+82 silly install resolved        tmp: 'tmp/node-fetch-1.5.3.tgz_1464202483131_0.3381968201138079' },
+82 silly install resolved     directories: {},
+82 silly install resolved     _resolved: 'https://registry.npmjs.org/node-fetch/-/node-fetch-1.5.3.tgz',
+82 silly install resolved     readme: 'ERROR: No README data found!' } ]
+83 info install node-fetch@1.5.3 into /Users/nadavlachish/Documents/node/spending
+84 info installOne node-fetch@1.5.3
+85 verbose installOne of node-fetch to /Users/nadavlachish/Documents/node/spending not in flight; installing
+86 verbose lock using /Users/nadavlachish/.npm/_locks/node-fetch-69a42488d6fa5424.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+87 silly install write writing node-fetch 1.5.3 to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+88 verbose unbuild node_modules/node-fetch
+89 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch is being purged from base /Users/nadavlachish/Documents/node/spending
+90 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+91 verbose tar unpack /Users/nadavlachish/.npm/node-fetch/1.5.3/package.tgz
+92 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+93 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch is being purged
+94 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+95 silly gunzTarPerm modes [ '755', '644' ]
+96 silly gunzTarPerm extractEntry package.json
+97 silly gunzTarPerm extractEntry .npmignore
+98 silly gunzTarPerm extractEntry README.md
+99 silly gunzTarPerm extractEntry index.js
+100 silly gunzTarPerm extractEntry LICENSE.md
+101 silly gunzTarPerm extractEntry LIMITS.md
+102 silly gunzTarPerm extractEntry .travis.yml
+103 silly gunzTarPerm extractEntry lib/body.js
+104 silly gunzTarPerm extractEntry lib/fetch-error.js
+105 silly gunzTarPerm extractEntry lib/headers.js
+106 silly gunzTarPerm extractEntry lib/request.js
+107 silly gunzTarPerm extractEntry lib/response.js
+108 silly gunzTarPerm extractEntry CHANGELOG.md
+109 silly gunzTarPerm extractEntry test/server.js
+110 silly gunzTarPerm extractEntry test/test.js
+111 silly gunzTarPerm extractEntry test/dummy.txt
+112 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/package.json
+113 info preinstall node-fetch@1.5.3
+114 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/package.json
+115 silly prepareForInstallMany adding encoding@^0.1.11 from node-fetch dependencies
+116 silly prepareForInstallMany adding is-stream@^1.0.1 from node-fetch dependencies
+117 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/package.json
+118 silly cache add args [ 'is-stream@^1.0.1', null ]
+119 verbose cache add spec is-stream@^1.0.1
+120 silly cache add parsed spec Result {
+120 silly cache add   raw: 'is-stream@^1.0.1',
+120 silly cache add   scope: null,
+120 silly cache add   name: 'is-stream',
+120 silly cache add   rawSpec: '^1.0.1',
+120 silly cache add   spec: '>=1.0.1 <2.0.0',
+120 silly cache add   type: 'range' }
+121 silly addNamed is-stream@>=1.0.1 <2.0.0
+122 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for is-stream
+123 silly addNameRange { name: 'is-stream', range: '>=1.0.1 <2.0.0', hasData: false }
+124 silly mapToRegistry name is-stream
+125 silly mapToRegistry using default registry
+126 silly mapToRegistry registry https://registry.npmjs.org/
+127 silly mapToRegistry uri https://registry.npmjs.org/is-stream
+128 verbose addNameRange registry:https://registry.npmjs.org/is-stream not in flight; fetching
+129 silly cache add args [ 'encoding@^0.1.11', null ]
+130 verbose cache add spec encoding@^0.1.11
+131 silly cache add parsed spec Result {
+131 silly cache add   raw: 'encoding@^0.1.11',
+131 silly cache add   scope: null,
+131 silly cache add   name: 'encoding',
+131 silly cache add   rawSpec: '^0.1.11',
+131 silly cache add   spec: '>=0.1.11 <0.2.0',
+131 silly cache add   type: 'range' }
+132 silly addNamed encoding@>=0.1.11 <0.2.0
+133 verbose addNamed ">=0.1.11 <0.2.0" is a valid semver range for encoding
+134 silly addNameRange { name: 'encoding', range: '>=0.1.11 <0.2.0', hasData: false }
+135 silly mapToRegistry name encoding
+136 silly mapToRegistry using default registry
+137 silly mapToRegistry registry https://registry.npmjs.org/
+138 silly mapToRegistry uri https://registry.npmjs.org/encoding
+139 verbose addNameRange registry:https://registry.npmjs.org/encoding not in flight; fetching
+140 verbose request uri https://registry.npmjs.org/is-stream
+141 verbose request no auth needed
+142 info attempt registry request try #1 at 3:24:15 PM
+143 verbose etag "7PDZPXEXN208G9I3CARQIADFG"
+144 http request GET https://registry.npmjs.org/is-stream
+145 verbose request uri https://registry.npmjs.org/encoding
+146 verbose request no auth needed
+147 info attempt registry request try #1 at 3:24:15 PM
+148 verbose etag "ED80P0SXOPGKRRYI0EVINPZUR"
+149 http request GET https://registry.npmjs.org/encoding
+150 http 304 https://registry.npmjs.org/is-stream
+151 verbose headers { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+151 verbose headers   via: '1.1 varnish',
+151 verbose headers   'cache-control': 'max-age=300',
+151 verbose headers   etag: '"7PDZPXEXN208G9I3CARQIADFG"',
+151 verbose headers   age: '210',
+151 verbose headers   connection: 'keep-alive',
+151 verbose headers   'x-served-by': 'cache-fra1226-FRA',
+151 verbose headers   'x-cache': 'HIT',
+151 verbose headers   'x-cache-hits': '474',
+151 verbose headers   'x-timer': 'S1466515455.905132,VS0,VE0',
+151 verbose headers   vary: 'Accept-Encoding' }
+152 silly get cb [ 304,
+152 silly get   { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+152 silly get     via: '1.1 varnish',
+152 silly get     'cache-control': 'max-age=300',
+152 silly get     etag: '"7PDZPXEXN208G9I3CARQIADFG"',
+152 silly get     age: '210',
+152 silly get     connection: 'keep-alive',
+152 silly get     'x-served-by': 'cache-fra1226-FRA',
+152 silly get     'x-cache': 'HIT',
+152 silly get     'x-cache-hits': '474',
+152 silly get     'x-timer': 'S1466515455.905132,VS0,VE0',
+152 silly get     vary: 'Accept-Encoding' } ]
+153 verbose etag https://registry.npmjs.org/is-stream from cache
+154 verbose get saving is-stream to /Users/nadavlachish/.npm/registry.npmjs.org/is-stream/.cache.json
+155 http 304 https://registry.npmjs.org/encoding
+156 verbose headers { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+156 verbose headers   via: '1.1 varnish',
+156 verbose headers   'cache-control': 'max-age=300',
+156 verbose headers   etag: '"ED80P0SXOPGKRRYI0EVINPZUR"',
+156 verbose headers   age: '192',
+156 verbose headers   connection: 'keep-alive',
+156 verbose headers   'x-served-by': 'cache-fra1225-FRA',
+156 verbose headers   'x-cache': 'HIT',
+156 verbose headers   'x-cache-hits': '3',
+156 verbose headers   'x-timer': 'S1466515455.913596,VS0,VE0',
+156 verbose headers   vary: 'Accept-Encoding' }
+157 silly get cb [ 304,
+157 silly get   { date: 'Tue, 21 Jun 2016 13:24:15 GMT',
+157 silly get     via: '1.1 varnish',
+157 silly get     'cache-control': 'max-age=300',
+157 silly get     etag: '"ED80P0SXOPGKRRYI0EVINPZUR"',
+157 silly get     age: '192',
+157 silly get     connection: 'keep-alive',
+157 silly get     'x-served-by': 'cache-fra1225-FRA',
+157 silly get     'x-cache': 'HIT',
+157 silly get     'x-cache-hits': '3',
+157 silly get     'x-timer': 'S1466515455.913596,VS0,VE0',
+157 silly get     vary: 'Accept-Encoding' } ]
+158 verbose etag https://registry.npmjs.org/encoding from cache
+159 verbose get saving encoding to /Users/nadavlachish/.npm/registry.npmjs.org/encoding/.cache.json
+160 silly addNameRange number 2 { name: 'is-stream', range: '>=1.0.1 <2.0.0', hasData: true }
+161 silly addNameRange versions [ 'is-stream', [ '1.0.0', '1.0.1', '1.1.0' ] ]
+162 silly addNamed is-stream@1.1.0
+163 verbose addNamed "1.1.0" is a plain semver version for is-stream
+164 silly addNameRange number 2 { name: 'encoding', range: '>=0.1.11 <0.2.0', hasData: true }
+165 silly addNameRange versions [ 'encoding',
+165 silly addNameRange   [ '0.1.1',
+165 silly addNameRange     '0.1.2',
+165 silly addNameRange     '0.1.3',
+165 silly addNameRange     '0.1.4',
+165 silly addNameRange     '0.1.5',
+165 silly addNameRange     '0.1.6',
+165 silly addNameRange     '0.1.7',
+165 silly addNameRange     '0.1.8',
+165 silly addNameRange     '0.1.9',
+165 silly addNameRange     '0.1.10',
+165 silly addNameRange     '0.1.11',
+165 silly addNameRange     '0.1.12' ] ]
+166 silly addNamed encoding@0.1.12
+167 verbose addNamed "0.1.12" is a plain semver version for encoding
+168 silly cache afterAdd is-stream@1.1.0
+169 verbose afterAdd /Users/nadavlachish/.npm/is-stream/1.1.0/package/package.json not in flight; writing
+170 verbose afterAdd /Users/nadavlachish/.npm/is-stream/1.1.0/package/package.json written
+171 silly cache afterAdd encoding@0.1.12
+172 verbose afterAdd /Users/nadavlachish/.npm/encoding/0.1.12/package/package.json not in flight; writing
+173 verbose afterAdd /Users/nadavlachish/.npm/encoding/0.1.12/package/package.json written
+174 silly install resolved [ { name: 'is-stream',
+174 silly install resolved     version: '1.1.0',
+174 silly install resolved     description: 'Check if something is a Node.js stream',
+174 silly install resolved     license: 'MIT',
+174 silly install resolved     repository:
+174 silly install resolved      { type: 'git',
+174 silly install resolved        url: 'git+https://github.com/sindresorhus/is-stream.git' },
+174 silly install resolved     author:
+174 silly install resolved      { name: 'Sindre Sorhus',
+174 silly install resolved        email: 'sindresorhus@gmail.com',
+174 silly install resolved        url: 'sindresorhus.com' },
+174 silly install resolved     engines: { node: '>=0.10.0' },
+174 silly install resolved     scripts: { test: 'xo && ava' },
+174 silly install resolved     files: [ 'index.js' ],
+174 silly install resolved     keywords:
+174 silly install resolved      [ 'stream',
+174 silly install resolved        'type',
+174 silly install resolved        'streams',
+174 silly install resolved        'writable',
+174 silly install resolved        'readable',
+174 silly install resolved        'duplex',
+174 silly install resolved        'transform',
+174 silly install resolved        'check',
+174 silly install resolved        'detect',
+174 silly install resolved        'is' ],
+174 silly install resolved     devDependencies: { ava: '*', tempfile: '^1.1.0', xo: '*' },
+174 silly install resolved     readme: '# is-stream [![Build Status](https://travis-ci.org/sindresorhus/is-stream.svg?branch=master)](https://travis-ci.org/sindresorhus/is-stream)\n\n> Check if something is a [Node.js stream](https://nodejs.org/api/stream.html)\n\n\n## Install\n\n```\n$ npm install --save is-stream\n```\n\n\n## Usage\n\n```js\nconst fs = require(\'fs\');\nconst isStream = require(\'is-stream\');\n\nisStream(fs.createReadStream(\'unicorn.png\'));\n//=> true\n\nisStream({});\n//=> false\n```\n\n\n## API\n\n### isStream(stream)\n\n#### isStream.writable(stream)\n\n#### isStream.readable(stream)\n\n#### isStream.duplex(stream)\n\n#### isStream.transform(stream)\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n',
+174 silly install resolved     readmeFilename: 'readme.md',
+174 silly install resolved     bugs: { url: 'https://github.com/sindresorhus/is-stream/issues' },
+174 silly install resolved     homepage: 'https://github.com/sindresorhus/is-stream#readme',
+174 silly install resolved     _id: 'is-stream@1.1.0',
+174 silly install resolved     _shasum: '12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44',
+174 silly install resolved     _resolved: 'https://registry.npmjs.org/is-stream/-/is-stream-1.1.0.tgz',
+174 silly install resolved     _from: 'is-stream@>=1.0.1 <2.0.0' },
+174 silly install resolved   { name: 'encoding',
+174 silly install resolved     version: '0.1.12',
+174 silly install resolved     description: 'Convert encodings, uses iconv by default and fallbacks to iconv-lite if needed',
+174 silly install resolved     main: 'lib/encoding.js',
+174 silly install resolved     scripts: { test: 'nodeunit test' },
+174 silly install resolved     repository:
+174 silly install resolved      { type: 'git',
+174 silly install resolved        url: 'git+https://github.com/andris9/encoding.git' },
+174 silly install resolved     author: { name: 'Andris Reinman' },
+174 silly install resolved     license: 'MIT',
+174 silly install resolved     dependencies: { 'iconv-lite': '~0.4.13' },
+174 silly install resolved     devDependencies: { iconv: '~2.1.11', nodeunit: '~0.9.1' },
+174 silly install resolved     readme: '# Encoding\n\n**encoding** is a simple wrapper around [node-iconv](https://github.com/bnoordhuis/node-iconv) and [iconv-lite](https://github.com/ashtuchkin/iconv-lite/) to convert strings from one encoding to another. If node-iconv is not available for some reason,\niconv-lite will be used instead of it as a fallback.\n\n[![Build Status](https://secure.travis-ci.org/andris9/encoding.svg)](http://travis-ci.org/andris9/Nodemailer)\n[![npm version](https://badge.fury.io/js/encoding.svg)](http://badge.fury.io/js/encoding)\n\n## Install\n\nInstall through npm\n\n    npm install encoding\n\n## Usage\n\nRequire the module\n\n    var encoding = require("encoding");\n\nConvert with encoding.convert()\n\n    var resultBuffer = encoding.convert(text, toCharset, fromCharset);\n\nWhere\n\n  * **text** is either a Buffer or a String to be converted\n  * **toCharset** is the characterset to convert the string\n  * **fromCharset** (*optional*, defaults to UTF-8) is the source charset\n\nOutput of the conversion is always a Buffer object.\n\nExample\n\n    var result = encoding.convert("ÕÄÖÜ", "Latin_1");\n    console.log(result); //<Buffer d5 c4 d6 dc>\n\n## iconv support\n\nBy default only iconv-lite is bundled. If you need node-iconv support, you need to add it\nas an additional dependency for your project:\n\n    ...,\n    "dependencies":{\n        "encoding": "*",\n        "iconv": "*"\n    },\n    ...\n\n## License\n\n**MIT**\n',
+174 silly install resolved     readmeFilename: 'README.md',
+174 silly install resolved     bugs: { url: 'https://github.com/andris9/encoding/issues' },
+174 silly install resolved     homepage: 'https://github.com/andris9/encoding#readme',
+174 silly install resolved     _id: 'encoding@0.1.12',
+174 silly install resolved     _shasum: '538b66f3ee62cd1ab51ec323829d1f9480c74beb',
+174 silly install resolved     _resolved: 'https://registry.npmjs.org/encoding/-/encoding-0.1.12.tgz',
+174 silly install resolved     _from: 'encoding@>=0.1.11 <0.2.0' } ]
+175 info install is-stream@1.1.0 into /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+176 info install encoding@0.1.12 into /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+177 info installOne is-stream@1.1.0
+178 verbose installOne of is-stream to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch not in flight; installing
+179 info installOne encoding@0.1.12
+180 verbose installOne of encoding to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch not in flight; installing
+181 verbose lock using /Users/nadavlachish/.npm/_locks/is-stream-2b36aae21c12c368.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+182 verbose lock using /Users/nadavlachish/.npm/_locks/encoding-80206343585d0372.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+183 silly install write writing is-stream 1.1.0 to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+184 silly install write writing encoding 0.1.12 to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+185 verbose unbuild node_modules/node-fetch/node_modules/is-stream
+186 verbose unbuild node_modules/node-fetch/node_modules/encoding
+187 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream is being purged from base /Users/nadavlachish/Documents/node/spending
+188 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+189 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding is being purged from base /Users/nadavlachish/Documents/node/spending
+190 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+191 verbose tar unpack /Users/nadavlachish/.npm/is-stream/1.1.0/package.tgz
+192 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+193 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream is being purged
+194 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+195 verbose tar unpack /Users/nadavlachish/.npm/encoding/0.1.12/package.tgz
+196 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+197 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding is being purged
+198 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+199 silly gunzTarPerm modes [ '755', '644' ]
+200 silly gunzTarPerm modes [ '755', '644' ]
+201 silly gunzTarPerm extractEntry package.json
+202 silly gunzTarPerm extractEntry package.json
+203 silly gunzTarPerm extractEntry index.js
+204 silly gunzTarPerm extractEntry license
+205 silly gunzTarPerm extractEntry .npmignore
+206 silly gunzTarPerm extractEntry README.md
+207 silly gunzTarPerm extractEntry readme.md
+208 silly gunzTarPerm extractEntry LICENSE
+209 silly gunzTarPerm extractEntry .travis.yml
+210 silly gunzTarPerm extractEntry lib/encoding.js
+211 silly gunzTarPerm extractEntry lib/iconv-loader.js
+212 silly gunzTarPerm extractEntry test/test.js
+213 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream/package.json
+214 info preinstall is-stream@1.1.0
+215 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream/package.json
+216 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream/package.json
+217 silly install resolved []
+218 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+219 info build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+220 info linkStuff is-stream@1.1.0
+221 silly linkStuff is-stream@1.1.0 has /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules as its parent node_modules
+222 verbose linkBins is-stream@1.1.0
+223 verbose linkMans is-stream@1.1.0
+224 verbose rebuildBundles is-stream@1.1.0
+225 info install is-stream@1.1.0
+226 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/package.json
+227 info postinstall is-stream@1.1.0
+228 verbose unlock done using /Users/nadavlachish/.npm/_locks/is-stream-2b36aae21c12c368.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/is-stream
+229 info preinstall encoding@0.1.12
+230 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/package.json
+231 silly prepareForInstallMany adding iconv-lite@~0.4.13 from encoding dependencies
+232 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/package.json
+233 silly cache add args [ 'iconv-lite@~0.4.13', null ]
+234 verbose cache add spec iconv-lite@~0.4.13
+235 silly cache add parsed spec Result {
+235 silly cache add   raw: 'iconv-lite@~0.4.13',
+235 silly cache add   scope: null,
+235 silly cache add   name: 'iconv-lite',
+235 silly cache add   rawSpec: '~0.4.13',
+235 silly cache add   spec: '>=0.4.13 <0.5.0',
+235 silly cache add   type: 'range' }
+236 silly addNamed iconv-lite@>=0.4.13 <0.5.0
+237 verbose addNamed ">=0.4.13 <0.5.0" is a valid semver range for iconv-lite
+238 silly addNameRange { name: 'iconv-lite', range: '>=0.4.13 <0.5.0', hasData: false }
+239 silly mapToRegistry name iconv-lite
+240 silly mapToRegistry using default registry
+241 silly mapToRegistry registry https://registry.npmjs.org/
+242 silly mapToRegistry uri https://registry.npmjs.org/iconv-lite
+243 verbose addNameRange registry:https://registry.npmjs.org/iconv-lite not in flight; fetching
+244 verbose request uri https://registry.npmjs.org/iconv-lite
+245 verbose request no auth needed
+246 info attempt registry request try #1 at 3:24:16 PM
+247 verbose etag "6OAKMK6MN0RIN5RQWRGBVGAFC"
+248 http request GET https://registry.npmjs.org/iconv-lite
+249 http 304 https://registry.npmjs.org/iconv-lite
+250 verbose headers { date: 'Tue, 21 Jun 2016 13:24:16 GMT',
+250 verbose headers   via: '1.1 varnish',
+250 verbose headers   'cache-control': 'max-age=300',
+250 verbose headers   etag: '"6OAKMK6MN0RIN5RQWRGBVGAFC"',
+250 verbose headers   age: '287',
+250 verbose headers   connection: 'keep-alive',
+250 verbose headers   'x-served-by': 'cache-fra1248-FRA',
+250 verbose headers   'x-cache': 'HIT',
+250 verbose headers   'x-cache-hits': '29',
+250 verbose headers   'x-timer': 'S1466515456.082664,VS0,VE0',
+250 verbose headers   vary: 'Accept-Encoding' }
+251 silly get cb [ 304,
+251 silly get   { date: 'Tue, 21 Jun 2016 13:24:16 GMT',
+251 silly get     via: '1.1 varnish',
+251 silly get     'cache-control': 'max-age=300',
+251 silly get     etag: '"6OAKMK6MN0RIN5RQWRGBVGAFC"',
+251 silly get     age: '287',
+251 silly get     connection: 'keep-alive',
+251 silly get     'x-served-by': 'cache-fra1248-FRA',
+251 silly get     'x-cache': 'HIT',
+251 silly get     'x-cache-hits': '29',
+251 silly get     'x-timer': 'S1466515456.082664,VS0,VE0',
+251 silly get     vary: 'Accept-Encoding' } ]
+252 verbose etag https://registry.npmjs.org/iconv-lite from cache
+253 verbose get saving iconv-lite to /Users/nadavlachish/.npm/registry.npmjs.org/iconv-lite/.cache.json
+254 silly addNameRange number 2 { name: 'iconv-lite', range: '>=0.4.13 <0.5.0', hasData: true }
+255 silly addNameRange versions [ 'iconv-lite',
+255 silly addNameRange   [ '0.1.0',
+255 silly addNameRange     '0.1.1',
+255 silly addNameRange     '0.1.2',
+255 silly addNameRange     '0.1.3',
+255 silly addNameRange     '0.1.4',
+255 silly addNameRange     '0.2.0',
+255 silly addNameRange     '0.2.1',
+255 silly addNameRange     '0.2.3',
+255 silly addNameRange     '0.2.4',
+255 silly addNameRange     '0.2.5',
+255 silly addNameRange     '0.2.6',
+255 silly addNameRange     '0.2.7',
+255 silly addNameRange     '0.2.8',
+255 silly addNameRange     '0.2.9',
+255 silly addNameRange     '0.2.10',
+255 silly addNameRange     '0.2.11',
+255 silly addNameRange     '0.4.0-pre',
+255 silly addNameRange     '0.4.0-pre2',
+255 silly addNameRange     '0.4.0-pre3',
+255 silly addNameRange     '0.4.0',
+255 silly addNameRange     '0.4.1',
+255 silly addNameRange     '0.4.2',
+255 silly addNameRange     '0.4.3',
+255 silly addNameRange     '0.4.4',
+255 silly addNameRange     '0.4.5',
+255 silly addNameRange     '0.4.6',
+255 silly addNameRange     '0.4.7',
+255 silly addNameRange     '0.4.8',
+255 silly addNameRange     '0.4.9',
+255 silly addNameRange     '0.4.10',
+255 silly addNameRange     '0.4.11',
+255 silly addNameRange     '0.4.12',
+255 silly addNameRange     '0.4.13' ] ]
+256 silly addNamed iconv-lite@0.4.13
+257 verbose addNamed "0.4.13" is a plain semver version for iconv-lite
+258 silly cache afterAdd iconv-lite@0.4.13
+259 verbose afterAdd /Users/nadavlachish/.npm/iconv-lite/0.4.13/package/package.json not in flight; writing
+260 verbose afterAdd /Users/nadavlachish/.npm/iconv-lite/0.4.13/package/package.json written
+261 silly install resolved [ { name: 'iconv-lite',
+261 silly install resolved     description: 'Convert character encodings in pure javascript.',
+261 silly install resolved     version: '0.4.13',
+261 silly install resolved     license: 'MIT',
+261 silly install resolved     keywords: [ 'iconv', 'convert', 'charset', 'icu' ],
+261 silly install resolved     author: { name: 'Alexander Shtuchkin', email: 'ashtuchkin@gmail.com' },
+261 silly install resolved     contributors:
+261 silly install resolved      [ [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object],
+261 silly install resolved        [Object] ],
+261 silly install resolved     main: './lib/index.js',
+261 silly install resolved     homepage: 'https://github.com/ashtuchkin/iconv-lite',
+261 silly install resolved     bugs: { url: 'https://github.com/ashtuchkin/iconv-lite/issues' },
+261 silly install resolved     repository:
+261 silly install resolved      { type: 'git',
+261 silly install resolved        url: 'git://github.com/ashtuchkin/iconv-lite.git' },
+261 silly install resolved     engines: { node: '>=0.8.0' },
+261 silly install resolved     scripts:
+261 silly install resolved      { coverage: 'istanbul cover _mocha -- --grep .',
+261 silly install resolved        'coverage-open': 'open coverage/lcov-report/index.html',
+261 silly install resolved        test: 'mocha --reporter spec --grep .' },
+261 silly install resolved     browser: { './extend-node': false, './streams': false },
+261 silly install resolved     devDependencies:
+261 silly install resolved      { mocha: '*',
+261 silly install resolved        request: '2.47',
+261 silly install resolved        unorm: '*',
+261 silly install resolved        errto: '*',
+261 silly install resolved        async: '*',
+261 silly install resolved        istanbul: '*',
+261 silly install resolved        iconv: '2.1' },
+261 silly install resolved     readme: '## Pure JS character encoding conversion [![Build Status](https://travis-ci.org/ashtuchkin/iconv-lite.svg?branch=master)](https://travis-ci.org/ashtuchkin/iconv-lite)\n\n * Doesn\'t need native code compilation. Works on Windows and in sandboxed environments like [Cloud9](http://c9.io).\n * Used in popular projects like [Express.js (body_parser)](https://github.com/expressjs/body-parser), \n   [Grunt](http://gruntjs.com/), [Nodemailer](http://www.nodemailer.com/), [Yeoman](http://yeoman.io/) and others.\n * Faster than [node-iconv](https://github.com/bnoordhuis/node-iconv) (see below for performance comparison).\n * Intuitive encode/decode API\n * Streaming support for Node v0.10+\n * [Deprecated] Can extend Node.js primitives (buffers, streams) to support all iconv-lite encodings.\n * In-browser usage via [Browserify](https://github.com/substack/node-browserify) (~180k gzip compressed with Buffer shim included).\n * License: MIT.\n\n[![NPM Stats](https://nodei.co/npm/iconv-lite.png?downloads=true&downloadRank=true)](https://npmjs.org/packages/iconv-lite/)\n\n## Usage\n### Basic API\n```javascript\nvar iconv = require(\'iconv-lite\');\n\n// Convert from an encoded buffer to js string.\nstr = iconv.decode(new Buffer([0x68, 0x65, 0x6c, 0x6c, 0x6f]), \'win1251\');\n\n// Convert from js string to an encoded buffer.\nbuf = iconv.encode("Sample input string", \'win1251\');\n\n// Check if encoding is supported\niconv.encodingExists("us-ascii")\n```\n\n### Streaming API (Node v0.10+)\n```javascript\n\n// Decode stream (from binary stream to js strings)\nhttp.createServer(function(req, res) {\n    var converterStream = iconv.decodeStream(\'win1251\');\n    req.pipe(converterStream);\n\n    converterStream.on(\'data\', function(str) {\n        console.log(str); // Do something with decoded strings, chunk-by-chunk.\n    });\n});\n\n// Convert encoding streaming example\nfs.createReadStream(\'file-in-win1251.txt\')\n    .pipe(iconv.decodeStream(\'win1251\'))\n    .pipe(iconv.encodeStream(\'ucs2\'))\n    .pipe(fs.createWriteStream(\'file-in-ucs2.txt\'));\n\n// Sugar: all encode/decode streams have .collect(cb) method to accumulate data.\nhttp.createServer(function(req, res) {\n    req.pipe(iconv.decodeStream(\'win1251\')).collect(function(err, body) {\n        assert(typeof body == \'string\');\n        console.log(body); // full request body string\n    });\n});\n```\n\n### [Deprecated] Extend Node.js own encodings\n> NOTE: This doesn\'t work on latest Node versions. See [details](https://github.com/ashtuchkin/iconv-lite/wiki/Node-v4-compatibility).\n\n```javascript\n// After this call all Node basic primitives will understand iconv-lite encodings.\niconv.extendNodeEncodings();\n\n// Examples:\nbuf = new Buffer(str, \'win1251\');\nbuf.write(str, \'gbk\');\nstr = buf.toString(\'latin1\');\nassert(Buffer.isEncoding(\'iso-8859-15\'));\nBuffer.byteLength(str, \'us-ascii\');\n\nhttp.createServer(function(req, res) {\n    req.setEncoding(\'big5\');\n    req.collect(function(err, body) {\n        console.log(body);\n    });\n});\n\nfs.createReadStream("file.txt", "shift_jis");\n\n// External modules are also supported (if they use Node primitives, which they probably do).\nrequest = require(\'request\');\nrequest({\n    url: "http://github.com/", \n    encoding: "cp932"\n});\n\n// To remove extensions\niconv.undoExtendNodeEncodings();\n```\n\n## Supported encodings\n\n *  All node.js native encodings: utf8, ucs2 / utf16-le, ascii, binary, base64, hex.\n *  Additional unicode encodings: utf16, utf16-be, utf-7, utf-7-imap.\n *  All widespread singlebyte encodings: Windows 125x family, ISO-8859 family, \n    IBM/DOS codepages, Macintosh family, KOI8 family, all others supported by iconv library. \n    Aliases like \'latin1\', \'us-ascii\' also supported.\n *  All widespread multibyte encodings: CP932, CP936, CP949, CP950, GB2313, GBK, GB18030, Big5, Shift_JIS, EUC-JP.\n\nSee [all supported encodings on wiki](https://github.com/ashtuchkin/iconv-lite/wiki/Supported-Encodings).\n\nMost singlebyte encodings are generated automatically from [node-iconv](https://github.com/bnoordhuis/node-iconv). Thank you Ben Noordhuis and libiconv authors!\n\nMultibyte encodings are generated from [Unicode.org mappings](http://www.unicode.org/Public/MAPPINGS/) and [WHATWG Encoding Standard mappings](http://encoding.spec.whatwg.org/). Thank you, respective authors!\n\n\n## Encoding/decoding speed\n\nComparison with node-iconv module (1000x256kb, on MacBook Pro, Core i5/2.6 GHz, Node v0.12.0). \nNote: your results may vary, so please always check on your hardware.\n\n    operation             iconv@2.1.4   iconv-lite@0.4.7\n    ----------------------------------------------------------\n    encode(\'win1251\')     ~96 Mb/s      ~320 Mb/s\n    decode(\'win1251\')     ~95 Mb/s      ~246 Mb/s\n\n## BOM handling\n\n * Decoding: BOM is stripped by default, unless overridden by passing `stripBOM: false` in options\n   (f.ex. `iconv.decode(buf, enc, {stripBOM: false})`).\n   A callback might also be given as a `stripBOM` parameter - it\'ll be called if BOM character was actually found.\n * Encoding: No BOM added, unless overridden by `addBOM: true` option.\n\n## UTF-16 Encodings\n\nThis library supports UTF-16LE, UTF-16BE and UTF-16 encodings. First two are straightforward, but UTF-16 is trying to be\nsmart about endianness in the following ways:\n * Decoding: uses BOM and \'spaces heuristic\' to determine input endianness. Default is UTF-16LE, but can be \n   overridden with `defaultEncoding: \'utf-16be\'` option. Strips BOM unless `stripBOM: false`.\n * Encoding: uses UTF-16LE and writes BOM by default. Use `addBOM: false` to override.\n\n## Other notes\n\nWhen decoding, be sure to supply a Buffer to decode() method, otherwise [bad things usually happen](https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding).  \nUntranslatable characters are set to � or ?. No transliteration is currently supported.  \nNode versions 0.10.31 and 0.11.13 are buggy, don\'t use them (see #65, #77).  \n\n## Testing\n\n```bash\n$ git clone git@github.com:ashtuchkin/iconv-lite.git\n$ cd iconv-lite\n$ npm install\n$ npm test\n    \n$ # To view performance:\n$ node test/performance.js\n\n$ # To view test coverage:\n$ npm run coverage\n$ open coverage/lcov-report/index.html\n```\n\n## Adoption\n[![NPM](https://nodei.co/npm-dl/iconv-lite.png)](https://nodei.co/npm/iconv-lite/)\n[![Codeship Status for ashtuchkin/iconv-lite](https://www.codeship.io/projects/81670840-fa72-0131-4520-4a01a6c01acc/status)](https://www.codeship.io/projects/29053)\n',
+261 silly install resolved     readmeFilename: 'README.md',
+261 silly install resolved     _id: 'iconv-lite@0.4.13',
+261 silly install resolved     _shasum: '1f88aba4ab0b1508e8312acc39345f36e992e2f2',
+261 silly install resolved     _resolved: 'https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.4.13.tgz',
+261 silly install resolved     _from: 'iconv-lite@>=0.4.13 <0.5.0' } ]
+262 info install iconv-lite@0.4.13 into /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+263 info installOne iconv-lite@0.4.13
+264 verbose installOne of iconv-lite to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding not in flight; installing
+265 verbose lock using /Users/nadavlachish/.npm/_locks/iconv-lite-aac6a6130955bab7.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+266 silly install write writing iconv-lite 0.4.13 to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+267 verbose unbuild node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+268 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite is being purged from base /Users/nadavlachish/Documents/node/spending
+269 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+270 verbose tar unpack /Users/nadavlachish/.npm/iconv-lite/0.4.13/package.tgz
+271 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+272 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite is being purged
+273 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+274 silly gunzTarPerm modes [ '755', '644' ]
+275 silly gunzTarPerm extractEntry package.json
+276 silly gunzTarPerm extractEntry .npmignore
+277 silly gunzTarPerm extractEntry README.md
+278 silly gunzTarPerm extractEntry LICENSE
+279 silly gunzTarPerm extractEntry encodings/dbcs-codec.js
+280 silly gunzTarPerm extractEntry encodings/dbcs-data.js
+281 silly gunzTarPerm extractEntry encodings/index.js
+282 silly gunzTarPerm extractEntry encodings/internal.js
+283 silly gunzTarPerm extractEntry encodings/sbcs-codec.js
+284 silly gunzTarPerm extractEntry encodings/sbcs-data-generated.js
+285 silly gunzTarPerm extractEntry encodings/sbcs-data.js
+286 silly gunzTarPerm extractEntry encodings/utf16.js
+287 silly gunzTarPerm extractEntry encodings/utf7.js
+288 silly gunzTarPerm extractEntry encodings/tables/big5-added.json
+289 silly gunzTarPerm extractEntry encodings/tables/cp936.json
+290 silly gunzTarPerm extractEntry encodings/tables/cp949.json
+291 silly gunzTarPerm extractEntry encodings/tables/cp950.json
+292 silly gunzTarPerm extractEntry encodings/tables/eucjp.json
+293 silly gunzTarPerm extractEntry encodings/tables/gb18030-ranges.json
+294 silly gunzTarPerm extractEntry encodings/tables/gbk-added.json
+295 silly gunzTarPerm extractEntry encodings/tables/shiftjis.json
+296 silly gunzTarPerm extractEntry .travis.yml
+297 silly gunzTarPerm extractEntry lib/bom-handling.js
+298 silly gunzTarPerm extractEntry lib/extend-node.js
+299 silly gunzTarPerm extractEntry lib/index.js
+300 silly gunzTarPerm extractEntry lib/streams.js
+301 silly gunzTarPerm extractEntry Changelog.md
+302 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite/package.json
+303 info preinstall iconv-lite@0.4.13
+304 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite/package.json
+305 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite/package.json
+306 silly install resolved []
+307 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+308 info build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+309 info linkStuff iconv-lite@0.4.13
+310 silly linkStuff iconv-lite@0.4.13 has /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules as its parent node_modules
+311 verbose linkBins iconv-lite@0.4.13
+312 verbose linkMans iconv-lite@0.4.13
+313 verbose rebuildBundles iconv-lite@0.4.13
+314 info install iconv-lite@0.4.13
+315 info postinstall iconv-lite@0.4.13
+316 verbose unlock done using /Users/nadavlachish/.npm/_locks/iconv-lite-aac6a6130955bab7.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding/node_modules/iconv-lite
+317 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+318 info build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+319 info linkStuff encoding@0.1.12
+320 silly linkStuff encoding@0.1.12 has /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules as its parent node_modules
+321 verbose linkBins encoding@0.1.12
+322 verbose linkMans encoding@0.1.12
+323 verbose rebuildBundles encoding@0.1.12
+324 verbose rebuildBundles [ 'iconv-lite' ]
+325 info install encoding@0.1.12
+326 info postinstall encoding@0.1.12
+327 verbose unlock done using /Users/nadavlachish/.npm/_locks/encoding-80206343585d0372.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/node_modules/encoding
+328 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+329 info build /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+330 info linkStuff node-fetch@1.5.3
+331 silly linkStuff node-fetch@1.5.3 has /Users/nadavlachish/Documents/node/spending/node_modules as its parent node_modules
+332 verbose linkBins node-fetch@1.5.3
+333 verbose linkMans node-fetch@1.5.3
+334 verbose rebuildBundles node-fetch@1.5.3
+335 verbose rebuildBundles [ 'encoding', 'is-stream' ]
+336 info install node-fetch@1.5.3
+337 info postinstall node-fetch@1.5.3
+338 verbose unlock done using /Users/nadavlachish/.npm/_locks/node-fetch-69a42488d6fa5424.lock for /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch
+339 verbose validateInstall loading /Users/nadavlachish/Documents/node/spending/package.json for validation
+340 verbose stack Error: The package superagent@2.0.0 does not satisfy its siblings' peerDependencies requirements!
+340 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+340 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+340 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+340 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+340 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+340 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+340 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+340 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+340 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+340 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+341 verbose cwd /Users/nadavlachish/Documents/node/spending
+342 error Darwin 15.5.0
+343 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "--save" "node-fetch"
+344 error node v4.3.1
+345 error npm  v2.14.12
+346 error code EPEERINVALID
+347 error peerinvalid The package superagent@2.0.0 does not satisfy its siblings' peerDependencies requirements!
+347 error peerinvalid Peer superagent-bluebird-promise@3.0.0 wants superagent@1.x
+348 verbose exit [ 1, true ]

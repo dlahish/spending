@@ -12,6 +12,9 @@ class Header extends Component {
         </li>,
         <li key="3">
           <Link to="/securepage">Secure Page</Link>
+        </li>,
+        <li key="5">
+          <Link to="/upload">Upload File</Link>
         </li>
       ];
     }
