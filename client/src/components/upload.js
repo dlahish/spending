@@ -4,8 +4,8 @@ import {reduxForm} from 'redux-form';
 class ContactForm extends Component {
   _handleSubmit(formProps){
     console.log('formProps');
-    console.log(formProps);
-    console.log('files');
+    console.log(formProps.file);
+    console.log('spreadsheet');
     sendData('http://localhost:3090/upload', formProps);
     //let file = replacer(formProps, formProps.files);
     //console.log(file);
@@ -23,7 +23,7 @@ class ContactForm extends Component {
   }
 
   render() {
-    const {fields: {firstName, lastName, email, files}, handleSubmit} = this.props;
+    const {fields: {firstName, lastName, email, spreadsheet}, handleSubmit} = this.props;
     return (
       <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
         <div>
@@ -40,7 +40,7 @@ class ContactForm extends Component {
         </div>
         <div>
           <label>File</label>
-          <input type="file" placeholder="File" {...files} value={null} />
+          <input type="file" placeholder="File" {...spreadsheet} value={null} />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -51,13 +51,17 @@ class ContactForm extends Component {
 function sendData(url, data) {
   var formData  = new FormData();
 
-  for(name in data) {
-    formData.append(name, data[name]);
-  }
-
+  formData.append('spreadsheet', data.spreadsheet[0]);
+  // for(name in data) {
+  //   console.log(name);
+  //   formData.append(name, data[name]);
+  // }
+  console.log('sendData -----');
+  console.log(formData.entries());
   fetch(url, {
     method: 'POST',
-    body: formData
+    body: formData,
+    contentType: 'multipart/form-data'
   });
 }
 
@@ -76,7 +80,7 @@ function stringify(values) {
 
 ContactForm = reduxForm({ // <----- THIS IS THE IMPORTANT PART!
   form: 'contact',                           // a unique name for this form
-  fields: ['firstName', 'lastName', 'email', 'files'] // all the fields in your form
+  fields: ['firstName', 'lastName', 'email', 'spreadsheet'] // all the fields in your form
 })(ContactForm);
 
 export default ContactForm;
