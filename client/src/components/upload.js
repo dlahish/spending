@@ -1,29 +1,16 @@
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 
-class ContactForm extends Component {
+class UploadForm extends Component {
   _handleSubmit(formProps){
     console.log('formProps');
     console.log(formProps.file);
     console.log('spreadsheet');
     sendData('http://localhost:3090/upload', formProps);
-    //let file = replacer(formProps, formProps.files);
-    //console.log(file);
-    // var body = new FormData();
-    //
-    // body.append('file', file);
-    //
-    // console.log(body.file);
-
-
-    // fetch(`http://example.com/send/`, {
-    //   method: 'POST',
-    //   body: body,
-    // })
   }
 
   render() {
-    const {fields: {firstName, lastName, email, spreadsheet}, handleSubmit} = this.props;
+    const {fields: {firstName, lastName, email, file}, handleSubmit} = this.props;
     return (
       <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
         <div>
@@ -40,7 +27,8 @@ class ContactForm extends Component {
         </div>
         <div>
           <label>File</label>
-          <input type="file" placeholder="File" {...spreadsheet} value={null} />
+           <p>{file.touched && file.error ? file.error : ''}</p>
+          <input type="file" {...file} value={null} />
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -48,14 +36,30 @@ class ContactForm extends Component {
   }
 }
 
+function validate(values) {
+  let errors = {};
+  console.log('values ------');
+  console.log(values);
+  if (!values.file) {
+      errors.file = 'Required';
+  } else {
+      let file = values.file[0];
+      console.log(file.type);
+      console.log(file.name.endsWith('.CSV'));
+      console.log(file.name.endsWith('.csv'));
+      if (file.type !== 'text/csv') {
+          errors.file = 'Scan file must be an .CSV file';
+      }
+  }
+
+  return errors;
+}
+
 function sendData(url, data) {
   var formData  = new FormData();
 
-  formData.append('spreadsheet', data.spreadsheet[0]);
-  // for(name in data) {
-  //   console.log(name);
-  //   formData.append(name, data[name]);
-  // }
+  formData.append('file', data.file[0]);
+
   console.log('sendData -----');
   console.log(formData.entries());
   fetch(url, {
@@ -65,22 +69,10 @@ function sendData(url, data) {
   });
 }
 
-function replacer(key, value) {
-  if (value instanceof FileList) {
-    console.log('=======');
-    return Array.from(value).map(file => file.name).join(', ') || 'No Files Selected';
-  }
-  console.log('nonono');
-  return value;
-}
+UploadForm = reduxForm({
+  form: 'contact',
+  fields: ['firstName', 'lastName', 'email', 'file'],
+  validate
+})(UploadForm);
 
-function stringify(values) {
-  return JSON.stringify(values, replacer, 2);
-}
-
-ContactForm = reduxForm({ // <----- THIS IS THE IMPORTANT PART!
-  form: 'contact',                           // a unique name for this form
-  fields: ['firstName', 'lastName', 'email', 'spreadsheet'] // all the fields in your form
-})(ContactForm);
-
-export default ContactForm;
+export default UploadForm;
