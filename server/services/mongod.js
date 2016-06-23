@@ -9,18 +9,16 @@ exports.saveFileToMongo = function(req, res) {
     if (err) { return res.send(err); }
     if (!user) { return res.send(false); }
 
-    user.files.push({
+    user.data.push({
       fileName: fileName,
       uploadDate: uploadDate,
-      data: [{
-        date: '1/1/111',
-        category: 'CREDIT',
-        amount: 123,
-        note: 'shoping'
-      }]
+      date: '2/2/2000',
+      category: 'Spring',
+      amount: 444,
+      note: 'Madame'
     });
 
-    var subdoc = user.files[0];
+    var subdoc = user.data[0];
     console.log(subdoc);
 
     user.save(function(err) {
