@@ -2,9 +2,23 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
+const fileDataSchema = new Schema({
+  date: Date,
+  category: String,
+  amount: Number,
+  note: String
+});
+
+const filesSchema = new Schema({
+  fileName: String,
+  uploadDate: Date
+  //data: [fileDataSchema]
+});
+
 const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
-  password: String
+  password: String,
+  files: [filesSchema]
 });
 
 //on save hood , encrypt password
@@ -21,6 +35,11 @@ userSchema.pre('save', function(next) {
       next();
     });
   });
+});
+
+filesSchema.pre('save', function (next) {
+  if ('invalid' == this.fileName) return next(new Error('#noName'));
+  next();
 });
 
 userSchema.methods.comparePassword = function(candidatePassword, callback) {
