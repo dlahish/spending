@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
 const fileDataSchema = new Schema({
-  date: Date,
+  date: String,
   category: String,
   amount: Number,
   note: String
@@ -11,8 +11,8 @@ const fileDataSchema = new Schema({
 
 const filesSchema = new Schema({
   fileName: String,
-  uploadDate: Date
-  //data: [fileDataSchema]
+  uploadDate: Date,
+  data: [fileDataSchema]
 });
 
 const userSchema = new Schema({
