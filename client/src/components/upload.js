@@ -2,15 +2,18 @@ import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 
 class UploadForm extends Component {
+  
   _handleSubmit(formProps){
     console.log('formProps');
     console.log(formProps.file);
     console.log('spreadsheet');
-    sendData('http://localhost:3090/upload', formProps);
+    sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
   }
 
   render() {
     const {fields: {firstName, lastName, email, file}, handleSubmit} = this.props;
+    console.log('this.props.userEmail');
+    console.log(this.props.userEmail);
     return (
       <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
         <div>
@@ -55,10 +58,12 @@ function validate(values) {
   return errors;
 }
 
-function sendData(url, data) {
+function sendData(url, data, email) {
+  console.log('sendData -------');
   var formData  = new FormData();
 
   formData.append('file', data.file[0]);
+  formData.append('email', email);
 
   console.log('sendData -----');
   console.log(formData.entries());
@@ -69,10 +74,14 @@ function sendData(url, data) {
   });
 }
 
+function mapStateToProps(state) {
+  return { userEmail: state.auth.userEmail };
+}
+
 UploadForm = reduxForm({
   form: 'contact',
   fields: ['firstName', 'lastName', 'email', 'file'],
   validate
-})(UploadForm);
+}, mapStateToProps)(UploadForm);
 
 export default UploadForm;

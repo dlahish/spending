@@ -9,13 +9,16 @@ class SecurePage extends Component {
 
   render() {
     return (
-      <div>{this.props.message}</div>
+      <div>
+        <div>{this.props.message}</div>
+        <div>{this.props.email}</div>
+      </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { message: state.user.message };
+  return { message: state.user.message, email: state.auth.userEmail };
 }
 
 export default connect(mapStateToProps, actions)(SecurePage);

@@ -29,7 +29,8 @@ module.exports = function(app) {
   app.use('./upload', requireAuth);
   app.post('/upload', upload.single('file'), function (req, res) {
     console.log(req.file);
-    // res.send(req);
+    console.log('req.body');
+    console.log(req.body);
   });
 
   app.post('/signin', requireSignin, Authentication.signin)
