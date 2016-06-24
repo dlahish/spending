@@ -3,7 +3,7 @@ import {reduxForm} from 'redux-form';
 
 class UploadForm extends Component {
 
-  _handleSubmit(formProps){
+  _handleSubmit(formProps) {
     console.log('formProps');
     console.log(formProps.file);
     console.log('spreadsheet');
