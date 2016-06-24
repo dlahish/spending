@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 
 class UploadForm extends Component {
-  
+
   _handleSubmit(formProps){
     console.log('formProps');
     console.log(formProps.file);

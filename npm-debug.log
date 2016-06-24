@@ -1,0 +1,1749 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'fast-csv',
+1 verbose cli   '--save' ]
+2 info using npm@2.14.12
+3 info using node@v4.3.1
+4 verbose install initial load of /Users/nadavlachish/Documents/node/spending/package.json
+5 warn package.json spending@1.0.0 No description
+6 warn package.json spending@1.0.0 No repository field.
+7 warn package.json spending@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/axios/package.json
+9 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-core/package.json
+10 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-loader/package.json
+11 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-es2015/package.json
+12 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-react/package.json
+13 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babel-preset-stage-1/package.json
+14 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/babyparse/package.json
+15 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/bcrypt-nodejs/package.json
+16 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/bluebird/package.json
+17 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/body-parser/package.json
+18 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/chai/package.json
+19 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/chai-jquery/package.json
+20 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/cors/package.json
+21 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/csv/package.json
+22 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/express/package.json
+23 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/package.json
+24 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/form-data/package.json
+25 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jquery/package.json
+26 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jsdom/package.json
+27 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/jwt-simple/package.json
+28 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/lodash/package.json
+29 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/mocha/package.json
+30 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/mongoose/package.json
+31 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/morgan/package.json
+32 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/multer/package.json
+33 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/multiparty/package.json
+34 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/node-fetch/package.json
+35 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/papaparse/package.json
+36 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport/package.json
+37 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport-jwt/package.json
+38 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/passport-local/package.json
+39 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react/package.json
+40 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-addons-test-utils/package.json
+41 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-dom/package.json
+42 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-dropzone/package.json
+43 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-redux/package.json
+44 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/react-router/package.json
+45 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux/package.json
+46 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-form/package.json
+47 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-logger/package.json
+48 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/redux-thunk/package.json
+49 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/superagent/package.json
+50 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/superagent-bluebird-promise/package.json
+51 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/webpack/package.json
+52 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/webpack-dev-server/package.json
+53 verbose installManyTop reading scoped package data from /Users/nadavlachish/Documents/node/spending/node_modules/whatwg-fetch/package.json
+54 info package.json bcrypt-nodejs@0.0.3 No license field.
+55 info package.json chai-jquery@2.0.0 No license field.
+56 info package.json passport-local@1.0.0 No license field.
+57 info package.json babyparse@0.4.6 No license field.
+58 info package.json papaparse@4.1.2 No license field.
+59 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/package.json
+60 verbose install fast-csv is installed as 2.0.0
+61 silly cache add args [ 'fast-csv@^2.0.0', null ]
+62 verbose cache add spec fast-csv@^2.0.0
+63 silly cache add parsed spec Result {
+63 silly cache add   raw: 'fast-csv@^2.0.0',
+63 silly cache add   scope: null,
+63 silly cache add   name: 'fast-csv',
+63 silly cache add   rawSpec: '^2.0.0',
+63 silly cache add   spec: '>=2.0.0 <3.0.0',
+63 silly cache add   type: 'range' }
+64 silly addNamed fast-csv@>=2.0.0 <3.0.0
+65 verbose addNamed ">=2.0.0 <3.0.0" is a valid semver range for fast-csv
+66 silly addNameRange { name: 'fast-csv', range: '>=2.0.0 <3.0.0', hasData: false }
+67 silly mapToRegistry name fast-csv
+68 silly mapToRegistry using default registry
+69 silly mapToRegistry registry https://registry.npmjs.org/
+70 silly mapToRegistry uri https://registry.npmjs.org/fast-csv
+71 verbose addNameRange registry:https://registry.npmjs.org/fast-csv not in flight; fetching
+72 verbose request uri https://registry.npmjs.org/fast-csv
+73 verbose request no auth needed
+74 info attempt registry request try #1 at 7:16:50 PM
+75 verbose request id 8a3b575684a3d1dc
+76 verbose etag "5VYTFN5BNKGSYZ9AGXVYOF760"
+77 http request GET https://registry.npmjs.org/fast-csv
+78 http 304 https://registry.npmjs.org/fast-csv
+79 verbose headers { date: 'Thu, 23 Jun 2016 17:16:50 GMT',
+79 verbose headers   via: '1.1 varnish',
+79 verbose headers   'cache-control': 'max-age=300',
+79 verbose headers   etag: '"5VYTFN5BNKGSYZ9AGXVYOF760"',
+79 verbose headers   age: '248',
+79 verbose headers   connection: 'keep-alive',
+79 verbose headers   'x-served-by': 'cache-ams4126-AMS',
+79 verbose headers   'x-cache': 'HIT',
+79 verbose headers   'x-cache-hits': '1',
+79 verbose headers   'x-timer': 'S1466702210.815485,VS0,VE0',
+79 verbose headers   vary: 'Accept-Encoding' }
+80 silly get cb [ 304,
+80 silly get   { date: 'Thu, 23 Jun 2016 17:16:50 GMT',
+80 silly get     via: '1.1 varnish',
+80 silly get     'cache-control': 'max-age=300',
+80 silly get     etag: '"5VYTFN5BNKGSYZ9AGXVYOF760"',
+80 silly get     age: '248',
+80 silly get     connection: 'keep-alive',
+80 silly get     'x-served-by': 'cache-ams4126-AMS',
+80 silly get     'x-cache': 'HIT',
+80 silly get     'x-cache-hits': '1',
+80 silly get     'x-timer': 'S1466702210.815485,VS0,VE0',
+80 silly get     vary: 'Accept-Encoding' } ]
+81 verbose etag https://registry.npmjs.org/fast-csv from cache
+82 verbose get saving fast-csv to /Users/nadavlachish/.npm/registry.npmjs.org/fast-csv/.cache.json
+83 silly addNameRange number 2 { name: 'fast-csv', range: '>=2.0.0 <3.0.0', hasData: true }
+84 silly addNameRange versions [ 'fast-csv',
+84 silly addNameRange   [ '0.0.0',
+84 silly addNameRange     '0.0.1',
+84 silly addNameRange     '0.0.2',
+84 silly addNameRange     '0.0.3',
+84 silly addNameRange     '0.1.0',
+84 silly addNameRange     '0.1.1',
+84 silly addNameRange     '0.1.2',
+84 silly addNameRange     '0.2.0',
+84 silly addNameRange     '0.2.1',
+84 silly addNameRange     '0.2.2',
+84 silly addNameRange     '0.2.3',
+84 silly addNameRange     '0.2.4',
+84 silly addNameRange     '0.2.5',
+84 silly addNameRange     '0.3.0',
+84 silly addNameRange     '0.3.1',
+84 silly addNameRange     '0.4.0',
+84 silly addNameRange     '0.4.1',
+84 silly addNameRange     '0.4.2',
+84 silly addNameRange     '0.4.3',
+84 silly addNameRange     '0.4.4',
+84 silly addNameRange     '0.5.0',
+84 silly addNameRange     '0.5.1',
+84 silly addNameRange     '0.5.2',
+84 silly addNameRange     '0.5.3',
+84 silly addNameRange     '0.5.4',
+84 silly addNameRange     '0.5.5',
+84 silly addNameRange     '0.5.6',
+84 silly addNameRange     '0.5.7',
+84 silly addNameRange     '0.6.0',
+84 silly addNameRange     '1.0.0',
+84 silly addNameRange     '1.1.0',
+84 silly addNameRange     '2.0.0' ] ]
+85 silly addNamed fast-csv@2.0.0
+86 verbose addNamed "2.0.0" is a plain semver version for fast-csv
+87 silly cache afterAdd fast-csv@2.0.0
+88 verbose afterAdd /Users/nadavlachish/.npm/fast-csv/2.0.0/package/package.json not in flight; writing
+89 verbose afterAdd /Users/nadavlachish/.npm/fast-csv/2.0.0/package/package.json written
+90 silly install resolved [ { name: 'fast-csv',
+90 silly install resolved     version: '2.0.0',
+90 silly install resolved     description: 'CSV parser and writer',
+90 silly install resolved     main: 'index.js',
+90 silly install resolved     scripts: { test: 'grunt jshint it' },
+90 silly install resolved     repository:
+90 silly install resolved      { type: 'git',
+90 silly install resolved        url: 'git+ssh://git@github.com/C2FO/fast-csv.git' },
+90 silly install resolved     keywords: [ 'csv', 'parser', 'fast', 'writer', 'csv writer', 'CSV' ],
+90 silly install resolved     homepage: 'http://c2fo.github.com/fast-csv/index.html',
+90 silly install resolved     author: { name: 'Doug Martin' },
+90 silly install resolved     license: 'MIT',
+90 silly install resolved     devDependencies:
+90 silly install resolved      { it: '^1.0.1',
+90 silly install resolved        'grunt-it': '^1.0.0',
+90 silly install resolved        grunt: '~0.4.1',
+90 silly install resolved        'grunt-contrib-jshint': '~0.10.0',
+90 silly install resolved        'grunt-exec': '^0.4.5' },
+90 silly install resolved     engines: { node: '>=4.0.0' },
+90 silly install resolved     dependencies:
+90 silly install resolved      { 'is-extended': '0.0.10',
+90 silly install resolved        'object-extended': '0.0.7',
+90 silly install resolved        extended: '0.0.6',
+90 silly install resolved        'string-extended': '0.0.8' },
+90 silly install resolved     gitHead: 'cd22ec31d432e3ad0dc8517899ca18f441052531',
+90 silly install resolved     bugs: { url: 'https://github.com/C2FO/fast-csv/issues' },
+90 silly install resolved     _id: 'fast-csv@2.0.0',
+90 silly install resolved     _shasum: 'fa48f79ef0d454aacc03403827ffd0316d10b611',
+90 silly install resolved     _from: 'fast-csv@>=2.0.0 <3.0.0',
+90 silly install resolved     _npmVersion: '3.7.3',
+90 silly install resolved     _nodeVersion: '5.9.0',
+90 silly install resolved     _npmUser: { name: 'dustinsmith1024', email: 'dds1024@gmail.com' },
+90 silly install resolved     dist:
+90 silly install resolved      { shasum: 'fa48f79ef0d454aacc03403827ffd0316d10b611',
+90 silly install resolved        tarball: 'https://registry.npmjs.org/fast-csv/-/fast-csv-2.0.0.tgz' },
+90 silly install resolved     maintainers: [ [Object], [Object] ],
+90 silly install resolved     _npmOperationalInternal:
+90 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+90 silly install resolved        tmp: 'tmp/fast-csv-2.0.0.tgz_1461856356679_0.3880623411387205' },
+90 silly install resolved     directories: {},
+90 silly install resolved     _resolved: 'https://registry.npmjs.org/fast-csv/-/fast-csv-2.0.0.tgz',
+90 silly install resolved     readme: 'ERROR: No README data found!' } ]
+91 info install fast-csv@2.0.0 into /Users/nadavlachish/Documents/node/spending
+92 info installOne fast-csv@2.0.0
+93 verbose installOne of fast-csv to /Users/nadavlachish/Documents/node/spending not in flight; installing
+94 verbose lock using /Users/nadavlachish/.npm/_locks/fast-csv-72eb77fc1be17b1b.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+95 silly install write writing fast-csv 2.0.0 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+96 verbose unbuild node_modules/fast-csv
+97 info preuninstall fast-csv@2.0.0
+98 info uninstall fast-csv@2.0.0
+99 verbose unbuild rmStuff fast-csv@2.0.0 from /Users/nadavlachish/Documents/node/spending/node_modules
+100 info postuninstall fast-csv@2.0.0
+101 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv is being purged from base /Users/nadavlachish/Documents/node/spending
+102 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+103 silly vacuum-fs purging /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+104 silly vacuum-fs quitting because other entries in /Users/nadavlachish/Documents/node/spending/node_modules
+105 verbose tar unpack /Users/nadavlachish/.npm/fast-csv/2.0.0/package.tgz
+106 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+107 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv is being purged
+108 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+109 silly gunzTarPerm modes [ '755', '644' ]
+110 silly gunzTarPerm extractEntry package.json
+111 silly gunzTarPerm extractEntry .npmignore
+112 silly gunzTarPerm extractEntry README.md
+113 silly gunzTarPerm extractEntry LICENSE
+114 silly gunzTarPerm extractEntry index.js
+115 silly gunzTarPerm extractEntry History.md
+116 silly gunzTarPerm extractEntry .gitmodules
+117 silly gunzTarPerm extractEntry lib/extended.js
+118 silly gunzTarPerm extractEntry lib/index.js
+119 silly gunzTarPerm extractEntry lib/formatter/formatter.js
+120 silly gunzTarPerm extractEntry lib/formatter/formatter_stream.js
+121 silly gunzTarPerm extractEntry lib/formatter/index.js
+122 silly gunzTarPerm extractEntry lib/parser/index.js
+123 silly gunzTarPerm extractEntry lib/parser/parser.js
+124 silly gunzTarPerm extractEntry lib/parser/parser_stream.js
+125 silly gunzTarPerm extractEntry .jshintrc
+126 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/package.json
+127 info preinstall fast-csv@2.0.0
+128 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/package.json
+129 silly prepareForInstallMany adding is-extended@0.0.10 from fast-csv dependencies
+130 silly prepareForInstallMany adding object-extended@0.0.7 from fast-csv dependencies
+131 silly prepareForInstallMany adding extended@0.0.6 from fast-csv dependencies
+132 silly prepareForInstallMany adding string-extended@0.0.8 from fast-csv dependencies
+133 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/package.json
+134 silly cache add args [ 'is-extended@0.0.10', null ]
+135 verbose cache add spec is-extended@0.0.10
+136 silly cache add args [ 'object-extended@0.0.7', null ]
+137 verbose cache add spec object-extended@0.0.7
+138 silly cache add parsed spec Result {
+138 silly cache add   raw: 'is-extended@0.0.10',
+138 silly cache add   scope: null,
+138 silly cache add   name: 'is-extended',
+138 silly cache add   rawSpec: '0.0.10',
+138 silly cache add   spec: '0.0.10',
+138 silly cache add   type: 'version' }
+139 silly addNamed is-extended@0.0.10
+140 verbose addNamed "0.0.10" is a plain semver version for is-extended
+141 silly mapToRegistry name is-extended
+142 silly mapToRegistry using default registry
+143 silly mapToRegistry registry https://registry.npmjs.org/
+144 silly mapToRegistry uri https://registry.npmjs.org/is-extended
+145 verbose addNameVersion registry:https://registry.npmjs.org/is-extended not in flight; fetching
+146 silly cache add parsed spec Result {
+146 silly cache add   raw: 'object-extended@0.0.7',
+146 silly cache add   scope: null,
+146 silly cache add   name: 'object-extended',
+146 silly cache add   rawSpec: '0.0.7',
+146 silly cache add   spec: '0.0.7',
+146 silly cache add   type: 'version' }
+147 silly addNamed object-extended@0.0.7
+148 verbose addNamed "0.0.7" is a plain semver version for object-extended
+149 silly mapToRegistry name object-extended
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry https://registry.npmjs.org/
+152 silly mapToRegistry uri https://registry.npmjs.org/object-extended
+153 verbose addNameVersion registry:https://registry.npmjs.org/object-extended not in flight; fetching
+154 silly cache add args [ 'extended@0.0.6', null ]
+155 verbose cache add spec extended@0.0.6
+156 silly cache add parsed spec Result {
+156 silly cache add   raw: 'extended@0.0.6',
+156 silly cache add   scope: null,
+156 silly cache add   name: 'extended',
+156 silly cache add   rawSpec: '0.0.6',
+156 silly cache add   spec: '0.0.6',
+156 silly cache add   type: 'version' }
+157 silly addNamed extended@0.0.6
+158 verbose addNamed "0.0.6" is a plain semver version for extended
+159 silly mapToRegistry name extended
+160 silly mapToRegistry using default registry
+161 silly mapToRegistry registry https://registry.npmjs.org/
+162 silly mapToRegistry uri https://registry.npmjs.org/extended
+163 verbose addNameVersion registry:https://registry.npmjs.org/extended not in flight; fetching
+164 silly cache add args [ 'string-extended@0.0.8', null ]
+165 verbose cache add spec string-extended@0.0.8
+166 silly cache add parsed spec Result {
+166 silly cache add   raw: 'string-extended@0.0.8',
+166 silly cache add   scope: null,
+166 silly cache add   name: 'string-extended',
+166 silly cache add   rawSpec: '0.0.8',
+166 silly cache add   spec: '0.0.8',
+166 silly cache add   type: 'version' }
+167 silly addNamed string-extended@0.0.8
+168 verbose addNamed "0.0.8" is a plain semver version for string-extended
+169 silly mapToRegistry name string-extended
+170 silly mapToRegistry using default registry
+171 silly mapToRegistry registry https://registry.npmjs.org/
+172 silly mapToRegistry uri https://registry.npmjs.org/string-extended
+173 verbose addNameVersion registry:https://registry.npmjs.org/string-extended not in flight; fetching
+174 verbose request uri https://registry.npmjs.org/extended
+175 verbose request no auth needed
+176 info attempt registry request try #1 at 7:16:51 PM
+177 verbose etag "CG4TR93ZDSL5NODR2SW6FTSMW"
+178 http request GET https://registry.npmjs.org/extended
+179 verbose request uri https://registry.npmjs.org/is-extended
+180 verbose request no auth needed
+181 info attempt registry request try #1 at 7:16:51 PM
+182 verbose etag "KVRE91HNAJ2SHUJYLNB50HS9"
+183 http request GET https://registry.npmjs.org/is-extended
+184 verbose request uri https://registry.npmjs.org/string-extended
+185 verbose request no auth needed
+186 info attempt registry request try #1 at 7:16:51 PM
+187 verbose etag "1T7M0DDU767SFFKGXTQ5G7NKR"
+188 http request GET https://registry.npmjs.org/string-extended
+189 verbose request uri https://registry.npmjs.org/object-extended
+190 verbose request no auth needed
+191 info attempt registry request try #1 at 7:16:51 PM
+192 verbose etag "BS6N97O0ZX79DYAXCLHY0P4F6"
+193 http request GET https://registry.npmjs.org/object-extended
+194 http 304 https://registry.npmjs.org/extended
+195 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+195 verbose headers   via: '1.1 varnish',
+195 verbose headers   'cache-control': 'max-age=300',
+195 verbose headers   etag: '"CG4TR93ZDSL5NODR2SW6FTSMW"',
+195 verbose headers   age: '64',
+195 verbose headers   connection: 'keep-alive',
+195 verbose headers   'x-served-by': 'cache-ams4120-AMS',
+195 verbose headers   'x-cache': 'HIT',
+195 verbose headers   'x-cache-hits': '1',
+195 verbose headers   'x-timer': 'S1466702211.216541,VS0,VE0',
+195 verbose headers   vary: 'Accept-Encoding' }
+196 silly get cb [ 304,
+196 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+196 silly get     via: '1.1 varnish',
+196 silly get     'cache-control': 'max-age=300',
+196 silly get     etag: '"CG4TR93ZDSL5NODR2SW6FTSMW"',
+196 silly get     age: '64',
+196 silly get     connection: 'keep-alive',
+196 silly get     'x-served-by': 'cache-ams4120-AMS',
+196 silly get     'x-cache': 'HIT',
+196 silly get     'x-cache-hits': '1',
+196 silly get     'x-timer': 'S1466702211.216541,VS0,VE0',
+196 silly get     vary: 'Accept-Encoding' } ]
+197 verbose etag https://registry.npmjs.org/extended from cache
+198 verbose get saving extended to /Users/nadavlachish/.npm/registry.npmjs.org/extended/.cache.json
+199 silly cache afterAdd extended@0.0.6
+200 verbose afterAdd /Users/nadavlachish/.npm/extended/0.0.6/package/package.json not in flight; writing
+201 verbose afterAdd /Users/nadavlachish/.npm/extended/0.0.6/package/package.json written
+202 http 304 https://registry.npmjs.org/is-extended
+203 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+203 verbose headers   via: '1.1 varnish',
+203 verbose headers   'cache-control': 'max-age=300',
+203 verbose headers   etag: '"KVRE91HNAJ2SHUJYLNB50HS9"',
+203 verbose headers   age: '63',
+203 verbose headers   connection: 'keep-alive',
+203 verbose headers   'x-served-by': 'cache-ams4125-AMS',
+203 verbose headers   'x-cache': 'HIT',
+203 verbose headers   'x-cache-hits': '1',
+203 verbose headers   'x-timer': 'S1466702211.228454,VS0,VE0',
+203 verbose headers   vary: 'Accept-Encoding' }
+204 silly get cb [ 304,
+204 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+204 silly get     via: '1.1 varnish',
+204 silly get     'cache-control': 'max-age=300',
+204 silly get     etag: '"KVRE91HNAJ2SHUJYLNB50HS9"',
+204 silly get     age: '63',
+204 silly get     connection: 'keep-alive',
+204 silly get     'x-served-by': 'cache-ams4125-AMS',
+204 silly get     'x-cache': 'HIT',
+204 silly get     'x-cache-hits': '1',
+204 silly get     'x-timer': 'S1466702211.228454,VS0,VE0',
+204 silly get     vary: 'Accept-Encoding' } ]
+205 verbose etag https://registry.npmjs.org/is-extended from cache
+206 verbose get saving is-extended to /Users/nadavlachish/.npm/registry.npmjs.org/is-extended/.cache.json
+207 http 304 https://registry.npmjs.org/string-extended
+208 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+208 verbose headers   via: '1.1 varnish',
+208 verbose headers   'cache-control': 'max-age=300',
+208 verbose headers   etag: '"1T7M0DDU767SFFKGXTQ5G7NKR"',
+208 verbose headers   age: '64',
+208 verbose headers   connection: 'keep-alive',
+208 verbose headers   'x-served-by': 'cache-ams4133-AMS',
+208 verbose headers   'x-cache': 'HIT',
+208 verbose headers   'x-cache-hits': '1',
+208 verbose headers   'x-timer': 'S1466702211.229712,VS0,VE0',
+208 verbose headers   vary: 'Accept-Encoding' }
+209 silly get cb [ 304,
+209 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+209 silly get     via: '1.1 varnish',
+209 silly get     'cache-control': 'max-age=300',
+209 silly get     etag: '"1T7M0DDU767SFFKGXTQ5G7NKR"',
+209 silly get     age: '64',
+209 silly get     connection: 'keep-alive',
+209 silly get     'x-served-by': 'cache-ams4133-AMS',
+209 silly get     'x-cache': 'HIT',
+209 silly get     'x-cache-hits': '1',
+209 silly get     'x-timer': 'S1466702211.229712,VS0,VE0',
+209 silly get     vary: 'Accept-Encoding' } ]
+210 verbose etag https://registry.npmjs.org/string-extended from cache
+211 verbose get saving string-extended to /Users/nadavlachish/.npm/registry.npmjs.org/string-extended/.cache.json
+212 http 304 https://registry.npmjs.org/object-extended
+213 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+213 verbose headers   via: '1.1 varnish',
+213 verbose headers   'cache-control': 'max-age=300',
+213 verbose headers   etag: '"BS6N97O0ZX79DYAXCLHY0P4F6"',
+213 verbose headers   age: '63',
+213 verbose headers   connection: 'keep-alive',
+213 verbose headers   'x-served-by': 'cache-ams4129-AMS',
+213 verbose headers   'x-cache': 'HIT',
+213 verbose headers   'x-cache-hits': '1',
+213 verbose headers   'x-timer': 'S1466702211.235121,VS0,VE0',
+213 verbose headers   vary: 'Accept-Encoding' }
+214 silly get cb [ 304,
+214 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+214 silly get     via: '1.1 varnish',
+214 silly get     'cache-control': 'max-age=300',
+214 silly get     etag: '"BS6N97O0ZX79DYAXCLHY0P4F6"',
+214 silly get     age: '63',
+214 silly get     connection: 'keep-alive',
+214 silly get     'x-served-by': 'cache-ams4129-AMS',
+214 silly get     'x-cache': 'HIT',
+214 silly get     'x-cache-hits': '1',
+214 silly get     'x-timer': 'S1466702211.235121,VS0,VE0',
+214 silly get     vary: 'Accept-Encoding' } ]
+215 verbose etag https://registry.npmjs.org/object-extended from cache
+216 verbose get saving object-extended to /Users/nadavlachish/.npm/registry.npmjs.org/object-extended/.cache.json
+217 silly cache afterAdd is-extended@0.0.10
+218 verbose afterAdd /Users/nadavlachish/.npm/is-extended/0.0.10/package/package.json not in flight; writing
+219 silly cache afterAdd string-extended@0.0.8
+220 verbose afterAdd /Users/nadavlachish/.npm/string-extended/0.0.8/package/package.json not in flight; writing
+221 silly cache afterAdd object-extended@0.0.7
+222 verbose afterAdd /Users/nadavlachish/.npm/object-extended/0.0.7/package/package.json not in flight; writing
+223 verbose afterAdd /Users/nadavlachish/.npm/is-extended/0.0.10/package/package.json written
+224 verbose afterAdd /Users/nadavlachish/.npm/string-extended/0.0.8/package/package.json written
+225 verbose afterAdd /Users/nadavlachish/.npm/object-extended/0.0.7/package/package.json written
+226 silly install resolved [ { name: 'extended',
+226 silly install resolved     version: '0.0.6',
+226 silly install resolved     description: 'Library for combining multiple libraries into one',
+226 silly install resolved     main: 'index.js',
+226 silly install resolved     scripts: { test: 'it -r dot' },
+226 silly install resolved     repository:
+226 silly install resolved      { type: 'git',
+226 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/extended.git' },
+226 silly install resolved     keywords: [ 'String', 'extender', 'utilities' ],
+226 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+226 silly install resolved     author: { name: 'Doug Martin' },
+226 silly install resolved     license: 'MIT',
+226 silly install resolved     dependencies: { extender: '~0.0.5' },
+226 silly install resolved     devDependencies:
+226 silly install resolved      { it: '~0.2.0',
+226 silly install resolved        grunt: '~0.4.1',
+226 silly install resolved        'grunt-it': '~0.3.0',
+226 silly install resolved        'is-extended': '0.0.1',
+226 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+226 silly install resolved        'grunt-contrib-jshint': '~0.4.3' },
+226 silly install resolved     bugs: { url: 'https://github.com/doug-martin/extended/issues' },
+226 silly install resolved     homepage: 'https://github.com/doug-martin/extended',
+226 silly install resolved     _id: 'extended@0.0.6',
+226 silly install resolved     dist:
+226 silly install resolved      { shasum: '7fb8bf7b9dae397586e48570acfd642c78e50669',
+226 silly install resolved        tarball: 'http://registry.npmjs.org/extended/-/extended-0.0.6.tgz' },
+226 silly install resolved     _from: 'extended@0.0.6',
+226 silly install resolved     _npmVersion: '1.4.3',
+226 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+226 silly install resolved     maintainers: [ [Object] ],
+226 silly install resolved     directories: {},
+226 silly install resolved     _shasum: '7fb8bf7b9dae397586e48570acfd642c78e50669',
+226 silly install resolved     _resolved: 'https://registry.npmjs.org/extended/-/extended-0.0.6.tgz',
+226 silly install resolved     readme: 'ERROR: No README data found!' },
+226 silly install resolved   { name: 'is-extended',
+226 silly install resolved     version: '0.0.10',
+226 silly install resolved     description: 'Module for type detection',
+226 silly install resolved     main: 'index.js',
+226 silly install resolved     scripts: { test: 'it -r dotmatrix' },
+226 silly install resolved     repository:
+226 silly install resolved      { type: 'git',
+226 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/is-extended.git' },
+226 silly install resolved     keywords: [ 'type', 'is', 'detection', 'instanceof' ],
+226 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+226 silly install resolved     author: { name: 'Doug Martin' },
+226 silly install resolved     license: 'MIT',
+226 silly install resolved     dependencies: { extended: '~0.0.3' },
+226 silly install resolved     devDependencies:
+226 silly install resolved      { it: '~0.2.0',
+226 silly install resolved        'grunt-it': '~0.3.0',
+226 silly install resolved        grunt: '~0.4.1',
+226 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+226 silly install resolved        'grunt-contrib-jshint': '~0.3.0' },
+226 silly install resolved     readme: '[![Build Status](https://travis-ci.org/doug-martin/is-extended.png?branch=master)](undefined)\n\n[![browser support](https://ci.testling.com/doug-martin/is-extended.png)](http://ci.testling.com/doug-martin/is-extended)\n\n# is-extended\n\n`is-extended` is a Javascript library that can be used standalone or incorporated into [`extended`](https://github.com/doug-martin/extended)\n\n```javascript\nvar is = require("is-extended");\n```\n\nOr\n\n```javascript\nvar myextended = require("extended")\n\t.register(require("is-extended"));\n```\n\n## Installation\n\n```\nnpm install is-extended\n```\n\nOr [download the source](https://raw.github.com/doug-martin/is-extended/master/index.js) ([minified](https://raw.github.com/doug-martin/is-extended/master/is-extended.min.js))\n\n## Usage\n\n`is-extended` includes the following type coercion methods.\n\n* `isFunction` : Test if something is a function\n* `isObject` : Test if something is an object.\n* `isEmpty` : Test if something is empty.\n* `isHash` : Test if something is a hash.\n\n```javascript\nis.isHash({}); //true\nis.isHash(new Number(1)); //false\n\nis.isObject({}); //true\nis.isObject(new Number(1)); //true\n```\n\n* `isNumber` : Test if something is a number.\n* `isString` : Test if something is a string.\n* `isDate` : Test if something is a `Date`.\n* `isArray` : Test if something is an `Object`\n* `isBoolean` : Test if something is a boolean value.\n* `isUndefined` : Test if something is strictly equal to `undefined`.\n* `isDefined` : Test if something is strictly not equal to `undefined`.\n* `isUndefinedOrNull` : Test if something is strictly equal to `null` or `undefined`.\n* `isNull` : Test if something is strictly equal to `null`.\n* `isArguments` : Test if something is an `Object`\n* `instanceOf` : Test if something is an `Object`\n* `isRegExp` : Test if something is a `RegExp`\n* `isTrue` : Test if something is strictly equal to `true`\n* `isFalse` : Test if something is strictly equal to `false`\n* `isNotNull` : Test if something is strictly not equal to `null`.\n\n**`deepEqual`**\n\nTests if two object are deep equal.\n\n```javascript\n\nis.deepEqual([1,2,3], [1,2,3]); //true\nis([1,2,3]).deepEqual([1,2,3]); //true\n\n\nis.deepEqual({ a: { b: "c"}}, {a : false}); //false\nis({ a: { b: "c"}}).deepEqual({ a: { b: "c"}}); //true\n\n```\n\n\n**`isEq`**\n\nTest if two objects are `==`\n\n**`isNeq`**\n\nTest if two objects are `!=`\n\n**`isSeq`**\n\nTest if two objects are `===`\n\n**`isSneq`**\n\nTest if two objects are `!==`\n\n**`isIn`**\n\nTest if an object is in a array.\n\n```javascript\nis.isIn(\'a\', [\'a\', \'b\', \'c\']); //true\n\nis(\'a\').isIn([\'a\', \'b\', \'c\']); //true\n```\n\n**`isNotIn`**\n\nTest if something is not in an array.\n\n```javascript\nis.isIn(\'d\', [\'a\', \'b\', \'c\']); //true\n\nis(\'d\').isIn([\'a\', \'b\', \'c\']); //true\n```\n\n**`isLt`**\n\nCheck if a value is `<` a given value.\n\n```javascript\nis.isLt(1, 2); //true\nis("a").isLt("b"); //true\n```\n\n**`isLte`**\n\nCheck if a value is `<=` a given value.\n\n```javascript\nis.isLte(2, 2); //true\nis("a").isLte("b"); //true\n```\n\n**`isGt`**\n\nCheck if a value is `>` a given value.\n\n```javascript\nis.isGt(2, 1); //true\nis("b").isGt("a"); //true\n```\n\n**`isGte`**\n\nCheck if a value is `>=` a given value.\n\n```javascript\nis.isGte(2, 2); //true\nis("b").isLt("a"); //true\n```\n\n**`isLike`**\n\nCheck if a value is like a given regexp.\n\n```javascript\nis.isLike("a", /a/); //true\nis.isLike("a", "a"); //true\nis(1).isLike(/\\d/); //true\nis.isLike(1, "\\\\d"); //true\n```\n\n**`isNotLike`**\n\nCheck if a value is not like a given regexp.\n\n```javascript\nis.isNotLike("a", /\\d/); //true\nis("a").isNotLike("b"); //true\n```\n\n**`contains`**\n\nChecks if an array contains a given value.\n\n```javascript\nis.contains([1,2,3], 2); //true\nis([1,2,3]).contains(2); //true\n```\n\n**`notContains`**\n\nChecks if an array does not contain a given value.\n\n```javascript\nis.notContains([1,2,3], 2); //true\nis([1,2,3]).notContains(2); //true\n```\n\n**`containsAt`**\n\nChecks if an array contains a given value at the specified index\n\n```javascript\nis.contains([1,2,3], 2, 1); //true\nis([1,2,3]).containsAt(2, 1); //true\n```\n\n**`notContainsAt`**\n\nChecks if an array does not contain a given value at the specified index\n\n```javascript\nis.notContains([1,2,3], 2, 0); //true\nis([1,2,3]).notContains(2, 0); //true\n```\n\n**`has`**\n\nChecks if a value has the specified property.\n\n```javascript\nis.has([1,2,3], "length"); //true\nis.has({a: "a"}, "a"); //true\nis([1,2,3]).has("length"); //true\nis({a: "a"}).has("a"); //true\n```\n\n**`notHas`**\n\nChecks if an array does not contain a given value.\n\n```javascript\nis.notHas([1,2,3], "someProperty"); //true\nis.notHas({a: "a"}, "b"); //true\nis([1,2,3]).notHas("someProperty"); //true\nis({a: "a"}).notHas("b"); //true\n```\n\n**`isLength`**\n\nChecks if a value has the specified length;\n\n```javascript\nis.isLength([1,2,3], 3); //true\nis.isLength("abc", 3); //true\nis.isLength(function(a, b, c){}, 3); //true\n\nis([1,2,3]).isLength(3); //true\nis("abc").isLength(3); //true\nis(function(a, b, c){}).isLength(3); //true\n```\n\n**`isNotLength`**\n\nChecks if an value does not have the specified length.\n\n```javascript\nis.isNotLength([1,2,3], 3); //false\nis.isNotLength("abc", 3); //false\nis.isNotLength(function(a, b, c){}, 3); //false\n\nis([1,2,3]).isNotLength(3); //false\nis("abc").isNotLength(3); //false\nis(function(a, b, c){}).isNotLength(3); //false\n```\n\n\n## Creating a custom tester.\n\nTo create a custom type tester you can use the `tester` method.\n\n```javascript\nvar tester = is.tester().isArray().isDate().isBoolean().tester();\ntester([]); //true\ntester(new Array()); //true\ntester(new Date()); //true\ntester(true); //true\ntester(false); //true\ntester(new Boolean()); //true\n\ntester("hello"); //false\ntester(); //false\ntester(new String()); //false\ntester({}); //false\ntester(new Object()); //false\n```\n\n## `switcher`\n\nThe `is-exteded` `switcher` method allows you to create a structure that executes certain code when a value passes a test.\n\n```javascript\nvar mySwitcher = is.switcher()\n    .isLt(0, function (num) {\n        return num + " is lt 0";\n    })\n    .isLte(5, function (num) {\n        return num + " is gte 0 lte 5";\n    })\n    .isLte(10, function (num) {\n        return num + " is gt 5 lte 10";\n    })\n    .isGt(10, function (num) {\n        return num + " is gt 10";\n    })\n    .def(function (num) {\n        return num + " is unknown value";\n    })\n    .switcher();\n\nfor (var i = -1; i < 12; i++) {\n    console.log(mySwitcher(i));\n}\n```\n\n\nOutputs the following\n\n```\n-1 is lt 0\n0 is gte 0 lte 5\n1 is gte 0 lte 5\n2 is gte 0 lte 5\n3 is gte 0 lte 5\n4 is gte 0 lte 5\n5 is gte 0 lte 5\n6 is gt 5 lte 10\n7 is gt 5 lte 10\n8 is gt 5 lte 10\n9 is gt 5 lte 10\n10 is gt 5 lte 10\n11 is gt 10\n```\n\n',
+226 silly install resolved     readmeFilename: 'README.md',
+226 silly install resolved     bugs: { url: 'https://github.com/doug-martin/is-extended/issues' },
+226 silly install resolved     _id: 'is-extended@0.0.10',
+226 silly install resolved     dist:
+226 silly install resolved      { shasum: '244e140df75bb1c9a3106f412ff182fb534a6d62',
+226 silly install resolved        tarball: 'http://registry.npmjs.org/is-extended/-/is-extended-0.0.10.tgz' },
+226 silly install resolved     _from: 'is-extended@0.0.10',
+226 silly install resolved     _npmVersion: '1.2.23',
+226 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+226 silly install resolved     maintainers: [ [Object] ],
+226 silly install resolved     directories: {},
+226 silly install resolved     _shasum: '244e140df75bb1c9a3106f412ff182fb534a6d62',
+226 silly install resolved     _resolved: 'https://registry.npmjs.org/is-extended/-/is-extended-0.0.10.tgz',
+226 silly install resolved     homepage: 'https://github.com/doug-martin/is-extended#readme' },
+226 silly install resolved   { name: 'string-extended',
+226 silly install resolved     version: '0.0.8',
+226 silly install resolved     description: 'Additional string extensions with a chainable api',
+226 silly install resolved     main: 'index.js',
+226 silly install resolved     scripts: { test: 'it -r dot' },
+226 silly install resolved     repository:
+226 silly install resolved      { type: 'git',
+226 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/string-extended.git' },
+226 silly install resolved     keywords: [ 'String', 'extender', 'utilities' ],
+226 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+226 silly install resolved     author: { name: 'Doug Martin' },
+226 silly install resolved     license: 'MIT',
+226 silly install resolved     dependencies:
+226 silly install resolved      { extended: '~0.0.3',
+226 silly install resolved        'is-extended': '~0.0.3',
+226 silly install resolved        'date-extended': '~0.0.3',
+226 silly install resolved        'array-extended': '~0.0.5' },
+226 silly install resolved     devDependencies:
+226 silly install resolved      { it: '~0.2.0',
+226 silly install resolved        grunt: '~0.4.1',
+226 silly install resolved        'grunt-it': '~0.3.0',
+226 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+226 silly install resolved        'grunt-contrib-jshint': '~0.4.3' },
+226 silly install resolved     bugs: { url: 'https://github.com/doug-martin/string-extended/issues' },
+226 silly install resolved     homepage: 'https://github.com/doug-martin/string-extended',
+226 silly install resolved     _id: 'string-extended@0.0.8',
+226 silly install resolved     dist:
+226 silly install resolved      { shasum: '741957dff487b0272a79eec5a44f239ee6f17ccd',
+226 silly install resolved        tarball: 'http://registry.npmjs.org/string-extended/-/string-extended-0.0.8.tgz' },
+226 silly install resolved     _from: 'string-extended@0.0.8',
+226 silly install resolved     _npmVersion: '1.4.3',
+226 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+226 silly install resolved     maintainers: [ [Object] ],
+226 silly install resolved     directories: {},
+226 silly install resolved     _shasum: '741957dff487b0272a79eec5a44f239ee6f17ccd',
+226 silly install resolved     _resolved: 'https://registry.npmjs.org/string-extended/-/string-extended-0.0.8.tgz',
+226 silly install resolved     readme: 'ERROR: No README data found!' },
+226 silly install resolved   { name: 'object-extended',
+226 silly install resolved     version: '0.0.7',
+226 silly install resolved     description: 'Additional object extensions with a chainable api',
+226 silly install resolved     main: 'index.js',
+226 silly install resolved     scripts: { test: 'it -r dot' },
+226 silly install resolved     repository:
+226 silly install resolved      { type: 'git',
+226 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/object-extended.git' },
+226 silly install resolved     keywords: [ 'Object', 'extender', 'utilities' ],
+226 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+226 silly install resolved     author: { name: 'Doug Martin' },
+226 silly install resolved     license: 'MIT',
+226 silly install resolved     dependencies:
+226 silly install resolved      { extended: '~0.0.3',
+226 silly install resolved        'is-extended': '~0.0.3',
+226 silly install resolved        'array-extended': '~0.0.4' },
+226 silly install resolved     devDependencies:
+226 silly install resolved      { it: '~0.2.0',
+226 silly install resolved        'grunt-it': '~0.3.1',
+226 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+226 silly install resolved        grunt: '~0.4.1',
+226 silly install resolved        'grunt-contrib-jshint': '~0.4.0' },
+226 silly install resolved     readme: '[![Build Status](https://travis-ci.org/doug-martin/object-extended.png?branch=master)](https://travis-ci.org/doug-martin/object-extended)\n\n[![browser support](https://ci.testling.com/doug-martin/object-extended.png)](https://ci.testling.com/doug-martin/object-extended)\n\n# object-extended\n\n`object-extended` is a Javascript library that can be used standalone or incorporated into [`extended`](https://github.com/doug-martin/extended)\n\n```javascript\nvar obj = require("object-extended");\n```\n\nOr\n\n```javascript\nvar myextended = require("extended")\n\t.register(require("object-extended"));\n```\n\n## Installation\n\n```\nnpm install object-extended\n```\n\nOr [download the source](https://raw.github.com/doug-martin/object-extended/master/index.js) ([minified](https://raw.github.com/doug-martin/object-extended/master/object-extended.min.js))\n\n## Usage\n\n**`merge`**\n\nmerges the properties of one object into another.\n\n**Note** This method changes the original object.\n\n```javascript\n\nobj.merge({}, {a : "a"}, {b : "b"}, {c : "c"}); //{a : "a", b : "b", c : "c"});\n\n```\n\n**`extend`**\n\nMerges properties into a function prototype or delegates to `merge`.\n\n```\nvar MyObj = function () {\n};\nMyObj.prototype.test = true;\nobject.extend(MyObj, {test2: false, test3: "hello", test4: "world"});\n\nvar myOjb = new MyObj();\nmyObj.test2; //false\nmyObj.test3; //"hello"\nmyObj.test4; //"world"\n```\n\n**`deepMerge`**\n\nMerges objects together only overriding properties that are different.\n\n**Note**: this function takes a variable number of objects to merge\n\n```javascript\nvar myObj = {my : {cool : {property1 : 1, property2 : 2}}};\nobj.deepMerge(myObj, {my : {cool : {property3 : 3}}});\n\nmyObj.my.cool.property1; // 1\nmyObj.my.cool.property2; // 2\nmyObj.my.cool.property3; // 3\n\n```\n\nOr\n\n```javacript\nvar myObj = {my : {cool : {property1 : 1, property2 : 2}}};\nobj(myObj).deepMerge({my : {cool : {property3 : 3}}});\n\nmyObj.my.cool.property1; // 1\nmyObj.my.cool.property2; // 2\nmyObj.my.cool.property3; // 3\n```\n\n\n**`hash.forEach`**\n\nLoops through each k/v in a hash.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).forEach(function(value, key){\n    console.log(value, key);\n});\n\nobj.hash.forEach(myObj, function(value, key){\n   console.log(value, key);\n});\n```\n\n**`hash.filter`**\n\n\nFilters out key/value pairs in an object.\nFilters out key/value pairs that return a falsey value from the iterator.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).filter(function(value, key){\n    return value == "b" || key === "e";\n}); //{a : "b", e : "f"};\n\nobj.hash.filter(myObj, function(value, key){\n   return value == "b" || key === "e";\n}); //{a : "b", e : "f"};\n\n```\n\n\n**`hash.values`**\n\nReturns the values of a hash.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).values(); //["b", "d", "f"]\n\nobj.values(myObj); //["b", "d", "f"]\n\n```\n\n**`hash.keys`**\nReturns the keys of a hash.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).keys(); //["a", "c", "e"]\n\nobj.keys(myObj); //["b", "d", "f"]\n\n```\n\n**`hash.invert`**\n\n\nReturns a new hash that is the invert of the hash.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).invert(); //{b : "a", d : "c", f : "e"}\n\nobj.hash.invert(myObj); //{b : "a", d : "c", f : "e"}\n```\n\n**`hash.omit`**\n\n\nReturns a new hash that is the with the given keys omitted.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).omit("e"); //{a : "b", c : "d"}\nobj(myObj).omit(["c", "e"]); //{a : "b"}\n\nobj.hash.omit(myObj, "e"); //{a : "b", c : "d"}\nobj.hash.omit(myObj, ["c", "e"]); //{a : "b"}\n```\n\n\n**`hash.toArray`**\n\nConverts a hash to an array.\n\n```javascript\nvar myObj = {a : "b", c : "d", e : "f"};\nobj(myObj).toArray(); //[["a", "b"], ["c", "d"], ["e", "f"]]\n\nobj.hash.toArray(myObj); //[["a", "b"], ["c", "d"], ["e", "f"]]\n```',
+226 silly install resolved     readmeFilename: 'README.md',
+226 silly install resolved     bugs: { url: 'https://github.com/doug-martin/object-extended/issues' },
+226 silly install resolved     _id: 'object-extended@0.0.7',
+226 silly install resolved     dist:
+226 silly install resolved      { shasum: '84fd23f56b15582aeb3e88b05cb55d2432d68a33',
+226 silly install resolved        tarball: 'http://registry.npmjs.org/object-extended/-/object-extended-0.0.7.tgz' },
+226 silly install resolved     _from: 'object-extended@0.0.7',
+226 silly install resolved     _npmVersion: '1.2.23',
+226 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+226 silly install resolved     maintainers: [ [Object] ],
+226 silly install resolved     directories: {},
+226 silly install resolved     _shasum: '84fd23f56b15582aeb3e88b05cb55d2432d68a33',
+226 silly install resolved     _resolved: 'https://registry.npmjs.org/object-extended/-/object-extended-0.0.7.tgz',
+226 silly install resolved     homepage: 'https://github.com/doug-martin/object-extended#readme' } ]
+227 info install extended@0.0.6 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+228 info install is-extended@0.0.10 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+229 info install string-extended@0.0.8 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+230 info install object-extended@0.0.7 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+231 info installOne extended@0.0.6
+232 verbose installOne of extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv not in flight; installing
+233 info installOne is-extended@0.0.10
+234 verbose installOne of is-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv not in flight; installing
+235 info installOne string-extended@0.0.8
+236 verbose installOne of string-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv not in flight; installing
+237 info installOne object-extended@0.0.7
+238 verbose installOne of object-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv not in flight; installing
+239 verbose lock using /Users/nadavlachish/.npm/_locks/extended-6350ef5b3aad8184.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+240 verbose lock using /Users/nadavlachish/.npm/_locks/is-extended-b149b17ce6cde18c.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+241 silly install write writing extended 0.0.6 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+242 silly install write writing is-extended 0.0.10 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+243 verbose lock using /Users/nadavlachish/.npm/_locks/string-extended-7d47e45a02238ce8.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+244 verbose lock using /Users/nadavlachish/.npm/_locks/object-extended-f4350d9ff7ab65ad.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+245 silly install write writing string-extended 0.0.8 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+246 silly install write writing object-extended 0.0.7 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+247 verbose unbuild node_modules/fast-csv/node_modules/extended
+248 verbose unbuild node_modules/fast-csv/node_modules/is-extended
+249 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended is being purged from base /Users/nadavlachish/Documents/node/spending
+250 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+251 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+252 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+253 verbose tar unpack /Users/nadavlachish/.npm/extended/0.0.6/package.tgz
+254 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+255 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended is being purged
+256 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+257 verbose unbuild node_modules/fast-csv/node_modules/string-extended
+258 verbose tar unpack /Users/nadavlachish/.npm/is-extended/0.0.10/package.tgz
+259 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+260 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended is being purged
+261 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+262 silly gunzTarPerm modes [ '755', '644' ]
+263 verbose unbuild node_modules/fast-csv/node_modules/object-extended
+264 silly gunzTarPerm modes [ '755', '644' ]
+265 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+266 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+267 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+268 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+269 verbose tar unpack /Users/nadavlachish/.npm/string-extended/0.0.8/package.tgz
+270 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+271 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended is being purged
+272 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+273 verbose tar unpack /Users/nadavlachish/.npm/object-extended/0.0.7/package.tgz
+274 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+275 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended is being purged
+276 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+277 silly gunzTarPerm modes [ '755', '644' ]
+278 silly gunzTarPerm modes [ '755', '644' ]
+279 silly gunzTarPerm extractEntry package.json
+280 silly gunzTarPerm extractEntry package.json
+281 silly gunzTarPerm extractEntry .npmignore
+282 silly gunzTarPerm extractEntry README.md
+283 silly gunzTarPerm extractEntry package.json
+284 silly gunzTarPerm extractEntry package.json
+285 silly gunzTarPerm extractEntry .npmignore
+286 silly gunzTarPerm extractEntry README.md
+287 silly gunzTarPerm extractEntry .npmignore
+288 silly gunzTarPerm extractEntry README.md
+289 silly gunzTarPerm extractEntry .npmignore
+290 silly gunzTarPerm extractEntry README.md
+291 silly gunzTarPerm extractEntry LICENSE
+292 silly gunzTarPerm extractEntry Gruntfile.js
+293 silly gunzTarPerm extractEntry LICENSE
+294 silly gunzTarPerm extractEntry Gruntfile.js
+295 silly gunzTarPerm extractEntry LICENSE
+296 silly gunzTarPerm extractEntry Gruntfile.js
+297 silly gunzTarPerm extractEntry LICENSE
+298 silly gunzTarPerm extractEntry Gruntfile.js
+299 silly gunzTarPerm extractEntry extended.min.js
+300 silly gunzTarPerm extractEntry index.js
+301 silly gunzTarPerm extractEntry index.js
+302 silly gunzTarPerm extractEntry is-extended.min.js
+303 silly gunzTarPerm extractEntry atlassian-ide-plugin.xml
+304 silly gunzTarPerm extractEntry is-extended.iml
+305 silly gunzTarPerm extractEntry .travis.yml
+306 silly gunzTarPerm extractEntry .jshintrc
+307 silly gunzTarPerm extractEntry test/browserling.js
+308 silly gunzTarPerm extractEntry test/is-extended.test.js
+309 silly gunzTarPerm extractEntry index.js
+310 silly gunzTarPerm extractEntry index.js
+311 silly gunzTarPerm extractEntry object-extended.min.js
+312 silly gunzTarPerm extractEntry object-extended.iml
+313 silly gunzTarPerm extractEntry .jshintrc
+314 silly gunzTarPerm extractEntry .travis.yml
+315 silly gunzTarPerm extractEntry test/browserling.js
+316 silly gunzTarPerm extractEntry test/object-extended.test.js
+317 silly gunzTarPerm extractEntry examples/browser/index.html
+318 silly gunzTarPerm extractEntry string-extended.min.js
+319 silly gunzTarPerm extractEntry atlassian-ide-plugin.xml
+320 silly gunzTarPerm extractEntry examples/browser/scripts/declare.js
+321 silly gunzTarPerm extractEntry examples/browser/scripts/extended1.js
+322 silly gunzTarPerm extractEntry .idea/jsLinters/jshint.xml
+323 silly gunzTarPerm extractEntry .idea/.name
+324 silly gunzTarPerm extractEntry examples/browser/scripts/extended2.js
+325 silly gunzTarPerm extractEntry examples/browser/scripts/extender.js
+326 silly gunzTarPerm extractEntry .idea/extended.iml
+327 silly gunzTarPerm extractEntry .idea/inspectionProfiles/Project_Default.xml
+328 silly gunzTarPerm extractEntry .idea/inspectionProfiles/profiles_settings.xml
+329 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+330 silly gunzTarPerm extractEntry extended.iml
+331 silly gunzTarPerm extractEntry .travis.yml
+332 silly gunzTarPerm extractEntry .idea/encodings.xml
+333 silly gunzTarPerm extractEntry .idea/misc.xml
+334 silly gunzTarPerm extractEntry .idea/misc.xml
+335 silly gunzTarPerm extractEntry .idea/encodings.xml
+336 silly gunzTarPerm extractEntry .idea/modules.xml
+337 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+338 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+339 silly gunzTarPerm extractEntry .idea/jsLinters/jshint.xml
+340 silly gunzTarPerm extractEntry .idea/libraries/Node_js_Dependencies_for_string_extended.xml
+341 silly gunzTarPerm extractEntry .idea/inspectionProfiles/Project_Default.xml
+342 silly gunzTarPerm extractEntry .idea/vcs.xml
+343 silly gunzTarPerm extractEntry .idea/workspace.xml
+344 silly gunzTarPerm extractEntry .idea/inspectionProfiles/profiles_settings.xml
+345 silly gunzTarPerm extractEntry .idea/modules.xml
+346 silly gunzTarPerm extractEntry .travis.yml
+347 silly gunzTarPerm extractEntry .jshintrc
+348 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+349 silly gunzTarPerm extractEntry .idea/string-extended.iml
+350 silly gunzTarPerm extractEntry test/browserling.js
+351 silly gunzTarPerm extractEntry test/string-extended.test.js
+352 silly gunzTarPerm extractEntry .idea/vcs.xml
+353 silly gunzTarPerm extractEntry .idea/workspace.xml
+354 silly gunzTarPerm extractEntry .jshintrc
+355 silly gunzTarPerm extractEntry projectFilesBackup/.idea/workspace.xml
+356 silly gunzTarPerm extractEntry test/browserling.js
+357 silly gunzTarPerm extractEntry test/extended.test.js
+358 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/package.json
+359 info preinstall object-extended@0.0.7
+360 silly gunzTarPerm extractEntry test/extenders/extended1.js
+361 silly gunzTarPerm extractEntry test/extenders/extended2.js
+362 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended/package.json
+363 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/package.json
+364 info preinstall is-extended@0.0.10
+365 silly prepareForInstallMany adding array-extended@~0.0.4 from object-extended dependencies
+366 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/package.json
+367 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended/package.json
+368 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended/package.json
+369 silly cache add args [ 'array-extended@~0.0.4', null ]
+370 verbose cache add spec array-extended@~0.0.4
+371 silly cache add parsed spec Result {
+371 silly cache add   raw: 'array-extended@~0.0.4',
+371 silly cache add   scope: null,
+371 silly cache add   name: 'array-extended',
+371 silly cache add   rawSpec: '~0.0.4',
+371 silly cache add   spec: '>=0.0.4 <0.1.0',
+371 silly cache add   type: 'range' }
+372 silly addNamed array-extended@>=0.0.4 <0.1.0
+373 verbose addNamed ">=0.0.4 <0.1.0" is a valid semver range for array-extended
+374 silly addNameRange { name: 'array-extended',
+374 silly addNameRange   range: '>=0.0.4 <0.1.0',
+374 silly addNameRange   hasData: false }
+375 silly mapToRegistry name array-extended
+376 silly mapToRegistry using default registry
+377 silly mapToRegistry registry https://registry.npmjs.org/
+378 silly mapToRegistry uri https://registry.npmjs.org/array-extended
+379 verbose addNameRange registry:https://registry.npmjs.org/array-extended not in flight; fetching
+380 silly install resolved []
+381 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+382 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+383 verbose request uri https://registry.npmjs.org/array-extended
+384 verbose request no auth needed
+385 info attempt registry request try #1 at 7:16:51 PM
+386 verbose etag "4Z0MFUHSXT2372W9F6JU7XLR4"
+387 http request GET https://registry.npmjs.org/array-extended
+388 info linkStuff is-extended@0.0.10
+389 silly linkStuff is-extended@0.0.10 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules as its parent node_modules
+390 verbose linkBins is-extended@0.0.10
+391 verbose linkMans is-extended@0.0.10
+392 verbose rebuildBundles is-extended@0.0.10
+393 info install is-extended@0.0.10
+394 info postinstall is-extended@0.0.10
+395 verbose unlock done using /Users/nadavlachish/.npm/_locks/is-extended-b149b17ce6cde18c.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/is-extended
+396 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/package.json
+397 info preinstall string-extended@0.0.8
+398 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/package.json
+399 silly prepareForInstallMany adding date-extended@~0.0.3 from string-extended dependencies
+400 silly prepareForInstallMany adding array-extended@~0.0.5 from string-extended dependencies
+401 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/package.json
+402 silly cache add args [ 'date-extended@~0.0.3', null ]
+403 verbose cache add spec date-extended@~0.0.3
+404 silly cache add args [ 'array-extended@~0.0.5', null ]
+405 verbose cache add spec array-extended@~0.0.5
+406 silly cache add parsed spec Result {
+406 silly cache add   raw: 'date-extended@~0.0.3',
+406 silly cache add   scope: null,
+406 silly cache add   name: 'date-extended',
+406 silly cache add   rawSpec: '~0.0.3',
+406 silly cache add   spec: '>=0.0.3 <0.1.0',
+406 silly cache add   type: 'range' }
+407 silly addNamed date-extended@>=0.0.3 <0.1.0
+408 verbose addNamed ">=0.0.3 <0.1.0" is a valid semver range for date-extended
+409 silly addNameRange { name: 'date-extended',
+409 silly addNameRange   range: '>=0.0.3 <0.1.0',
+409 silly addNameRange   hasData: false }
+410 silly mapToRegistry name date-extended
+411 silly mapToRegistry using default registry
+412 silly mapToRegistry registry https://registry.npmjs.org/
+413 silly mapToRegistry uri https://registry.npmjs.org/date-extended
+414 verbose addNameRange registry:https://registry.npmjs.org/date-extended not in flight; fetching
+415 silly cache add parsed spec Result {
+415 silly cache add   raw: 'array-extended@~0.0.5',
+415 silly cache add   scope: null,
+415 silly cache add   name: 'array-extended',
+415 silly cache add   rawSpec: '~0.0.5',
+415 silly cache add   spec: '>=0.0.5 <0.1.0',
+415 silly cache add   type: 'range' }
+416 silly addNamed array-extended@>=0.0.5 <0.1.0
+417 verbose addNamed ">=0.0.5 <0.1.0" is a valid semver range for array-extended
+418 silly addNameRange { name: 'array-extended',
+418 silly addNameRange   range: '>=0.0.5 <0.1.0',
+418 silly addNameRange   hasData: false }
+419 silly mapToRegistry name array-extended
+420 silly mapToRegistry using default registry
+421 silly mapToRegistry registry https://registry.npmjs.org/
+422 silly mapToRegistry uri https://registry.npmjs.org/array-extended
+423 verbose addNameRange registry:https://registry.npmjs.org/array-extended already in flight; waiting
+424 verbose request uri https://registry.npmjs.org/date-extended
+425 verbose request no auth needed
+426 info attempt registry request try #1 at 7:16:51 PM
+427 verbose etag "DMJ94HU77Q3UODGI18O50UC6R"
+428 http request GET https://registry.npmjs.org/date-extended
+429 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/package.json
+430 info preinstall extended@0.0.6
+431 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/package.json
+432 silly prepareForInstallMany adding extender@~0.0.5 from extended dependencies
+433 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/package.json
+434 silly cache add args [ 'extender@~0.0.5', null ]
+435 verbose cache add spec extender@~0.0.5
+436 silly cache add parsed spec Result {
+436 silly cache add   raw: 'extender@~0.0.5',
+436 silly cache add   scope: null,
+436 silly cache add   name: 'extender',
+436 silly cache add   rawSpec: '~0.0.5',
+436 silly cache add   spec: '>=0.0.5 <0.1.0',
+436 silly cache add   type: 'range' }
+437 silly addNamed extender@>=0.0.5 <0.1.0
+438 verbose addNamed ">=0.0.5 <0.1.0" is a valid semver range for extender
+439 silly addNameRange { name: 'extender', range: '>=0.0.5 <0.1.0', hasData: false }
+440 silly mapToRegistry name extender
+441 silly mapToRegistry using default registry
+442 silly mapToRegistry registry https://registry.npmjs.org/
+443 silly mapToRegistry uri https://registry.npmjs.org/extender
+444 verbose addNameRange registry:https://registry.npmjs.org/extender not in flight; fetching
+445 verbose request uri https://registry.npmjs.org/extender
+446 verbose request no auth needed
+447 info attempt registry request try #1 at 7:16:51 PM
+448 verbose etag "80PZ7AR8M6B05BN2EZ1RIIR8J"
+449 http request GET https://registry.npmjs.org/extender
+450 http 304 https://registry.npmjs.org/array-extended
+451 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+451 verbose headers   via: '1.1 varnish',
+451 verbose headers   'cache-control': 'max-age=300',
+451 verbose headers   etag: '"4Z0MFUHSXT2372W9F6JU7XLR4"',
+451 verbose headers   age: '61',
+451 verbose headers   connection: 'keep-alive',
+451 verbose headers   'x-served-by': 'cache-ams4135-AMS',
+451 verbose headers   'x-cache': 'HIT',
+451 verbose headers   'x-cache-hits': '1',
+451 verbose headers   'x-timer': 'S1466702211.496216,VS0,VE0',
+451 verbose headers   vary: 'Accept-Encoding' }
+452 silly get cb [ 304,
+452 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+452 silly get     via: '1.1 varnish',
+452 silly get     'cache-control': 'max-age=300',
+452 silly get     etag: '"4Z0MFUHSXT2372W9F6JU7XLR4"',
+452 silly get     age: '61',
+452 silly get     connection: 'keep-alive',
+452 silly get     'x-served-by': 'cache-ams4135-AMS',
+452 silly get     'x-cache': 'HIT',
+452 silly get     'x-cache-hits': '1',
+452 silly get     'x-timer': 'S1466702211.496216,VS0,VE0',
+452 silly get     vary: 'Accept-Encoding' } ]
+453 verbose etag https://registry.npmjs.org/array-extended from cache
+454 verbose get saving array-extended to /Users/nadavlachish/.npm/registry.npmjs.org/array-extended/.cache.json
+455 silly addNameRange number 2 { name: 'array-extended',
+455 silly addNameRange   range: '>=0.0.4 <0.1.0',
+455 silly addNameRange   hasData: true }
+456 silly addNameRange versions [ 'array-extended',
+456 silly addNameRange   [ '0.0.1',
+456 silly addNameRange     '0.0.2',
+456 silly addNameRange     '0.0.3',
+456 silly addNameRange     '0.0.4',
+456 silly addNameRange     '0.0.5',
+456 silly addNameRange     '0.0.6',
+456 silly addNameRange     '0.0.7',
+456 silly addNameRange     '0.0.8',
+456 silly addNameRange     '0.0.9',
+456 silly addNameRange     '0.0.10',
+456 silly addNameRange     '0.0.11' ] ]
+457 silly addNamed array-extended@0.0.11
+458 verbose addNamed "0.0.11" is a plain semver version for array-extended
+459 silly addNameRange number 2 { name: 'array-extended',
+459 silly addNameRange   range: '>=0.0.5 <0.1.0',
+459 silly addNameRange   hasData: true }
+460 silly addNameRange versions [ 'array-extended',
+460 silly addNameRange   [ '0.0.1',
+460 silly addNameRange     '0.0.2',
+460 silly addNameRange     '0.0.3',
+460 silly addNameRange     '0.0.4',
+460 silly addNameRange     '0.0.5',
+460 silly addNameRange     '0.0.6',
+460 silly addNameRange     '0.0.7',
+460 silly addNameRange     '0.0.8',
+460 silly addNameRange     '0.0.9',
+460 silly addNameRange     '0.0.10',
+460 silly addNameRange     '0.0.11' ] ]
+461 silly addNamed array-extended@0.0.11
+462 verbose addNamed "0.0.11" is a plain semver version for array-extended
+463 silly cache afterAdd array-extended@0.0.11
+464 verbose afterAdd /Users/nadavlachish/.npm/array-extended/0.0.11/package/package.json not in flight; writing
+465 silly cache afterAdd array-extended@0.0.11
+466 verbose afterAdd /Users/nadavlachish/.npm/array-extended/0.0.11/package/package.json already in flight; not writing
+467 verbose afterAdd /Users/nadavlachish/.npm/array-extended/0.0.11/package/package.json written
+468 silly install resolved [ { name: 'array-extended',
+468 silly install resolved     version: '0.0.11',
+468 silly install resolved     description: 'Additional array extensions with a chainable api',
+468 silly install resolved     main: 'index.js',
+468 silly install resolved     scripts: { test: 'it -r dot' },
+468 silly install resolved     repository:
+468 silly install resolved      { type: 'git',
+468 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/array-extended.git' },
+468 silly install resolved     keywords: [ 'Array', 'extender', 'utilities' ],
+468 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+468 silly install resolved     author: { name: 'Doug Martin' },
+468 silly install resolved     license: 'MIT',
+468 silly install resolved     dependencies:
+468 silly install resolved      { extended: '~0.0.3',
+468 silly install resolved        'is-extended': '~0.0.3',
+468 silly install resolved        'arguments-extended': '~0.0.3' },
+468 silly install resolved     devDependencies:
+468 silly install resolved      { it: '~0.2.0',
+468 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+468 silly install resolved        grunt: '~0.4.1',
+468 silly install resolved        'grunt-contrib-jshint': '~0.4.3',
+468 silly install resolved        'grunt-it': '~0.3.0' },
+468 silly install resolved     bugs: { url: 'https://github.com/doug-martin/array-extended/issues' },
+468 silly install resolved     homepage: 'https://github.com/doug-martin/array-extended',
+468 silly install resolved     _id: 'array-extended@0.0.11',
+468 silly install resolved     dist:
+468 silly install resolved      { shasum: 'd7144ae748de93ca726f121009dbff1626d164bd',
+468 silly install resolved        tarball: 'http://registry.npmjs.org/array-extended/-/array-extended-0.0.11.tgz' },
+468 silly install resolved     _from: 'array-extended@>=0.0.4 <0.1.0',
+468 silly install resolved     _npmVersion: '1.4.3',
+468 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+468 silly install resolved     maintainers: [ [Object] ],
+468 silly install resolved     directories: {},
+468 silly install resolved     _shasum: 'd7144ae748de93ca726f121009dbff1626d164bd',
+468 silly install resolved     _resolved: 'https://registry.npmjs.org/array-extended/-/array-extended-0.0.11.tgz',
+468 silly install resolved     readme: 'ERROR: No README data found!' } ]
+469 info install array-extended@0.0.11 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+470 info installOne array-extended@0.0.11
+471 verbose installOne of array-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended not in flight; installing
+472 verbose lock using /Users/nadavlachish/.npm/_locks/array-extended-a38fa966b8fc0b2a.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+473 silly install write writing array-extended 0.0.11 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+474 verbose unbuild node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+475 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+476 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+477 verbose tar unpack /Users/nadavlachish/.npm/array-extended/0.0.11/package.tgz
+478 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+479 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended is being purged
+480 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+481 silly gunzTarPerm modes [ '755', '644' ]
+482 silly gunzTarPerm extractEntry package.json
+483 silly gunzTarPerm extractEntry .npmignore
+484 silly gunzTarPerm extractEntry README.md
+485 silly gunzTarPerm extractEntry LICENSE
+486 silly gunzTarPerm extractEntry Gruntfile.js
+487 silly gunzTarPerm extractEntry array-extended.min.js
+488 silly gunzTarPerm extractEntry index.js
+489 silly gunzTarPerm extractEntry array-extended.iml
+490 silly gunzTarPerm extractEntry .idea/.name
+491 silly gunzTarPerm extractEntry .idea/array-extended.iml
+492 silly gunzTarPerm extractEntry .idea/encodings.xml
+493 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+494 silly gunzTarPerm extractEntry .idea/libraries/array_extended_node_modules.xml
+495 silly gunzTarPerm extractEntry .idea/misc.xml
+496 silly gunzTarPerm extractEntry .idea/modules.xml
+497 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+498 silly gunzTarPerm extractEntry .idea/vcs.xml
+499 silly gunzTarPerm extractEntry .idea/workspace.xml
+500 silly gunzTarPerm extractEntry .travis.yml
+501 silly gunzTarPerm extractEntry .jshintrc
+502 silly gunzTarPerm extractEntry test/array-extended.test.js
+503 silly gunzTarPerm extractEntry test/browserling.js
+504 http 304 https://registry.npmjs.org/date-extended
+505 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+505 verbose headers   via: '1.1 varnish',
+505 verbose headers   'cache-control': 'max-age=300',
+505 verbose headers   etag: '"DMJ94HU77Q3UODGI18O50UC6R"',
+505 verbose headers   age: '58',
+505 verbose headers   connection: 'keep-alive',
+505 verbose headers   'x-served-by': 'cache-ams4125-AMS',
+505 verbose headers   'x-cache': 'HIT',
+505 verbose headers   'x-cache-hits': '1',
+505 verbose headers   'x-timer': 'S1466702211.553334,VS0,VE0',
+505 verbose headers   vary: 'Accept-Encoding' }
+506 silly get cb [ 304,
+506 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+506 silly get     via: '1.1 varnish',
+506 silly get     'cache-control': 'max-age=300',
+506 silly get     etag: '"DMJ94HU77Q3UODGI18O50UC6R"',
+506 silly get     age: '58',
+506 silly get     connection: 'keep-alive',
+506 silly get     'x-served-by': 'cache-ams4125-AMS',
+506 silly get     'x-cache': 'HIT',
+506 silly get     'x-cache-hits': '1',
+506 silly get     'x-timer': 'S1466702211.553334,VS0,VE0',
+506 silly get     vary: 'Accept-Encoding' } ]
+507 verbose etag https://registry.npmjs.org/date-extended from cache
+508 verbose get saving date-extended to /Users/nadavlachish/.npm/registry.npmjs.org/date-extended/.cache.json
+509 silly addNameRange number 2 { name: 'date-extended', range: '>=0.0.3 <0.1.0', hasData: true }
+510 silly addNameRange versions [ 'date-extended',
+510 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.5', '0.0.6' ] ]
+511 silly addNamed date-extended@0.0.6
+512 verbose addNamed "0.0.6" is a plain semver version for date-extended
+513 silly cache afterAdd date-extended@0.0.6
+514 verbose afterAdd /Users/nadavlachish/.npm/date-extended/0.0.6/package/package.json not in flight; writing
+515 verbose afterAdd /Users/nadavlachish/.npm/date-extended/0.0.6/package/package.json written
+516 silly install resolved [ { name: 'array-extended',
+516 silly install resolved     version: '0.0.11',
+516 silly install resolved     description: 'Additional array extensions with a chainable api',
+516 silly install resolved     main: 'index.js',
+516 silly install resolved     scripts: { test: 'it -r dot' },
+516 silly install resolved     repository:
+516 silly install resolved      { type: 'git',
+516 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/array-extended.git' },
+516 silly install resolved     keywords: [ 'Array', 'extender', 'utilities' ],
+516 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+516 silly install resolved     author: { name: 'Doug Martin' },
+516 silly install resolved     license: 'MIT',
+516 silly install resolved     dependencies:
+516 silly install resolved      { extended: '~0.0.3',
+516 silly install resolved        'is-extended': '~0.0.3',
+516 silly install resolved        'arguments-extended': '~0.0.3' },
+516 silly install resolved     devDependencies:
+516 silly install resolved      { it: '~0.2.0',
+516 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+516 silly install resolved        grunt: '~0.4.1',
+516 silly install resolved        'grunt-contrib-jshint': '~0.4.3',
+516 silly install resolved        'grunt-it': '~0.3.0' },
+516 silly install resolved     bugs: { url: 'https://github.com/doug-martin/array-extended/issues' },
+516 silly install resolved     homepage: 'https://github.com/doug-martin/array-extended',
+516 silly install resolved     _id: 'array-extended@0.0.11',
+516 silly install resolved     dist:
+516 silly install resolved      { shasum: 'd7144ae748de93ca726f121009dbff1626d164bd',
+516 silly install resolved        tarball: 'http://registry.npmjs.org/array-extended/-/array-extended-0.0.11.tgz' },
+516 silly install resolved     _from: 'array-extended@>=0.0.4 <0.1.0',
+516 silly install resolved     _npmVersion: '1.4.3',
+516 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+516 silly install resolved     maintainers: [ [Object] ],
+516 silly install resolved     directories: {},
+516 silly install resolved     _shasum: 'd7144ae748de93ca726f121009dbff1626d164bd',
+516 silly install resolved     _resolved: 'https://registry.npmjs.org/array-extended/-/array-extended-0.0.11.tgz',
+516 silly install resolved     readme: 'ERROR: No README data found!' },
+516 silly install resolved   { name: 'date-extended',
+516 silly install resolved     version: '0.0.6',
+516 silly install resolved     description: 'Additional date extensions with a chainable api',
+516 silly install resolved     main: 'index.js',
+516 silly install resolved     scripts: { test: 'it -r dot' },
+516 silly install resolved     repository:
+516 silly install resolved      { type: 'git',
+516 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/date-extended.git' },
+516 silly install resolved     keywords: [ 'Date', 'extender', 'utilities' ],
+516 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+516 silly install resolved     author: { name: 'Doug Martin' },
+516 silly install resolved     license: 'MIT',
+516 silly install resolved     dependencies:
+516 silly install resolved      { extended: '~0.0.3',
+516 silly install resolved        'is-extended': '~0.0.3',
+516 silly install resolved        'array-extended': '~0.0.3' },
+516 silly install resolved     devDependencies:
+516 silly install resolved      { it: '~0.2.0',
+516 silly install resolved        'grunt-it': '~0.3.0',
+516 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+516 silly install resolved        grunt: '~0.4.1',
+516 silly install resolved        'grunt-contrib-jshint': '~0.4.3' },
+516 silly install resolved     bugs: { url: 'https://github.com/doug-martin/date-extended/issues' },
+516 silly install resolved     homepage: 'https://github.com/doug-martin/date-extended',
+516 silly install resolved     _id: 'date-extended@0.0.6',
+516 silly install resolved     dist:
+516 silly install resolved      { shasum: '23802d57dd1bf7818813fe0c32e851a86da267c9',
+516 silly install resolved        tarball: 'http://registry.npmjs.org/date-extended/-/date-extended-0.0.6.tgz' },
+516 silly install resolved     _from: 'date-extended@>=0.0.3 <0.1.0',
+516 silly install resolved     _npmVersion: '1.4.3',
+516 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+516 silly install resolved     maintainers: [ [Object] ],
+516 silly install resolved     directories: {},
+516 silly install resolved     _shasum: '23802d57dd1bf7818813fe0c32e851a86da267c9',
+516 silly install resolved     _resolved: 'https://registry.npmjs.org/date-extended/-/date-extended-0.0.6.tgz',
+516 silly install resolved     readme: 'ERROR: No README data found!' } ]
+517 info install array-extended@0.0.11 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+518 info install date-extended@0.0.6 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+519 info installOne array-extended@0.0.11
+520 verbose installOne of array-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended not in flight; installing
+521 info installOne date-extended@0.0.6
+522 verbose installOne of date-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended not in flight; installing
+523 verbose lock using /Users/nadavlachish/.npm/_locks/array-extended-975d348e9a00b770.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+524 silly install write writing array-extended 0.0.11 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+525 verbose lock using /Users/nadavlachish/.npm/_locks/date-extended-46c1ffb2d3ee0dec.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+526 verbose unbuild node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+527 silly install write writing date-extended 0.0.6 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+528 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+529 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+530 verbose tar unpack /Users/nadavlachish/.npm/array-extended/0.0.11/package.tgz
+531 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+532 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended is being purged
+533 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+534 silly gunzTarPerm modes [ '755', '644' ]
+535 verbose unbuild node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+536 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+537 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+538 verbose tar unpack /Users/nadavlachish/.npm/date-extended/0.0.6/package.tgz
+539 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+540 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended is being purged
+541 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+542 silly gunzTarPerm extractEntry package.json
+543 silly gunzTarPerm modes [ '755', '644' ]
+544 silly gunzTarPerm extractEntry .npmignore
+545 silly gunzTarPerm extractEntry README.md
+546 silly gunzTarPerm extractEntry package.json
+547 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/package.json
+548 silly gunzTarPerm extractEntry .npmignore
+549 silly gunzTarPerm extractEntry README.md
+550 silly gunzTarPerm extractEntry LICENSE
+551 info preinstall array-extended@0.0.11
+552 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/package.json
+553 silly gunzTarPerm extractEntry Gruntfile.js
+554 silly gunzTarPerm extractEntry array-extended.min.js
+555 http 304 https://registry.npmjs.org/extender
+556 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+556 verbose headers   via: '1.1 varnish',
+556 verbose headers   'cache-control': 'max-age=300',
+556 verbose headers   etag: '"80PZ7AR8M6B05BN2EZ1RIIR8J"',
+556 verbose headers   age: '55',
+556 verbose headers   connection: 'keep-alive',
+556 verbose headers   'x-served-by': 'cache-ams4124-AMS',
+556 verbose headers   'x-cache': 'HIT',
+556 verbose headers   'x-cache-hits': '1',
+556 verbose headers   'x-timer': 'S1466702211.595765,VS0,VE0',
+556 verbose headers   vary: 'Accept-Encoding' }
+557 silly get cb [ 304,
+557 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+557 silly get     via: '1.1 varnish',
+557 silly get     'cache-control': 'max-age=300',
+557 silly get     etag: '"80PZ7AR8M6B05BN2EZ1RIIR8J"',
+557 silly get     age: '55',
+557 silly get     connection: 'keep-alive',
+557 silly get     'x-served-by': 'cache-ams4124-AMS',
+557 silly get     'x-cache': 'HIT',
+557 silly get     'x-cache-hits': '1',
+557 silly get     'x-timer': 'S1466702211.595765,VS0,VE0',
+557 silly get     vary: 'Accept-Encoding' } ]
+558 verbose etag https://registry.npmjs.org/extender from cache
+559 verbose get saving extender to /Users/nadavlachish/.npm/registry.npmjs.org/extender/.cache.json
+560 silly gunzTarPerm extractEntry LICENSE
+561 silly gunzTarPerm extractEntry Gruntfile.js
+562 silly prepareForInstallMany adding arguments-extended@~0.0.3 from array-extended dependencies
+563 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/package.json
+564 silly gunzTarPerm extractEntry date-extended.min.js
+565 silly cache add args [ 'arguments-extended@~0.0.3', null ]
+566 verbose cache add spec arguments-extended@~0.0.3
+567 silly cache add parsed spec Result {
+567 silly cache add   raw: 'arguments-extended@~0.0.3',
+567 silly cache add   scope: null,
+567 silly cache add   name: 'arguments-extended',
+567 silly cache add   rawSpec: '~0.0.3',
+567 silly cache add   spec: '>=0.0.3 <0.1.0',
+567 silly cache add   type: 'range' }
+568 silly addNamed arguments-extended@>=0.0.3 <0.1.0
+569 verbose addNamed ">=0.0.3 <0.1.0" is a valid semver range for arguments-extended
+570 silly addNameRange { name: 'arguments-extended',
+570 silly addNameRange   range: '>=0.0.3 <0.1.0',
+570 silly addNameRange   hasData: false }
+571 silly mapToRegistry name arguments-extended
+572 silly mapToRegistry using default registry
+573 silly mapToRegistry registry https://registry.npmjs.org/
+574 silly mapToRegistry uri https://registry.npmjs.org/arguments-extended
+575 verbose addNameRange registry:https://registry.npmjs.org/arguments-extended not in flight; fetching
+576 silly gunzTarPerm extractEntry index.js
+577 silly gunzTarPerm extractEntry array-extended.iml
+578 silly addNameRange number 2 { name: 'extender', range: '>=0.0.5 <0.1.0', hasData: true }
+579 silly addNameRange versions [ 'extender',
+579 silly addNameRange   [ '0.0.1',
+579 silly addNameRange     '0.0.2',
+579 silly addNameRange     '0.0.3',
+579 silly addNameRange     '0.0.4',
+579 silly addNameRange     '0.0.5',
+579 silly addNameRange     '0.0.6',
+579 silly addNameRange     '0.0.7',
+579 silly addNameRange     '0.0.8',
+579 silly addNameRange     '0.0.9',
+579 silly addNameRange     '0.0.10' ] ]
+580 silly addNamed extender@0.0.10
+581 verbose addNamed "0.0.10" is a plain semver version for extender
+582 verbose request uri https://registry.npmjs.org/arguments-extended
+583 verbose request no auth needed
+584 info attempt registry request try #1 at 7:16:51 PM
+585 verbose etag "417Q8PVW16Q4IY8L1FSBJ4WSK"
+586 http request GET https://registry.npmjs.org/arguments-extended
+587 silly gunzTarPerm extractEntry index.js
+588 silly gunzTarPerm extractEntry .travis.yml
+589 silly gunzTarPerm extractEntry .idea/.name
+590 silly gunzTarPerm extractEntry .idea/array-extended.iml
+591 silly cache afterAdd extender@0.0.10
+592 verbose afterAdd /Users/nadavlachish/.npm/extender/0.0.10/package/package.json not in flight; writing
+593 verbose afterAdd /Users/nadavlachish/.npm/extender/0.0.10/package/package.json written
+594 silly install resolved [ { name: 'extender',
+594 silly install resolved     version: '0.0.10',
+594 silly install resolved     description: 'Easily create object decorators!',
+594 silly install resolved     main: 'index.js',
+594 silly install resolved     scripts: { test: 'it -r dotmatrix' },
+594 silly install resolved     repository:
+594 silly install resolved      { type: 'git',
+594 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/extender.git' },
+594 silly install resolved     keywords: [ 'decorator', 'extend', 'extender', 'chain', 'wrap' ],
+594 silly install resolved     author: { name: 'Doug Martin', url: 'blog.dougamartin.com' },
+594 silly install resolved     license: 'MIT',
+594 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+594 silly install resolved     dependencies: { 'declare.js': '~0.0.4' },
+594 silly install resolved     devDependencies:
+594 silly install resolved      { grunt: '~0.4.1',
+594 silly install resolved        it: '~0.2.0',
+594 silly install resolved        'grunt-it': '~0.3.0',
+594 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+594 silly install resolved        'grunt-contrib-jshint': '~0.4.3' },
+594 silly install resolved     bugs: { url: 'https://github.com/doug-martin/extender/issues' },
+594 silly install resolved     homepage: 'https://github.com/doug-martin/extender',
+594 silly install resolved     _id: 'extender@0.0.10',
+594 silly install resolved     dist:
+594 silly install resolved      { shasum: '589c07482be61a1460b6d81f9c24aa67e8f324cd',
+594 silly install resolved        tarball: 'http://registry.npmjs.org/extender/-/extender-0.0.10.tgz' },
+594 silly install resolved     _from: 'extender@>=0.0.5 <0.1.0',
+594 silly install resolved     _npmVersion: '1.4.3',
+594 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+594 silly install resolved     maintainers: [ [Object] ],
+594 silly install resolved     directories: {},
+594 silly install resolved     _shasum: '589c07482be61a1460b6d81f9c24aa67e8f324cd',
+594 silly install resolved     _resolved: 'https://registry.npmjs.org/extender/-/extender-0.0.10.tgz',
+594 silly install resolved     readme: 'ERROR: No README data found!' } ]
+595 info install extender@0.0.10 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+596 info installOne extender@0.0.10
+597 verbose installOne of extender to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended not in flight; installing
+598 silly gunzTarPerm extractEntry .jshintrc
+599 silly gunzTarPerm extractEntry date-extended.iml
+600 silly gunzTarPerm extractEntry .idea/encodings.xml
+601 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+602 verbose lock using /Users/nadavlachish/.npm/_locks/extender-a5c254e350e4b47d.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+603 silly install write writing extender 0.0.10 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+604 verbose unbuild node_modules/fast-csv/node_modules/extended/node_modules/extender
+605 silly gunzTarPerm extractEntry test/browserling.js
+606 silly gunzTarPerm extractEntry test/date-extended.test.js
+607 silly gunzTarPerm extractEntry .idea/libraries/array_extended_node_modules.xml
+608 silly gunzTarPerm extractEntry .idea/misc.xml
+609 silly gunzTarPerm extractEntry .idea/modules.xml
+610 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender is being purged from base /Users/nadavlachish/Documents/node/spending
+611 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+612 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+613 verbose tar unpack /Users/nadavlachish/.npm/extender/0.0.10/package.tgz
+614 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+615 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender is being purged
+616 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+617 silly gunzTarPerm modes [ '755', '644' ]
+618 silly gunzTarPerm extractEntry package.json
+619 silly gunzTarPerm extractEntry .idea/vcs.xml
+620 silly gunzTarPerm extractEntry .idea/workspace.xml
+621 silly gunzTarPerm extractEntry .npmignore
+622 silly gunzTarPerm extractEntry README.md
+623 silly gunzTarPerm extractEntry .travis.yml
+624 silly gunzTarPerm extractEntry .jshintrc
+625 silly gunzTarPerm extractEntry extender-min.js
+626 silly gunzTarPerm extractEntry Gruntfile.js
+627 silly gunzTarPerm extractEntry test/array-extended.test.js
+628 silly gunzTarPerm extractEntry test/browserling.js
+629 silly gunzTarPerm extractEntry extender.js
+630 silly gunzTarPerm extractEntry index.js
+631 silly gunzTarPerm extractEntry .travis.yml
+632 silly gunzTarPerm extractEntry .jshintrc
+633 silly gunzTarPerm extractEntry extender.iml
+634 silly gunzTarPerm extractEntry test/browserling.js
+635 silly gunzTarPerm extractEntry test/extender.test.js
+636 silly gunzTarPerm extractEntry test/is.js
+637 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended/package.json
+638 info preinstall date-extended@0.0.6
+639 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended/package.json
+640 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended/package.json
+641 silly install resolved []
+642 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+643 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+644 info linkStuff date-extended@0.0.6
+645 silly linkStuff date-extended@0.0.6 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules as its parent node_modules
+646 verbose linkBins date-extended@0.0.6
+647 verbose linkMans date-extended@0.0.6
+648 verbose rebuildBundles date-extended@0.0.6
+649 info install date-extended@0.0.6
+650 info postinstall date-extended@0.0.6
+651 verbose unlock done using /Users/nadavlachish/.npm/_locks/date-extended-46c1ffb2d3ee0dec.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/date-extended
+652 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/package.json
+653 info preinstall extender@0.0.10
+654 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/package.json
+655 silly prepareForInstallMany adding declare.js@~0.0.4 from extender dependencies
+656 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/package.json
+657 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/package.json
+658 info preinstall array-extended@0.0.11
+659 silly cache add args [ 'declare.js@~0.0.4', null ]
+660 verbose cache add spec declare.js@~0.0.4
+661 silly cache add parsed spec Result {
+661 silly cache add   raw: 'declare.js@~0.0.4',
+661 silly cache add   scope: null,
+661 silly cache add   name: 'declare.js',
+661 silly cache add   rawSpec: '~0.0.4',
+661 silly cache add   spec: '>=0.0.4 <0.1.0',
+661 silly cache add   type: 'range' }
+662 silly addNamed declare.js@>=0.0.4 <0.1.0
+663 verbose addNamed ">=0.0.4 <0.1.0" is a valid semver range for declare.js
+664 silly addNameRange { name: 'declare.js', range: '>=0.0.4 <0.1.0', hasData: false }
+665 silly mapToRegistry name declare.js
+666 silly mapToRegistry using default registry
+667 silly mapToRegistry registry https://registry.npmjs.org/
+668 silly mapToRegistry uri https://registry.npmjs.org/declare.js
+669 verbose addNameRange registry:https://registry.npmjs.org/declare.js not in flight; fetching
+670 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/package.json
+671 silly prepareForInstallMany adding arguments-extended@~0.0.3 from array-extended dependencies
+672 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/package.json
+673 verbose request uri https://registry.npmjs.org/declare.js
+674 verbose request no auth needed
+675 info attempt registry request try #1 at 7:16:51 PM
+676 verbose etag "4IKF7KNN9W6J7X0S5J0SH7ZKM"
+677 http request GET https://registry.npmjs.org/declare.js
+678 silly cache add args [ 'arguments-extended@~0.0.3', null ]
+679 verbose cache add spec arguments-extended@~0.0.3
+680 silly cache add parsed spec Result {
+680 silly cache add   raw: 'arguments-extended@~0.0.3',
+680 silly cache add   scope: null,
+680 silly cache add   name: 'arguments-extended',
+680 silly cache add   rawSpec: '~0.0.3',
+680 silly cache add   spec: '>=0.0.3 <0.1.0',
+680 silly cache add   type: 'range' }
+681 silly addNamed arguments-extended@>=0.0.3 <0.1.0
+682 verbose addNamed ">=0.0.3 <0.1.0" is a valid semver range for arguments-extended
+683 silly addNameRange { name: 'arguments-extended',
+683 silly addNameRange   range: '>=0.0.3 <0.1.0',
+683 silly addNameRange   hasData: false }
+684 silly mapToRegistry name arguments-extended
+685 silly mapToRegistry using default registry
+686 silly mapToRegistry registry https://registry.npmjs.org/
+687 silly mapToRegistry uri https://registry.npmjs.org/arguments-extended
+688 verbose addNameRange registry:https://registry.npmjs.org/arguments-extended already in flight; waiting
+689 http 304 https://registry.npmjs.org/arguments-extended
+690 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+690 verbose headers   via: '1.1 varnish',
+690 verbose headers   'cache-control': 'max-age=300',
+690 verbose headers   etag: '"417Q8PVW16Q4IY8L1FSBJ4WSK"',
+690 verbose headers   age: '56',
+690 verbose headers   connection: 'keep-alive',
+690 verbose headers   'x-served-by': 'cache-ams4138-AMS',
+690 verbose headers   'x-cache': 'HIT',
+690 verbose headers   'x-cache-hits': '1',
+690 verbose headers   'x-timer': 'S1466702211.732384,VS0,VE0',
+690 verbose headers   vary: 'Accept-Encoding' }
+691 silly get cb [ 304,
+691 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+691 silly get     via: '1.1 varnish',
+691 silly get     'cache-control': 'max-age=300',
+691 silly get     etag: '"417Q8PVW16Q4IY8L1FSBJ4WSK"',
+691 silly get     age: '56',
+691 silly get     connection: 'keep-alive',
+691 silly get     'x-served-by': 'cache-ams4138-AMS',
+691 silly get     'x-cache': 'HIT',
+691 silly get     'x-cache-hits': '1',
+691 silly get     'x-timer': 'S1466702211.732384,VS0,VE0',
+691 silly get     vary: 'Accept-Encoding' } ]
+692 verbose etag https://registry.npmjs.org/arguments-extended from cache
+693 verbose get saving arguments-extended to /Users/nadavlachish/.npm/registry.npmjs.org/arguments-extended/.cache.json
+694 silly addNameRange number 2 { name: 'arguments-extended',
+694 silly addNameRange   range: '>=0.0.3 <0.1.0',
+694 silly addNameRange   hasData: true }
+695 silly addNameRange versions [ 'arguments-extended', [ '0.0.1', '0.0.2', '0.0.3' ] ]
+696 silly addNamed arguments-extended@0.0.3
+697 verbose addNamed "0.0.3" is a plain semver version for arguments-extended
+698 silly addNameRange number 2 { name: 'arguments-extended',
+698 silly addNameRange   range: '>=0.0.3 <0.1.0',
+698 silly addNameRange   hasData: true }
+699 silly addNameRange versions [ 'arguments-extended', [ '0.0.1', '0.0.2', '0.0.3' ] ]
+700 silly addNamed arguments-extended@0.0.3
+701 verbose addNamed "0.0.3" is a plain semver version for arguments-extended
+702 silly cache afterAdd arguments-extended@0.0.3
+703 verbose afterAdd /Users/nadavlachish/.npm/arguments-extended/0.0.3/package/package.json not in flight; writing
+704 silly cache afterAdd arguments-extended@0.0.3
+705 verbose afterAdd /Users/nadavlachish/.npm/arguments-extended/0.0.3/package/package.json already in flight; not writing
+706 verbose afterAdd /Users/nadavlachish/.npm/arguments-extended/0.0.3/package/package.json written
+707 silly install resolved [ { name: 'arguments-extended',
+707 silly install resolved     version: '0.0.3',
+707 silly install resolved     description: 'Utilities for working with arguments object',
+707 silly install resolved     main: 'index.js',
+707 silly install resolved     scripts: { test: 'it -r dotmatrix' },
+707 silly install resolved     repository:
+707 silly install resolved      { type: 'git',
+707 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/arguments-extended.git' },
+707 silly install resolved     keywords: [ 'arguments', 'utils', 'extended', 'extender', 'monad', 'monads' ],
+707 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+707 silly install resolved     author: { name: 'Doug Martin' },
+707 silly install resolved     license: 'MIT',
+707 silly install resolved     dependencies: { extended: '~0.0.3', 'is-extended': '~0.0.8' },
+707 silly install resolved     devDependencies:
+707 silly install resolved      { it: '~0.2.0',
+707 silly install resolved        'grunt-it': '~0.3.0',
+707 silly install resolved        grunt: '~0.4.1',
+707 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+707 silly install resolved        'grunt-contrib-jshint': '~0.3.0' },
+707 silly install resolved     readme: '[![Build Status](https://travis-ci.org/doug-martin/arguments-extended.png?branch=master)](https://travis-ci.org/doug-martin/arguments-extended)\n\n[![browser support](https://ci.testling.com/doug-martin/arguments-extended.png)](http://ci.testling.com/doug-martin/arguments-extended)\n\n# arguments-extended\n\n`arguments-extended` is a Javascript library that provides utilities for working with the arguments object. `arguments-extended` can be used as a monad library or each function can be used standalone.\n\n`arguments-extended` can be used standalone or incorporated into [`extended`](https://github.com/doug-martin/extended)\n\n```javascript\nvar args = require("arguments-extended");\n```\n\nOr\n\n```javascript\nvar args = require("extended")\n\t.register(require("arguments-extended"));\n```\n\n## Installation\n\n```\nnpm install arguments-extended\n```\n\nOr [download the source](https://raw.github.com/doug-martin/arguments-extended/master/index.js) ([minified](https://raw.github.com/doug-martin/arguments-extended/master/arguments-extended.min.js))\n\n## Usage\n\n**`toArray() argsToArray()`**\n\nFunction to convert arguments to an array. If you are using `arguments-extended` as a monad use the `toArray` method, if your using the standalone method use `argsToArray`\n\nTo use as a monad.\n\n```javascript\n\nfunction argsToArray(){\n    return args(arguments).toArray().value();\n}\n\nargsToArray("a", "b", "c"); //["a", "b", "c"];\n\n```\n\nTo use a a function\n\n```javascript\n\nfunction argsToArray(){\n    return args.argsToArray(arguments);\n}\n\nargsToArray("a", "b", "c"); //["a", "b", "c"];\n\n```\n\nYou may also specify a `slice` argument to slice a number of arguments off of the front of returned array\n\n\n```javascript\n\nfunction argsToArray(){\n    return args(arguments).toArray(1).value();\n}\n\nargsToArray("a", "b", "c"); //["b", "c"];\n\n```\n\n```javascript\n\nfunction argsToArray(){\n    return args.argsToArray(arguments, 1);\n}\n\nargsToArray("a", "b", "c"); //["b", "c"];\n\n```',
+707 silly install resolved     readmeFilename: 'README.md',
+707 silly install resolved     bugs: { url: 'https://github.com/doug-martin/arguments-extended/issues' },
+707 silly install resolved     _id: 'arguments-extended@0.0.3',
+707 silly install resolved     dist:
+707 silly install resolved      { shasum: '6107e4917d0eb6f0a4dd66320fc15afc72ef4946',
+707 silly install resolved        tarball: 'http://registry.npmjs.org/arguments-extended/-/arguments-extended-0.0.3.tgz' },
+707 silly install resolved     _from: 'arguments-extended@>=0.0.3 <0.1.0',
+707 silly install resolved     _npmVersion: '1.2.23',
+707 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+707 silly install resolved     maintainers: [ [Object] ],
+707 silly install resolved     directories: {},
+707 silly install resolved     _shasum: '6107e4917d0eb6f0a4dd66320fc15afc72ef4946',
+707 silly install resolved     _resolved: 'https://registry.npmjs.org/arguments-extended/-/arguments-extended-0.0.3.tgz',
+707 silly install resolved     homepage: 'https://github.com/doug-martin/arguments-extended#readme' } ]
+708 info install arguments-extended@0.0.3 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+709 info installOne arguments-extended@0.0.3
+710 verbose installOne of arguments-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended not in flight; installing
+711 silly install resolved [ { name: 'arguments-extended',
+711 silly install resolved     version: '0.0.3',
+711 silly install resolved     description: 'Utilities for working with arguments object',
+711 silly install resolved     main: 'index.js',
+711 silly install resolved     scripts: { test: 'it -r dotmatrix' },
+711 silly install resolved     repository:
+711 silly install resolved      { type: 'git',
+711 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/arguments-extended.git' },
+711 silly install resolved     keywords: [ 'arguments', 'utils', 'extended', 'extender', 'monad', 'monads' ],
+711 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+711 silly install resolved     author: { name: 'Doug Martin' },
+711 silly install resolved     license: 'MIT',
+711 silly install resolved     dependencies: { extended: '~0.0.3', 'is-extended': '~0.0.8' },
+711 silly install resolved     devDependencies:
+711 silly install resolved      { it: '~0.2.0',
+711 silly install resolved        'grunt-it': '~0.3.0',
+711 silly install resolved        grunt: '~0.4.1',
+711 silly install resolved        'grunt-contrib-uglify': '~0.2.0',
+711 silly install resolved        'grunt-contrib-jshint': '~0.3.0' },
+711 silly install resolved     readme: '[![Build Status](https://travis-ci.org/doug-martin/arguments-extended.png?branch=master)](https://travis-ci.org/doug-martin/arguments-extended)\n\n[![browser support](https://ci.testling.com/doug-martin/arguments-extended.png)](http://ci.testling.com/doug-martin/arguments-extended)\n\n# arguments-extended\n\n`arguments-extended` is a Javascript library that provides utilities for working with the arguments object. `arguments-extended` can be used as a monad library or each function can be used standalone.\n\n`arguments-extended` can be used standalone or incorporated into [`extended`](https://github.com/doug-martin/extended)\n\n```javascript\nvar args = require("arguments-extended");\n```\n\nOr\n\n```javascript\nvar args = require("extended")\n\t.register(require("arguments-extended"));\n```\n\n## Installation\n\n```\nnpm install arguments-extended\n```\n\nOr [download the source](https://raw.github.com/doug-martin/arguments-extended/master/index.js) ([minified](https://raw.github.com/doug-martin/arguments-extended/master/arguments-extended.min.js))\n\n## Usage\n\n**`toArray() argsToArray()`**\n\nFunction to convert arguments to an array. If you are using `arguments-extended` as a monad use the `toArray` method, if your using the standalone method use `argsToArray`\n\nTo use as a monad.\n\n```javascript\n\nfunction argsToArray(){\n    return args(arguments).toArray().value();\n}\n\nargsToArray("a", "b", "c"); //["a", "b", "c"];\n\n```\n\nTo use a a function\n\n```javascript\n\nfunction argsToArray(){\n    return args.argsToArray(arguments);\n}\n\nargsToArray("a", "b", "c"); //["a", "b", "c"];\n\n```\n\nYou may also specify a `slice` argument to slice a number of arguments off of the front of returned array\n\n\n```javascript\n\nfunction argsToArray(){\n    return args(arguments).toArray(1).value();\n}\n\nargsToArray("a", "b", "c"); //["b", "c"];\n\n```\n\n```javascript\n\nfunction argsToArray(){\n    return args.argsToArray(arguments, 1);\n}\n\nargsToArray("a", "b", "c"); //["b", "c"];\n\n```',
+711 silly install resolved     readmeFilename: 'README.md',
+711 silly install resolved     bugs: { url: 'https://github.com/doug-martin/arguments-extended/issues' },
+711 silly install resolved     _id: 'arguments-extended@0.0.3',
+711 silly install resolved     dist:
+711 silly install resolved      { shasum: '6107e4917d0eb6f0a4dd66320fc15afc72ef4946',
+711 silly install resolved        tarball: 'http://registry.npmjs.org/arguments-extended/-/arguments-extended-0.0.3.tgz' },
+711 silly install resolved     _from: 'arguments-extended@>=0.0.3 <0.1.0',
+711 silly install resolved     _npmVersion: '1.2.23',
+711 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+711 silly install resolved     maintainers: [ [Object] ],
+711 silly install resolved     directories: {},
+711 silly install resolved     _shasum: '6107e4917d0eb6f0a4dd66320fc15afc72ef4946',
+711 silly install resolved     _resolved: 'https://registry.npmjs.org/arguments-extended/-/arguments-extended-0.0.3.tgz',
+711 silly install resolved     homepage: 'https://github.com/doug-martin/arguments-extended#readme' } ]
+712 info install arguments-extended@0.0.3 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+713 info installOne arguments-extended@0.0.3
+714 verbose installOne of arguments-extended to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended not in flight; installing
+715 verbose lock using /Users/nadavlachish/.npm/_locks/arguments-extended-d603e5cd21507712.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+716 verbose lock using /Users/nadavlachish/.npm/_locks/arguments-extended-d711a02a37d51151.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+717 silly install write writing arguments-extended 0.0.3 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+718 silly install write writing arguments-extended 0.0.3 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+719 verbose unbuild node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+720 verbose unbuild node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+721 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+722 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+723 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended is being purged from base /Users/nadavlachish/Documents/node/spending
+724 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+725 verbose tar unpack /Users/nadavlachish/.npm/arguments-extended/0.0.3/package.tgz
+726 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+727 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended is being purged
+728 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+729 verbose tar unpack /Users/nadavlachish/.npm/arguments-extended/0.0.3/package.tgz
+730 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+731 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended is being purged
+732 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+733 silly gunzTarPerm modes [ '755', '644' ]
+734 silly gunzTarPerm modes [ '755', '644' ]
+735 silly gunzTarPerm extractEntry package.json
+736 silly gunzTarPerm extractEntry package.json
+737 silly gunzTarPerm extractEntry .npmignore
+738 silly gunzTarPerm extractEntry README.md
+739 silly gunzTarPerm extractEntry .npmignore
+740 silly gunzTarPerm extractEntry README.md
+741 silly gunzTarPerm extractEntry LICENSE
+742 silly gunzTarPerm extractEntry Gruntfile.js
+743 silly gunzTarPerm extractEntry LICENSE
+744 silly gunzTarPerm extractEntry Gruntfile.js
+745 silly gunzTarPerm extractEntry arguments-extended.min.js
+746 silly gunzTarPerm extractEntry index.js
+747 silly gunzTarPerm extractEntry arguments-extended.min.js
+748 silly gunzTarPerm extractEntry index.js
+749 silly gunzTarPerm extractEntry arguments-extended.iml
+750 silly gunzTarPerm extractEntry atlassian-ide-plugin.xml
+751 silly gunzTarPerm extractEntry arguments-extended.iml
+752 silly gunzTarPerm extractEntry atlassian-ide-plugin.xml
+753 silly gunzTarPerm extractEntry .travis.yml
+754 silly gunzTarPerm extractEntry .jshintrc
+755 silly gunzTarPerm extractEntry test/arguments-extended.test.js
+756 silly gunzTarPerm extractEntry test/browserling.js
+757 silly gunzTarPerm extractEntry .travis.yml
+758 silly gunzTarPerm extractEntry .jshintrc
+759 silly gunzTarPerm extractEntry test/arguments-extended.test.js
+760 silly gunzTarPerm extractEntry test/browserling.js
+761 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+762 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+763 info preinstall arguments-extended@0.0.3
+764 info preinstall arguments-extended@0.0.3
+765 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+766 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+767 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+768 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended/package.json
+769 silly install resolved []
+770 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+771 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+772 silly install resolved []
+773 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+774 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+775 info linkStuff arguments-extended@0.0.3
+776 silly linkStuff arguments-extended@0.0.3 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules as its parent node_modules
+777 info linkStuff arguments-extended@0.0.3
+778 silly linkStuff arguments-extended@0.0.3 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules as its parent node_modules
+779 http 304 https://registry.npmjs.org/declare.js
+780 verbose headers { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+780 verbose headers   via: '1.1 varnish',
+780 verbose headers   'cache-control': 'max-age=300',
+780 verbose headers   etag: '"4IKF7KNN9W6J7X0S5J0SH7ZKM"',
+780 verbose headers   age: '52',
+780 verbose headers   connection: 'keep-alive',
+780 verbose headers   'x-served-by': 'cache-ams4121-AMS',
+780 verbose headers   'x-cache': 'HIT',
+780 verbose headers   'x-cache-hits': '1',
+780 verbose headers   'x-timer': 'S1466702211.834653,VS0,VE0',
+780 verbose headers   vary: 'Accept-Encoding' }
+781 silly get cb [ 304,
+781 silly get   { date: 'Thu, 23 Jun 2016 17:16:51 GMT',
+781 silly get     via: '1.1 varnish',
+781 silly get     'cache-control': 'max-age=300',
+781 silly get     etag: '"4IKF7KNN9W6J7X0S5J0SH7ZKM"',
+781 silly get     age: '52',
+781 silly get     connection: 'keep-alive',
+781 silly get     'x-served-by': 'cache-ams4121-AMS',
+781 silly get     'x-cache': 'HIT',
+781 silly get     'x-cache-hits': '1',
+781 silly get     'x-timer': 'S1466702211.834653,VS0,VE0',
+781 silly get     vary: 'Accept-Encoding' } ]
+782 verbose etag https://registry.npmjs.org/declare.js from cache
+783 verbose get saving declare.js to /Users/nadavlachish/.npm/registry.npmjs.org/declare.js/.cache.json
+784 verbose linkBins arguments-extended@0.0.3
+785 verbose linkMans arguments-extended@0.0.3
+786 verbose rebuildBundles arguments-extended@0.0.3
+787 verbose linkBins arguments-extended@0.0.3
+788 verbose linkMans arguments-extended@0.0.3
+789 verbose rebuildBundles arguments-extended@0.0.3
+790 info install arguments-extended@0.0.3
+791 silly addNameRange number 2 { name: 'declare.js', range: '>=0.0.4 <0.1.0', hasData: true }
+792 silly addNameRange versions [ 'declare.js',
+792 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.0.4', '0.0.6', '0.0.7', '0.0.8' ] ]
+793 silly addNamed declare.js@0.0.8
+794 verbose addNamed "0.0.8" is a plain semver version for declare.js
+795 info install arguments-extended@0.0.3
+796 info postinstall arguments-extended@0.0.3
+797 info postinstall arguments-extended@0.0.3
+798 verbose unlock done using /Users/nadavlachish/.npm/_locks/arguments-extended-d603e5cd21507712.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended/node_modules/arguments-extended
+799 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+800 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+801 verbose unlock done using /Users/nadavlachish/.npm/_locks/arguments-extended-d711a02a37d51151.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended/node_modules/arguments-extended
+802 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+803 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+804 silly cache afterAdd declare.js@0.0.8
+805 verbose afterAdd /Users/nadavlachish/.npm/declare.js/0.0.8/package/package.json not in flight; writing
+806 info linkStuff array-extended@0.0.11
+807 silly linkStuff array-extended@0.0.11 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules as its parent node_modules
+808 info linkStuff array-extended@0.0.11
+809 silly linkStuff array-extended@0.0.11 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules as its parent node_modules
+810 verbose afterAdd /Users/nadavlachish/.npm/declare.js/0.0.8/package/package.json written
+811 silly install resolved [ { name: 'declare.js',
+811 silly install resolved     version: '0.0.8',
+811 silly install resolved     description: 'OO system from node and browser',
+811 silly install resolved     main: 'index.js',
+811 silly install resolved     scripts: { test: 'export NODE_PATH=. && it -r dotmatrix' },
+811 silly install resolved     repository:
+811 silly install resolved      { type: 'git',
+811 silly install resolved        url: 'git+ssh://git@github.com/doug-martin/declare.js.git' },
+811 silly install resolved     keywords: [ 'OO', 'class', 'object', 'clazz' ],
+811 silly install resolved     testling: { files: 'test/browserling.js', browsers: [Object] },
+811 silly install resolved     author: { name: 'Doug Martin', url: 'doug@dougamartin.com' },
+811 silly install resolved     license: 'MIT',
+811 silly install resolved     devDependencies:
+811 silly install resolved      { it: '0.2.0',
+811 silly install resolved        'grunt-it': '~0.3.1',
+811 silly install resolved        'grunt-contrib-uglify': '~0.2.2',
+811 silly install resolved        'grunt-contrib-jshint': '~0.6.0',
+811 silly install resolved        grunt: '~0.4.1' },
+811 silly install resolved     dependencies: {},
+811 silly install resolved     bugs: { url: 'https://github.com/doug-martin/declare.js/issues' },
+811 silly install resolved     homepage: 'https://github.com/doug-martin/declare.js',
+811 silly install resolved     _id: 'declare.js@0.0.8',
+811 silly install resolved     dist:
+811 silly install resolved      { shasum: '0478adff9564c004f51df73d8bc134019d28dcde',
+811 silly install resolved        tarball: 'http://registry.npmjs.org/declare.js/-/declare.js-0.0.8.tgz' },
+811 silly install resolved     _from: 'declare.js@>=0.0.4 <0.1.0',
+811 silly install resolved     _npmVersion: '1.4.3',
+811 silly install resolved     _npmUser: { name: 'damartin', email: 'doug@dougamartin.com' },
+811 silly install resolved     maintainers: [ [Object] ],
+811 silly install resolved     directories: {},
+811 silly install resolved     _shasum: '0478adff9564c004f51df73d8bc134019d28dcde',
+811 silly install resolved     _resolved: 'https://registry.npmjs.org/declare.js/-/declare.js-0.0.8.tgz',
+811 silly install resolved     readme: 'ERROR: No README data found!' } ]
+812 info install declare.js@0.0.8 into /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+813 info installOne declare.js@0.0.8
+814 verbose installOne of declare.js to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender not in flight; installing
+815 verbose lock using /Users/nadavlachish/.npm/_locks/declare-js-c66a92b8c57bda74.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+816 silly install write writing declare.js 0.0.8 to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+817 verbose linkBins array-extended@0.0.11
+818 verbose linkMans array-extended@0.0.11
+819 verbose rebuildBundles array-extended@0.0.11
+820 verbose unbuild node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+821 verbose linkBins array-extended@0.0.11
+822 verbose linkMans array-extended@0.0.11
+823 verbose rebuildBundles array-extended@0.0.11
+824 verbose rebuildBundles [ 'arguments-extended' ]
+825 info install array-extended@0.0.11
+826 verbose rebuildBundles [ 'arguments-extended' ]
+827 info install array-extended@0.0.11
+828 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js is being purged from base /Users/nadavlachish/Documents/node/spending
+829 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+830 info postinstall array-extended@0.0.11
+831 verbose tar unpack /Users/nadavlachish/.npm/declare.js/0.0.8/package.tgz
+832 verbose tar unpacking to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+833 silly gentlyRm /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js is being purged
+834 verbose gentlyRm don't care about contents; nuking /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+835 info postinstall array-extended@0.0.11
+836 silly gunzTarPerm modes [ '755', '644' ]
+837 verbose unlock done using /Users/nadavlachish/.npm/_locks/array-extended-a38fa966b8fc0b2a.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended/node_modules/array-extended
+838 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+839 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+840 verbose unlock done using /Users/nadavlachish/.npm/_locks/array-extended-975d348e9a00b770.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended/node_modules/array-extended
+841 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+842 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+843 silly gunzTarPerm extractEntry package.json
+844 info linkStuff object-extended@0.0.7
+845 silly linkStuff object-extended@0.0.7 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules as its parent node_modules
+846 silly gunzTarPerm extractEntry .npmignore
+847 silly gunzTarPerm extractEntry README.md
+848 info linkStuff string-extended@0.0.8
+849 silly linkStuff string-extended@0.0.8 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules as its parent node_modules
+850 verbose linkBins object-extended@0.0.7
+851 verbose linkMans object-extended@0.0.7
+852 verbose rebuildBundles object-extended@0.0.7
+853 silly gunzTarPerm extractEntry LICENSE
+854 silly gunzTarPerm extractEntry Gruntfile.js
+855 silly gunzTarPerm extractEntry declare.js
+856 silly gunzTarPerm extractEntry declare.min.js
+857 silly gunzTarPerm extractEntry index.js
+858 silly gunzTarPerm extractEntry atlassian-ide-plugin.xml
+859 silly gunzTarPerm extractEntry .idea/libraries/declare_js_node_modules.xml
+860 silly gunzTarPerm extractEntry .idea/libraries/sass_stdlib.xml
+861 silly gunzTarPerm extractEntry .idea/.name
+862 silly gunzTarPerm extractEntry .idea/encodings.xml
+863 silly gunzTarPerm extractEntry .idea/inspectionProfiles/Project_Default.xml
+864 silly gunzTarPerm extractEntry .idea/inspectionProfiles/profiles_settings.xml
+865 silly gunzTarPerm extractEntry .idea/jsLibraryMappings.xml
+866 silly gunzTarPerm extractEntry .idea/jsLinters/jshint.xml
+867 silly gunzTarPerm extractEntry .idea/declare.js.iml
+868 silly gunzTarPerm extractEntry .idea/misc.xml
+869 silly gunzTarPerm extractEntry .idea/modules.xml
+870 silly gunzTarPerm extractEntry .idea/scopes/scope_settings.xml
+871 silly gunzTarPerm extractEntry .idea/vcs.xml
+872 silly gunzTarPerm extractEntry .idea/workspace.xml
+873 silly gunzTarPerm extractEntry .jshintrc
+874 silly gunzTarPerm extractEntry .travis.yml
+875 silly gunzTarPerm extractEntry projectFilesBackup/.idea/workspace.xml
+876 silly gunzTarPerm extractEntry test/browserling.js
+877 silly gunzTarPerm extractEntry test/declare.test.js
+878 verbose rebuildBundles [ 'array-extended' ]
+879 info install object-extended@0.0.7
+880 verbose linkBins string-extended@0.0.8
+881 verbose linkMans string-extended@0.0.8
+882 verbose rebuildBundles string-extended@0.0.8
+883 info postinstall object-extended@0.0.7
+884 verbose rebuildBundles [ 'array-extended', 'date-extended' ]
+885 info install string-extended@0.0.8
+886 verbose unlock done using /Users/nadavlachish/.npm/_locks/object-extended-f4350d9ff7ab65ad.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/object-extended
+887 info postinstall string-extended@0.0.8
+888 verbose unlock done using /Users/nadavlachish/.npm/_locks/string-extended-7d47e45a02238ce8.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/string-extended
+889 verbose write writing to /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js/package.json
+890 info preinstall declare.js@0.0.8
+891 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js/package.json
+892 verbose readDependencies loading dependencies from /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js/package.json
+893 silly install resolved []
+894 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+895 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+896 info linkStuff declare.js@0.0.8
+897 silly linkStuff declare.js@0.0.8 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules as its parent node_modules
+898 verbose linkBins declare.js@0.0.8
+899 verbose linkMans declare.js@0.0.8
+900 verbose rebuildBundles declare.js@0.0.8
+901 info install declare.js@0.0.8
+902 info postinstall declare.js@0.0.8
+903 verbose unlock done using /Users/nadavlachish/.npm/_locks/declare-js-c66a92b8c57bda74.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender/node_modules/declare.js
+904 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+905 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+906 info linkStuff extender@0.0.10
+907 silly linkStuff extender@0.0.10 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules as its parent node_modules
+908 verbose linkBins extender@0.0.10
+909 verbose linkMans extender@0.0.10
+910 verbose rebuildBundles extender@0.0.10
+911 verbose rebuildBundles [ 'declare.js' ]
+912 info install extender@0.0.10
+913 info postinstall extender@0.0.10
+914 verbose unlock done using /Users/nadavlachish/.npm/_locks/extender-a5c254e350e4b47d.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended/node_modules/extender
+915 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+916 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+917 info linkStuff extended@0.0.6
+918 silly linkStuff extended@0.0.6 has /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules as its parent node_modules
+919 verbose linkBins extended@0.0.6
+920 verbose linkMans extended@0.0.6
+921 verbose rebuildBundles extended@0.0.6
+922 verbose rebuildBundles [ 'extender' ]
+923 info install extended@0.0.6
+924 info postinstall extended@0.0.6
+925 verbose unlock done using /Users/nadavlachish/.npm/_locks/extended-6350ef5b3aad8184.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv/node_modules/extended
+926 verbose about to build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+927 info build /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+928 info linkStuff fast-csv@2.0.0
+929 silly linkStuff fast-csv@2.0.0 has /Users/nadavlachish/Documents/node/spending/node_modules as its parent node_modules
+930 verbose linkBins fast-csv@2.0.0
+931 verbose linkMans fast-csv@2.0.0
+932 verbose rebuildBundles fast-csv@2.0.0
+933 verbose rebuildBundles [ 'extended',
+933 verbose rebuildBundles   'is-extended',
+933 verbose rebuildBundles   'object-extended',
+933 verbose rebuildBundles   'string-extended' ]
+934 info install fast-csv@2.0.0
+935 info postinstall fast-csv@2.0.0
+936 verbose unlock done using /Users/nadavlachish/.npm/_locks/fast-csv-72eb77fc1be17b1b.lock for /Users/nadavlachish/Documents/node/spending/node_modules/fast-csv
+937 verbose validateInstall loading /Users/nadavlachish/Documents/node/spending/package.json for validation
+938 verbose stack Error: The package superagent@2.0.0 does not satisfy its siblings' peerDependencies requirements!
+938 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:125:32
+938 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:268:7
+938 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:142:5
+938 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+938 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+938 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+938 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+938 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+938 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:47:24)
+938 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-installed/read-installed.js:263:14
+939 verbose cwd /Users/nadavlachish/Documents/node/spending
+940 error Darwin 15.5.0
+941 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "fast-csv" "--save"
+942 error node v4.3.1
+943 error npm  v2.14.12
+944 error code EPEERINVALID
+945 error peerinvalid The package superagent@2.0.0 does not satisfy its siblings' peerDependencies requirements!
+945 error peerinvalid Peer superagent-bluebird-promise@3.0.0 wants superagent@1.x
+946 verbose exit [ 1, true ]

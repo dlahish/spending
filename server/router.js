@@ -2,8 +2,8 @@ module.exports = function(app) {
 
   const Authentication = require('./controllers/authentication');
   const passportService = require('./services/passport');
-  const db = require('./services/mongod');
   const passport = require('passport');
+  const db = require('./services/mongod');
 
   const multer = require('multer');
   var storage =   multer.diskStorage({
@@ -29,6 +29,9 @@ module.exports = function(app) {
 
   app.use('./upload', requireAuth);
   app.post('/upload', upload.single('file'), db.saveFileToMongo);
+  // app.post('/upload', upload.single('file'), function (req, res) {
+  //   console.log(req.file);
+  // });
 
   app.post('/signin', requireSignin, Authentication.signin)
   app.post('/signup', Authentication.signup);
