@@ -134,5 +134,6 @@ exports.saveFileToMongo = function(req, res) {
       fs.unlink(path, function(err) {
         if (err) { throw err; }
       })
+      res.send({ message: 'File saved!'});
     });
 };
