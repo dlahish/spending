@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/user_actions';
+import * as actions from '../actions';
 
 class SecurePage extends Component {
   componentWillMount() {

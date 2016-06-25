@@ -25,6 +25,7 @@ module.exports = function(app) {
 
   app.get('/', requireAuth, function(req, res) {
     res.send({ message: 'this is a secure path with a message from the API server' });
+    console.log(req.user);
   });
 
   app.get('/getemail', requireAuth, function(req, res) {
