@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
+import * as actions from '../actions'
 
 class UploadForm extends Component {
+
+  componentWillMount() {
+    if (!this.props.userEmail) {
+      this.props.getUserEmail();
+    }
+  }
 
   _handleSubmit(formProps) {
     console.log('formProps');
@@ -82,6 +89,6 @@ UploadForm = reduxForm({
   form: 'contact',
   fields: ['firstName', 'lastName', 'email', 'file'],
   validate
-}, mapStateToProps)(UploadForm);
+}, mapStateToProps, actions)(UploadForm);
 
 export default UploadForm;

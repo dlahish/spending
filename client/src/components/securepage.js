@@ -4,6 +4,9 @@ import * as actions from '../actions/user_actions';
 
 class SecurePage extends Component {
   componentWillMount() {
+    // if (!this.props.userEmail) {
+    //   this.props.getUserEmail();
+    // }
     this.props.fetchMessage();
   }
 

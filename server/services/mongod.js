@@ -105,9 +105,9 @@ exports.saveFileToMongo = function(req, res) {
       console.log('---------------');
       console.log(xxx);
       if (typeof newData.amount === 'number' ) {
-        User.findOne({'data': {$elemMatch: {amount: newData.amount}}}, function (err, user) {
+        User.findOne({'data': {$elemMatch: {amount: newData.amount}}}, function (err, dataMatch) {
           if (err) { console.log(err); }
-          if (user) {
+          if (dataMatch) {
               console.log('data already exists');
           } else {
               // var tempUser = new User;
@@ -127,7 +127,7 @@ exports.saveFileToMongo = function(req, res) {
               // });
           }
         });
-      } else { console.log('else else')};
+      } else { console.log('not a valid input')};
     })
     .on('end', function(){
       console.log('read finished');

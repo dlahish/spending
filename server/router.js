@@ -27,6 +27,10 @@ module.exports = function(app) {
     res.send({ message: 'this is a secure path with a message from the API server' });
   });
 
+  app.get('/getemail', requireAuth, function(req, res) {
+    res.send({ email: req.user.email });
+  });
+
   app.use('./upload', requireAuth);
   app.post('/upload', upload.single('file'), db.saveFileToMongo);
   // app.post('/upload', upload.single('file'), function (req, res) {
