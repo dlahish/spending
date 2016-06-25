@@ -28,18 +28,38 @@ exports.saveFileToMongo = function(req, res) {
       }
 
       if (typeof newData.amount === 'number' ) {
-        User.findOne({'data': {$elemMatch: {amount: newData.amount}}}, function (err, dataMatch) {
+        User.findOne({ email: email }, {'data': {$elemMatch: { amount: newData.amount, date: newData.date }}}, function(err, existingUser) {
           if (err) { console.log(err); }
-          if (dataMatch) {
+          if (!existingUser || existingUser.data.length > 0) {
+              console.log('existingUser -------');
+              console.log(existingUser);
+              console.log(existingUser.data.length);
               console.log('data already exists');
           } else {
-              User.update({ email: email }, {$push: { 'data' : newData }},{upsert:true}, function(err) {
-                if (err) { console.log(err); }
-                console.log('Success!');
-              });
+            User.update({ email: email }, {$push: { 'data' : newData }},{upsert:true}, function(err) {
+              if (err) { console.log(err); }
+              console.log('Success!');
+            });
           }
         });
       } else { console.log('not a valid input')};
+
+
+      // if (typeof newData.amount === 'number' ) {
+      //   User.findOne({'data': {$elemMatch: {amount: newData.amount}}}, function (err, dataMatch) {
+      //     if (err) { console.log(err); }
+      //     if (dataMatch) {
+      //         console.log('data already exists');
+      //     } else {
+      //         User.update({ email: email }, {$push: { 'data' : newData }},{upsert:true}, function(err, userr) {
+      //           if (err) { console.log(err); }
+      //           console.log('User.update -------');
+      //           console.log(user);
+      //           console.log('Success!');
+      //         });
+      //     }
+      //   });
+      // } else { console.log('not a valid input')};
     })
     .on('end', function(){
       console.log('read finished');
