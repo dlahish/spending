@@ -14,12 +14,13 @@ class SecurePage extends Component {
   render() {
     console.log('THIS PROPS DATA FROM SECURE PAGE');
     console.log(this.props.data);
-    var ttt = this.props.data;
-    console.log('tttttt');
-    var result = ttt.filter((obj) => {
-      return obj.amount == 216;
-    });
-    console.log(result);
+    // var ttt = this.props.data;
+    // console.log('tttttt');
+    // console.log(typeof ttt.amount);
+    // var result = ttt.filter((obj) => {
+    //   return obj.amount == 216;
+    // });
+    // console.log(result);
     // var xxx = [{a: 'aa'}, {b: 'bb'}, {c: 'cc'}];
     // var ppp = ttt.map((data1) => {
     //   console.log(data1.amount);

@@ -84,9 +84,11 @@ export function getUserData() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
-        dispatch({
-          type: GET_DATA,
-          payload: response.data.data
+        response.data.data.map((td) => {
+          dispatch({
+            type: GET_DATA,
+            payload: td
+          });
         });
       })
       .catch((err) => {
