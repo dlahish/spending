@@ -5,7 +5,8 @@ import {
   UNAUTH_USER,
   AUTH_ERROR,
   FETCH_MESSAGE,
-  GET_EMAIL
+  GET_EMAIL,
+  GET_DATA
 }
 from './types';
 
@@ -75,6 +76,21 @@ export function getUserEmail() {
       })
       .catch((err) => {
         dispatch(authError('Something went wrong'));
+      });
+  }
+}
+
+export function getUserData() {
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
+      .then(response => {
+        dispatch({
+          type: GET_DATA,
+          payload: response.data.data
+        });
+      })
+      .catch((err) => {
+        dispatch(authError('Something went wrong with GET_DATA'));
       });
   }
 }

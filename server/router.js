@@ -25,11 +25,17 @@ module.exports = function(app) {
 
   app.get('/', requireAuth, function(req, res) {
     res.send({ message: 'this is a secure path with a message from the API server' });
-    console.log(req.user);
+    //console.log(req.user);
   });
 
   app.get('/getemail', requireAuth, function(req, res) {
-    res.send({ email: req.user.email });
+    var userEmail = req.user.email;
+    res.send({ email: userEmail });
+  });
+
+  app.get('/getdata', requireAuth, function(req, res) {
+    var userData = req.user.data;
+    res.send({ data: userData });
   });
 
   app.use('./upload', requireAuth);
