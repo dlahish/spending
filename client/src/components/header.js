@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Signin from './auth/signin';
 
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
@@ -26,30 +27,35 @@ const styles = {
 }
 
 class Header extends Component {
+
   renderLinks() {
-    console.log('renderLinks');
     if (this.props.authenticated) {
-      return [
-        <li key="4">
-          <Link to="/signout">Sign Out</Link>
-        </li>,
-        <li key="3">
-          <Link to="/securepage">Secure Page</Link>
-        </li>,
-        <li key="5">
-          <Link to="/upload">Upload File</Link>
-        </li>
-      ];
+      return (
+        <ToolbarGroup>
+          <FlatButton
+            style={styles.flatbutton}
+            label="Sign Out"
+            linkButton={true}
+            containerElement={<Link to="/signout"></Link>}
+          />
+        </ToolbarGroup>
+      );
     }
 
-    return [
-      <li key="1">
-        <Link to="/signin">Sign In</Link>
-      </li>,
-      <li key="2">
-        <Link to="/signup">Sign Up</Link>
-      </li>,
-    ];
+    return (
+      <ToolbarGroup>
+        <Signin />
+      </ToolbarGroup>
+    );
+
+    // [
+    //   <li key="1">
+    //     <Link to="/signin">Sign In</Link>
+    //   </li>,
+    //   <li key="2">
+    //     <Link to="/signup">Sign Up</Link>
+    //   </li>,
+    // ];
   }
 
   handleTouchTap() {
@@ -61,17 +67,7 @@ class Header extends Component {
       <div>
         <Toolbar style={styles.toolbar}>
           <ToolbarTitle style={styles.toolbartitle} text="Spending" />
-          <ToolbarGroup>
-            <TextField
-              hintText="Email:"
-              style={styles.textfield}
-            />
-            <TextField
-              hintText="Password:"
-            />
-            <FlatButton style={styles.flatbutton} label="Sign In" />
-            <FlatButton style={styles.flatbutton} label="Sign Up" />
-          </ToolbarGroup>
+            {this.renderLinks()}
         </Toolbar>
       </div>
     );

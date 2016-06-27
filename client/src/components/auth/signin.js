@@ -1,6 +1,33 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import * as actions from '../../actions';
+import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
+import { deepPurple300, grey50, red900 } from 'material-ui/styles/colors';
+import { ToolbarTitle } from 'material-ui/Toolbar';
+
+const styles = {
+  toolbartitle: {
+    cursor: 'pointer'
+  },
+
+  toolbar: {
+    backgroundColor: deepPurple300
+  },
+
+  flatbutton: {
+    marginRight: -15
+  },
+
+  textfield: {
+    marginRight: 5
+  },
+
+  errormessgae: {
+    color: red900,
+    marginTop: -90
+  }
+}
 
 class Signin extends Component {
   handleFormSubmit({ email, password }) {
@@ -9,10 +36,10 @@ class Signin extends Component {
 
   renderError() {
     if (this.props.errorMessage) {
+      let text = 'Oops! ' + this.props.errorMessage;
       return (
-        <div>
-          <strong>Oops!</strong> {this.props.errorMessage}
-        </div>
+        <ToolbarTitle style={ styles.errormessgae } text={text} />
+
       );
     }
   }
@@ -22,16 +49,28 @@ class Signin extends Component {
 
     return(
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset>
-          <label>Email:</label>
-          <input {...email} />
-        </fieldset>
-        <fieldset>
-          <label>Password:</label>
-          <input type="password" {...password} />
-        </fieldset>
         {this.renderError()}
-        <button action="submit">Sign In</button>
+        <TextField
+          {...email}
+          hintText="Email:"
+          style={styles.textfield}
+          autoComplete='on'
+        />
+        <TextField
+          {...password}
+          hintText="Password:"
+          type="password"
+        />
+        <FlatButton
+          style={styles.flatbutton}
+          label="Sign In"
+          type="submit"
+        />
+        <FlatButton
+          style={styles.flatbutton}
+          label="Sign Up"
+
+        />
       </form>
     );
   }
