@@ -34,22 +34,13 @@ class Signin extends Component {
     this.props.signinUser({ email, password });
   }
 
-  renderError() {
-    if (this.props.errorMessage) {
-      let text = 'Oops! ' + this.props.errorMessage;
-      return (
-        <ToolbarTitle style={ styles.errormessgae } text={text} />
 
-      );
-    }
-  }
 
   render() {
     const { handleSubmit, fields: { email, password }} = this.props;
 
     return(
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        {this.renderError()}
         <TextField
           {...email}
           hintText="Email:"
