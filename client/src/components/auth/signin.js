@@ -21,7 +21,10 @@ const styles = {
   },
 
   textfield: {
-    marginRight: 5
+    paddingTop: '1%',
+    marginRight: 5,
+    height: '70%',
+    width: 200
   }
 }
 
@@ -45,6 +48,7 @@ class Signin extends Component {
           <TextField
             {...password}
             hintText="Password:"
+            style={styles.textfield}
             type="password"
           />
           <FlatButton

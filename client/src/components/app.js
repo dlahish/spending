@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './header';
+import Footer from './footer';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import * as Colors from 'material-ui/styles/colors';
+
+
 
 class App extends Component {
 
@@ -10,9 +15,18 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <Header />
-          {this.props.children}
+          <div style={{height: 630}} className="default-primary-color">
+            <Header />
+            <div style={{ padding: 30, textAlign: 'center' }} >
+              {this.props.children}
+            </div>
+
+          </div>
+          <div style={{height: 50}} className="light-primary-color">
+            <Footer />
+          </div>
         </div>
+
       </MuiThemeProvider>
     );
   }
