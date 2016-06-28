@@ -3,7 +3,8 @@ import {
   AUTH_ERROR,
   UNAUTH_USER,
   GET_EMAIL,
-  CLEAR_ERROR
+  CLEAR_ERROR,
+  ADD_ROUTE
 } from '../actions/types';
 
 export default function(state={}, action) {
@@ -18,6 +19,8 @@ export default function(state={}, action) {
       return { ...state, userEmail: action.payload };
     case CLEAR_ERROR:
       return { ...state, error: '' };
+    case ADD_ROUTE:
+      return { ...state, currentRoute: action.payload };
   }
 
   return state;

@@ -7,7 +7,8 @@ import {
   CLEAR_ERROR,
   FETCH_MESSAGE,
   GET_EMAIL,
-  GET_DATA
+  GET_DATA,
+  ADD_ROUTE
 }
 from './types';
 
@@ -41,6 +42,7 @@ export function signinUser({ email, password }) {
       })
       .catch((err) => {
         dispatch(authError('Bad Login Info'));
+        dispatch(addRouteToStore('/loginattempt'));
         browserHistory.push('/loginattempt');
       });
   }
@@ -97,6 +99,13 @@ export function getUserData() {
         dispatch(authError('Something went wrong with GET_DATA'));
       });
   }
+}
+
+export function addRouteToStore(route) {
+  return {
+    type: ADD_ROUTE,
+    payload: route
+  };
 }
 
 export function clearAuthError() {

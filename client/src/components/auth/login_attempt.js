@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import * as actions from '../../actions';
 
 class LoginAttempt extends Component {
-  nav() {
-    console.log(this.props.location.pathname);
+
+  componentWillUnmount() {
+    this.props.addRouteToStore('');
   }
 
   render() {
     return (
       <div>
         <h2>bad login attempt</h2>
-        <button onClick={this.nav.bind(this)}>Click</button>
+
       </div>
     );
   }
@@ -19,8 +21,9 @@ class LoginAttempt extends Component {
 
 function mapStateToProps(state) {
   return {
-    errorMessage: state.auth.error
+    errorMessage: state.auth.error,
+    route: state.auth.currentRoute
   };
 }
 
-export default withRouter(connect(mapStateToProps)(LoginAttempt));
+export default withRouter(connect(mapStateToProps, actions)(LoginAttempt));

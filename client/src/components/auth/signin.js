@@ -30,13 +30,6 @@ class Signin extends Component {
     this.props.signinUser({ email, password });
   }
 
-  handleSigninButton() {
-    console.log('handle handle');
-    if(this.props.errorMessage) {
-      this.props.clearAuthError();
-    }
-  }
-
   render() {
     const { handleSubmit, fields: { email, password }} = this.props;
 

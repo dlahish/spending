@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Header from './header';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class App extends Component {
+class App extends Component {
 
   render() {
     return (
@@ -15,3 +17,5 @@ export default class App extends Component {
     );
   }
 };
+
+export default connect(null, actions)(App);

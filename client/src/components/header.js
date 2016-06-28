@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import Signin from './auth/signin';
 import { browserHistory } from 'react-router';
 import * as actions from '../actions';
-
+import { withRouter } from 'react-router';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
@@ -31,6 +31,7 @@ const styles = {
 class Header extends Component {
 
   renderLinks() {
+    if (this.props.route == '/loginattempt') { return; }
     if (this.props.authenticated) {
       return (
         <ToolbarGroup>
@@ -56,13 +57,6 @@ class Header extends Component {
   }
 
   render() {
-    //let brs = this.props.location.pathname;
-    console.log('ownProps.id');
-    console.log(this.props.stateData);
-    console.log('currentLocation');
-    console.log(this.props.id);
-    console.log('this.props.stateData');
-    console.log(this.props);
     return(
       <div>
         <Toolbar style={styles.toolbar}>
@@ -82,8 +76,8 @@ function mapStateToProps(state, location) {
   return {
     authenticated: state.auth.authenticated,
     errorMessage: state.auth.error,
-    stateData: location
+    route: state.auth.currentRoute
   };
 }
 
-export default connect(mapStateToProps, actions)(Header);
+export default withRouter(connect(mapStateToProps, actions)(Header));
