@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 import * as actions from '../../actions';
 import Paper from 'material-ui/Paper';
 import * as Colors from 'material-ui/styles/colors';
+import SigninPage from './signin_page';
+import FlatButton from 'material-ui/FlatButton';
 
 const style = {
-  height: 100,
-  width: 500,
-  margin: 20,
+  margin: 50,
   textAlign: 'center',
   marginTop: 100,
   margin: 'auto',
-  width: '50%',
+  width: '40%',
   backgroundColor: 'white',
-  paddingTop: 8
+  padding: 20,
+  paddingTop: 25
 };
 
 class LoginAttempt extends Component {
@@ -25,9 +26,22 @@ class LoginAttempt extends Component {
 
   render() {
     return (
-      <Paper style={style} zDephth={3} >
-        <p>Login into Spending</p>
-      </Paper>
+      <div>
+        <div>
+          <Paper style={style} zDephth={3} >
+            <SigninPage />
+            <FlatButton
+              style={{ marginTop: 10 }}
+              label="Sign Up for Spending"
+              containerElement={<Link to="/signup"></Link>}
+            />
+          </Paper>
+        </div>
+        <div style={{ color: 'black', marginTop: 6 }}>
+
+        </div>
+      </div>
+
     );
   }
 }
