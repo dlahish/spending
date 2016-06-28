@@ -4,6 +4,7 @@ import {
   AUTH_USER,
   UNAUTH_USER,
   AUTH_ERROR,
+  CLEAR_ERROR,
   FETCH_MESSAGE,
   GET_EMAIL,
   GET_DATA
@@ -40,6 +41,7 @@ export function signinUser({ email, password }) {
       })
       .catch((err) => {
         dispatch(authError('Bad Login Info'));
+        browserHistory.push('/loginattempt');
       });
   }
 }
@@ -95,6 +97,10 @@ export function getUserData() {
         dispatch(authError('Something went wrong with GET_DATA'));
       });
   }
+}
+
+export function clearAuthError() {
+  return { type: CLEAR_ERROR };
 }
 
 function authError(error) {

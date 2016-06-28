@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Signin from './auth/signin';
 import { browserHistory } from 'react-router';
+import * as actions from '../actions';
 
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
@@ -24,26 +25,10 @@ const styles = {
 
   textfield: {
     marginRight: 5
-  },
-
-  errormessgae: {
-    color: red900,
-    fontSize: '120%',
-    fontWeight: 'bold'
   }
 }
 
 class Header extends Component {
-  renderError() {
-    if (this.props.errorMessage) {
-      let text = 'Oops! ' + this.props.errorMessage;
-      return (
-        <ToolbarGroup style={{ marginRight: -350 }}>
-          <ToolbarTitle style={ styles.errormessgae } text={text} />
-        </ToolbarGroup>
-      );
-    }
-  }
 
   renderLinks() {
     if (this.props.authenticated) {
@@ -71,6 +56,13 @@ class Header extends Component {
   }
 
   render() {
+    //let brs = this.props.location.pathname;
+    console.log('ownProps.id');
+    console.log(this.props.stateData);
+    console.log('currentLocation');
+    console.log(this.props.id);
+    console.log('this.props.stateData');
+    console.log(this.props);
     return(
       <div>
         <Toolbar style={styles.toolbar}>
@@ -79,7 +71,6 @@ class Header extends Component {
             text="Spending"
             onTouchTap={this.handleTitleTouchTap}
           />
-            {this.renderError()}
             {this.renderLinks()}
         </Toolbar>
       </div>
@@ -87,15 +78,12 @@ class Header extends Component {
   }
 }
 
-{/*<ul>
-  {this.renderLinks()}
-</ul>*/}
-
-function mapStateToProps(state) {
+function mapStateToProps(state, location) {
   return {
     authenticated: state.auth.authenticated,
-    errorMessage: state.auth.error
+    errorMessage: state.auth.error,
+    stateData: location
   };
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, actions)(Header);

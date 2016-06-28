@@ -4,7 +4,8 @@ import * as actions from '../../actions';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import { deepPurple300, grey50, red900 } from 'material-ui/styles/colors';
-import { ToolbarTitle } from 'material-ui/Toolbar';
+import { ToolbarTitle, ToolbarGroup } from 'material-ui/Toolbar';
+import { Link, browserHistory } from 'react-router';
 
 const styles = {
   toolbartitle: {
@@ -16,16 +17,11 @@ const styles = {
   },
 
   flatbutton: {
-    marginRight: -15
+    marginRight: 0
   },
 
   textfield: {
     marginRight: 5
-  },
-
-  errormessgae: {
-    color: red900,
-    marginTop: -90
   }
 }
 
@@ -34,41 +30,52 @@ class Signin extends Component {
     this.props.signinUser({ email, password });
   }
 
-
+  handleSigninButton() {
+    console.log('handle handle');
+    if(this.props.errorMessage) {
+      this.props.clearAuthError();
+    }
+  }
 
   render() {
     const { handleSubmit, fields: { email, password }} = this.props;
 
     return(
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <TextField
-          {...email}
-          hintText="Email:"
-          style={styles.textfield}
-          autoComplete='on'
-        />
-        <TextField
-          {...password}
-          hintText="Password:"
-          type="password"
-        />
-        <FlatButton
-          style={styles.flatbutton}
-          label="Sign In"
-          type="submit"
-        />
-        <FlatButton
-          style={styles.flatbutton}
-          label="Sign Up"
-
-        />
-      </form>
+      <ToolbarGroup>
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <TextField
+            {...email}
+            hintText="Email:"
+            style={styles.textfield}
+            autoComplete='on'
+          />
+          <TextField
+            {...password}
+            hintText="Password:"
+            type="password"
+          />
+          <FlatButton
+            style={styles.flatbutton}
+            label="Sign In"
+            type="submit"
+            onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+          />
+          <FlatButton
+            style={styles.flatbutton}
+            label="Sign Up"
+            onTouchTap={ () => { browserHistory.push('/signup'); }}
+            //containerElement={<Link to="/signup"></Link>}
+          />
+        </form>
+      </ToolbarGroup>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return {
+    errorMessage: state.auth.error
+  };
 }
 export default reduxForm({
   form: 'signin',
