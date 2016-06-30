@@ -40,6 +40,11 @@ export function signinUser({ email, password }) {
         localStorage.setItem('token', response.data.token);
         browserHistory.push('/securepage');
       })
+      .then(axios.get(`${ROOT_URL}/err`)
+        .then(response => {
+          console.log('ERRRR');
+          console.log(response);
+        }))
       .catch((err) => {
         dispatch(authError('Bad Login Info'));
         dispatch(addRouteToStore('/loginattempt'));
