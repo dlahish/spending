@@ -1,22 +1,22 @@
-var login = require('./login');
+var login = require('./signin');
 var signup = require('./signup');
 const models = require('../models/user');
 const User = models.User;
 
 module.exports = function(passport){
 
-	// // Passport needs to be able to serialize and deserialize users to support persistent login sessions
-  //   passport.serializeUser(function(user, done) {
-  //       console.log('serializing user: ');console.log(user);
-  //       done(null, user._id);
-  //   });
-  //
-  //   passport.deserializeUser(function(id, done) {
-  //       User.findById(id, function(err, user) {
-  //           console.log('deserializing user:',user);
-  //           done(err, user);
-  //       });
-  //   });
+	// Passport needs to be able to serialize and deserialize users to support persistent login sessions
+    passport.serializeUser(function(user, done) {
+        console.log('serializing user: ');console.log(user);
+        done(null, user._id);
+    });
+
+    passport.deserializeUser(function(id, done) {
+        User.findById(id, function(err, user) {
+            console.log('deserializing user:',user);
+            done(err, user);
+        });
+    });
 
     // Setting up Passport Strategies for Login and SignUp/Registration
     login(passport);

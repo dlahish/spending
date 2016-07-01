@@ -46,28 +46,19 @@ module.exports = function(app) {
     //console.log(req.user);
   });
 
-  // app.post('/signup', passport.authenticate('signup', {
-	// 	successRedirect: 'http://www.walla.co.il',
-	// 	failureRedirect: 'http://www.google.com',
-	// 	failureFlash : true
-	// }));
-
-  // app.post('/signup', function(req, res, next){
-  //   passport.authenticate('signup', function(err, user, info){
-  //     if (err) { return (err); }
-  //     if (!user) { return res.send({ message: info.message }); }
-  //     // res.json({ token: tokenForUser(user) });
-  //   })(req, res, next);
-  // });
-
-  app.post('/signup', function(req, res, next){
-    passport.authenticate('signup', function(err, user, info){
+  app.post('/signup', function(req, res, next) {
+    passport.authenticate('signup', function(err, user, info) {
       if (err) { return (err); }
       if (!user) { return res.send({ message: info.message }); }
-      // res.json({ token: tokenForUser(user) });
+      res.json({ token: tokenForUser(user) });
     })(req, res, next);
   });
 
+  // app.post('/signin', function(req, res, next){
+  //   passport.authenticate('signin', function(err, user, info) {
+  //
+  //   })
+  // });
 
 
   // app.post('/signin', passport.authenticate('login', {
