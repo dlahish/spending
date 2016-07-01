@@ -9,9 +9,16 @@ var requireAuth = function (req, res, next) {
 }
 
 module.exports = function(app) {
+  const jwt = require('jwt-simple');
   const passport = require('passport');
   const initPassport = require('./services/passport_init');
   initPassport(passport);
+  const config = require('./config');
+
+  function tokenForUser(user) {
+    const timestamp = new Date().getTime();
+    return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+  }
 
   // const passport = require('passport');
   const db = require('./services/mongod');
@@ -39,21 +46,39 @@ module.exports = function(app) {
     //console.log(req.user);
   });
 
-  app.post('/signup', passport.authenticate('signup', {
-		successRedirect: 'http://www.walla.co.il',
-		failureRedirect: 'http://www.google.com',
-		failureFlash : true
-	}));
+  // app.post('/signup', passport.authenticate('signup', {
+	// 	successRedirect: 'http://www.walla.co.il',
+	// 	failureRedirect: 'http://www.google.com',
+	// 	failureFlash : true
+	// }));
 
-  app.post('/signin', passport.authenticate('login', {
-		// successRedirect: '/home',
-		// failureRedirect: '/err',
-		failureFlash : true
-	}), function(req, res) {
-    console.log(req);
-    var mmm = req.flash('message');
-    res.send({ message: mmm });
+  // app.post('/signup', function(req, res, next){
+  //   passport.authenticate('signup', function(err, user, info){
+  //     if (err) { return (err); }
+  //     if (!user) { return res.send({ message: info.message }); }
+  //     // res.json({ token: tokenForUser(user) });
+  //   })(req, res, next);
+  // });
+
+  app.post('/signup', function(req, res, next){
+    passport.authenticate('signup', function(err, user, info){
+      if (err) { return (err); }
+      if (!user) { return res.send({ message: info.message }); }
+      // res.json({ token: tokenForUser(user) });
+    })(req, res, next);
   });
+
+
+
+  // app.post('/signin', passport.authenticate('login', {
+	// 	// successRedirect: '/home',
+	// 	// failureRedirect: '/err',
+	// 	failureFlash : true
+	// }), function(req, res) {
+  //   console.log(req);
+  //   var mmm = req.flash('message');
+  //   res.send({ message: mmm });
+  // });
 
   app.get('/err', function(req, res) {
     	// Display the Login page with any flash message, if any
