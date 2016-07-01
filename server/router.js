@@ -4,6 +4,8 @@ module.exports = function(app) {
   const passportService = require('./services/passport');
   const passport = require('passport');
   const db = require('./services/mongod');
+  const jwt = require('jwt-simple');
+  const config = require('./config');
 
   const multer = require('multer');
   var storage =   multer.diskStorage({
@@ -16,6 +18,11 @@ module.exports = function(app) {
     }
   });
 
+  function tokenForUser(user) {
+    const timestamp = new Date().getTime();
+    return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+  }
+
   var upload = multer({ storage : storage });
   const fs = require('fs');
 
@@ -25,7 +32,6 @@ module.exports = function(app) {
 
   app.get('/', requireAuth, function(req, res) {
     res.send({ message: 'this is a secure path with a message from the API server' });
-    //console.log(req.user);
   });
 
   app.get('/getemail', requireAuth, function(req, res) {
@@ -46,8 +52,9 @@ module.exports = function(app) {
   app.post('/signin', function(req, res, next){
     passport.authenticate('local', function(err, user, info) {
       if (err) { return (err); }
-      if (!user) { return res.send({ message: info.message }); }
-      Authentication.signin;
+      if (!user) { return res.send({ message: 'No user found' }); }
+      if (user.error) { return res.send({ message: 'Invalid password' }); }
+      res.send( { token: tokenForUser(user) });
     })(req, res, next);
   });
 
