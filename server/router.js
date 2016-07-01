@@ -20,7 +20,7 @@ module.exports = function(app) {
   const fs = require('fs');
 
   const requireAuth = passport.authenticate('jwt', { session: false });
-  const requireSignin = passport.authenticate('local', { session: false });
+  // const requireSignin = passport.authenticate('local', { session: false });
 
 
   app.get('/', requireAuth, function(req, res) {
@@ -40,10 +40,16 @@ module.exports = function(app) {
 
   app.use('./upload', requireAuth);
   app.post('/upload', upload.single('file'), db.saveFileToMongo);
-  // app.post('/upload', upload.single('file'), function (req, res) {
-  //   console.log(req.file);
-  // });
 
-  app.post('/signin', requireSignin, Authentication.signin)
+  // app.post('/signin', requireSignin, Authentication.signin);
+
+  app.post('/signin', function(req, res, next){
+    passport.authenticate('local', function(err, user, info) {
+      if (err) { return (err); }
+      if (!user) { return res.send({ message: info.message }); }
+      Authentication.signin;
+    })(req, res, next);
+  });
+
   app.post('/signup', Authentication.signup);
 }
