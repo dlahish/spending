@@ -31,7 +31,7 @@ const styles = {
 class Header extends Component {
 
   renderLinks() {
-    if (this.props.route == '/loginattempt') { return; }
+    if (this.props.route == '/signinattempt') { return; }
     if (this.props.authenticated) {
       return (
         <ToolbarGroup>

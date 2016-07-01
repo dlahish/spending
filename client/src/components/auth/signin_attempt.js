@@ -18,11 +18,14 @@ const style = {
   paddingTop: 25
 };
 
-class LoginAttempt extends Component {
-
+class SigninAttempt extends Component {
   componentWillUnmount() {
     this.props.addRouteToStore('');
   }
+
+  // componentWillUnmount() {
+  //   this.props.clearAuthError();
+  // }
 
   render() {
     return (
@@ -53,4 +56,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps, actions)(LoginAttempt));
+export default withRouter(connect(mapStateToProps, actions)(SigninAttempt));

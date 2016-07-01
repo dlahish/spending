@@ -42,16 +42,16 @@ export function signinUser({ email, password }) {
             browserHistory.push('/securepage');
           }
 
-          if (response.data.message) {
+          else if (response.data.message) {
             dispatch(authError(response.data.message));
-            dispatch(addRouteToStore('/loginattempt'));
-            browserHistory.push('/loginattempt');
+            dispatch(addRouteToStore('/signinattempt'));
+            browserHistory.push('/signinattempt');
           }
       })
       .catch((err) => {
-        dispatch(authError('Bad Login Info'));
-        dispatch(addRouteToStore('/loginattempt'));
-        browserHistory.push('/loginattempt');
+        dispatch(authError('Bad login info'));
+        dispatch(addRouteToStore('/signinattempt'));
+        browserHistory.push('/signinattempt');
       });
   }
 }

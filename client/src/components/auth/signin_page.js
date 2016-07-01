@@ -44,6 +44,7 @@ const styles = {
 // }
 
 class Signin extends Component {
+
   handleFormSubmit({ email, password }) {
     this.props.signinUser({ email, password });
   }
