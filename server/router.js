@@ -54,11 +54,14 @@ module.exports = function(app) {
     })(req, res, next);
   });
 
-  // app.post('/signin', function(req, res, next){
-  //   passport.authenticate('signin', function(err, user, info) {
-  //
-  //   })
-  // });
+  app.post('/signin', function(req, res, next){
+    passport.authenticate('signin', function(err, user, info) {
+      if (err) { return (err); }
+      if (!user) { return res.send({ message: info.error }); }
+      if (user.error) { return res.send({ message: 'Invalid password.' }); }
+      res.json({ token: tokenForUser(user) });
+    })(req, res, next);
+  });
 
 
   // app.post('/signin', passport.authenticate('login', {
