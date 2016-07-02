@@ -8,7 +8,8 @@ import {
   FETCH_MESSAGE,
   GET_EMAIL,
   GET_DATA,
-  ADD_ROUTE
+  ADD_ROUTE,
+  GET_TOTAL
 }
 from './types';
 
@@ -101,6 +102,24 @@ export function getUserData() {
             type: GET_DATA,
             payload: td
           });
+        });
+      })
+      .catch((err) => {
+        dispatch(authError('Something went wrong with GET_DATA'));
+      });
+  }
+}
+
+export function getTotal() {
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/gettotal`, { headers: { authorization: localStorage.getItem('token') }})
+      .then(response => {
+        dispatch({
+          type: GET_TOTAL,
+          payload: {
+            totalIncome: response.data.income,
+            totalExpense: response.data.expense
+          }
         });
       })
       .catch((err) => {

@@ -21,6 +21,9 @@ const dataSchema = new Schema({
 const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
+  username: String,
+  totalIncome: Number,
+  totalExpense: Number,
   data: [dataSchema]
 });
 

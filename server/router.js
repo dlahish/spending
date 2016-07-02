@@ -44,6 +44,14 @@ module.exports = function(app) {
     res.send({ data: userData });
   });
 
+  app.get('/gettotal', requireAuth, function(req, res) {
+    console.log('REQ USER ---------');
+    console.log(req.user);
+    var totalIncome = req.user.totalIncome;
+    var totalExpense = req.user.totalExpense;
+    res.send({ income: totalIncome, expense: totalExpense });
+  });
+
   app.use('./upload', requireAuth);
   app.post('/upload', upload.single('file'), db.saveFileToMongo);
 

@@ -8,28 +8,17 @@ class SecurePage extends Component {
       this.props.getUserEmail();
     }
     this.props.fetchMessage();
-    this.props.getUserData();
+    // this.props.getUserData();
+    this.props.getTotal();
   }
 
   render() {
-    console.log('THIS PROPS DATA FROM SECURE PAGE');
-    console.log(this.props.data);
-    // var ttt = this.props.data;
-    // console.log('tttttt');
-    // console.log(typeof ttt.amount);
-    // var result = ttt.filter((obj) => {
-    //   return obj.amount == 216;
-    // });
-    // console.log(result);
-    // var xxx = [{a: 'aa'}, {b: 'bb'}, {c: 'cc'}];
-    // var ppp = ttt.map((data1) => {
-    //   console.log(data1.amount);
-    // })
-
     return (
       <div>
         <div>{this.props.message}</div>
         <div>{this.props.email}</div>
+        <div>{this.props.totalIncome}</div>
+        <div>{this.props.totalExpense}</div>
       </div>
     );
   }
@@ -39,7 +28,9 @@ function mapStateToProps(state) {
   return {
     message: state.user.message,
     email: state.auth.userEmail,
-    data: state.user.data
+    data: state.user.data,
+    totalIncome: state.user.totalIncome,
+    totalExpense: state.user.totalExpense
   };
 }
 

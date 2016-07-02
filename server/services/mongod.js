@@ -31,12 +31,28 @@ exports.saveFileToMongo = function(req, res) {
         User.findOne({ email: email }, {'data': {$elemMatch: { amount: newData.amount, date: newData.date }}}, function(err, existingUser) {
           if (err) { console.log(err); }
           if (!existingUser || existingUser.data.length > 0) {
-              console.log('existingUser -------');
-              console.log(existingUser);
-              console.log(existingUser.data.length);
+              // console.log('existingUser -------');
+              // console.log(existingUser);
+              // console.log(existingUser.data.length);
               console.log('data already exists');
           } else {
-            User.update({ email: email }, {$push: { 'data' : newData }},{upsert:true}, function(err) {
+            if(!existingUser.totalIncome) {
+              existingUser.totalIncome = 0;
+            }
+            console.log('existingUser.totalIncome -----------');
+            console.log(existingUser.totalIncome);
+            console.log('newData.amount -------');
+            console.log(newData.amount);
+            if (newData.amount > 0) {
+              existingUser.update({ $inc: { totalIncome: newData.amount }}, function(err){
+                if (err) { console.log(err) ;}
+              });
+            } else if (newData.amount < 0) {
+              existingUser.update({ $inc: { totalExpense: newData.amount }}, function(err){
+                if (err) { console.log(err) ;}
+              });
+            }
+            existingUser.update({$push: { 'data': newData }},{ upsert:true }, function(err) {
               if (err) { console.log(err); }
               console.log('Success!');
             });
@@ -69,3 +85,7 @@ exports.saveFileToMongo = function(req, res) {
       res.send({ message: 'File saved!'});
     });
 };
+
+function addTotalAmount() {
+
+}

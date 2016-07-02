@@ -8,3 +8,4 @@ export const REMOVE_ROUTE = 'remove_route';
 export const FETCH_MESSAGE = 'fetch_message';
 export const GET_EMAIL = 'get_email';
 export const GET_DATA = 'get_data';
+export const GET_TOTAL = 'get_total';
