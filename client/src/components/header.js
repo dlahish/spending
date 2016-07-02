@@ -37,6 +37,12 @@ class Header extends Component {
         <ToolbarGroup>
           <FlatButton
             style={styles.flatbutton}
+            label="Dashboard"
+            linkButton={true}
+            containerElement={<Link to="/securepage"></Link>}
+          />
+          <FlatButton
+            style={styles.flatbutton}
             label="Sign Out"
             linkButton={true}
             containerElement={<Link to="/signout"></Link>}

@@ -15,8 +15,10 @@ class SecurePage extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.message}</div>
-        <div>{this.props.email}</div>
+        <div>
+          <h3>Your email address:</h3>
+          <p> {this.props.email}</p>
+        </div>
         <div>{this.props.totalIncome}</div>
         <div>{this.props.totalExpense}</div>
       </div>
