@@ -29,6 +29,10 @@ class Signup extends Component {
     this.props.signupUser(formProps);
   }
 
+  componentWillMount() {
+    this.props.addRouteToStore('/signup');
+  }
+
   renderError() {
     if (this.props.errorMessage) {
       return (

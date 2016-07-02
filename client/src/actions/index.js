@@ -116,6 +116,12 @@ export function addRouteToStore(route) {
   };
 }
 
+export function removeRouteFromStore() {
+  return {
+    type: REMOVE_ROUTE
+  };
+}
+
 export function clearAuthError() {
   return { type: CLEAR_ERROR };
 }

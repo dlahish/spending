@@ -51,9 +51,8 @@ class Signin extends Component {
   }
 
   render() {
+
     const { handleSubmit, fields: { email, password }} = this.props;
-    console.log('this.props.errorMessage');
-    console.log(this.props.errorMessage);
 
     return(
       <div>
@@ -77,7 +76,7 @@ class Signin extends Component {
             style={styles.flatbutton}
             label="Sign In"
             type="submit"
-            //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+            //onTouchTap={this.handleSigninButton.bind(this)}
           />
         </form>
       </div>

@@ -19,13 +19,11 @@ const style = {
 };
 
 class SigninAttempt extends Component {
+
   componentWillUnmount() {
+    this.props.clearAuthError();
     this.props.addRouteToStore('');
   }
-
-  // componentWillUnmount() {
-  //   this.props.clearAuthError();
-  // }
 
   render() {
     return (
