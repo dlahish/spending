@@ -54,11 +54,8 @@ module.exports = function(app) {
       return res.send({ message: 'No user supplied' });
     }
     passport.authenticate('local', function(err, user, info) {
-      console.log('USER ------');
-      console.log(user);
       if (err) { return (err); }
-      if (!user) { return res.send({ message: 'No user found' }); }
-      if (user && !req.body.email) { return res.send({ message: 'No password supplied' }); }
+      if (!user) { return res.send({ message: 'Bad login info' }); }
       if (user.error) { return res.send({ message: 'Invalid password' }); }
       res.send( { token: tokenForUser(user) });
     })(req, res, next);

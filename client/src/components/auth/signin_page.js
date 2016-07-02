@@ -29,7 +29,8 @@ const styles = {
   },
 
   label: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 25
   }
 }
 

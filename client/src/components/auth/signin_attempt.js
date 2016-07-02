@@ -35,6 +35,7 @@ class SigninAttempt extends Component {
             <SigninPage />
             <FlatButton
               style={{ marginTop: 10 }}
+              secondary={true}
               label="Sign Up for Spending"
               containerElement={<Link to="/signup"></Link>}
             />

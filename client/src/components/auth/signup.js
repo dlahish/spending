@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
+import TextField from 'material-ui/TextField';
+import Paper from 'material-ui/Paper';
+import RaisedButton from 'material-ui/RaisedButton';
+import * as Colors from 'material-ui/styles/colors';
 import * as actions from '../../actions';
+
+const styles = {
+  paper : {
+    margin: 50,
+    textAlign: 'center',
+    marginTop: 100,
+    margin: 'auto',
+    width: '40%',
+    backgroundColor: 'white',
+    padding: 20,
+    paddingTop: 25
+  },
+
+  label: {
+    fontWeight: 'bold',
+    fontSize: 30,
+  }
+};
 
 class Signup extends Component {
   handleFormSubmit(formProps) {
@@ -21,30 +43,49 @@ class Signup extends Component {
     const { handleSubmit, fields: {email, password, passwordConfirm}} = this.props;
 
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset>
-          <label>Email:</label>
-          <input {...email} />
-          {email.touched && email.error && <div className="error">{email.error}</div>}
-        </fieldset>
-        <fieldset>
-          <label>Password:</label>
-          <input type="password" {...password} />
-          {password.touched && password.error && passwordConfirm.touched && <div className="error">{password.error}</div>}
-        </fieldset>
-        <fieldset>
-          <label>Confirm Password:</label>
-          <input type="password" {...passwordConfirm} />
-          {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}
-        </fieldset>
-        {this.renderError()}
-        <button action="submit">Sign Up</button>
-      </form>
+      <Paper style={styles.paper} zDephth={3} >
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <label style={styles.label}>Sign Up for Spending</label><br /><br />
+          <div>
+            <TextField hintText = 'Email:'
+              name='Email'
+              errorText = { this.props.errorMessage || email.touched && email.error }
+              {...email}
+            />
+          </div><br />
+          <div>
+            <TextField hintText = 'Password:'
+              name='Password'
+              type="password"
+              errorText = { password.touched && password.error }
+              {...password}
+            />
+          </div><br />
+          <div>
+            <TextField hintText = 'Confirm Password:'
+              name='Email'
+              type="password"
+              errorText = { passwordConfirm.touched && passwordConfirm.error }
+              {...passwordConfirm}
+            />
+          </div><br />
+
+          <RaisedButton
+            primary={true}
+            style={{ marginTop: 10 }}
+            label="Sign Up"
+            type="submit"
+            //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+          />
+
+        </form>
+      </Paper>
+
     );
   }
 }
 
-function validate(formProps) {
+const validate = formProps => {
   const errors = {};
 
   if (!formProps.email) {
