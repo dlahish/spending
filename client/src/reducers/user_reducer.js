@@ -9,7 +9,7 @@ const initialState = {
   message: '',
   totalIncome: 0,
   totalExpense: 0,
-  visibilityFilter: 'ALL'
+  visibilityFilter: 'SHOW_ALL'
 }
 
 export default function(state = initialState, action) {

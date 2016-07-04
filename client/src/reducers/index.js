@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   form,
   auth: authReducer,
   user: userReducer,
-  dataFromServer: dataReducer
+  data: dataReducer
 });
 
 export default rootReducer;

@@ -8,7 +8,7 @@ const getVisibleData = (
   filter
 ) => {
   switch (filter) {
-    case 'ALL':
+    case 'SHOW_ALL':
       return data;
     case 'SHOW_INCOME':
       return data.filter(d => d.amount > 0);
@@ -40,7 +40,7 @@ class SecurePage extends Component {
           Show:
           {' '}
           <FilterLink
-            filter='All'
+            filter='SHOW_All'
           >
             All
           </FilterLink>
@@ -76,7 +76,7 @@ function mapStateToProps(state) {
   return {
     message: state.user.message,
     email: state.auth.userEmail,
-    data: state.dataFromServer,
+    data: state.data,
     totalIncome: state.user.totalIncome,
     totalExpense: state.user.totalExpense,
     visibilityFilter: state.user.visibilityFilter
