@@ -53,13 +53,14 @@ class Signin extends Component {
             autoComplete='on'
             floatingLabelText="Email:"
             floatingLabelStyle={{ color: 'black' }}
-            errorText={this.props.errorMessage}
+            errorText={this.props.emailError}
           />
           <TextField
             {...password}
             floatingLabelText="Password:"
             floatingLabelStyle={{ color: 'black' }}
             type="password"
+            errorText={this.props.passwordError}
           /><br /><br />
           <RaisedButton
             primary={true}
@@ -76,7 +77,8 @@ class Signin extends Component {
 
 function mapStateToProps(state) {
   return {
-    errorMessage: state.auth.error
+    emailError: state.auth.emailError,
+    passwordError: state.auth.passwordError
   };
 }
 export default reduxForm({

@@ -4,6 +4,8 @@ import {
   AUTH_USER,
   UNAUTH_USER,
   AUTH_ERROR,
+  AUTH_ERROR_EMAIL,
+  AUTH_ERROR_PASSWORD,
   CLEAR_ERROR,
   FETCH_MESSAGE,
   GET_EMAIL,
@@ -44,13 +46,18 @@ export function signinUser({ email, password }) {
           }
 
           else if (response.data.message) {
-            dispatch(authError(response.data.message));
+            if (response.data.message !== 'Invalid password') {
+              dispatch(authErrorEmail(response.data.message));
+            } else if (response.data.message === 'Invalid password') {
+              dispatch(authErrorPassword(response.data.message));
+            }
+
             dispatch(addRouteToStore('/signinattempt'));
             browserHistory.push('/signinattempt');
           }
       })
       .catch((err) => {
-        dispatch(authError('Bad login info'));
+        dispatch(authError('Something went wrong'));
         dispatch(addRouteToStore('/signinattempt'));
         browserHistory.push('/signinattempt');
       });
@@ -148,6 +155,20 @@ export function clearAuthError() {
 function authError(error) {
   return {
     type: AUTH_ERROR,
+    payload: error
+  };
+}
+
+function authErrorEmail(error) {
+  return {
+    type: AUTH_ERROR_EMAIL,
+    payload: error
+  };
+}
+
+function authErrorPassword(error) {
+  return {
+    type: AUTH_ERROR_PASSWORD,
     payload: error
   };
 }
