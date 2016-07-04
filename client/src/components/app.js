@@ -22,7 +22,7 @@ class App extends Component {
             </div>
 
           </div>
-          <div style={{height: 45}} className="light-primary-color">
+          <div style={{height: 45, fontSize: 15, backgroundColor: '#34282C', color: 'white'}} className="light-primary-color">
             <Footer />
           </div>
         </div>

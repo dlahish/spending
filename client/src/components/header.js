@@ -16,11 +16,13 @@ const styles = {
   },
 
   toolbar: {
-    backgroundColor: deepPurple300
+    backgroundColor: '#34282C',
+    color: 'white'
   },
 
   flatbutton: {
-    marginRight: -15
+    marginRight: -15,
+    color: 'white'
   },
 
   textfield: {
@@ -37,12 +39,21 @@ class Header extends Component {
         <ToolbarGroup>
           <FlatButton
             style={styles.flatbutton}
+            labelStyle={{color: 'white'}}
+            label="Upload"
+            linkButton={true}
+            containerElement={<Link to="/upload"></Link>}
+          />
+          <FlatButton
+            style={styles.flatbutton}
+            labelStyle={{color: 'white'}}
             label="Dashboard"
             linkButton={true}
             containerElement={<Link to="/securepage"></Link>}
           />
           <FlatButton
             style={styles.flatbutton}
+            labelStyle={{color: 'white'}}
             label="Sign Out"
             linkButton={true}
             containerElement={<Link to="/signout"></Link>}

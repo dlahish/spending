@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import FilterLink from './FilterLink';
+import Table from './Table';
 
 const getVisibleData = (
   data,
@@ -56,7 +57,7 @@ class SecurePage extends Component {
             Exspense
           </FilterLink>
         </p>
-        <ul>
+        {/*<ul>
           {visibleData.map(dat =>
             <li key={dat._id}>
               <ul>
@@ -66,7 +67,8 @@ class SecurePage extends Component {
               </ul>
             </li>
           )}
-        </ul>
+        </ul>*/}
+        <Table tableData={visibleData}/>
       </div>
     );
   }
