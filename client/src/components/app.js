@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <div style={{height: 630}} className="default-primary-color">
+          <div className="default-primary-color">
             <Header />
             <div style={{ padding: 30, textAlign: 'center' }} >
               {this.props.children}

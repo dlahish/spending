@@ -10,8 +10,10 @@ import {
   FETCH_MESSAGE,
   GET_EMAIL,
   GET_DATA,
+  FETCH_DATA,
   ADD_ROUTE,
-  GET_TOTAL
+  GET_TOTAL,
+  SET_VISIBILITY_FILTER
 }
 from './types';
 
@@ -106,7 +108,8 @@ export function getUserData() {
       .then(response => {
         response.data.data.map((td) => {
           dispatch({
-            type: GET_DATA,
+            // type: GET_DATA,
+            type: FETCH_DATA,
             payload: td
           });
         });
@@ -146,6 +149,13 @@ export function removeRouteFromStore() {
   return {
     type: REMOVE_ROUTE
   };
+}
+
+export function setVisibilityFilter(filter) {
+  return {
+    type: SET_VISIBILITY_FILTER,
+    payload: filter
+  }
 }
 
 export function clearAuthError() {
