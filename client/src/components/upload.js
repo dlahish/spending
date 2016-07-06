@@ -1,6 +1,21 @@
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 import * as actions from '../actions'
+import RaisedButton from 'material-ui/RaisedButton';
+
+const styles = {
+  exampleImageInput: {
+    cursor: 'pointer',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0,
+  },
+};
+
 
 class UploadForm extends Component {
 
@@ -38,9 +53,23 @@ class UploadForm extends Component {
         <div>
           <label>File</label>
            <p>{file.touched && file.error ? file.error : ''}</p>
-          <input type="file" {...file} value={null} />
+         </div>
+        <div>
+          <RaisedButton label="Choose an Image" labelPosition="before" primary={true}>
+            <input {...file} accept={'text/csv'} type="file" style={styles.exampleImageInput} value={null} />
+          </RaisedButton>
+          {/*<input type="file" {...file} value={null} />*/}
         </div>
-        <button type="submit">Submit</button>
+        <div>
+        <RaisedButton
+          label="Submit"
+          type="submit"
+          style={styles.exampleImageInput}
+        />
+        </div>
+
+
+        {/*<button type="submit">Submit</button>*/}
       </form>
     );
   }
