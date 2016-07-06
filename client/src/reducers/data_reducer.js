@@ -1,5 +1,6 @@
 import {
-  FETCH_DATA
+  FETCH_DATA,
+  UNAUTH_USER
 } from '../actions/types';
 
 const data = (state = [], action) => {
@@ -16,6 +17,8 @@ const data = (state = [], action) => {
           _id: action.payload._id
         }
       ];
+    case UNAUTH_USER:
+      return state = [];
     default:
       return state;
   }

@@ -13,7 +13,7 @@ import App from './components/app';
 import Home from './components/home';
 import Signup from './components/auth/signup';
 import Signin from './components/auth/signin';
-import SecurePage from './components/securepage';
+import Dashboard from './components/dashboard';
 import Signout from './components/auth/signout';
 import UploadFile from './components/upload';
 import SigninAttempt from './components/auth/signin_attempt';
@@ -53,7 +53,7 @@ ReactDOM.render(
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />
         <Route path="signinattempt" component={SigninAttempt} />
-        <Route path="securepage" component={RequireAuth(SecurePage)} />
+        <Route path="dashboard" component={RequireAuth(Dashboard)} />
         <Route path="upload" component={RequireAuth(UploadFile)} />
 
       </Route>

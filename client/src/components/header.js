@@ -16,7 +16,7 @@ const styles = {
   },
 
   toolbar: {
-    backgroundColor: '#34282C',
+    backgroundColor: '#464646',
     color: 'white'
   },
 
@@ -49,7 +49,7 @@ class Header extends Component {
             labelStyle={{color: 'white'}}
             label="Dashboard"
             linkButton={true}
-            containerElement={<Link to="/securepage"></Link>}
+            containerElement={<Link to="/dashboard"></Link>}
           />
           <FlatButton
             style={styles.flatbutton}

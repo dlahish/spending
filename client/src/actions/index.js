@@ -28,7 +28,7 @@ export function signupUser({ email, password }) {
           payload: email
         });
         localStorage.setItem('token', response.data.token);
-        browserHistory.push('/securepage');
+        browserHistory.push('/dashboard');
       })
       .catch(response => dispatch(authError(response.data.error)));
   }
@@ -44,7 +44,7 @@ export function signinUser({ email, password }) {
               payload: email
             });
             localStorage.setItem('token', response.data.token);
-            browserHistory.push('/securepage');
+            browserHistory.push('/dashboard');
           }
 
           else if (response.data.message) {
@@ -102,17 +102,19 @@ export function getUserEmail() {
   }
 }
 
-export function getUserData() {
+export function getUserData(dataLength) {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
-        response.data.data.map((td) => {
-          dispatch({
-            // type: GET_DATA,
-            type: FETCH_DATA,
-            payload: td
+        if (response.data.data.length !== dataLength) {
+          response.data.data.map((td) => {
+            dispatch({
+              // type: GET_DATA,
+              type: FETCH_DATA,
+              payload: td
+            });
           });
-        });
+        }
       })
       .catch((err) => {
         dispatch(authError('Something went wrong with GET_DATA'));

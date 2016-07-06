@@ -3,6 +3,7 @@ import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow,
   from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
+import { cyan800, grey50, red900 } from 'material-ui/styles/colors';
 
 const styles = {
   propContainer: {
@@ -33,7 +34,7 @@ export default class TableExampleComplex extends React.Component {
       enableSelectAll: false,
       deselectOnClickaway: true,
       showCheckboxes: false,
-      height: '250px',
+      height: '320px',
     };
   }
 
@@ -49,7 +50,7 @@ export default class TableExampleComplex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ width: '80%', margin: 'auto', paddingTop: '20px' }}>
         <Table
           height={this.state.height}
           fixedHeader={this.state.fixedHeader}
@@ -63,19 +64,20 @@ export default class TableExampleComplex extends React.Component {
             enableSelectAll={this.state.enableSelectAll}
           >
             <TableRow>
-              <TableHeaderColumn colSpan="6" tooltip="Super Header"
-                style={{textAlign: 'left', fontSize: '18px', color: 'black' }}>
-                Your Data
-              </TableHeaderColumn>
+              <TableHeaderColumn style={{ width: '6%', textAlign: 'left', fontSize: '18px', color: 'black', height: '10px' }} tooltip="Super Header">Your Data</TableHeaderColumn>
+              {/*<TableHeaderColumn></TableHeaderColumn>*/}
+              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
+              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
+              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
+              <TableHeaderColumn style={{ width: '14%' }}></TableHeaderColumn>
             </TableRow>
-            <TableRow
-              style={{ height: '10px' }}>
-              <TableHeaderColumn tooltip="The ID">#</TableHeaderColumn>
-              <TableHeaderColumn tooltip="fileName">fileName</TableHeaderColumn>
-              <TableHeaderColumn tooltip="date">date</TableHeaderColumn>
-              <TableHeaderColumn tooltip="category">category</TableHeaderColumn>
-              <TableHeaderColumn tooltip="amount">amount</TableHeaderColumn>
-              <TableHeaderColumn tooltip="note">note</TableHeaderColumn>
+            <TableRow>
+              <TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="The ID">#</TableHeaderColumn>
+              {/*<TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="fileName">fileName</TableHeaderColumn>*/}
+              <TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="date">date</TableHeaderColumn>
+              <TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="category">category</TableHeaderColumn>
+              <TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="amount">amount</TableHeaderColumn>
+              <TableHeaderColumn style={{ height: '10px', color: 'black', fontSize: '14px', textAlign: 'left', backgroundColor: cyan800, fontWeight: '600' }} tooltip="note">note</TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody
@@ -86,12 +88,12 @@ export default class TableExampleComplex extends React.Component {
           >
             {this.props.tableData.map( (row, index) => (
               <TableRow key={index} selected={row.selected}>
-                <TableRowColumn>{index}</TableRowColumn>
-                <TableRowColumn>{row.fileName}</TableRowColumn>
-                <TableRowColumn>{row.date}</TableRowColumn>
-                <TableRowColumn>{row.category}</TableRowColumn>
-                <TableRowColumn>{row.amount}</TableRowColumn>
-                <TableRowColumn>{row.note}</TableRowColumn>
+                <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
+                {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
+                <TableRowColumn style={{ width: '13%' }}>{row.date}</TableRowColumn>
+                <TableRowColumn style={{ width: '13%' }}>{row.category}</TableRowColumn>
+                <TableRowColumn style={{ width: '13%' }}>{row.amount}</TableRowColumn>
+                <TableRowColumn style={{ width: '14%' }}>{row.note}</TableRowColumn>
               </TableRow>
               ))}
           </TableBody>

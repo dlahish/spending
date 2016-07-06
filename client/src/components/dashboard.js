@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import FilterLink from './FilterLink';
 import Table from './Table';
+import TextField from 'material-ui/TextField';
 
 const getVisibleData = (
   data,
@@ -20,15 +21,12 @@ const getVisibleData = (
   }
 };
 
-class SecurePage extends Component {
+class Dashboard extends Component {
   componentWillMount() {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
-    this.props.fetchMessage();
-    if (this.props.data.length < 1) {
-      this.props.getUserData();
-    }
+    this.props.getUserData(this.props.data.length);
     this.props.getTotal();
   }
 
@@ -37,6 +35,14 @@ class SecurePage extends Component {
 
     return (
       <div style={{ textAlign: 'left' }}>
+        <div>
+          <p>
+            Total Income: {''} {this.props.totalIncome}
+          </p>
+          <p>
+            Total Expense: {''} {this.props.totalExpense}
+          </p>
+        </div>
         <p>
           Show:
           {' '}
@@ -57,17 +63,7 @@ class SecurePage extends Component {
             Exspense
           </FilterLink>
         </p>
-        {/*<ul>
-          {visibleData.map(dat =>
-            <li key={dat._id}>
-              <ul>
-                <li>{dat.fileName}</li>
-                <li>{dat.date}</li>
-                <li>{dat.amount}</li>
-              </ul>
-            </li>
-          )}
-        </ul>*/}
+
         <Table tableData={visibleData}/>
       </div>
     );
@@ -85,4 +81,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(SecurePage);
+export default connect(mapStateToProps, actions)(Dashboard);
