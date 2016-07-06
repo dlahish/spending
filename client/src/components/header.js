@@ -17,7 +17,14 @@ const styles = {
 
   toolbar: {
     backgroundColor: '#464646',
-    color: 'white'
+    color: 'white',
+    // position: 'absolute',
+    top: 0,
+    // marginRight: '10px',
+    position: 'fixed',
+    width: '98.7%',
+    zIndex: 1,
+    top: 0
   },
 
   flatbutton: {

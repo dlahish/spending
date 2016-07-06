@@ -15,13 +15,14 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <div className="default-primary-color">
+          <div>
             <Header />
-            <div style={{ padding: 30, textAlign: 'center' }} >
-              {this.props.children}
-            </div>
-
           </div>
+
+          <div className="default-primary-color" style={{ marginTop: 45, paddingTop: '10', textAlign: 'center' }} >
+            {this.props.children}
+          </div>
+
           <div style={{height: 45, fontSize: 15, backgroundColor: '#464646', color: 'white'}} className="light-primary-color">
             <Footer />
           </div>

@@ -85,6 +85,7 @@ export default class TableExampleComplex extends React.Component {
             deselectOnClickaway={this.state.deselectOnClickaway}
             showRowHover={this.state.showRowHover}
             stripedRows={this.state.stripedRows}
+            preScanRows={false}
           >
             {this.props.tableData.map( (row, index) => (
               <TableRow key={index} selected={row.selected}>
