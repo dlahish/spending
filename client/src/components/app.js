@@ -19,7 +19,8 @@ class App extends Component {
             <Header />
           </div>
 
-          <div className="default-primary-color" style={{ marginTop: 45, paddingTop: '10', textAlign: 'center' }} >
+          <div className="default-primary-color"
+            style={{ marginTop: '56px' , height: 'auto', minHeight: '450px', padding: 30, textAlign: 'center' }} >
             {this.props.children}
           </div>
 

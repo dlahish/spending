@@ -60,7 +60,7 @@ class Dashboard extends Component {
           {' '}
           <FilterLink
             filter='SHOW_EXPENSE'>
-            Exspense
+            Expense
           </FilterLink>
         </p>
 

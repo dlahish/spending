@@ -10,7 +10,7 @@ import FlatButton from 'material-ui/FlatButton';
 const style = {
   margin: 50,
   textAlign: 'center',
-  marginTop: 100,
+  marginTop: 50,
   margin: 'auto',
   width: '40%',
   backgroundColor: 'white',

@@ -20,7 +20,7 @@ const styles = {
   paper : {
     margin: 'auto',
     textAlign: 'center',
-    marginTop: '30',
+    marginTop: '30px',
     width: '40%',
     backgroundColor: 'white',
     padding: 20,
