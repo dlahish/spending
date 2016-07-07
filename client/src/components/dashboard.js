@@ -16,6 +16,10 @@ const getVisibleData = (
       return data.filter(d => d.amount > 0);
     case 'SHOW_EXPENSE':
       return data.filter(d => d.amount < 0);
+    case 'SORT_UP_AMOUNT':
+      return data.sort((a,b) => a.amount - b.amount);
+    case 'SORT_DOWN_AMOUNT':
+      return data.sort((a,b) => b.amount - a.amount);
     default:
       return data;
   }
@@ -32,6 +36,9 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
+    console.log('this.props.data');
+    console.log(typeof this.props.data[0].amount);
+    console.log(this.props.data[0].amount);
 
     return (
       <div style={{ textAlign: 'left' }}>
@@ -61,6 +68,16 @@ class Dashboard extends Component {
           <FilterLink
             filter='SHOW_EXPENSE'>
             Expense
+          </FilterLink>
+          {' '}
+          <FilterLink
+            filter='SORT_UP_AMOUNT'>
+            Amount increasing
+          </FilterLink>
+          {' '}
+          <FilterLink
+            filter='SORT_DOWN_AMOUNT'>
+            Amount decreasing
           </FilterLink>
         </p>
 
