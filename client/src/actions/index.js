@@ -13,7 +13,8 @@ import {
   FETCH_DATA,
   ADD_ROUTE,
   GET_TOTAL,
-  SET_VISIBILITY_FILTER
+  SET_VISIBILITY_FILTER,
+  UPLOAD_FILE
 }
 from './types';
 
@@ -70,6 +71,34 @@ export function signoutUser() {
   localStorage.removeItem('token');
 
   return { type: UNAUTH_USER };
+}
+
+export function uploadFile(url, data, email) {
+  return function(dispatch) {
+    let formData  = new FormData();
+    formData.append('file', data.file[0]);
+    formData.append('email', email);
+    axios({
+      url: url,
+      method: 'post',
+      data: formData,
+      contentType: 'multipart/form-data'
+    })
+    .then(response => {
+      console.log('response ------');
+      console.log(response);
+      if (response.data.message) {
+        dispatch({
+          type: UPLOAD_FILE,
+          payload: response.data.message
+        })
+      }
+    })
+    .catch(err => {
+      dispatch(authError('Something went wrong with uploading the file'));
+      browserHistory.push('/');
+    });
+  };
 }
 
 export function fetchMessage() {

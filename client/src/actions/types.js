@@ -12,5 +12,6 @@ export const GET_EMAIL = 'get_email';
 export const GET_DATA = 'get_data';
 export const FETCH_DATA = 'fetch_data';
 export const GET_TOTAL = 'get_total';
+export const UPLOAD_FILE = 'upload_file';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';

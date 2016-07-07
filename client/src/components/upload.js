@@ -62,13 +62,11 @@ class UploadForm extends Component {
   }
 
   _handleSubmit(formProps) {
-    console.log('formProps');
-    console.log(formProps.file);
-    console.log(formProps.file[0].name);
-    // this.setState({
-    //   fileName: formProps.file[0].name
-    // });
-    sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
+    this.setState({
+      fileName: ''
+    });
+    this.props.uploadFile('http://localhost:3090/upload', formProps, this.props.userEmail);
+    // sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
   }
 
   render() {
@@ -80,6 +78,13 @@ class UploadForm extends Component {
         <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
           <div>
             <p>{file.touched && file.error ? file.error : ''}</p>
+            {this.props.uploadFileMessage === 'All data already exists' ?
+              <div>
+                <p>All data already exists</p>
+              </div> : this.props.uploadFileMessage ?
+              <div>
+                <p><h4>New entires from selected file: </h4>{this.props.uploadFileMessage}</p>
+              </div> : ''}
             {this.state.fileName.length > 0 ?
               <div style={{ marginBottom: '40px' }}>
               {/*<TextField hintText="First name" style={style} underlineShow={false} />*/}
@@ -149,7 +154,10 @@ function sendData(url, data, email) {
 }
 
 function mapStateToProps(state) {
-  return { userEmail: state.auth.userEmail };
+  return {
+    userEmail: state.auth.userEmail,
+    uploadFileMessage: state.user.uploadFileMessage
+  };
 }
 
 UploadForm = reduxForm({

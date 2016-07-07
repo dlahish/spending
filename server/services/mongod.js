@@ -18,7 +18,15 @@ exports.saveFileToMongo = function(req, res) {
     if(processing === 0 && done){
       console.log('FINISHED -------');
       console.log('harey');
-      // res.send({ message: 'mongo finished'});
+      console.log('newEntries');
+      console.log(newEntries);
+      console.log('existsEntries');
+      console.log(existsEntries);
+      if (newEntries === 0) {
+          return res.send({ message: 'All data already exists'});
+      } else if (newEntries > 0) {
+          return res.send({ message: newEntries }); 
+      }
     }
   };
 
@@ -45,10 +53,12 @@ exports.saveFileToMongo = function(req, res) {
           if (err) { console.log(err); }
           if (!existingUser || existingUser.data.length > 0) {
               console.log('existingData -------');
-              // console.log(existingUser);
+              existsEntries++;
               console.log('processing');
               processing--;
+
               console.log(processing);
+              finished();
               console.log('data already exists');
           } else {
             if(!existingUser.totalIncome) {
@@ -76,7 +86,7 @@ exports.saveFileToMongo = function(req, res) {
       } else {
         console.log('not a valid input');
         processing--;
-        // res.send({ message: 'Not a valid input'});
+        finished();
       };
     })
     .on('end', function(){
