@@ -36,9 +36,6 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('this.props.data');
-    console.log(typeof this.props.data[0].amount);
-    console.log(this.props.data[0].amount);
 
     return (
       <div style={{ textAlign: 'left' }}>

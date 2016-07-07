@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
+import moment from 'moment';
 import {
   AUTH_USER,
   UNAUTH_USER,
@@ -137,8 +138,12 @@ export function getUserData(dataLength) {
       .then(response => {
         if (response.data.data.length !== dataLength) {
           response.data.data.map((td) => {
+            console.log('DATA TO FETCH ----');
+            let parsedDate = moment(td.date).format("DD/MM/YYYY");
+            console.log(td.date);
+            console.log(parsedDate);
+            td.date = parsedDate;
             dispatch({
-              // type: GET_DATA,
               type: FETCH_DATA,
               payload: td
             });

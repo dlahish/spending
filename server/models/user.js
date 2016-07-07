@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
+var moment = require('moment');
+moment().format();
 
 // const fileDataSchema = new Schema({
 //   date: String,
@@ -12,7 +14,7 @@ const Schema = mongoose.Schema;
 const dataSchema = new Schema({
   fileName: String,
   uploadDate: Date,
-  date: String,
+  date: Date,
   category: String,
   amount: Number,
   note: String

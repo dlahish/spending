@@ -1,8 +1,9 @@
 const csv = require('fast-csv');
 const fs = require('fs');
 var models = require('../models/user');
-// var Promise = require('bluebird');
-// Promise.promisifyAll(fs);
+var moment = require('moment');
+// moment().format("DD/MM/YYYY");
+
 const User = models.User;
 var newEntries = 0;
 var existsEntries = 0;
@@ -25,7 +26,7 @@ exports.saveFileToMongo = function(req, res) {
       if (newEntries === 0) {
           return res.send({ message: 'All data already exists'});
       } else if (newEntries > 0) {
-          return res.send({ message: newEntries }); 
+          return res.send({ message: newEntries });
       }
     }
   };
@@ -34,11 +35,18 @@ exports.saveFileToMongo = function(req, res) {
     .pipe(csv())
     .on('data', function(data){
       processing++;
+      var parsedDate = moment(data[0], "DD-MM-YYYY");
+      // console.log('MOMENT -----');
+      // console.log(data[0]);
+      var ppp = moment(parsedDate).format("DD/MM/YYYY");
+      console.log('parsed date ----');
+      console.log(ppp);
+
       var newData = {};
       newData = {
         fileName: fileName,
         uploadDate: date,
-        date: data[0],
+        date: parsedDate,
         category: data[1],
         amount: data[2],
         note: data[3]
@@ -52,12 +60,12 @@ exports.saveFileToMongo = function(req, res) {
         User.findOne({ email: email }, {'data': {$elemMatch: { amount: newData.amount, date: newData.date }}}, function(err, existingUser) {
           if (err) { console.log(err); }
           if (!existingUser || existingUser.data.length > 0) {
-              console.log('existingData -------');
+              // console.log('existingData -------');
               existsEntries++;
-              console.log('processing');
+              // console.log('processing');
               processing--;
 
-              console.log(processing);
+              // console.log(processing);
               finished();
               console.log('data already exists');
           } else {
