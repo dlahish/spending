@@ -15,7 +15,8 @@ import {
   ADD_ROUTE,
   GET_TOTAL,
   SET_VISIBILITY_FILTER,
-  UPLOAD_FILE
+  UPLOAD_FILE,
+  DATE_FORMAT_TOGGLE
 }
 from './types';
 
@@ -74,11 +75,12 @@ export function signoutUser() {
   return { type: UNAUTH_USER };
 }
 
-export function uploadFile(url, data, email) {
+export function uploadFile(url, data, email, dateFormat) {
   return function(dispatch) {
     let formData  = new FormData();
     formData.append('file', data.file[0]);
     formData.append('email', email);
+    formData.append('dateformat', dateFormat);
     axios({
       url: url,
       method: 'post',
@@ -192,6 +194,10 @@ export function setVisibilityFilter(filter) {
     type: SET_VISIBILITY_FILTER,
     payload: filter
   }
+}
+
+export function toggleDateFormat() {
+  return { type: DATE_FORMAT_TOGGLE };
 }
 
 export function clearAuthError() {

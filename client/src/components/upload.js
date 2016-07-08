@@ -4,6 +4,7 @@ import * as actions from '../actions'
 import RaisedButton from 'material-ui/RaisedButton';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
+import Toggle from 'material-ui/Toggle';
 
 const styles = {
   exampleImageInput: {
@@ -31,6 +32,16 @@ const styles = {
   label: {
     fontWeight: 'bold',
     fontSize: 30,
+  },
+
+  divBlock: {
+    marginTop: 20,
+    marginLeft: 120,
+    maxWidth: 250
+  },
+
+  toggle: {
+    marginBottom: 16
   }
 };
 
@@ -65,8 +76,12 @@ class UploadForm extends Component {
     this.setState({
       fileName: ''
     });
-    this.props.uploadFile('http://localhost:3090/upload', formProps, this.props.userEmail);
+    this.props.uploadFile('http://localhost:3090/upload', formProps, this.props.userEmail, this.props.dateFormat);
     // sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
+  }
+
+  handleToggle() {
+    this.props.toggleDateFormat();
   }
 
   render() {
@@ -117,6 +132,13 @@ class UploadForm extends Component {
               style={{ marginLeft: '10px' }}
             />
           </div>
+          <div style={styles.divBlock}>
+            <Toggle
+              label="American date format"
+              style={styles.toggle}
+              onToggle={this.handleToggle.bind(this)}
+            />
+          </div>
         </form>
       </Paper>
     );
@@ -142,21 +164,22 @@ function validate(values) {
   return errors;
 }
 
-function sendData(url, data, email) {
-  var formData  = new FormData();
-  formData.append('file', data.file[0]);
-  formData.append('email', email);
-  fetch(url, {
-    method: 'POST',
-    body: formData,
-    contentType: 'multipart/form-data'
-  });
-}
+// function sendData(url, data, email) {
+//   var formData  = new FormData();
+//   formData.append('file', data.file[0]);
+//   formData.append('email', email);
+//   fetch(url, {
+//     method: 'POST',
+//     body: formData,
+//     contentType: 'multipart/form-data'
+//   });
+// }
 
 function mapStateToProps(state) {
   return {
     userEmail: state.auth.userEmail,
-    uploadFileMessage: state.user.uploadFileMessage
+    uploadFileMessage: state.user.uploadFileMessage,
+    dateFormat: state.user.dateFormat
   };
 }
 

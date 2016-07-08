@@ -3,7 +3,8 @@ import {
   GET_DATA,
   GET_TOTAL,
   SET_VISIBILITY_FILTER,
-  UPLOAD_FILE
+  UPLOAD_FILE,
+  DATE_FORMAT_TOGGLE
 } from '../actions/types';
 
 const initialState = {
@@ -11,7 +12,8 @@ const initialState = {
   totalIncome: 0,
   totalExpense: 0,
   visibilityFilter: 'SHOW_ALL',
-  uploadFileMessage: ''
+  uploadFileMessage: '',
+  dateFormat: 'eu'
 }
 
 export default function(state = initialState, action) {
@@ -24,7 +26,13 @@ export default function(state = initialState, action) {
       return { ...state, visibilityFilter: action.payload };
     case UPLOAD_FILE:
       return { ...state, uploadFileMessage: action.payload };
+    case DATE_FORMAT_TOGGLE:
+      if (state.dateFormat === 'eu') {
+          return { ...state, dateFormat: 'us' };
+      } else {
+          return { ...state, dateFormat: 'eu' };
+      }
+    default:
+      return state;
   }
-
-  return state;
 }

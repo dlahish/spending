@@ -2,7 +2,6 @@ const csv = require('fast-csv');
 const fs = require('fs');
 var models = require('../models/user');
 var moment = require('moment');
-// moment().format("DD/MM/YYYY");
 
 const User = models.User;
 var newEntries = 0;
@@ -10,9 +9,13 @@ var existsEntries = 0;
 
 exports.saveFileToMongo = function(req, res) {
   const email = req.body.email;
+  const dateFormat = req.body.dateformat;
   const fileName = req.file.originalname;
   const date = new Date();
   const path = './uploads/'+fileName;
+
+  console.log('date Format ------');
+  console.log(dateFormat);
 
   var processing = 0, done = false;
   var finished = function(){
@@ -35,12 +38,11 @@ exports.saveFileToMongo = function(req, res) {
     .pipe(csv())
     .on('data', function(data){
       processing++;
-      var parsedDate = moment(data[0], "DD-MM-YYYY");
-      // console.log('MOMENT -----');
-      // console.log(data[0]);
-      var ppp = moment(parsedDate).format("DD/MM/YYYY");
-      console.log('parsed date ----');
-      console.log(ppp);
+      if (dateFormat === "eu") {
+          var parsedDate = moment(data[0], "DD-MM-YYYY");
+      } else {
+          var parsedDate = moment(data[0], "MM-DD-YYYY");
+      }
 
       var newData = {};
       newData = {
