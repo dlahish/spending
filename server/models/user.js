@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
-var moment = require('moment');
-moment().format();
 
 // const fileDataSchema = new Schema({
 //   date: String,
