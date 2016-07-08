@@ -56,6 +56,17 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
   });
 }
 
+// userSchema.methods.getDataByDateRage = function getDataByDateRage(start, end, callback) {
+//   return this.model('User').find(
+//     { 'data.date': { $lt: end } },
+//       function(err, data) {
+//         if (err) { return callback(err); }
+//
+//         callback(null, data);
+//       }
+//   );
+// }
+
 const User = mongoose.model('user', userSchema);
 const UserFile = mongoose.model('userfile', dataSchema);
 

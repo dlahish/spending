@@ -7,6 +7,36 @@ const User = models.User;
 var newEntries = 0;
 var existsEntries = 0;
 
+var today = moment().startOf('day'),
+    tomorrow = moment(today).add(1, 'days');
+
+exports.getDataByDate = function(req, res) {
+  const email = req.user.email;
+  var start = moment('01/06/2016').format("DD/MM/YYYY");
+  var end = moment('10/06/2016').format("DD/MM/YYYY");
+  console.log('MOMENT END------------------');
+  console.log(end);
+  // User.findOne({ email: email }, function(err, user) {
+  //   if (err) { console.log(err); }
+  //   if (!user) { return res.send({ message: 'no user found' }) }
+  //   user.getDataByDateRage(start, end, function(err, data) {
+  //     if (err) { console.log(err); }
+  //     if (!data) { console.log('no data found'); }
+  //     console.log(data);
+  //     return res.send({ data: data });
+  //   });
+  // });
+  User.find({ 'data.date': { $gte: today.toDate(), $lt: tomorrow.toDate() } }, function(err, data){
+    if (err) { console.log(err); }
+    if (!data) {
+      return res.send('No data found');
+    }
+    // console.log('DATA AFTER SEARCH ------------');
+    // console.log(data[0]);
+    // res.send({ data: data.data })
+  });
+};
+
 exports.saveFileToMongo = function(req, res) {
   const email = req.body.email;
   const dateFormat = req.body.dateformat;

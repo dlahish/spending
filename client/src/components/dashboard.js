@@ -30,8 +30,8 @@ class Dashboard extends Component {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
-    this.props.getUserData(this.props.data.length);
     this.props.getTotal();
+    this.props.getUserData(this.props.data.length);
   }
 
   render() {
