@@ -14,16 +14,18 @@ var today = moment().startOf('day'),
 
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;
-  var start = moment('01/06/2016').format("DD/MM/YYYY");
-  var end = moment('10/06/2016').format("DD/MM/YYYY");
-  console.log('MOMENT END------------------');
-  console.log(end);
-
-  User.find({ 'data.date': { $gte: today.toDate(), $lt: tomorrow.toDate() } }, function(err, data){
+  const userId = req.user._id;
+  // var start = moment('01/06/2016').format("DD/MM/YYYY");
+  // var end = moment('10/06/2016').format("DD/MM/YYYY");
+  // console.log('MOMENT END------------------');
+  // console.log(end);
+  var andBack = moment("20/06/2016", "DD/MM/YYYY");
+  Data.find({ user: userId, date: { $gt: andBack } }, function(err, data){
     if (err) { console.log(err); }
     if (!data) {
       return res.send('No data found');
     }
+    res.send({ data: data });
   });
 };
 

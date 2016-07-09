@@ -145,6 +145,9 @@ export function getUserData(dataLength) {
             let parsedDate = moment(td.date).format("DD/MM/YYYY");
             console.log(td.date);
             console.log(parsedDate);
+            console.log('AND BACK -------');
+            let andBack = moment("26/06/2016", "DD/MM/YYYY");
+            console.log(andBack);
             td.date = parsedDate;
             dispatch({
               type: FETCH_DATA,

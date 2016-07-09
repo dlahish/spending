@@ -42,11 +42,12 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
     if (err) { return done(err, false); }
 
     if (user) {
-        // var logUser = {
-        //   password: user.password,
-        //   email: user.email
-        // };
-        done(null, user);
+        var logUser = {
+          _id: user._id,
+          password: user.password,
+          email: user.email
+        };
+        done(null, logUser);
     } else {
         done(null, false);
     }

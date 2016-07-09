@@ -39,14 +39,14 @@ module.exports = function(app) {
     res.send({ email: userEmail });
   });
 
-  app.get('/getdata', requireAuth, function(req, res) {
-    console.log('USER -------------');
-    console.log(req.user);
-    var userData = req.user.data;
-    res.send({ data: userData });
-  });
+  // app.get('/getdata', requireAuth, function(req, res) {
+  //   console.log('USER -------------');
+  //   console.log(req.user);
+  //   var userData = req.user.data;
+  //   res.send({ data: userData });
+  // });
 
-  // app.get('/getdata', requireAuth, db.getDataByDate);
+  app.get('/getdata', requireAuth, db.getDataByDate);
 
   app.get('/gettotal', requireAuth, function(req, res) {
     console.log('REQ USER ---------');
