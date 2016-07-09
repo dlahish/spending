@@ -61,13 +61,13 @@ class UploadForm extends Component {
   }
 
   handleFileChange(ev) {
-    console.log('HANDLECHANGE');
+    // console.log('HANDLECHANGE');
     // const r = e.get(value);
-    console.log(ev[0].name);
+    // console.log(ev[0].name);
     this.setState({
       fileName: ev[0].name
     });
-    console.log(this.props);
+    // console.log(this.props);
     // console.log(file.value[0].name);
     // console.log(formProps.file[0].name + 'aaaa');
   }

@@ -85,7 +85,8 @@ export function uploadFile(url, data, email, dateFormat) {
       url: url,
       method: 'post',
       data: formData,
-      contentType: 'multipart/form-data'
+      contentType: 'multipart/form-data',
+      headers: { authorization: localStorage.getItem('token') }
     })
     .then(response => {
       console.log('response ------');
