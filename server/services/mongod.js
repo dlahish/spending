@@ -38,8 +38,14 @@ exports.saveFileToMongo = function(req, res) {
   const path = './uploads/'+fileName;
 
   var processing = 0, done = false;
+  var save = true;
+  var messageToClient = '';
+
   var finished = function(){
     if(processing === 0 && done){
+      if (!save) {
+        return res.send({ message: 'Check date Format.'});
+      }
       if (newEntries === 0) {
           return res.send({ message: 'All data already exists'});
       } else if (newEntries > 0) {
@@ -68,31 +74,48 @@ exports.saveFileToMongo = function(req, res) {
 
       if (typeof tempAmount === 'number' ) {
         Data.findOne({ user: userId, amount: tempAmount, date: tempDate }, function(err, dData) {
-          if (err) { console.log(err); }
-          if (dData) { console.log('Data already exists.'); }
+          if (err) {
+            console.log('err');
+            processing--;
+            done = true;
+            save = false;
+            finished();
+          }
           else {
-            const newData = new Data({
-              user: userId,
-              fileName: fileName,
-              uploadDate: date,
-              date: parsedDate,
-              category: data[1],
-              amount: tempAmount,
-              note: data[3]
-            });
-            newData.save(function(err, nd) {
-              if (err) { console.log(err); }
-              console.log('data was saved');
-              console.log(nd._id);
-              User.findById(userId, function(err, saveDataUser){
-                if (err) { console.log(err); }
-                if (!saveDataUser) {console.log('user was not found.'); }
-                saveDataUser.data.push(nd);
-                saveDataUser.save(function(err){
-                  if (err) { console.log(err); }
+            if (dData) {
+              console.log('Data already exists.');
+              processing--;
+              finished();
+            }
+            else {
+              if (save) {
+                const newData = new Data({
+                  user: userId,
+                  fileName: fileName,
+                  uploadDate: date,
+                  date: parsedDate,
+                  category: data[1],
+                  amount: tempAmount,
+                  note: data[3]
                 });
-              });
-            });
+                newData.save(function(err, nd) {
+                  if (err) { console.log(err); }
+                  console.log('data was saved');
+                  console.log(nd._id);
+                  User.findById(userId, function(err, saveDataUser){
+                    if (err) { console.log(err); }
+                    if (!saveDataUser) {console.log('user was not found.'); }
+                    saveDataUser.data.push(nd);
+                    saveDataUser.save(function(err){
+                      if (err) { console.log(err); }
+                    });
+                  });
+                });
+              }
+            }
+            newEntries++;
+            processing--;
+            finished();
           }
         });
       } else {

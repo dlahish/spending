@@ -50,13 +50,23 @@ class UploadForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fileName: ''
+      fileName: '',
+      toggled: false
     };
   }
 
   componentWillMount() {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
+    }
+    if (this.props.dateFormat === "eu") {
+        this.setState({
+          toggled: false
+        });
+    } else {
+        this.setState({
+          toggled: true
+        });
     }
   }
 
@@ -81,13 +91,22 @@ class UploadForm extends Component {
   }
 
   handleToggle() {
+    if (this.props.dateFormat === "eu") {
+        this.setState({
+          toggled: true
+        });
+    } else {
+        this.setState({
+          toggled: false
+        });
+    }
     this.props.toggleDateFormat();
   }
 
   render() {
     const {fields: {firstName, lastName, email, file}, handleSubmit} = this.props;
-    // console.log('this.props.userEmail');
-    // console.log(this.props.userEmail);
+    console.log(this.state.toggled);
+    console.log(this.props.dateFormat);
     return (
       <Paper style={styles.paper} zDephth={3} >
         <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
@@ -97,8 +116,8 @@ class UploadForm extends Component {
               <div>
                 <p>All data already exists</p>
               </div> : this.props.uploadFileMessage ?
-              <div>
-                <p><h4>New entires from selected file: </h4>{this.props.uploadFileMessage}</p>
+              <div style={{ color: 'red' }}>
+                <p>{this.props.uploadFileMessage}</p>
               </div> : ''}
             {this.state.fileName.length > 0 ?
               <div style={{ marginBottom: '40px' }}>
@@ -137,6 +156,7 @@ class UploadForm extends Component {
               label="American date format"
               style={styles.toggle}
               onToggle={this.handleToggle.bind(this)}
+              toggled={this.state.toggled}
             />
           </div>
         </form>
