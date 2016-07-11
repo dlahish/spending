@@ -208,6 +208,13 @@ export function clearAuthError() {
   return { type: CLEAR_ERROR };
 }
 
+export function clearUploadFileMessage() {
+  return {
+    type: UPLOAD_FILE,
+    payload: ''
+  };
+}
+
 function authError(error) {
   return {
     type: AUTH_ERROR,

@@ -70,16 +70,14 @@ class UploadForm extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.clearUploadFileMessage();
+  }
+
   handleFileChange(ev) {
-    // console.log('HANDLECHANGE');
-    // const r = e.get(value);
-    // console.log(ev[0].name);
     this.setState({
       fileName: ev[0].name
     });
-    // console.log(this.props);
-    // console.log(file.value[0].name);
-    // console.log(formProps.file[0].name + 'aaaa');
   }
 
   _handleSubmit(formProps) {
@@ -87,7 +85,6 @@ class UploadForm extends Component {
       fileName: ''
     });
     this.props.uploadFile('http://localhost:3090/upload', formProps, this.props.userEmail, this.props.dateFormat);
-    // sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
   }
 
   handleToggle() {
@@ -170,7 +167,7 @@ function validate(values) {
   // console.log('values ------');
   // console.log(values);
   if (!values.file) {
-      errors.file = 'Required';
+      errors.file = 'No file was selected.';
   } else {
       let file = values.file[0];
       // console.log(file.type);

@@ -6,7 +6,6 @@ var moment = require('moment');
 const User = models.User;
 const Data = models.Data;
 
-var newEntries = 0;
 var existsEntries = 0;
 
 var today = moment().startOf('day'),
@@ -20,7 +19,7 @@ exports.getDataByDate = function(req, res) {
   // console.log('MOMENT END------------------');
   // console.log(end);
   var andBack = moment("20/06/2016", "DD/MM/YYYY");
-  Data.find({ user: userId, date: { $gt: andBack } }, function(err, data){
+  Data.find({ user: userId }, function(err, data){
     if (err) { console.log(err); }
     if (!data) {
       return res.send('No data found');
@@ -40,6 +39,7 @@ exports.saveFileToMongo = function(req, res) {
   var processing = 0, done = false;
   var save = true;
   var messageToClient = '';
+  var newEntries = 0;
 
   var finished = function(){
     if(processing === 0 && done){
@@ -102,18 +102,14 @@ exports.saveFileToMongo = function(req, res) {
                   if (err) { console.log(err); }
                   console.log('data was saved');
                   console.log(nd._id);
-                  User.findById(userId, function(err, saveDataUser){
-                    if (err) { console.log(err); }
-                    if (!saveDataUser) {console.log('user was not found.'); }
-                    saveDataUser.data.push(nd);
-                    saveDataUser.save(function(err){
-                      if (err) { console.log(err); }
-                    });
+                  
+                  User.findByIdAndUpdate(userId, { $push: { data: nd } }, function(err){
+                    if (err) { console.log('err-------------'); }
                   });
                 });
+                newEntries++;
               }
             }
-            newEntries++;
             processing--;
             finished();
           }
