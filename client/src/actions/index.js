@@ -137,6 +137,7 @@ export function getUserEmail() {
 
 export function getUserData(dataLength) {
   return function(dispatch) {
+    let dataToReducer = [];
     axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
         if (response.data.data.length !== dataLength) {
@@ -149,10 +150,11 @@ export function getUserData(dataLength) {
             let andBack = moment("26/06/2016", "DD/MM/YYYY");
             console.log(andBack);
             td.date = parsedDate;
-            dispatch({
-              type: FETCH_DATA,
-              payload: td
-            });
+            dataToReducer.push(td);
+          });
+          dispatch({
+            type: FETCH_DATA,
+            payload: dataToReducer
           });
         }
       })
