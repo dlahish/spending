@@ -101,9 +101,20 @@ exports.saveFileToMongo = function(req, res) {
                 newData.save(function(err, nd) {
                   if (err) { console.log(err); }
                   console.log('data was saved');
-                  console.log(nd._id);
-                  
-                  User.findByIdAndUpdate(userId, { $push: { data: nd } }, function(err){
+                  var incomeTemp = 0;
+                  var expenseTemp = 0;
+                  console.log(nd.amount);
+                  if (nd.amount > 0) {
+                    incomeTemp = nd.amount;
+                  } else if (nd.amount < 0) {
+                    expenseTemp = nd.amount;
+                  }
+                  console.log('incomeTemp  ----' + incomeTemp)
+                  User.findByIdAndUpdate(userId,
+                    {
+                      $push: { data: nd },
+                      $inc: { totalIncome: incomeTemp, totalExpense: expenseTemp }
+                    }, function(err){
                     if (err) { console.log('err-------------'); }
                   });
                 });
