@@ -5,6 +5,7 @@ import FilterLink from './FilterLink';
 import Table from './Table';
 import TextField from 'material-ui/TextField';
 import moment from 'moment';
+import PieChart from './pie';
 
 const getVisibleData = (
   data,
@@ -56,6 +57,7 @@ class Dashboard extends Component {
 
     return (
       <div style={{ textAlign: 'left' }}>
+        <PieChart income={this.props.totalIncome} expense={this.props.totalExpense}/>
         <div>
           <p>
             Total Income: {''} {this.props.totalIncome}
