@@ -9,6 +9,7 @@ import { cyan800, grey50, red900 } from 'material-ui/styles/colors';
 import MaterialIcons from 'material-design-icons';
 import FontIcon from 'material-ui/FontIcon';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
+import SortArrow from './SortArrow';
 
 const iconStyles = {
   marginRight: 54,
@@ -59,7 +60,8 @@ class DataTable extends React.Component {
       },
 
       amountSort: '',
-      dateSort: ''
+      dateSort: '',
+      categorySort: ''
     };
   }
 
@@ -98,7 +100,21 @@ class DataTable extends React.Component {
     }
   }
 
+  handleCategorySort() {
+    if (this.state.categorySort.length === 0) {
+        this.props.setVisibilityFilter('SORT_DOWN_CATEGORY');
+        this.setState({ categorySort: 'down' });
+    } else if (this.state.categorySort === 'down') {
+        this.props.setVisibilityFilter('SORT_UP_CATEGORY');
+        this.setState({ categorySort: 'up' });
+    } else {
+        this.props.setVisibilityFilter('SORT_DOWN_CATEGORY');
+        this.setState({ categorySort: 'down' });
+    }
+  }
+
   render() {
+    console.log(this.state.categorySort);
     return (
       <div style={{ width: '80%', margin: 'auto', paddingTop: '20px' }}>
         <Table
@@ -113,28 +129,41 @@ class DataTable extends React.Component {
             adjustForCheckbox={this.state.table.showCheckboxes}
             enableSelectAll={this.state.table.enableSelectAll}
           >
-            <TableRow>
+            {/*<TableRow>
               <TableHeaderColumn style={{ width: '6%', textAlign: 'left', fontSize: '18px', color: 'black', height: '10px' }} tooltip="Super Header">Your Data</TableHeaderColumn>
-              {/*<TableHeaderColumn></TableHeaderColumn>*/}
+              <TableHeaderColumn style={{ width: '6%' }}></TableHeaderColumn>
               <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
               <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
               <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
               <TableHeaderColumn style={{ width: '14%' }}></TableHeaderColumn>
-            </TableRow>
+            </TableRow>*/}
             <TableRow>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="The ID">#</TableHeaderColumn>
+              <TableHeaderColumn
+                style={ {
+                  width: '8%',
+                  height: '10px',
+                  color: 'black',
+                  fontSize: '14px',
+                  textAlign: 'left',
+                  backgroundColor: cyan800,
+                  fontWeight: '600' } }
+                tooltip="The ID">#</TableHeaderColumn>
               <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="date">
+                {/*<SortArrow
+                  sort={ this.state.dateSort }
+                  handleFunction={ this.handleDatetSort }
+                />*/}
                 <span>
                   { this.state.dateSort === 'down' ?
                     <FontIcon
                       className="material-icons"
-                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      style={{ fontSize: '25px', cursor: 'pointer' }}
                       onTouchTap={this.handleDatetSort.bind(this)}
                     >arrow_drop_down
                     </FontIcon> :
                     <FontIcon
                       className="material-icons"
-                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      style={{ fontSize: '25px', cursor: 'pointer' }}
                       onTouchTap={this.handleDatetSort.bind(this)}
                     >arrow_drop_up
                     </FontIcon>
@@ -142,19 +171,37 @@ class DataTable extends React.Component {
                 </span>
                 date
               </TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="category">category</TableHeaderColumn>
+              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="category">
+                <span>
+                  { this.state.categorySort === 'down' ?
+                    <FontIcon
+                      className="material-icons"
+                      style={{ fontSize: '25px', marginLeft: '-30px', cursor: 'pointer' }}
+                      onTouchTap={this.handleCategorySort.bind(this)}
+                    >arrow_drop_down
+                    </FontIcon> :
+                    <FontIcon
+                      className="material-icons"
+                      style={{ fontSize: '25px', marginLeft: '-30px', cursor: 'pointer' }}
+                      onTouchTap={this.handleCategorySort.bind(this)}
+                    >arrow_drop_up
+                    </FontIcon>
+                  }
+                </span>
+                category
+              </TableHeaderColumn>
               <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="amount">
                 <span>
                   { this.state.amountSort === 'down' ?
                     <FontIcon
                       className="material-icons"
-                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      style={{ fontSize: '25px', marginLeft: '-30px', cursor: 'pointer' }}
                       onTouchTap={this.handleAmountSort.bind(this)}
                     >arrow_drop_down
                     </FontIcon> :
                     <FontIcon
                       className="material-icons"
-                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      style={{ fontSize: '25px', marginLeft: '-30px', cursor: 'pointer' }}
                       onTouchTap={this.handleAmountSort.bind(this)}
                     >arrow_drop_up
                     </FontIcon>

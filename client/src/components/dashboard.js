@@ -33,6 +33,10 @@ const getVisibleData = (
         const bDate = moment(b.date, "DD/MM/YYYY");
         return bDate - aDate;
       });
+    case 'SORT_UP_CATEGORY':
+      return data.sort((a,b) => a.category > b.category);
+    case 'SORT_DOWN_CATEGORY':
+      return data.sort((a,b) => a.category < b.category);
     default:
       return data;
   }
@@ -49,7 +53,6 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log(this.props.data.date);
 
     return (
       <div style={{ textAlign: 'left' }}>
