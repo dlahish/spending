@@ -58,7 +58,8 @@ class DataTable extends React.Component {
         height: '320px'
       },
 
-      amountSort: ''
+      amountSort: '',
+      dateSort: ''
     };
   }
 
@@ -82,18 +83,24 @@ class DataTable extends React.Component {
         this.props.setVisibilityFilter('SORT_DOWN_AMOUNT');
         this.setState({ amountSort: 'down' });
     }
-    // this.forceUpdate();
+  }
+
+  handleDatetSort() {
+    if (this.state.dateSort.length === 0) {
+        this.props.setVisibilityFilter('SORT_DOWN_DATE');
+        this.setState({ dateSort: 'down' });
+    } else if (this.state.dateSort === 'down') {
+        this.props.setVisibilityFilter('SORT_UP_DATE');
+        this.setState({ dateSort: 'up' });
+    } else {
+        this.props.setVisibilityFilter('SORT_DOWN_DATE');
+        this.setState({ dateSort: 'down' });
+    }
   }
 
   render() {
     return (
       <div style={{ width: '80%', margin: 'auto', paddingTop: '20px' }}>
-        {/*<div>
-          <FontIcon className="material-icons" style={iconStyles}>home</FontIcon>
-          <FontIcon className="material-icons" style={iconStyles} color={red500}>flight_takeoff</FontIcon>
-          <FontIcon className="material-icons" style={iconStyles} color={yellow500}>cloud_download</FontIcon>
-          <FontIcon className="material-icons" style={iconStyles} color={blue500}>videogame_asset</FontIcon>
-        </div>*/}
         <Table
           height={this.state.table.height}
           fixedHeader={this.state.table.fixedHeader}
@@ -116,7 +123,25 @@ class DataTable extends React.Component {
             </TableRow>
             <TableRow>
               <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="The ID">#</TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="date">date</TableHeaderColumn>
+              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="date">
+                <span>
+                  { this.state.dateSort === 'down' ?
+                    <FontIcon
+                      className="material-icons"
+                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      onTouchTap={this.handleDatetSort.bind(this)}
+                    >arrow_drop_down
+                    </FontIcon> :
+                    <FontIcon
+                      className="material-icons"
+                      style={{ fontSize: '25px', marginLeft: '-35px', cursor: 'pointer' }}
+                      onTouchTap={this.handleDatetSort.bind(this)}
+                    >arrow_drop_up
+                    </FontIcon>
+                  }
+                </span>
+                date
+              </TableHeaderColumn>
               <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="category">category</TableHeaderColumn>
               <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="amount">
                 <span>
@@ -158,86 +183,7 @@ class DataTable extends React.Component {
               </TableRow>
               ))}
           </TableBody>
-          {/*<TableFooter
-            adjustForCheckbox={this.state.showCheckboxes}
-          >
-            <TableRow>
-              <TableRowColumn>ID</TableRowColumn>
-              <TableRowColumn>Name</TableRowColumn>
-              <TableRowColumn>Status</TableRowColumn>
-            </TableRow>
-            <TableRow>
-              <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
-                Super Footer
-              </TableRowColumn>
-            </TableRow>
-          </TableFooter>*/}
         </Table>
-
-        {/*<div style={styles.propContainer}>
-          <h3>Table Properties</h3>
-          <TextField
-            floatingLabelText="Table Body Height"
-            defaultValue={this.state.height}
-            onChange={this.handleChange}
-          />
-          <Toggle
-            name="fixedHeader"
-            label="Fixed Header"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.fixedHeader}
-          />
-          <Toggle
-            name="fixedFooter"
-            label="Fixed Footer"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.fixedFooter}
-          />
-          <Toggle
-            name="selectable"
-            label="Selectable"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.selectable}
-          />
-          <Toggle
-            name="multiSelectable"
-            label="Multi-Selectable"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.multiSelectable}
-          />
-          <Toggle
-            name="enableSelectAll"
-            label="Enable Select All"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.enableSelectAll}
-          />
-          <h3 style={styles.propToggleHeader}>TableBody Properties</h3>
-          <Toggle
-            name="deselectOnClickaway"
-            label="Deselect On Clickaway"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.deselectOnClickaway}
-          />
-          <Toggle
-            name="stripedRows"
-            label="Stripe Rows"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.stripedRows}
-          />
-          <Toggle
-            name="showRowHover"
-            label="Show Row Hover"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.showRowHover}
-          />
-          <h3 style={styles.propToggleHeader}>Multiple Properties</h3>
-          <Toggle
-            name="showCheckboxes"
-            label="Show Checkboxes"
-            onToggle={this.handleToggle}
-            defaultToggled={this.state.showCheckboxes}
-          />
-        </div>*/}
       </div>
     );
   }

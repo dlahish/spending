@@ -8,8 +8,18 @@ const Data = models.Data;
 
 var existsEntries = 0;
 
-var today = moment().startOf('day'),
-    tomorrow = moment(today).add(1, 'days');
+exports.getTotal = function(req, res) {
+  const email = req.user.email;
+  var totalIncome = 0;
+  var totalExpense = 0;
+  User.findOne({ email: email }, function(err, user) {
+    console.log(user.totalIncome);
+    if (err) { console.log(err); }
+    totalIncome = user.totalIncome;
+    totalExpense = user.totalExpense;
+    res.send({ income: totalIncome, expense: totalExpense });
+  });
+}
 
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;

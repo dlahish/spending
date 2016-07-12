@@ -4,6 +4,7 @@ import * as actions from '../actions';
 import FilterLink from './FilterLink';
 import Table from './Table';
 import TextField from 'material-ui/TextField';
+import moment from 'moment';
 
 const getVisibleData = (
   data,
@@ -20,6 +21,18 @@ const getVisibleData = (
       return data.sort((a,b) => a.amount - b.amount);
     case 'SORT_DOWN_AMOUNT':
       return data.sort((a,b) => b.amount - a.amount);
+    case 'SORT_UP_DATE':
+      return data.sort((a,b) => {
+        const aDate = moment(a.date, "DD/MM/YYYY");
+        const bDate = moment(b.date, "DD/MM/YYYY");
+        return aDate - bDate;
+      });
+    case 'SORT_DOWN_DATE':
+      return data.sort((a,b) => {
+        const aDate = moment(a.date, "DD/MM/YYYY");
+        const bDate = moment(b.date, "DD/MM/YYYY");
+        return bDate - aDate;
+      });
     default:
       return data;
   }
@@ -36,6 +49,7 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
+    console.log(this.props.data.date);
 
     return (
       <div style={{ textAlign: 'left' }}>
