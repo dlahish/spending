@@ -9,10 +9,20 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import { deepPurple300, grey50, red900 } from 'material-ui/styles/colors';
+import Popover from 'material-ui/Popover/Popover';
+import {Menu, MenuItem} from 'material-ui/Menu';
+import RaisedButton from 'material-ui/RaisedButton';
+import IconButton from 'material-ui/IconButton/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 const styles = {
   toolbartitle: {
     cursor: 'pointer'
+  },
+
+  user: {
+    cursor: 'pointer',
+    fontWeight: '600'
   },
 
   toolbar: {
@@ -20,7 +30,7 @@ const styles = {
     color: 'white',
     // position: 'absolute',
     top: 0,
-    // marginRight: '10px',
+    paddingRight: 20,
     position: 'fixed',
     width: '98.7%',
     zIndex: 1,
@@ -39,32 +49,126 @@ const styles = {
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+      anchorOrigin: {
+        horizontal: 'left',
+        vertical: 'bottom',
+      },
+      targetOrigin: {
+        horizontal: 'left',
+        vertical: 'top',
+      },
+    };
+  }
+
+  handleTouchTap = (event) => {
+    // This prevents ghost click.
+    event.preventDefault();
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
+  handleMenuLink() {
+    this.handleRequestClose();
+    browserHistory.push(this.value);
+  }
+
+  handleSignout() {
+    this.props.signoutUser();
+    browserHistory.push('/signout');
+  }
+
+  handleDashboard() {
+    this.handleRequestClose()
+    browserHistory.push('/dashboard');
+  }
+
+  handleDashboard() {
+    this.handleRequestClose()
+    browserHistory.push('/dashboard');
+  }
+
+  // setAnchor = (positionElement, position) => {
+  //   const {anchorOrigin} = this.state;
+  //   anchorOrigin[positionElement] = position;
+  //
+  //   this.setState({
+  //     anchorOrigin: anchorOrigin,
+  //   });
+  // };
+  //
+  // setTarget = (positionElement, position) => {
+  //   const {targetOrigin} = this.state;
+  //   targetOrigin[positionElement] = position;
+  //
+  //   this.setState({
+  //     targetOrigin: targetOrigin,
+  //   });
+  // };
+
   renderLinks() {
     if (this.props.route == '/signinattempt') { return; }
     if (this.props.authenticated) {
       return (
         <ToolbarGroup>
-          <FlatButton
+          {/*<FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
             label="Upload"
             linkButton={true}
             containerElement={<Link to="/upload"></Link>}
-          />
-          <FlatButton
+          />*/}
+          {/*<FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
             label="Dashboard"
             linkButton={true}
             containerElement={<Link to="/dashboard"></Link>}
-          />
-          <FlatButton
+          />*/}
+          {/*<FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
             label="Sign Out"
             linkButton={true}
             containerElement={<Link to="/signout"></Link>}
-          />
+          />*/}
+          <p style={styles.user} onTouchTap={this.handleTouchTap}>d_lahish</p>
+          <IconButton onTouchTap={this.handleTouchTap}><MoreVertIcon color={'white'}/></IconButton>
+          <Popover
+            open={this.state.open}
+            anchorEl={this.state.anchorEl}
+            anchorOrigin={this.state.anchorOrigin}
+            targetOrigin={this.state.targetOrigin}
+            onRequestClose={this.handleRequestClose}
+          >
+            <Menu>
+              <MenuItem
+                linkButton
+                containerElement={<Link to="/dashboard" />}
+                primaryText="Dashboard"
+                onTouchTap={this.handleRequestClose.bind(this)}
+              />
+              <MenuItem
+                linkButton
+                containerElement={<Link to="/upload" />}
+                primaryText="Upload File"
+                onTouchTap={this.handleRequestClose.bind(this)}
+              />
+              <MenuItem primaryText="Sign out" onTouchTap={this.handleSignout.bind(this)}/>
+            </Menu>
+          </Popover>
         </ToolbarGroup>
       );
     }
