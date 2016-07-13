@@ -1,41 +1,39 @@
 import React, { Component } from 'react';
-import ReactD3 from 'react-d3-components';
-import Chart from 'react-d3-core';
-const PieChart = ReactD3.PieChart;
+import { render } from 'react-dom';
+import { VictoryPie } from 'victory';
+import { teal700 , grey50, red900 } from 'material-ui/styles/colors';
 
-export default class Pie extends Component {
-  render() {
-    const pieData = {
-        label: 'somethingA',
-        values: [{x: 'Income', y: this.props.income}, {x: 'Expenses', y: this.props.expense}]
-    };
-    const sort = null;
+const Pie = ({income, expenses}) => {
+  // const income = this.props.income;
+  // const expenses = this.props.expenses;
 
-    const chartSeries = [
-      {
-        field: 'x',
-        name: 'x',
-        color: 'red'
-      }
-    ];
-    const x = function(d) {
-      return d.index;
-    }
+  return (
+    <VictoryPie
+      data={[
+        {x: "Income", y: income},
+        {x: "Expenses", y: expenses},
+      ]}
+      style={{
+        labels: {
+          fontSize: 5,
+          padding: 0,
+          fontWeight: 'bold'
+        }
+      }}
+      colorScale={[
+        teal700,
+        red900
+      ]}
+      height={120}
+      innerRadius={15}
+      padAngle={2}
+    />
+  );
 
-    return(
-      <div>
-        <PieChart
-          data={pieData}
-          width={400}
-          height={200}
-          margin={{top: 10, bottom: 10, left: 100, right: 100}}
-          sort={sort}
-          chartSeries={chartSeries}
-          innerRadius={20}
-          radius={50}
-          //x={x}
-        />
-      </div>
-    );
-  }
+  Pie.propTypes = {
+    income: React.propTypes.number,
+    expenses: React.propTypes.number
+  };
 }
+
+export default Pie;

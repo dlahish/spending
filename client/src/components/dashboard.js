@@ -57,7 +57,7 @@ class Dashboard extends Component {
 
     return (
       <div style={{ textAlign: 'left' }}>
-        <PieChart income={this.props.totalIncome} expense={this.props.totalExpense}/>
+        <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
         <div>
           <p>
             Total Income: {''} {this.props.totalIncome}
