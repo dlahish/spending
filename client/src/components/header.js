@@ -55,11 +55,11 @@ class Header extends Component {
     this.state = {
       open: false,
       anchorOrigin: {
-        horizontal: 'left',
+        horizontal: 'right',
         vertical: 'bottom',
       },
       targetOrigin: {
-        horizontal: 'left',
+        horizontal: 'right',
         vertical: 'top',
       },
     };
@@ -144,7 +144,7 @@ class Header extends Component {
             linkButton={true}
             containerElement={<Link to="/signout"></Link>}
           />*/}
-          <p style={styles.user} onTouchTap={this.handleTouchTap}>d_lahish</p>
+          <p style={styles.user}>{this.props.user}</p>
           <IconButton onTouchTap={this.handleTouchTap}><MoreVertIcon color={'white'}/></IconButton>
           <Popover
             open={this.state.open}
@@ -152,6 +152,7 @@ class Header extends Component {
             anchorOrigin={this.state.anchorOrigin}
             targetOrigin={this.state.targetOrigin}
             onRequestClose={this.handleRequestClose}
+            style={{ marginTop: '9px' }}
           >
             <Menu>
               <MenuItem
@@ -204,7 +205,8 @@ function mapStateToProps(state, location) {
   return {
     authenticated: state.auth.authenticated,
     errorMessage: state.auth.error,
-    route: state.auth.currentRoute
+    route: state.auth.currentRoute,
+    user: state.auth.userEmail
   };
 }
 
