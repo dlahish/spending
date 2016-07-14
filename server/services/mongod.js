@@ -20,6 +20,21 @@ exports.getTotal = function(req, res) {
   });
 }
 
+function getMonthIncomeTotal(userId, year) {
+  var yearIncomeTotal = [];
+  var yearIncomeExpenses = [];
+  for (var i=1; i=12; i++) {
+    var monthStart = moment(year/i/1);
+    // Data.find({ user: userId, date: { $gt: startDate, $lte: endDate } }, function(err, data){
+    // }
+  }
+};
+
+exports.getYearTotal = function(req, res) {
+  const userId = req.user._id;
+
+}
+
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;
   const userId = req.user._id;

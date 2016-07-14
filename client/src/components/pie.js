@@ -24,7 +24,8 @@ const Pie = ({income, expenses}) => {
         teal700,
         red900
       ]}
-      height={120}
+      height={60}
+      padding={2}
       innerRadius={15}
       padAngle={2}
     />

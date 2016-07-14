@@ -14,15 +14,20 @@ import {Menu, MenuItem} from 'material-ui/Menu';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import FontIcon from 'material-ui/FontIcon';
+import UploadIcon from 'material-ui/svg-icons/file/file-upload';
+import EjectIcon from 'material-ui/svg-icons/action/eject';
 
 const styles = {
   toolbartitle: {
     cursor: 'pointer'
   },
 
-  user: {
+  toolbaruser: {
     cursor: 'pointer',
-    fontWeight: '600'
+    fontWeight: '600',
+    marginRight: '-15px',
+    lineHeight: '25px'
   },
 
   toolbar: {
@@ -130,13 +135,13 @@ class Header extends Component {
             linkButton={true}
             containerElement={<Link to="/upload"></Link>}
           />*/}
-          {/*<FlatButton
+          <FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
             label="Dashboard"
             linkButton={true}
             containerElement={<Link to="/dashboard"></Link>}
-          />*/}
+          />
           {/*<FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
@@ -144,32 +149,46 @@ class Header extends Component {
             linkButton={true}
             containerElement={<Link to="/signout"></Link>}
           />*/}
-          <p style={styles.user}>{this.props.user}</p>
-          <IconButton onTouchTap={this.handleTouchTap}><MoreVertIcon color={'white'}/></IconButton>
-          <Popover
-            open={this.state.open}
-            anchorEl={this.state.anchorEl}
-            anchorOrigin={this.state.anchorOrigin}
-            targetOrigin={this.state.targetOrigin}
-            onRequestClose={this.handleRequestClose}
-            style={{ marginTop: '9px' }}
-          >
-            <Menu>
-              <MenuItem
-                linkButton
-                containerElement={<Link to="/dashboard" />}
-                primaryText="Dashboard"
-                onTouchTap={this.handleRequestClose.bind(this)}
-              />
-              <MenuItem
-                linkButton
-                containerElement={<Link to="/upload" />}
-                primaryText="Upload File"
-                onTouchTap={this.handleRequestClose.bind(this)}
-              />
-              <MenuItem primaryText="Sign out" onTouchTap={this.handleSignout.bind(this)}/>
-            </Menu>
+          <ToolbarSeparator style={{ backgroundColor: 'white', width: '2px' }}/>
+          <ToolbarGroup onTouchTap={this.handleTouchTap} style={{ paddingLeft: '25px' }}>
+            <p style={styles.toolbaruser}>{this.props.user}</p>
+            <FontIcon
+              className="material-icons"
+              style={{ fontSize: '25px', cursor: 'pointer', color: 'white' }}
+              //onTouchTap={this.handleTouchTap}
+            >arrow_drop_down
+            </FontIcon>
+            {/*<IconButton onTouchTap={this.handleTouchTap}><MoreVertIcon color={'white'}/></IconButton>*/}
+            <Popover
+              open={this.state.open}
+              anchorEl={this.state.anchorEl}
+              anchorOrigin={this.state.anchorOrigin}
+              targetOrigin={this.state.targetOrigin}
+              onRequestClose={this.handleRequestClose}
+              style={{ marginTop: '0px' }}
+            >
+              <Menu>
+                {/*<MenuItem
+                  linkButton
+                  containerElement={<Link to="/dashboard" />}
+                  primaryText="Dashboard"
+                  onTouchTap={this.handleRequestClose.bind(this)}
+                />*/}
+                <MenuItem
+                  linkButton
+                  containerElement={<Link to="/upload" />}
+                  primaryText="Upload File"
+                  onTouchTap={this.handleRequestClose.bind(this)}
+                  leftIcon={<UploadIcon />}
+                />
+                <MenuItem
+                  primaryText="Sign out"
+                  onTouchTap={this.handleSignout.bind(this)}
+                  leftIcon={<EjectIcon />}
+                />
+              </Menu>
           </Popover>
+          </ToolbarGroup>
         </ToolbarGroup>
       );
     }
