@@ -13,7 +13,6 @@ exports.getTotal = function(req, res) {
   var totalIncome = 0;
   var totalExpense = 0;
   User.findOne({ email: email }, function(err, user) {
-    console.log(user.totalIncome);
     if (err) { console.log(err); }
     totalIncome = user.totalIncome;
     totalExpense = user.totalExpense;
@@ -24,21 +23,24 @@ exports.getTotal = function(req, res) {
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;
   const userId = req.user._id;
-  console.log('REQ.BODY.startDate--------');
-  console.log(req.body.startDate);
-  console.log('REQ.BODY.endDate--------');
-  console.log(req.body.endDate);
-
-  // const startDate = moment(req.body.startDate, "DD/MM/YYYY");
-  // const endDate = moment(req.body.endDate, "DD/MM/YYYY");
   const startDate = req.body.startDate;
   const endDate = req.body.endDate;
+
   Data.find({ user: userId, date: { $gt: startDate, $lte: endDate } }, function(err, data){
     if (err) { console.log(err); }
     if (!data) {
       return res.send('No data found');
     }
-    res.send({ data: data });
+    var searchTotalIncome = 0;
+    var searchTotalExpenses = 0;
+    data.map((d) => {
+      if (d.amount > 0) {
+        searchTotalIncome += d.amount;
+      } else {
+        searchTotalExpenses += d.amount;
+      }
+    });
+    res.send({ data: data, searchTotalIncome: searchTotalIncome, searchTotalExpenses: searchTotalExpenses });
   });
 };
 

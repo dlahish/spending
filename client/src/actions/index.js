@@ -16,7 +16,8 @@ import {
   GET_TOTAL,
   SET_VISIBILITY_FILTER,
   UPLOAD_FILE,
-  DATE_FORMAT_TOGGLE
+  DATE_FORMAT_TOGGLE,
+  SEARCH_TOTAL
 }
 from './types';
 
@@ -138,6 +139,8 @@ export function getUserEmail() {
 export function getUserData(dataLength, startDate, endDate) {
   return function(dispatch) {
     let dataToReducer = [];
+    let serachTotalIncome = 0;
+    let searchTotalExpenses = 0;
     axios({
       url: `${ROOT_URL}/getdata`,
       method: 'post',
@@ -145,30 +148,35 @@ export function getUserData(dataLength, startDate, endDate) {
       headers: { authorization: localStorage.getItem('token') },
       contentType: 'application/json'
     })
-    // axios.post(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }}, { startDate, endDate })
-    // axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
-      .then(response => {
-        if (response.data.data.length !== dataLength) {
-          response.data.data.map((td) => {
-            console.log('DATA TO FETCH ----');
-            let parsedDate = moment(td.date).format("DD/MM/YYYY");
-            console.log(td.date);
-            console.log(parsedDate);
-            console.log('AND BACK -------');
-            let andBack = moment("26/06/2016", "DD/MM/YYYY");
-            console.log(andBack);
-            td.date = parsedDate;
-            dataToReducer.push(td);
-          });
-          dispatch({
-            type: FETCH_DATA,
-            payload: dataToReducer
-          });
-        }
-      })
-      .catch((err) => {
-        dispatch(authError('Something went wrong with GET_DATA'));
-      });
+    .then(response => {
+      if (response.data.data.length !== dataLength) {
+        response.data.data.map((td) => {
+          console.log('DATA TO FETCH ----');
+          let parsedDate = moment(td.date).format("DD/MM/YYYY");
+          console.log(td.date);
+          console.log(parsedDate);
+          console.log('AND BACK -------');
+          let andBack = moment("26/06/2016", "DD/MM/YYYY");
+          console.log(andBack);
+          td.date = parsedDate;
+          dataToReducer.push(td);
+        });
+        dispatch({
+          type: FETCH_DATA,
+          payload: dataToReducer
+        });
+        dispatch({
+          type: SEARCH_TOTAL,
+          payload: {
+            searchTotalIncome: response.data.searchTotalIncome,
+            searchTotalExpenses: response.data.searchTotalExpenses
+          }
+        })
+      }
+    })
+    .catch((err) => {
+      dispatch(authError('Something went wrong with GET_DATA'));
+    });
   }
 }
 

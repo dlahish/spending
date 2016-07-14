@@ -109,7 +109,7 @@ class Dashboard extends Component {
           style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
           autoOk={true}
         />
-        <h4 style={{ display: 'inline-block' }}>Start date: </h4>
+        <h4 style={{ display: 'inline-block' }}>End date: </h4>
         <DatePicker
           hintText="Choose date"
           onChange={this.handleEndDateChange.bind(this)}
@@ -120,11 +120,19 @@ class Dashboard extends Component {
           disabled={this.state.endDateDisabled}
         />
         <div>
-          <p>
+          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
             Total Income: {''} {this.props.totalIncome}
           </p>
-          <p>
+          <p  style={{ display: 'inline-block' }}>
             Total Expense: {''} {this.props.totalExpense}
+          </p>
+        </div>
+        <div>
+          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
+            Search Income: {''} {this.props.searchTotalIncome}
+          </p>
+          <p  style={{ display: 'inline-block' }}>
+            Search Expense: {''} {this.props.searchTotalExpenses}
           </p>
         </div>
         <p>
@@ -171,6 +179,8 @@ function mapStateToProps(state) {
     data: state.data,
     totalIncome: state.user.totalIncome,
     totalExpense: state.user.totalExpense,
+    searchTotalIncome: state.user.searchTotalIncome,
+    searchTotalExpenses: state.user.searchTotalExpenses,
     visibilityFilter: state.user.visibilityFilter
   };
 }

@@ -4,7 +4,8 @@ import {
   GET_TOTAL,
   SET_VISIBILITY_FILTER,
   UPLOAD_FILE,
-  DATE_FORMAT_TOGGLE
+  DATE_FORMAT_TOGGLE,
+  SEARCH_TOTAL
 } from '../actions/types';
 
 const initialState = {
@@ -13,7 +14,9 @@ const initialState = {
   totalExpense: 0,
   visibilityFilter: 'SHOW_ALL',
   uploadFileMessage: '',
-  dateFormat: 'eu'
+  dateFormat: 'eu',
+  searchTotalIncome: 0,
+  searchTotalExpenses: 0
 }
 
 export default function(state = initialState, action) {
@@ -31,6 +34,12 @@ export default function(state = initialState, action) {
           return { ...state, dateFormat: 'us' };
       } else {
           return { ...state, dateFormat: 'eu' };
+      }
+    case SEARCH_TOTAL:
+      return {
+        ...state,
+        searchTotalIncome: action.payload.searchTotalIncome,
+        searchTotalExpenses: action.payload.searchTotalExpenses
       }
     default:
       return state;
