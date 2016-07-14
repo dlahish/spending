@@ -39,7 +39,7 @@ module.exports = function(app) {
     res.send({ email: userEmail });
   });
 
-  app.get('/getdata', requireAuth, db.getDataByDate);
+  app.post('/getdata', requireAuth, db.getDataByDate);
 
   app.get('/gettotal', requireAuth, db.getTotal);
 

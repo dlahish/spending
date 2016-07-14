@@ -135,10 +135,18 @@ export function getUserEmail() {
   }
 }
 
-export function getUserData(dataLength) {
+export function getUserData(dataLength, startDate, endDate) {
   return function(dispatch) {
     let dataToReducer = [];
-    axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
+    axios({
+      url: `${ROOT_URL}/getdata`,
+      method: 'post',
+      data: { startDate: startDate, endDate: endDate },
+      headers: { authorization: localStorage.getItem('token') },
+      contentType: 'application/json'
+    })
+    // axios.post(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }}, { startDate, endDate })
+    // axios.get(`${ROOT_URL}/getdata`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
         if (response.data.data.length !== dataLength) {
           response.data.data.map((td) => {

@@ -6,6 +6,8 @@ import Table from './Table';
 import TextField from 'material-ui/TextField';
 import moment from 'moment';
 import PieChart from './pie';
+import DatePicker from 'material-ui/DatePicker';
+import { cyan500 } from 'material-ui/styles/colors';
 
 const getVisibleData = (
   data,
@@ -44,12 +46,51 @@ const getVisibleData = (
 };
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      startDate: null,
+      endDate: null,
+      dateError: '',
+      endDateDisabled: true
+    }
+  }
+
   componentWillMount() {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
     this.props.getTotal();
-    this.props.getUserData(this.props.data.length);
+    // this.props.getUserData(this.props.data.length);
+
+  }
+
+  handleStartDateChange = (event, date) => {
+    if (date > this.state.endDate && this.state.endDate !== null) {
+        this.setState({ dateError: 'Start date must be before end date.', startDate: null, dateReady: false });
+    } else {
+        this.setState({ startDate: date, endDateDisabled: false, dateError: '' });
+        if (this.state.startDate && this.state.endDate !== null && this.state.dateError.length === 0) {
+          // this.setState({ dateReady: true });
+          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+        }
+    }
+  }
+
+  handleEndDateChange = (event, date) => {
+    if (date < this.state.startDate) {
+        this.setState({ dateError: 'End date must be after start date.', dateReady: false })
+    } else {
+        this.setState({ endDate: date, dateError: '' });
+        if (this.state.startDate && this.state.endDate && this.state.dateError.length === 0) {
+          // this.setState({ dateReady: true });
+          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+        }
+    }
+  }
+
+  handleDateFormat(date) {
+    return moment(date).format("DD/MM/YYYY");
   }
 
   render() {
@@ -58,6 +99,26 @@ class Dashboard extends Component {
     return (
       <div style={{ textAlign: 'left' }}>
         <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
+        {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
+        <h4 style={{ display: 'inline-block' }}>Start date: </h4>
+        <DatePicker
+          hintText="Choose date"
+          onChange={this.handleStartDateChange.bind(this)}
+          value={this.state.startDate}
+          formatDate={this.handleDateFormat.bind(this)}
+          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
+          autoOk={true}
+        />
+        <h4 style={{ display: 'inline-block' }}>Start date: </h4>
+        <DatePicker
+          hintText="Choose date"
+          onChange={this.handleEndDateChange.bind(this)}
+          value={this.state.endDate}
+          formatDate={this.handleDateFormat.bind(this)}
+          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
+          autoOk={true}
+          disabled={this.state.endDateDisabled}
+        />
         <div>
           <p>
             Total Income: {''} {this.props.totalIncome}

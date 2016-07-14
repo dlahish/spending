@@ -11,7 +11,7 @@ const Pie = ({income, expenses}) => {
     <VictoryPie
       data={[
         {x: "Income", y: income},
-        {x: "Expenses", y: expenses},
+        {x: "Expenses", y: 4000},
       ]}
       style={{
         labels: {
