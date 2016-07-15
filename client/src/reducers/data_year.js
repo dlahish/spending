@@ -3,17 +3,15 @@ import {
 } from '../actions/types';
 import moment from 'moment';
 
-const initialState = [
+const initialState =
   {
-   year: null,
-   monthsTotal: []
-  }
-];
+   2016: []
+  };
 
 const dataYear = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MONTHS_TOTAL:
-      return { ...state, monthsTotal: action.payload };
+      return { ...state, 2016: action.payload };
     default:
       return state;
   }

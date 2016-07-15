@@ -147,9 +147,10 @@ export function getMonthsTotal(year) {
       data: { year }
     })
     .then(response => {
+      console.log(response.data.data);
       dispatch({
         type: FETCH_MONTHS_TOTAL,
-        payload: response.data
+        payload: response.data.data
       });
     })
     .catch(err => {

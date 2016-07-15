@@ -4,8 +4,29 @@ import { VictoryChart, VictoryLine, VictoryLabel, VictoryAxis } from 'victory';
 import { teal700 , grey50, red900 } from 'material-ui/styles/colors';
 
 export default class CustomTheme extends Component {
+  propTypes: {
+    hey: React.PropTypes.number.isRequired
+  }
+  constructor(props) {
+    super(props);
+  }
+
   getDataSetOne() {
-    return [
+    const data = this.props.data;
+    console.log('DATA PROPS IN CHART');
+    console.log(data);
+    let IncomeLineData = [];
+    data.map((d,i) => {
+      let rObj = {};
+      rObj.x = i;
+      rObj.y = d.income;
+      IncomeLineData.push(rObj);
+    });
+    console.log('Income Like Data');
+
+    // return IncomeLineData;
+    const ddw =
+    [
       {x: new Date(2000, 1, 1), y: 12},
       {x: new Date(2000, 6, 1), y: 10},
       {x: new Date(2000, 12, 1), y: 11},
@@ -23,6 +44,8 @@ export default class CustomTheme extends Component {
       {x: new Date(2014, 1, 1), y: 2},
       {x: new Date(2015, 1, 1), y: -5}
     ];
+
+    return ddw;
   }
 
   getDataSetTwo() {
@@ -67,11 +90,11 @@ export default class CustomTheme extends Component {
           strokeWidth: 1
         },
         ticks: {
-          size: (tick) => {
-            const tickSize =
-              tick.getFullYear() % 5 === 0 ? 10 : 5;
-            return tickSize;
-          },
+          // size: (tick) => {
+          //   const tickSize =
+          //     tick.getFullYear() % 5 === 0 ? 10 : 5;
+          //   return tickSize;
+          // },
           stroke: "black",
           strokeWidth: 1
         },
@@ -224,12 +247,12 @@ export default class CustomTheme extends Component {
 
             <VictoryLine
               data={dataSetOne}
-              //domain={{
-              //  x: [new Date(1999, 1, 1), new Date(2016, 1, 1)],
-              //  y: [-10, 15]
-              //}}
+              domain={{
+                x: [new Date(1999, 1, 1), new Date(2016, 1, 1)],
+                y: [-10, 15]
+              }}
               interpolation="monotoneX"
-              scale={{x: "time", y: "linear"}}
+              //scale={{x: "time", y: "linear"}}
               standalone={false}
               style={styles.lineOne}
             />
