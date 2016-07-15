@@ -44,12 +44,8 @@ module.exports = function(app) {
   app.get('/gettotal', requireAuth, db.getTotal);
 
   app.post('/upload', upload.single('file'), requireAuth, db.saveFileToMongo);
-  // app.post('/upload', requireAuth, function(req, res) {
-  //   console.log('USER -------------');
-  //   console.log(req.user);
-  // });
 
-  // app.post('/signin', requireSignin, Authentication.signin);
+  app.post('/getmonthstotal', requireAuth, db.getMonthsTotal);
 
   app.post('/signin', function(req, res, next){
     if (!req.body.email) {

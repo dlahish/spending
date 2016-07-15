@@ -6,7 +6,7 @@ import Table from './Table';
 import TextField from 'material-ui/TextField';
 import moment from 'moment';
 import PieChart from './pie';
-// import Chart from './chartTheme';
+import Chart from './chartTheme';
 import DatePicker from 'material-ui/DatePicker';
 import { cyan500 } from 'material-ui/styles/colors';
 
@@ -62,7 +62,7 @@ class Dashboard extends Component {
       this.props.getUserEmail();
     }
     this.props.getTotal();
-    // this.props.getUserData(this.props.data.length);
+    this.props.getMonthsTotal(2016);
 
   }
 
@@ -102,7 +102,7 @@ class Dashboard extends Component {
         <div>
           <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
           {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
-          {/*<Chart />*/}
+          <Chart data={this.props.monthsTotal}/>
         </div>
         <h4 style={{ display: 'inline-block' }}>Start date: </h4>
         <DatePicker
@@ -185,7 +185,8 @@ function mapStateToProps(state) {
     totalExpense: state.user.totalExpense,
     searchTotalIncome: state.user.searchTotalIncome,
     searchTotalExpenses: state.user.searchTotalExpenses,
-    visibilityFilter: state.user.visibilityFilter
+    visibilityFilter: state.user.visibilityFilter,
+    monthsTotal: state.dataYear.monthsTotal
   };
 }
 

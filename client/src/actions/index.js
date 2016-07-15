@@ -17,7 +17,8 @@ import {
   SET_VISIBILITY_FILTER,
   UPLOAD_FILE,
   DATE_FORMAT_TOGGLE,
-  SEARCH_TOTAL
+  SEARCH_TOTAL,
+  FETCH_MONTHS_TOTAL
 }
 from './types';
 
@@ -133,6 +134,28 @@ export function getUserEmail() {
       .catch((err) => {
         dispatch(authError('Something went wrong'));
       });
+  }
+}
+
+export function getMonthsTotal(year) {
+  return function(dispatch) {
+    axios({
+      url: `${ROOT_URL}/getmonthstotal`,
+      method: 'post',
+      headers: { authorization: localStorage.getItem('token') },
+      contentType: 'application/json',
+      data: { year }
+    })
+    .then(response => {
+      dispatch({
+        type: FETCH_MONTHS_TOTAL,
+        payload: response.data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch(authError('Something went wrong with getMonthsTotal'));
+    });
   }
 }
 

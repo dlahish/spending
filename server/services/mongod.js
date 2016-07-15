@@ -20,7 +20,9 @@ exports.getTotal = function(req, res) {
   });
 }
 
-function getMonthIncomeTotal(userId, year) {
+exports.getMonthsTotal = function(req, res) {
+  var userId = req.user._id;
+  var year = req.body.year;
   var yearIncomeTotal = [];
   var yearExpensesTotal = [];
   var monthStart;
@@ -29,6 +31,7 @@ function getMonthIncomeTotal(userId, year) {
   // monthStart = moment(1 + '/' + i + '/' + year, "DD/MM/YYYY");
   console.log('MONTH START------------');
   console.log(typeof year);
+  console.log(year);
 
   function asyncLoop(iterations, func, callback) {
     var index = 1;
@@ -67,11 +70,11 @@ function getMonthIncomeTotal(userId, year) {
     nextYear += 1;
     nextYear = nextYear.toString();
     yaer = year.toString();
-    console.log('NEXT YEAR -------');
-    console.log(nextYear);
-    console.log(typeof nextYear);
-    console.log('------ J ------');
-    console.log(j);
+    // console.log('NEXT YEAR -------');
+    // console.log(nextYear);
+    // console.log(typeof nextYear);
+    // console.log('------ J ------');
+    // console.log(j);
     var jj = j + 1;
     // if (j < 10) {
     //     var preStart = '0' + 1 + '/' + '0' + j + '/' + year;
@@ -94,7 +97,6 @@ function getMonthIncomeTotal(userId, year) {
       if (!data) { console.log('No data found'); }
       callback(data);
     });
-    // callback(preStart);
   }
 
   asyncLoop(
@@ -113,37 +115,47 @@ function getMonthIncomeTotal(userId, year) {
             yearArray.push([0,0]);
           } else if (d.amount > 0) {
               monthIncome += d.amount;
-              console.log(monthIncome);
           } else {
               monthExpenses += d.amount;
           }
         });
         console.log('AFTER MAPPING ------');
         yearArray.push({ income: monthIncome, expenses: monthExpenses });
-        console.log(yearArray);
-        console.log(j);
+        // console.log(yearArray);
+        // console.log(j);
         loop.next();
       })},
     function(yearArray){
       console.log('cycle ended');
       console.log(yearArray);
+      if (!yearArray) {
+          res.send({ message: 'Something went wrong.'});
+      } else {
+          res.send({ data: yearArray });
+      }
     }
   );
-
 };
 
-exports.getYearTotal = function(req, res) {
-  const userId = req.user._id;
-
-}
+// exports.getMonthsTotal = function(req, res) {
+//   console.log('hello from getMonthsTotal');
+//   const userId = req.user._id;
+//   const ya = getMonthsTotalFunc(userId, 2016);
+//   console.log('yayayayayayayaya');
+//   console.log(ya);
+//   var yearArray;
+//   if (!yearArray) {
+//       res.send({ message: 'Something went wrong.'});
+//   } else {
+//       res.send({ data: yearArray });
+//   }
+// }
 
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;
   const userId = req.user._id;
   const startDate = req.body.startDate;
   const endDate = req.body.endDate;
-
-  // getMonthIncomeTotal(userId, 2016);
 
   Data.find({ user: userId, date: { $gt: startDate, $lte: endDate } }, function(err, data){
     if (err) { console.log(err); }
@@ -160,7 +172,6 @@ exports.getDataByDate = function(req, res) {
       }
     });
     res.send({ data: data, searchTotalIncome: searchTotalIncome, searchTotalExpenses: searchTotalExpenses });
-    getMonthIncomeTotal(userId, 2016);
   });
 };
 
