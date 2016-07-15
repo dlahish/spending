@@ -14,10 +14,44 @@ const styles = {
     fontFamily: "'Fira Sans', sans-serif",
     width: "60%",
     height: "auto"
+  },
+
+  axisOne: {
+    grid: {
+      stroke: (tick) =>
+        tick === 0 ? "transparent" : "#ffffff",
+      strokeWidth: 1
+    },
+    axis: { strokeWidth: 1 },
+    ticks: { strokeWidth: 0 },
+    tickLabels: { fontSize: 9 }
+  },
+
+  axisTwo: {
+    axis: {
+      stroke: RED_COLOR,
+      strokeWidth: 1
+    },
+    ticks: {
+      strokeWidth: 0
+    },
+    tickLabels: {
+      fill: BLUE_COLOR,
+      fontFamily: "inherit",
+      fontSize: 10
+    }
+  },
+
+  lineOne: {
+    data: {
+      stroke: BLUE_COLOR,
+      strokeWidth: 4.5
+    }
   }
 }
 
 export default class CustomTheme extends Component {
+
   getDataSetOne() {
     const data = this.props.data;
     console.log('DATA PROPS IN CHART');
@@ -35,70 +69,52 @@ export default class CustomTheme extends Component {
     console.log('Income Like Data');
     console.log(IncomeLineData);
     console.log(typeof IncomeLineData);
-    const ddd = [
-      {x: 0, y: data[0].income},
-      {x: 1, y: data[1].income},
-      {x: 2, y: data[2].income},
-      {x: 3, y: data[3].income}
-    ];
-    // return IncomeLineData;
-    const ddw =
-    [
-      {x: new Date(2000, 1, 1), y: 12},
-      {x: new Date(2000, 6, 1), y: 10},
-      {x: new Date(2000, 12, 1), y: 11},
-      {x: new Date(2001, 1, 1), y: 5},
-      {x: new Date(2002, 1, 1), y: 4},
-      {x: new Date(2003, 1, 1), y: 6},
-      {x: new Date(2004, 1, 1), y: 5},
-      {x: new Date(2005, 1, 1), y: 7},
-      {x: new Date(2006, 1, 1), y: 8},
-      {x: new Date(2007, 1, 1), y: 9},
-      {x: new Date(2008, 1, 1), y: -8.5},
-      {x: new Date(2009, 1, 1), y: -9},
-      {x: new Date(2010, 1, 1), y: 5},
-      {x: new Date(2013, 1, 1), y: 1},
-      {x: new Date(2014, 1, 1), y: 2},
-      {x: new Date(2015, 1, 1), y: -5}
-    ];
-
-    return ddw;
+    // const ddd = [
+    //   {x: 0, y: data[0].income},
+    //   {x: 1, y: data[1].income},
+    //   {x: 2, y: data[2].income},
+    //   {x: 3, y: data[3].income}
+    // ];
+    return IncomeLineData;
   };
 
   render() {
     const data = this.getDataSetOne();
     return (
       <div>
-        <svg
-          style={styles.parent}
-          viewBox="0 0 450 350"
-        >
-          <g transform={"translate(0, 40)"}>
+        <svg style={{ width: 600, height: 600 }}>
+          <VictoryChart>
             <VictoryAxis dependentAxis
-
+              style={styles.axisOne}
+              domain={[0, 12000]}
             />
 
             <VictoryAxis
-              //tickValues={[
-              //  "Jan",
-              //  "Feb",
-              //  "March",
-              //  "April",
-              //  "May",
-              //  "June",
-              //  "July",
-              //  "Aug",
-              //  "Sept",
-              //  "Oct",
-              //  "Nov",
-              //  "Dec"
-              //]}
+              style={styles.axisTwo}
+              tickValues={[0,1,2,3,4,5,6,7,8,9,10,11]}
+              tickFormat={[
+                "Jan",
+                "Feb",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "Aug",
+                "Sept",
+                "Oct",
+                "Nov",
+                "Dec"
+              ]}
             />
 
             <VictoryLine
               data={data}
+              //interpolation="catmullRom"
+              label="INCOME"
+              style={styles.lineOne}
             />
-          </g>
+          </VictoryChart>
         </svg>
       </div>
     );

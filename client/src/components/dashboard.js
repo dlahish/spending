@@ -96,13 +96,14 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-
+    console.log('THIS.PROPS.MONTHS2016');
+    console.log(this.props.months2016);
     return (
       <div style={{ textAlign: 'left' }}>
         <div>
           <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
           {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
-          <Chart name="Nadav" data={this.props.months2016}/>
+          {this.props.months2016.length > 0 ? <Chart data={this.props.months2016}/> : ''}
         </div>
         <h4 style={{ display: 'inline-block' }}>Start date: </h4>
         <DatePicker
