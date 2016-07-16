@@ -47,44 +47,45 @@ class Signup extends Component {
     const { handleSubmit, fields: {email, password, passwordConfirm}} = this.props;
 
     return (
-      <Paper style={styles.paper} zDephth={3} >
-        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <label style={styles.label}>Sign Up for Spending</label><br /><br />
-          <div>
-            <TextField hintText = 'Email:'
-              name='Email'
-              errorText = { this.props.errorMessage || email.touched && email.error }
-              {...email}
-            />
-          </div><br />
-          <div>
-            <TextField hintText = 'Password:'
-              name='Password'
-              type="password"
-              errorText = { password.touched && password.error }
-              {...password}
-            />
-          </div><br />
-          <div>
-            <TextField hintText = 'Confirm Password:'
-              name='Email'
-              type="password"
-              errorText = { passwordConfirm.touched && passwordConfirm.error }
-              {...passwordConfirm}
-            />
-          </div><br />
+      <div>
+        <label style={styles.label}>Enter a New Record</label><br /><br />
+        <Paper style={styles.paper} zDephth={3} >
+          <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+            <div>
+              <TextField hintText = 'Email:'
+                name='Email'
+                errorText = { this.props.errorMessage || email.touched && email.error }
+                {...email}
+              />
+            </div><br />
+            <div>
+              <TextField hintText = 'Password:'
+                name='Password'
+                type="password"
+                errorText = { password.touched && password.error }
+                {...password}
+              />
+            </div><br />
+            <div>
+              <TextField hintText = 'Confirm Password:'
+                name='Email'
+                type="password"
+                errorText = { passwordConfirm.touched && passwordConfirm.error }
+                {...passwordConfirm}
+              />
+            </div><br />
 
-          <RaisedButton
-            primary={true}
-            style={{ marginTop: 10 }}
-            label="Sign Up"
-            type="submit"
-            //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
-          />
+            <RaisedButton
+              primary={true}
+              style={{ marginTop: 10 }}
+              label="Sign Up"
+              type="submit"
+              //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+            />
 
-        </form>
-      </Paper>
-
+          </form>
+        </Paper>
+      </div>
     );
   }
 }

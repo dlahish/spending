@@ -90,8 +90,7 @@ export default class CustomTheme extends Component {
     const dataExpenses = this.getDataExpenses();
 
     return (
-      <div>
-        <svg style={{ width: 600, height: 600 }}>
+      <div style={{ width: '50%', height: 'auto', display: 'inline-block' }}>
           <VictoryChart>
             <VictoryAxis dependentAxis
               style={styles.axisOne}
@@ -132,7 +131,7 @@ export default class CustomTheme extends Component {
             />
 
           </VictoryChart>
-        </svg>
+
       </div>
     );
   }

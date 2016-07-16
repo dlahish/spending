@@ -17,6 +17,7 @@ import Dashboard from './components/dashboard';
 import Signout from './components/auth/signout';
 import UploadFile from './components/upload';
 import SigninAttempt from './components/auth/signin_attempt';
+import NewRecord from './components/NewRecord';
 import { loadState, saveState } from './localStorage';
 
 import { AUTH_USER } from './actions/types';
@@ -55,7 +56,7 @@ ReactDOM.render(
         <Route path="signinattempt" component={SigninAttempt} />
         <Route path="dashboard" component={RequireAuth(Dashboard)} />
         <Route path="upload" component={RequireAuth(UploadFile)} />
-
+        <Route path="newrecord" component={RequireAuth(NewRecord)} />
       </Route>
     </Router>
   </Provider>

@@ -17,7 +17,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import FontIcon from 'material-ui/FontIcon';
 import UploadIcon from 'material-ui/svg-icons/file/file-upload';
 import EjectIcon from 'material-ui/svg-icons/action/eject';
-
+import ControlPoint from 'material-ui/svg-icons/image/control-point';
 const styles = {
   toolbartitle: {
     cursor: 'pointer'
@@ -180,6 +180,13 @@ class Header extends Component {
                   primaryText="Upload File"
                   onTouchTap={this.handleRequestClose.bind(this)}
                   leftIcon={<UploadIcon />}
+                />
+                <MenuItem
+                  linkButton
+                  containerElement={<Link to="/newrecord" />}
+                  primaryText="New Record"
+                  onTouchTap={this.handleRequestClose.bind(this)}
+                  leftIcon={<ControlPoint />}
                 />
                 <MenuItem
                   primaryText="Sign out"
