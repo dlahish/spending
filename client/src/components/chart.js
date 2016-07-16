@@ -47,39 +47,48 @@ const styles = {
       stroke: BLUE_COLOR,
       strokeWidth: 4.5
     }
+  },
+
+  lineTwo: {
+    data: {
+      stroke: RED_COLOR,
+      strokeWidth: 4.5
+    }
   }
 }
 
 export default class CustomTheme extends Component {
 
-  getDataSetOne() {
+  getDataIncome() {
     const data = this.props.data;
-    console.log('DATA PROPS IN CHART');
-    console.log(data);
     let IncomeLineData = [];
     data.map((d,i) => {
       const obj = {};
       obj.x = i;
       obj.y = d.income;
       IncomeLineData.push(obj);
-      // rObj.x = i;
-      // rObj.y = d.income;
-      // IncomeLineData.push(rObj);
     });
-    console.log('Income Like Data');
-    console.log(IncomeLineData);
-    console.log(typeof IncomeLineData);
-    // const ddd = [
-    //   {x: 0, y: data[0].income},
-    //   {x: 1, y: data[1].income},
-    //   {x: 2, y: data[2].income},
-    //   {x: 3, y: data[3].income}
-    // ];
+
+    return IncomeLineData;
+  };
+
+  getDataExpenses() {
+    const data = this.props.data;
+    let IncomeLineData = [];
+    data.map((d,i) => {
+      const obj = {};
+      obj.x = i;
+      obj.y = d.expenses;
+      IncomeLineData.push(obj);
+    });
+
     return IncomeLineData;
   };
 
   render() {
-    const data = this.getDataSetOne();
+    const dataIncome = this.getDataIncome();
+    const dataExpenses = this.getDataExpenses();
+
     return (
       <div>
         <svg style={{ width: 600, height: 600 }}>
@@ -109,11 +118,19 @@ export default class CustomTheme extends Component {
             />
 
             <VictoryLine
-              data={data}
+              data={dataIncome}
               //interpolation="catmullRom"
-              label="INCOME"
+              //label="INCOME"
               style={styles.lineOne}
             />
+
+            <VictoryLine
+              data={dataExpenses}
+              //interpolation="catmullRom"
+              //label="EXPENSES"
+              style={styles.lineTwo}
+            />
+
           </VictoryChart>
         </svg>
       </div>

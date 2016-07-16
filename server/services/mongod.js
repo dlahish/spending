@@ -116,6 +116,7 @@ exports.getMonthsTotal = function(req, res) {
           } else if (d.amount > 0) {
               monthIncome += d.amount;
           } else {
+              d.amount = Math.abs(d.amount);
               monthExpenses += d.amount;
           }
         });
