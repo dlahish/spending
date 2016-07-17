@@ -21,20 +21,19 @@ const styles = {
     margin: 'auto',
     width: '40%',
     backgroundColor: 'white',
-    padding: 20,
-    paddingTop: 25
+    padding: 20
   },
 
   label: {
     fontWeight: 'bold',
     fontSize: 30,
-    marginTop: 30
+    marginTop: 15
   },
 
   headline: {
     fontSize: 24,
-    paddingTop: 16,
-    marginBottom: 12,
+    paddingTop: 10,
+    marginBottom: 8,
     fontWeight: 400,
   },
 
@@ -47,13 +46,21 @@ const styles = {
   }
 };
 
+const selectItems = [
+  <MenuItem key={1} value={1} primaryText="Never" />,
+  <MenuItem key={2} value={2} primaryText="Every Night" />,
+  <MenuItem key={3} value={3} primaryText="Weeknights" />,
+  <MenuItem key={4} value={4} primaryText="Weekends" />,
+  <MenuItem key={5} value={5} primaryText="Weekly" />,
+];
+
 class NewRecord extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       date: null,
-      selectValue: 1,
+      selectValue: null,
       slideIndex: 0
     }
   }
@@ -64,7 +71,7 @@ class NewRecord extends Component {
     }
   }
 
-  handleSelectChange = (event, index, value) => this.setState({ value });
+  handleSelectChange = (event, index, value) => this.setState({ selectValue: value });
 
   handleSlideChange = (value) => {
     this.setState({
@@ -110,9 +117,14 @@ class NewRecord extends Component {
                   onChange={this.handleDateChange.bind(this)}
                   value={this.state.date}
                   formatDate={this.handleDateFormat.bind(this)}
-                  style={{ display: 'inline-block', paddingTop: '20px' }}
+                  style={{ display: 'inline-block', paddingTop: '20px', color: 'black' }}
                   autoOk={true}
                   mode={'landscape'}
+                  dialogContainerStyle={{ cursor: 'pointer', color: 'black' }}
+                  textFieldStyle={{ cursor: 'pointer', color: 'black' }}
+                  hintStyle={{ color: 'black' }}
+                  floatingLabelText="Date:"
+                  floatingLabelStyle={{ color: 'black' }}
                   //{...date}
                 />
               </div><br />
@@ -121,21 +133,21 @@ class NewRecord extends Component {
                   floatingLabelText="Amount:"
                   floatingLabelStyle={{ color: 'black' }}
                   name='Amount'
-                  style={{ display: 'inline-block', marginTop: '-25px' }}
+                  style={{ display: 'inline-block'}}
                   errorText = { amount.touched && amount.error }
                   {...amount}
                 />
               </div><br />
               <div>
                 <SelectField
+                  //style={{ marginTop: '-25px' }}
                   value={this.state.selectValue}
-                  onChange={this.handleSelectChange}
+                  onChange={this.handleSelectChange.bind(this)}
+                  floatingLabelText="Category"
+                  hintText="Category"
+                  floatingLabelStyle={{ color: 'black' }}
                 >
-                  <MenuItem value={1} primaryText="Never" />
-                  <MenuItem value={2} primaryText="Every Night" />
-                  <MenuItem value={3} primaryText="Weeknights" />
-                  <MenuItem value={4} primaryText="Weekends" />
-                  <MenuItem value={5} primaryText="Weekly" />
+                  {selectItems}
                 </SelectField>
               </div>
 
