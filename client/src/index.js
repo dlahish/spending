@@ -9,6 +9,7 @@ import { throttle } from 'lodash';
 import reducers from './reducers';
 import RequireAuth from './components/auth/require_auth';
 
+
 import App from './components/app';
 import Home from './components/home';
 import Signup from './components/auth/signup';
@@ -18,6 +19,7 @@ import Signout from './components/auth/signout';
 import UploadFile from './components/upload';
 import SigninAttempt from './components/auth/signin_attempt';
 import NewRecord from './components/NewRecord';
+import Categories from './components/Categories';
 import { loadState, saveState } from './localStorage';
 
 import { AUTH_USER } from './actions/types';
@@ -57,6 +59,7 @@ ReactDOM.render(
         <Route path="dashboard" component={RequireAuth(Dashboard)} />
         <Route path="upload" component={RequireAuth(UploadFile)} />
         <Route path="newrecord" component={RequireAuth(NewRecord)} />
+        <Route path="categories" component={RequireAuth(Categories)} />
       </Route>
     </Router>
   </Provider>

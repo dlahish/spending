@@ -18,6 +18,8 @@ import FontIcon from 'material-ui/FontIcon';
 import UploadIcon from 'material-ui/svg-icons/file/file-upload';
 import EjectIcon from 'material-ui/svg-icons/action/eject';
 import ControlPoint from 'material-ui/svg-icons/image/control-point';
+import DescriptionIcon from 'material-ui/svg-icons/action/description';
+
 const styles = {
   toolbartitle: {
     cursor: 'pointer'
@@ -187,6 +189,13 @@ class Header extends Component {
                   primaryText="New Record"
                   onTouchTap={this.handleRequestClose.bind(this)}
                   leftIcon={<ControlPoint />}
+                />
+                <MenuItem
+                  linkButton
+                  containerElement={<Link to="/categories" />}
+                  primaryText="Categories"
+                  onTouchTap={this.handleRequestClose.bind(this)}
+                  leftIcon={<DescriptionIcon />}
                 />
                 <MenuItem
                   primaryText="Sign out"

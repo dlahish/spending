@@ -5,7 +5,9 @@ import {
   SET_VISIBILITY_FILTER,
   UPLOAD_FILE,
   DATE_FORMAT_TOGGLE,
-  SEARCH_TOTAL
+  SEARCH_TOTAL,
+  ADD_CATEGORY,
+  FETCH_CATEGORIES
 } from '../actions/types';
 
 const initialState = {
@@ -16,7 +18,8 @@ const initialState = {
   uploadFileMessage: '',
   dateFormat: 'eu',
   searchTotalIncome: 0,
-  searchTotalExpenses: 0
+  searchTotalExpenses: 0,
+  categories: []
 }
 
 export default function(state = initialState, action) {
@@ -41,6 +44,12 @@ export default function(state = initialState, action) {
         searchTotalIncome: action.payload.searchTotalIncome,
         searchTotalExpenses: action.payload.searchTotalExpenses
       }
+    case ADD_CATEGORY:
+      const nextState = { ...state };
+      nextState.categories.push(action.payload);
+      return { ...nextState };
+    case FETCH_CATEGORIES:
+      return { ...state, categories: action.payload };
     default:
       return state;
   }

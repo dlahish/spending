@@ -8,6 +8,31 @@ const Data = models.Data;
 
 var existsEntries = 0;
 
+exports.fetchCategories = function(req, res) {
+  const userId = req.user._id;
+  User.findById(userId, function(err, user) {
+    if (err) { console.log(err); }
+    if (!user) { console.log('no user found'); }
+    res.send({ categories: user.categories });
+  })
+}
+
+exports.newCategory = function(req, res) {
+  const userId = req.user._id;
+  User.findByIdAndUpdate(userId,
+    {
+      $push: { categories: req.body.category }
+    },
+    function(err) {
+      if (err) {
+        console.log(err);
+        return res.send({ error: 'Something went wrong with push new category.'})
+      }
+      res.send({ message: 'Category was saved.' });
+    }
+  );
+}
+
 exports.getTotal = function(req, res) {
   const email = req.user.email;
   var totalIncome = 0;

@@ -16,5 +16,7 @@ export const UPLOAD_FILE = 'upload_file';
 export const DATE_FORMAT_TOGGLE = 'date_format_toggle';
 export const SEARCH_TOTAL = 'search_total';
 export const FETCH_MONTHS_TOTAL = 'fetch_months_total';
+export const ADD_CATEGORY = 'add_category';
+export const FETCH_CATEGORIES = 'fetch_categories';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';

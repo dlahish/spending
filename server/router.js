@@ -47,6 +47,10 @@ module.exports = function(app) {
 
   app.post('/getmonthstotal', requireAuth, db.getMonthsTotal);
 
+  app.post('/addnewcategory', requireAuth, db.newCategory);
+
+  app.get('/fetchcategories', requireAuth, db.fetchCategories);
+
   app.post('/signin', function(req, res, next){
     if (!req.body.email) {
       return res.send({ message: 'No user supplied' });

@@ -18,11 +18,50 @@ import {
   UPLOAD_FILE,
   DATE_FORMAT_TOGGLE,
   SEARCH_TOTAL,
-  FETCH_MONTHS_TOTAL
+  FETCH_MONTHS_TOTAL,
+  ADD_CATEGORY,
+  FETCH_CATEGORIES
 }
 from './types';
 
 const ROOT_URL = 'http://localhost:3090';
+
+export function addNewCategory(newCategory) {
+  return function(dispatch) {
+    axios({
+      url: `${ROOT_URL}/addnewcategory`,
+      method: 'post',
+      headers: { authorization: localStorage.getItem('token') },
+      contentType: 'application/json',
+      data: { category: newCategory }
+    })
+    .then(response => {
+      dispatch({
+        type: ADD_CATEGORY,
+        payload: newCategory
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch(authError('Something went wrong with ADD_CATEGORIES'));
+    })
+  }
+}
+
+export function fetchCategories() {
+  return function(dispatch) {
+    axios.get(`${ROOT_URL}/fetchcategories`, { headers: { authorization: localStorage.getItem('token') }})
+      .then(response => {
+        dispatch({
+          type: FETCH_CATEGORIES,
+          payload: response.data.categories
+        })
+      })
+      .catch((err) => {
+        dispatch(authError('Unable to get categories'));
+      });
+  }
+}
 
 export function signupUser({ email, password }) {
   return function(dispatch) {

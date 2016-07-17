@@ -18,6 +18,7 @@ const userSchema = new Schema({
   username: String,
   totalIncome: Number,
   totalExpense: Number,
+  categories: [],
   data: [{ type: Schema.Types.ObjectId, ref: 'Data' }]
 });
 
