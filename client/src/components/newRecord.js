@@ -12,6 +12,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import SwipeableViews from 'react-swipeable-views';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
+import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
 
 const styles = {
   paper : {
@@ -43,6 +44,10 @@ const styles = {
 
   customWidth: {
     width: 150,
+  },
+
+  radioButton: {
+    marginBottom: 12
   }
 };
 
@@ -92,36 +97,42 @@ class NewRecord extends Component {
   }
 
   render() {
-    const { handleSubmit, fields: {date, amount, category}} = this.props;
+    const { handleSubmit, fields: { date, amount, category, reqType }} = this.props;
 
     return (
       <div>
         <p style={styles.label}>Enter a New Record</p>
         <Paper style={styles.paper} zDephth={3} >
-        <Tabs
-          value={this.state.value}
-          onChange={this.handleSlideChange}
-        >
-          <Tab label="Income" value={0} />
-          <Tab label="Expense" value={1} />
-        </Tabs>
-        <SwipeableViews
-          index={this.state.slideIndex}
-          onChangeIndex={this.handleSlideChange}
-        >
-          <div>
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+              <div style={{ marginBottom: '-25px', paddingTop: '15px' }}>
+                <RadioButtonGroup
+                  name="reqType"
+                  defaultSelected="Income"
+                  style={{ display: 'flex', width: '40%' }}
+                  {...reqType}
+                >
+                  <RadioButton
+                    value="Income"
+                    label="Income"
+                    style={styles.radioButton}
+                  />
+                  <RadioButton
+                    value="Expense"
+                    label="Expense"
+                    style={styles.radioButton}
+                  />
+                </RadioButtonGroup>
+              </div>
               <div>
                 <DatePicker
                   hintText="Choose date"
                   onChange={this.handleDateChange.bind(this)}
                   value={this.state.date}
                   formatDate={this.handleDateFormat.bind(this)}
-                  style={{ display: 'inline-block', paddingTop: '20px', color: 'black' }}
+                  style={{ paddingTop: '20px', color: 'black' }}
                   autoOk={true}
                   mode={'landscape'}
                   dialogContainerStyle={{ cursor: 'pointer', color: 'black' }}
-                  textFieldStyle={{ cursor: 'pointer', color: 'black' }}
                   hintStyle={{ color: 'black' }}
                   floatingLabelText="Date:"
                   floatingLabelStyle={{ color: 'black' }}
@@ -153,62 +164,12 @@ class NewRecord extends Component {
 
               <RaisedButton
                 primary={true}
-                style={{ marginTop: 10 }}
+                style={{ marginTop: '20px' }}
                 label="Sign Up"
                 type="submit"
                 //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
               />
-
             </form>
-          </div>
-          <div>
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-              <div style={{ margin: 'auto'}}>
-                <DatePicker
-                  hintText="Choose date"
-                  onChange={this.handleDateChange.bind(this)}
-                  value={this.state.date}
-                  formatDate={this.handleDateFormat.bind(this)}
-                  style={{ display: 'inline-block', marginLeft: '15px' }}
-                  autoOk={true}
-                  mode={'landscape'}
-                  {...date}
-                />
-              </div><br />
-              <div>
-                <TextField
-                  floatingLabelText="Amount:"
-                  floatingLabelStyle={{ color: 'black' }}
-                  name='Amout'
-                  style={{ display: 'inline-block', marginLeft: '15px' }}
-                  errorText = { amount.touched && amount.error }
-                  {...amount}
-                />
-              </div><br />
-              <div>
-                <SelectField
-                  value={this.state.selectValue}
-                  onChange={this.handleSelectChange}
-                >
-                  <MenuItem value={1} primaryText="Never" />
-                  <MenuItem value={2} primaryText="Every Night" />
-                  <MenuItem value={3} primaryText="Weeknights" />
-                  <MenuItem value={4} primaryText="Weekends" />
-                  <MenuItem value={5} primaryText="Weekly" />
-                </SelectField>
-              </div>
-
-              <RaisedButton
-                primary={true}
-                style={{ marginTop: 10 }}
-                label="Sign Up"
-                type="submit"
-                //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
-              />
-
-            </form>
-          </div>
-        </SwipeableViews>
         </Paper>
       </div>
     );
@@ -238,6 +199,6 @@ const validate = formProps => {
 
 export default reduxForm({
   form: 'newrecord',
-  fields: ['date', 'amount', 'category'],
+  fields: ['date', 'amount', 'category', 'reqType'],
   validate
 }, mapStateToProps, actions)(NewRecord);

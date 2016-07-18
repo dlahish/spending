@@ -20,11 +20,34 @@ import {
   SEARCH_TOTAL,
   FETCH_MONTHS_TOTAL,
   ADD_CATEGORY,
-  FETCH_CATEGORIES
+  FETCH_CATEGORIES,
+  DELETE_CATEGORY
 }
 from './types';
 
 const ROOT_URL = 'http://localhost:3090';
+
+export function deleteCategory(category) {
+  return function(dispatch) {
+    axios({
+      url: `${ROOT_URL}/deletecategory`,
+      method: 'post',
+      headers: { authorization: localStorage.getItem('token') },
+      contentType: 'application/json',
+      data: { category: category }
+    })
+    .then(response => {
+      // dispatch({
+      //   type: DELETE_CATEGORY,
+      //   payload: category
+      // });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch(authError('Something went wrong with DELETE_CATEGORY'));
+    })
+  }
+}
 
 export function addNewCategory(newCategory) {
   return function(dispatch) {

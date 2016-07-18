@@ -64,7 +64,10 @@ class Categories extends Component {
     super(props);
     this.state = {
       dialogOpen: false,
-      categoryInput: ''
+      categoryInput: '',
+      disableDialogSubmit: true,
+      categoryToDelete: '',
+      tableData: []
     }
   }
 
@@ -73,33 +76,61 @@ class Categories extends Component {
       this.props.getUserEmail();
     }
     this.props.fetchCategories();
+    const tempTableData = [] ;
+    this.props.categories.map(cat => {
+      tempTableData.push({
+        name: cat,
+        selected: false
+      });
+    });
+    this.setState({ tableData: tempTableData });
   }
 
   handleDialogOpen = () => {
     this.setState({ dialogOpen: true });
-  };
+  }
 
   handleDialogClose = () => {
     this.setState({ dialogOpen: false });
-  };
+  }
+
+  handleDeleteButton() {
+    this.props.deleteCategory(this.state.categoryToDelete);
+    this.props.fetchCategories();
+  }
 
   handleAddButton() {
     this.handleDialogClose();
     this.props.addNewCategory(this.state.categoryInput);
-    this.setState({ categoryInput: event.target.value });
     this.props.fetchCategories();
   }
 
   handleDialogText = (event) => {
-    this.setState({
-      categoryInput: event.target.value,
-    });
+    if (event.target.value.length > 0) {
+      this.setState({ categoryInput: event.target.value, disableDialogSubmit: false });
+    } else {
+      this.setState({ categoryInput: event.target.value, disableDialogSubmit: true });
+    }
+
   };
 
-  render() {
+  handleRowSelection = (event) => {
+    const selectedCategory = event[0];
+    const nextTableData = this.state.tableData;
+    this.state.tableData.map((td, i) => {
+      if (td.selected) { nextTableData[i].selected = false };
+      if (i == selectedCategory) {
+        nextTableData[i].name = td.name;
+        nextTableData[i].selected = true;
+      }
+    });
+    this.setState({
+      categoryToDelete: this.props.categories[selectedCategory],
+      tableData: nextTableData
+    });
+  }
 
-    // const tableData = ['General', 'Grocery', 'Coffee', 'Eating Out'];
-    const tableData = this.props.categories ;
+  render() {
 
     const dialogActions = [
       <FlatButton
@@ -112,6 +143,7 @@ class Categories extends Component {
         primary={true}
         keyboardFocused={true}
         onTouchTap={this.handleAddButton.bind(this)}
+        disabled={this.state.disableDialogSubmit}
       />,
     ];
 
@@ -137,7 +169,11 @@ class Categories extends Component {
             />
           </Dialog>
           <FlatButton label="Edit" />
-          <FlatButton label="Delete" secondary={true} />
+          <FlatButton
+            label="Delete"
+            secondary={true}
+            onTouchTap={this.handleDeleteButton.bind(this)}
+          />
           </div>
           <Divider style={{ height: '3px' }} />
           <div>
@@ -147,6 +183,7 @@ class Categories extends Component {
               fixedFooter={styles.table.fixedFooter}
               selectable={styles.table.selectable}
               multiSelectable={styles.table.multiSelectable}
+              onRowSelection={this.handleRowSelection.bind(this)}
             >
               <TableHeader
                 displaySelectAll={styles.table.showCheckboxes}
@@ -169,9 +206,9 @@ class Categories extends Component {
                 stripedRows={styles.table.stripedRows}
                 style={{ backgroundColor: blueGrey200 }}
               >
-                {tableData.map( (row, index) => (
+                {this.state.tableData.map( (row, index) => (
                   <TableRow key={index} selected={row.selected}>
-                    <TableRowColumn>{row}</TableRowColumn>
+                    <TableRowColumn>{row.name}</TableRowColumn>
                   </TableRow>
                 ))}
               </TableBody>

@@ -8,6 +8,17 @@ const Data = models.Data;
 
 var existsEntries = 0;
 
+exports.deleteCategory = function(req, res) {
+  const userId = req.user._id;
+  User.findByIdAndUpdate(userId, { $pullAll: { categories: [req.body.category] } }, function(err) {
+    if (err) {
+      console.log(err);
+      return res.send({ error: err});
+    }
+    res.send({ message: 'Category was deleted.'});
+  })
+}
+
 exports.fetchCategories = function(req, res) {
   const userId = req.user._id;
   User.findById(userId, function(err, user) {
