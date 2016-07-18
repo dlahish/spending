@@ -9,7 +9,7 @@ const data = (state = [], action) => {
     case FETCH_DATA:
       return action.payload;
     case UNAUTH_USER:
-      return state = [];
+      return [];
     default:
       return state;
   }

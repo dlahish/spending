@@ -7,7 +7,8 @@ import {
   DATE_FORMAT_TOGGLE,
   SEARCH_TOTAL,
   ADD_CATEGORY,
-  FETCH_CATEGORIES
+  FETCH_CATEGORIES,
+  TOGGLE_CATEGORY
 } from '../actions/types';
 
 const initialState = {
@@ -23,6 +24,7 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
+  const nextState = { ...state };
   switch(action.type) {
     case FETCH_MESSAGE:
       return { ...state, message: action.payload };
@@ -45,11 +47,18 @@ export default function(state = initialState, action) {
         searchTotalExpenses: action.payload.searchTotalExpenses
       }
     case ADD_CATEGORY:
-      const nextState = { ...state };
       nextState.categories.push(action.payload);
       return { ...nextState };
     case FETCH_CATEGORIES:
       return { ...state, categories: action.payload };
+    case TOGGLE_CATEGORY:
+      const newCategories = state.categories;
+      if (action.payload === undefined) {
+          newCategories.map(c => c.selected = false);
+      } else {
+          newCategories[action.payload].selected = true;
+      }
+      return { ...state, categories: newCategories }
     default:
       return state;
   }

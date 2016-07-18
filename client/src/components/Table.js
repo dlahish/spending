@@ -87,7 +87,7 @@ class DataTable extends React.Component {
     }
   }
 
-  handleDatetSort() {
+  handleDateSort() {
     if (this.state.dateSort.length === 0) {
         this.props.setVisibilityFilter('SORT_DOWN_DATE');
         this.setState({ dateSort: 'down' });
@@ -158,7 +158,7 @@ class DataTable extends React.Component {
                     <FontIcon
                       className="material-icons"
                       style={{ fontSize: '25px', cursor: 'pointer' }}
-                      onTouchTap={this.handleDatetSort.bind(this)}
+                      onTouchTap={this.handleDateSort.bind(this)}
                     >arrow_drop_down
                     </FontIcon> :
                     <FontIcon

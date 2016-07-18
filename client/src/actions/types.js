@@ -19,5 +19,6 @@ export const FETCH_MONTHS_TOTAL = 'fetch_months_total';
 export const ADD_CATEGORY = 'add_category';
 export const FETCH_CATEGORIES = 'fetch_categories';
 export const DELETE_CATEGORY = 'delete_category';
+export const TOGGLE_CATEGORY = 'toggle_category';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';
