@@ -136,7 +136,12 @@ class Categories extends Component {
         <p style={styles.label}>Edit Caegories</p>
         <Paper style={styles.paper} zDephth={3} >
           <div style={{ paddingBottom: '20px' }}>
-          <FlatButton label="Add" primary={true} onTouchTap={this.handleDialogOpen}/>
+          <FlatButton
+            label="Add"
+            primary={true}
+            onTouchTap={this.handleDialogOpen}
+            //style={{ display: 'inline-block', w: '20%'}}
+          />
           <Dialog
             title="Enter a new Category"
             actions={dialogActions}
@@ -152,11 +157,12 @@ class Categories extends Component {
               onChange={this.handleDialogText.bind(this)}
             />
           </Dialog>
-          <FlatButton label="Edit" />
+          {/*<FlatButton label="Edit" />*/}
           <FlatButton
             label="Delete"
             secondary={true}
             onTouchTap={this.handleDeleteButton.bind(this)}
+            //style={{ display: 'inline-block'}}
           />
           </div>
           <Divider style={{ height: '3px' }} />

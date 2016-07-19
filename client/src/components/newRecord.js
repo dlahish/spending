@@ -51,22 +51,13 @@ const styles = {
   }
 };
 
-const selectItems = [
-  <MenuItem key={1} value={1} primaryText="Never" />,
-  <MenuItem key={2} value={2} primaryText="Every Night" />,
-  <MenuItem key={3} value={3} primaryText="Weeknights" />,
-  <MenuItem key={4} value={4} primaryText="Weekends" />,
-  <MenuItem key={5} value={5} primaryText="Weekly" />,
-];
-
 class NewRecord extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       date: null,
-      selectValue: null,
-      slideIndex: 0
+      selectedValue: null
     }
   }
 
@@ -77,7 +68,7 @@ class NewRecord extends Component {
     this.props.fetchCategories();
   }
 
-  handleSelectChange = (event, index, value) => this.setState({ selectValue: value });
+  handleSelectChange = (event, index, value) => this.setState({ selectedValue: value });
 
   handleSlideChange = (value) => {
     this.setState({
@@ -99,13 +90,13 @@ class NewRecord extends Component {
 
   render() {
     const { handleSubmit, fields: { date, amount, category, reqType }} = this.props;
-    
+
     return (
       <div>
         <p style={styles.label}>Enter a New Record</p>
         <Paper style={styles.paper} zDephth={3} >
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-              <div style={{ marginBottom: '-25px', paddingTop: '15px' }}>
+              <div style={{ marginBottom: '-30px', paddingTop: '15px' }}>
                 <RadioButtonGroup
                   name="reqType"
                   defaultSelected="Income"
@@ -140,20 +131,19 @@ class NewRecord extends Component {
                   //{...date}
                 />
               </div><br />
-              <div>
+              <div style={{ marginTop: '-15px' }}>
                 <TextField
                   floatingLabelText="Amount:"
                   floatingLabelStyle={{ color: 'black' }}
                   name='Amount'
-                  style={{ display: 'inline-block'}}
                   errorText = { amount.touched && amount.error }
                   {...amount}
                 />
               </div><br />
-              <div>
+              <div style={{ marginTop: '-10px' }}>
                 <SelectField
                   //style={{ marginTop: '-25px' }}
-                  value={this.state.selectValue}
+                  value={this.state.selectedValue}
                   onChange={this.handleSelectChange.bind(this)}
                   floatingLabelText="Category"
                   hintText="Category"
@@ -161,6 +151,13 @@ class NewRecord extends Component {
                 >
                   {this.props.categories.map((category, i) => <MenuItem key={i} value={i} primaryText={category.name} />) }
                 </SelectField>
+              </div>
+              <div style={{ paddingTop: '20px' }}>
+              <TextField
+                value='Note:'
+                underlineShow={false}
+              />
+                <textarea rows="2" cols="50" maxlength={10}></textarea>
               </div>
 
               <RaisedButton
