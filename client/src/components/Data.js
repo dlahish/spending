@@ -5,8 +5,10 @@ import FilterLink from './FilterLink';
 import Table from './Table';
 import TextField from 'material-ui/TextField';
 import moment from 'moment';
-import PieChart from './pie';
-import Chart from './chart';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
+// import PieChart from './pie';
+// import Chart from './chart';
 import DatePicker from 'material-ui/DatePicker';
 import { cyan500 } from 'material-ui/styles/colors';
 
@@ -69,6 +71,7 @@ class Dashboard extends Component {
   }
 
   handleStartDateChange = (event, date) => {
+    console.log('handle start date change');
     if (date > this.state.endDate && this.state.endDate !== null) {
         this.setState({ dateError: 'Start date must be before end date.', startDate: null, dateReady: false });
     } else {
@@ -96,44 +99,67 @@ class Dashboard extends Component {
     return moment(date).format("DD/MM/YYYY");
   }
 
+  openStartDatePicker(){
+    this.refs.startDate.openDialog()
+  }
+
+  openEndDatePicker(){
+    this.refs.endDate.openDialog()
+  }
+
+  handleShowExpenses(){
+    this.props.setVisibilityFilter('SHOW_EXPENSE')
+  }
+
+  handleShowIncome(){
+    this.props.setVisibilityFilter('SHOW_INCOME')
+  }
+
+  handleShowAll(){
+    this.props.setVisibilityFilter('SHOW_ALL')
+  }
+
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('THIS.PROPS.totalExpense');
-    console.log(this.props.totalExpense);
+
     return (
-      <div style={{ textAlign: 'left' }}>
+      <div style={{ textAlign: 'center', width: '80%', margin: 'auto', paddingTop: '20px' }}>
+        <h2>Select date range to show record data</h2>
         <div>
-          <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
           {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
-          {this.props.months2016.length > 0 ? <Chart data={this.props.months2016}/> : ''}
+          <br/>
+          <div style={{ display: 'inline-block', textAlign: 'center', marginRight: '40px' }}>
+            <RaisedButton
+              onTouchTap={this.openStartDatePicker.bind(this)}
+              label='Start Date'
+            /><br />
+            <DatePicker
+              ref='startDate'
+              textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
+              onChange={this.handleStartDateChange.bind(this)}
+              value={this.state.startDate}
+              formatDate={this.handleDateFormat.bind(this)}
+              autoOk={true}
+            />
+          </div>
+          <div style={{ display: 'inline-block', textAlign: 'center' }}>
+            <RaisedButton
+              onTouchTap={this.openEndDatePicker.bind(this)}
+              label='End Date'
+              disabled={this.state.endDateDisabled}
+            /><br />
+            <DatePicker
+              ref='endDate'
+              textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
+              onChange={this.handleEndDateChange.bind(this)}
+              value={this.state.endDate}
+              formatDate={this.handleDateFormat.bind(this)}
+              autoOk={true}
+              disabled={this.state.endDateDisabled}
+              underlineShow={false}
+            />
+          </div>
         </div>
-        <div>
-          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
-            Total Income: {''} {this.props.totalIncome}
-          </p>
-          <p  style={{ display: 'inline-block' }}>
-            Total Expense: {''} {this.props.totalExpense}
-          </p>
-        </div>
-        <h4 style={{ display: 'inline-block' }}>Start date: </h4>
-        <DatePicker
-          hintText="Choose date"
-          onChange={this.handleStartDateChange.bind(this)}
-          value={this.state.startDate}
-          formatDate={this.handleDateFormat.bind(this)}
-          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
-          autoOk={true}
-        />
-        <h4 style={{ display: 'inline-block' }}>End date: </h4>
-        <DatePicker
-          hintText="Choose date"
-          onChange={this.handleEndDateChange.bind(this)}
-          value={this.state.endDate}
-          formatDate={this.handleDateFormat.bind(this)}
-          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
-          autoOk={true}
-          disabled={this.state.endDateDisabled}
-        />
         <div>
           <p  style={{ display: 'inline-block', marginRight: '20px' }}>
             Search Income: {''} {this.props.searchTotalIncome}
@@ -142,7 +168,25 @@ class Dashboard extends Component {
             Search Expense: {''} {this.props.searchTotalExpenses}
           </p>
         </div>
-        <p>
+        <div>
+          <h4 style={{ display: 'inline' }}>Show:</h4>
+          <RaisedButton
+            label='All'
+            style={{ marginLeft: '10px' }}
+            onTouchTap={ this.handleShowAll.bind(this) }
+          />
+          <RaisedButton
+            label='Income'
+            style={{ marginLeft: '10px' }}
+            onTouchTap={ this.handleShowIncome.bind(this) }
+          />
+          <RaisedButton
+            label='Expenses'
+            style={{ marginLeft: '10px' }}
+            onTouchTap={ this.handleShowExpenses.bind(this) }
+          />
+        </div>
+        {/*<p>
           Show:
           {' '}
           <FilterLink
@@ -161,17 +205,7 @@ class Dashboard extends Component {
             filter='SHOW_EXPENSE'>
             Expense
           </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SORT_UP_AMOUNT'>
-            Amount increasing
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SORT_DOWN_AMOUNT'>
-            Amount decreasing
-          </FilterLink>
-        </p>
+        </p>*/}
 
         <Table tableData={visibleData}/>
       </div>

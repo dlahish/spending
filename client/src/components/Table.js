@@ -65,15 +65,6 @@ class DataTable extends React.Component {
     };
   }
 
-  // handleToggle = (event, toggled) => {
-  //   this.setState({
-  //     [event.target.name]: toggled,
-  //   });
-  // };
-  //
-  // handleChange = (event) => {
-  //   this.setState({height: event.target.value});
-  // };
   handleAmountSort() {
     if (this.state.amountSort.length === 0) {
         this.props.setVisibilityFilter('SORT_DOWN_AMOUNT');

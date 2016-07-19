@@ -20,6 +20,8 @@ import UploadFile from './components/upload';
 import SigninAttempt from './components/auth/signin_attempt';
 import NewRecord from './components/NewRecord';
 import Categories from './components/Categories';
+import Data from './components/Data';
+
 import { loadState, saveState } from './localStorage';
 
 import { AUTH_USER } from './actions/types';
@@ -60,6 +62,7 @@ ReactDOM.render(
         <Route path="upload" component={RequireAuth(UploadFile)} />
         <Route path="newrecord" component={RequireAuth(NewRecord)} />
         <Route path="categories" component={RequireAuth(Categories)} />
+        <Route path="data" component={RequireAuth(Data)} />
       </Route>
     </Router>
   </Provider>

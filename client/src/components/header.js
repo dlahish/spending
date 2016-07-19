@@ -46,6 +46,7 @@ const styles = {
 
   flatbutton: {
     marginRight: -15,
+    marginLeft: 10,
     color: 'white'
   },
 
@@ -144,13 +145,14 @@ class Header extends Component {
             linkButton={true}
             containerElement={<Link to="/dashboard"></Link>}
           />
-          {/*<FlatButton
+          <ToolbarSeparator style={{ backgroundColor: 'white', width: '2px' }}/>
+          <FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
-            label="Sign Out"
+            label="Data"
             linkButton={true}
-            containerElement={<Link to="/signout"></Link>}
-          />*/}
+            containerElement={<Link to="/data"></Link>}
+          />
           <ToolbarSeparator style={{ backgroundColor: 'white', width: '2px' }}/>
           <ToolbarGroup onTouchTap={this.handleTouchTap} style={{ paddingLeft: '25px' }}>
             <p style={styles.toolbaruser}>{this.props.user}</p>
