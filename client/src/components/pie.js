@@ -14,7 +14,7 @@ const Pie = ({income, expenses}) => {
         ]}
         style={{
           labels: {
-            fontSize: 5,
+            fontSize: 11,
             padding: 0,
             fontWeight: 'bold'
           }

@@ -29,7 +29,7 @@ export default function(state = initialState, action) {
     case FETCH_MESSAGE:
       return { ...state, message: action.payload };
     case GET_TOTAL:
-      return { ...state, totalIncome: action.payload.totalIncome, totalExpense: action.payload.totalExpense };
+      return { ...state, totalIncome: action.payload.totalIncome, totalExpense: action.payload.totalExpense * -1 };
     case SET_VISIBILITY_FILTER:
       return { ...state, visibilityFilter: action.payload };
     case UPLOAD_FILE:

@@ -98,8 +98,8 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('THIS.PROPS.MONTHS2016');
-    console.log(this.props.months2016);
+    console.log('THIS.PROPS.totalExpense');
+    console.log(this.props.totalExpense);
     return (
       <div style={{ textAlign: 'left' }}>
         <div>

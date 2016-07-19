@@ -32,6 +32,7 @@ const styles = {
   label: {
     fontWeight: 'bold',
     fontSize: 30,
+    marginTop: 15
   },
 
   divBlock: {
@@ -105,59 +106,62 @@ class UploadForm extends Component {
     console.log(this.state.toggled);
     console.log(this.props.dateFormat);
     return (
-      <Paper style={styles.paper} zDephth={3} >
-        <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
-          <div>
-            <p>{file.touched && file.error ? file.error : ''}</p>
-            {this.props.uploadFileMessage === 'All data already exists' ?
-              <div>
-                <p>All data already exists</p>
-              </div> : this.props.uploadFileMessage ?
-              <div style={{ color: 'red' }}>
-                <p>{this.props.uploadFileMessage}</p>
-              </div> : ''}
-            {this.state.fileName.length > 0 ?
-              <div style={{ marginBottom: '40px' }}>
-              {/*<TextField hintText="First name" style={style} underlineShow={false} />*/}
-                <h3>File chosen:</h3>
-                <p>{this.state.fileName}</p>
-                <Divider />
-              </div> : ''}
-          </div>
-          <div style={{ margin: 'auto' }}>
-            <RaisedButton label="Select a file" labelPosition="before" primary={true}>
-              <input {...file}
-                accept={'text/csv'}
-                type="file"
-                value={null}
-                style={styles.exampleImageInput}
-                onChange={
-                  ( e ) => {
-                    e.preventDefault();
-                    const { fields } = this.props;
-                    // convert files to an array
-                    const files = [ ...e.target.files ];
-                    this.handleFileChange(files);
+      <div>
+        <p style={styles.label}>Upload a File</p>
+        <Paper style={styles.paper} zDephth={3} >
+          <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
+            <div>
+              <p>{file.touched && file.error ? file.error : ''}</p>
+              {this.props.uploadFileMessage === 'All data already exists' ?
+                <div>
+                  <p>All data already exists</p>
+                </div> : this.props.uploadFileMessage ?
+                <div style={{ color: 'red' }}>
+                  <p>{this.props.uploadFileMessage}</p>
+                </div> : ''}
+              {this.state.fileName.length > 0 ?
+                <div style={{ marginBottom: '40px' }}>
+                {/*<TextField hintText="First name" style={style} underlineShow={false} />*/}
+                  <h3>File chosen:</h3>
+                  <p>{this.state.fileName}</p>
+                  <Divider />
+                </div> : ''}
+            </div>
+            <div style={{ margin: 'auto' }}>
+              <RaisedButton label="Select a file" labelPosition="before" primary={true}>
+                <input {...file}
+                  accept={'text/csv'}
+                  type="file"
+                  value={null}
+                  style={styles.exampleImageInput}
+                  onChange={
+                    ( e ) => {
+                      e.preventDefault();
+                      const { fields } = this.props;
+                      // convert files to an array
+                      const files = [ ...e.target.files ];
+                      this.handleFileChange(files);
+                    }
                   }
-                }
+                />
+              </RaisedButton>
+              <RaisedButton
+                label="Upload"
+                type="submit"
+                style={{ marginLeft: '10px' }}
               />
-            </RaisedButton>
-            <RaisedButton
-              label="Upload"
-              type="submit"
-              style={{ marginLeft: '10px' }}
-            />
-          </div>
-          <div style={styles.divBlock}>
-            <Toggle
-              label="American date format"
-              style={styles.toggle}
-              onToggle={this.handleToggle.bind(this)}
-              toggled={this.state.toggled}
-            />
-          </div>
-        </form>
-      </Paper>
+            </div>
+            <div style={styles.divBlock}>
+              <Toggle
+                label="American date format"
+                style={styles.toggle}
+                onToggle={this.handleToggle.bind(this)}
+                toggled={this.state.toggled}
+              />
+            </div>
+          </form>
+        </Paper>
+      </div>
     );
   }
 }
