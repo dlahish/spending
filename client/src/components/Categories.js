@@ -66,7 +66,7 @@ class Categories extends Component {
       dialogOpen: false,
       categoryInput: '',
       disableDialogSubmit: true,
-      categoryToDelete: ''
+      selectedCategory: null
     }
   }
 
@@ -86,12 +86,8 @@ class Categories extends Component {
   }
 
   handleDeleteButton() {
-    console.log('handleDeleteButton');
-    this.props.categories.map(m => {
-      if (m.selected === true) {
-        this.props.deleteCategory(m.category);
-      }
-    })
+    console.log(this.props.categories[this.state.selectedCategory].name);
+    this.props.deleteCategory(this.props.categories[this.state.selectedCategory].name);
     this.props.fetchCategories();
   }
 
@@ -113,7 +109,8 @@ class Categories extends Component {
   handleRowSelection = (event) => {
     console.log('handle row selection');
     const selectedCategory = event[0];
-    this.props.rowSelection(selectedCategory);
+    this.setState({ selectedCategory: selectedCategory });
+    this.props.toggleCategory(selectedCategory);
   }
 
   render() {
@@ -194,7 +191,7 @@ class Categories extends Component {
               >
                 {this.props.categories.map((row, index) => (
                   <TableRow key={index} selected={row.selected}>
-                    <TableRowColumn>{row.category}</TableRowColumn>
+                    <TableRowColumn>{row.name}</TableRowColumn>
                   </TableRow>
                 ))}
               </TableBody>

@@ -28,7 +28,7 @@ from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
-export function rowSelection(category) {
+export function toggleCategory(category) {
   return {
     type: TOGGLE_CATEGORY,
     payload: category
@@ -45,7 +45,7 @@ export function deleteCategory(category) {
       data: { category: category }
     })
     .then(response => {
-      
+
     })
     .catch(err => {
       console.log(err);
@@ -80,16 +80,16 @@ export function fetchCategories() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/fetchcategories`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
-        const catToReducer = [];
-        response.data.categories.map(cat => {
-          catToReducer.push({
-            category: cat,
+        const categoriesToReducer = [];
+        response.data.categories.map(category => {
+          categoriesToReducer.push({
+            name: category,
             selected: false
           });
         });
         dispatch({
           type: FETCH_CATEGORIES,
-          payload: catToReducer
+          payload: categoriesToReducer
         })
       })
       .catch((err) => {
