@@ -86,6 +86,7 @@ class Categories extends Component {
   }
 
   handleDeleteButton() {
+    console.log('delete category');
     console.log(this.props.categories[this.state.selectedCategory].name);
     this.props.deleteCategory(this.props.categories[this.state.selectedCategory].name);
     this.props.fetchCategories();
@@ -191,7 +192,7 @@ class Categories extends Component {
 
               <TableBody
                 displayRowCheckbox={styles.table.showCheckboxes}
-                deselectOnClickaway={styles.table.deselectOnClickaway}
+                //deselectOnClickaway={styles.table.deselectOnClickaway}
                 showRowHover={styles.table.showRowHover}
                 stripedRows={styles.table.stripedRows}
                 style={{ backgroundColor: blueGrey200 }}

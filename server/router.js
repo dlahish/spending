@@ -53,6 +53,8 @@ module.exports = function(app) {
 
   app.post('/deletecategory', requireAuth, db.deleteCategory);
 
+  app.post('/addrecord', requireAuth, db.addRecord);
+
   app.post('/signin', function(req, res, next){
     if (!req.body.email) {
       return res.send({ message: 'No user supplied' });

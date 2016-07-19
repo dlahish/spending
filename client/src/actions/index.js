@@ -22,11 +22,45 @@ import {
   ADD_CATEGORY,
   FETCH_CATEGORIES,
   DELETE_CATEGORY,
-  TOGGLE_CATEGORY
+  TOGGLE_CATEGORY,
+  ADD_NEW_RECORD
 }
 from './types';
 
 const ROOT_URL = 'http://localhost:3090';
+
+export function addNewRecord(url, data, date, category) {
+  console.log(data);
+  console.log(date);
+  console.log(category);
+  return function(dispatch) {
+    // let formData2  = new FormData();
+    // // formData.append('date', date);
+    // formData2.append('category', category);
+    // formData2.append('amount', data.amount);
+    // formData2.append('notes', data.notes);
+    data = {
+      date: date,
+      category: category,
+      amount: data.amount,
+      notes: data.notes
+    };
+
+    axios({
+      url: url,
+      method: 'post',
+      data: data,
+      contentType: 'application/json',
+      headers: { authorization: localStorage.getItem('token') }
+    })
+    .then(response => {
+      browserHistory.push('/dashboard');
+    })
+    .catch(err =>{
+      console.log(err);
+    })
+  }
+}
 
 export function toggleCategory(category) {
   return {

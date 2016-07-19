@@ -8,6 +8,42 @@ const Data = models.Data;
 
 var existsEntries = 0;
 
+exports.addRecord = function(req, res) {
+  const userId = req.user._id;
+  // const date = req.body.date;
+  // const category = req.body.category;
+  console.log('REQ BODY -----');
+  console.log(req.user);
+  console.log(req.body);
+  const newData = new Data({
+    user: userId,
+    date: req.body.date,
+    category: req.body.category,
+    amount: req.body.amount,
+    notes: req.body.notes
+  });
+  newData.save(function(err, nd){
+    if (err) {
+      console.log(err);
+      return res.send({ error: err});
+    }
+    var incomeTemp = 0, expenseTemp = 0;
+    if (req.body.amount < 0) {
+        expenseTemp = req.body.amount;
+    } else {
+        incomeTemp = req.body.amount;
+    }
+    User.findByIdAndUpdate(userId,
+      {
+        $push: { data: nd },
+        $inc: { totalIncome: incomeTemp, totalExpense: expenseTemp }
+      }, function(err){
+      if (err) { console.log(err); }
+    });
+    res.send({ message: 'Record saved'});
+  });
+}
+
 exports.deleteCategory = function(req, res) {
   const userId = req.user._id;
   User.findByIdAndUpdate(userId, { $pullAll: { categories: [req.body.category] } }, function(err) {
@@ -106,18 +142,7 @@ exports.getMonthsTotal = function(req, res) {
     nextYear += 1;
     nextYear = nextYear.toString();
     yaer = year.toString();
-    // console.log('NEXT YEAR -------');
-    // console.log(nextYear);
-    // console.log(typeof nextYear);
-    // console.log('------ J ------');
-    // console.log(j);
     var jj = j + 1;
-    // if (j < 10) {
-    //     var preStart = '0' + 1 + '/' + '0' + j + '/' + year;
-    // } else {
-    //     var preStart = '0' + 1 + '/' + j + '/' + year;
-    // }
-
 
     var monthStart = moment(1 + '/' + j + '/' + year, "DD/MM/YYYY");
     if (j === 12) {
@@ -125,8 +150,6 @@ exports.getMonthsTotal = function(req, res) {
     } else {
         var monthEnd = moment(1 + '/' + jj + '/' + year, "DD/MM/YYYY");
     }
-
-
 
     Data.find({ user: userId, date: { $gt: monthStart, $lte: monthEnd } }, function(err, data){
       if (err) { console.log(err); }

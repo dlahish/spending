@@ -57,7 +57,7 @@ class NewRecord extends Component {
     super(props);
     this.state = {
       date: null,
-      selectedValue: null
+      selectedCategory: null
     }
   }
 
@@ -68,7 +68,7 @@ class NewRecord extends Component {
     this.props.fetchCategories();
   }
 
-  handleSelectChange = (event, index, value) => this.setState({ selectedValue: value });
+  handleSelectChange = (event, index, value) => this.setState({ selectedCategory: value });
 
   handleSlideChange = (value) => {
     this.setState({
@@ -78,6 +78,11 @@ class NewRecord extends Component {
 
   handleFormSubmit(formProps) {
     console.log('Form Submit');
+    if (formProps.reqType === 'Expense') {
+      formProps.amount = formProps.amount * -1;
+    }
+    const categorytoServer = this.props.categories[this.state.selectedCategory].name;
+    this.props.addNewRecord('http://localhost:3090/addrecord', formProps, this.state.date, categorytoServer);
   }
 
   handleDateChange = (event, date) => {
@@ -89,7 +94,7 @@ class NewRecord extends Component {
   }
 
   render() {
-    const { handleSubmit, fields: { date, amount, category, reqType }} = this.props;
+    const { handleSubmit, fields: { date, amount, category, reqType, notes }} = this.props;
 
     return (
       <div>
@@ -99,7 +104,7 @@ class NewRecord extends Component {
               <div style={{ marginBottom: '-30px', paddingTop: '15px' }}>
                 <RadioButtonGroup
                   name="reqType"
-                  defaultSelected="Income"
+                  //defaultSelected="Income"
                   style={{ display: 'flex', width: '40%' }}
                   {...reqType}
                 >
@@ -143,7 +148,7 @@ class NewRecord extends Component {
               <div style={{ marginTop: '-10px' }}>
                 <SelectField
                   //style={{ marginTop: '-25px' }}
-                  value={this.state.selectedValue}
+                  value={this.state.selectedCategory}
                   onChange={this.handleSelectChange.bind(this)}
                   floatingLabelText="Category"
                   hintText="Category"
@@ -157,15 +162,19 @@ class NewRecord extends Component {
                 value='Note:'
                 underlineShow={false}
               />
-                <textarea rows="2" cols="50" maxlength={10}></textarea>
+                <textarea
+                  rows="2"
+                  cols="50"
+                  {...notes}
+                ></textarea>
               </div>
 
               <RaisedButton
                 primary={true}
                 style={{ marginTop: '20px' }}
-                label="Sign Up"
+                label="Submit"
                 type="submit"
-                //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+                //onTouchTap={ () => { this.handleSubmitButton.bind(this) }}
               />
             </form>
         </Paper>
@@ -200,6 +209,6 @@ const validate = formProps => {
 
 export default reduxForm({
   form: 'newrecord',
-  fields: ['date', 'amount', 'category', 'reqType'],
+  fields: ['date', 'amount', 'category', 'reqType', 'notes'],
   validate
 }, mapStateToProps, actions)(NewRecord);
