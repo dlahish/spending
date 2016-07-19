@@ -274,10 +274,11 @@ exports.saveFileToMongo = function(req, res) {
       var tempAmount = data[2],
           tempDate = parsedDate;
 
-
       if (tempAmount !== ' Amount') {
         tempAmount = parseInt(tempAmount);
       }
+
+      data[1] = data[1].trim();
 
       if (typeof tempAmount === 'number' ) {
         Data.findOne({ user: userId, amount: tempAmount, date: tempDate }, function(err, dData) {
