@@ -21,11 +21,19 @@ import {
   FETCH_MONTHS_TOTAL,
   ADD_CATEGORY,
   FETCH_CATEGORIES,
-  DELETE_CATEGORY
+  DELETE_CATEGORY,
+  TOGGLE_CATEGORY
 }
 from './types';
 
 const ROOT_URL = 'http://localhost:3090';
+
+export function toggleCategory(category) {
+  return {
+    type: TOGGLE_CATEGORY,
+    payload: category
+  };
+}
 
 export function deleteCategory(category) {
   return function(dispatch) {
@@ -75,9 +83,16 @@ export function fetchCategories() {
   return function(dispatch) {
     axios.get(`${ROOT_URL}/fetchcategories`, { headers: { authorization: localStorage.getItem('token') }})
       .then(response => {
+        const categoriesToReducer = [];
+        response.data.categories.map(category => {
+          categoriesToReducer.push({
+            name: category,
+            selected: false
+          });
+        });
         dispatch({
           type: FETCH_CATEGORIES,
-          payload: response.data.categories
+          payload: categoriesToReducer
         })
       })
       .catch((err) => {

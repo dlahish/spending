@@ -66,8 +66,7 @@ class Categories extends Component {
       dialogOpen: false,
       categoryInput: '',
       disableDialogSubmit: true,
-      categoryToDelete: '',
-      tableData: []
+      selectedCategory: null
     }
   }
 
@@ -76,14 +75,6 @@ class Categories extends Component {
       this.props.getUserEmail();
     }
     this.props.fetchCategories();
-    const tempTableData = [] ;
-    this.props.categories.map(cat => {
-      tempTableData.push({
-        name: cat,
-        selected: false
-      });
-    });
-    this.setState({ tableData: tempTableData });
   }
 
   handleDialogOpen = () => {
@@ -95,7 +86,8 @@ class Categories extends Component {
   }
 
   handleDeleteButton() {
-    this.props.deleteCategory(this.state.categoryToDelete);
+    console.log(this.props.categories[this.state.selectedCategory].name);
+    this.props.deleteCategory(this.props.categories[this.state.selectedCategory].name);
     this.props.fetchCategories();
   }
 
@@ -116,18 +108,8 @@ class Categories extends Component {
 
   handleRowSelection = (event) => {
     const selectedCategory = event[0];
-    const nextTableData = this.state.tableData;
-    this.state.tableData.map((td, i) => {
-      if (td.selected) { nextTableData[i].selected = false };
-      if (i == selectedCategory) {
-        nextTableData[i].name = td.name;
-        nextTableData[i].selected = true;
-      }
-    });
-    this.setState({
-      categoryToDelete: this.props.categories[selectedCategory],
-      tableData: nextTableData
-    });
+    this.setState({ selectedCategory: selectedCategory });
+    this.props.toggleCategory(selectedCategory);
   }
 
   render() {
@@ -206,7 +188,7 @@ class Categories extends Component {
                 stripedRows={styles.table.stripedRows}
                 style={{ backgroundColor: blueGrey200 }}
               >
-                {this.state.tableData.map( (row, index) => (
+                {this.props.categories.map((row, index) => (
                   <TableRow key={index} selected={row.selected}>
                     <TableRowColumn>{row.name}</TableRowColumn>
                   </TableRow>
