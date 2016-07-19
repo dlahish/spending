@@ -138,7 +138,7 @@ export function signinUser({ email, password }) {
           }
       })
       .catch((err) => {
-        dispatch(authError('Something went wrong'));
+        dispatch(authError('Something went wrong with sign in user'));
         dispatch(addRouteToStore('/signinattempt'));
         browserHistory.push('/signinattempt');
       });

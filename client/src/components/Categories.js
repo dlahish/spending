@@ -82,7 +82,7 @@ class Categories extends Component {
   }
 
   handleDialogClose = () => {
-    this.setState({ dialogOpen: false });
+    this.setState({ dialogOpen: false, categoryInput: '' });
   }
 
   handleDeleteButton() {
@@ -95,6 +95,7 @@ class Categories extends Component {
     this.handleDialogClose();
     this.props.addNewCategory(this.state.categoryInput);
     this.props.fetchCategories();
+    this.setState({ categoryInput: '' });
   }
 
   handleDialogText = (event) => {
@@ -114,7 +115,7 @@ class Categories extends Component {
   }
 
   render() {
-    console.log(this.state.tableData);
+    console.log(this.props.categories);
     const dialogActions = [
       <FlatButton
         label="Cancel"

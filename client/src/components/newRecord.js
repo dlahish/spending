@@ -74,6 +74,7 @@ class NewRecord extends Component {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
+    this.props.fetchCategories();
   }
 
   handleSelectChange = (event, index, value) => this.setState({ selectValue: value });
@@ -98,7 +99,7 @@ class NewRecord extends Component {
 
   render() {
     const { handleSubmit, fields: { date, amount, category, reqType }} = this.props;
-
+    
     return (
       <div>
         <p style={styles.label}>Enter a New Record</p>
@@ -158,7 +159,7 @@ class NewRecord extends Component {
                   hintText="Category"
                   floatingLabelStyle={{ color: 'black' }}
                 >
-                  {selectItems}
+                  {this.props.categories.map((category, i) => <MenuItem key={i} value={i} primaryText={category.name} />) }
                 </SelectField>
               </div>
 
@@ -177,7 +178,10 @@ class NewRecord extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.error };
+  return {
+    errorMessage: state.auth.error,
+    categories: state.user.categories
+  };
 }
 
 const validate = formProps => {

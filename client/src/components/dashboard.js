@@ -58,7 +58,9 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    if (!this.props.userEmail) {
+    console.log('DAHBOARD component will mount ----');
+    console.log(this.props.email);
+    if (!this.props.email) {
       this.props.getUserEmail();
     }
     this.props.getTotal();

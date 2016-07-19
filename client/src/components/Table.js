@@ -164,7 +164,7 @@ class DataTable extends React.Component {
                     <FontIcon
                       className="material-icons"
                       style={{ fontSize: '25px', cursor: 'pointer' }}
-                      onTouchTap={this.handleDatetSort.bind(this)}
+                      onTouchTap={this.handleDateSort.bind(this)}
                     >arrow_drop_up
                     </FontIcon>
                   }
