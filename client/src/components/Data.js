@@ -55,19 +55,25 @@ class Data extends Component {
       startDate: null,
       endDate: null,
       dateError: '',
-      endDateDisabled: true
+      endDateDisabled: true,
+      dataSelectedId: null
     }
   }
 
   componentWillMount() {
     console.log('DAHBOARD component will mount ----');
-    console.log(this.props.email);
+    // console.log(this.props.data);
     if (!this.props.email) {
       this.props.getUserEmail();
     }
     this.props.getTotal();
     this.props.getMonthsTotal(2016);
-
+    this.props.data.map(dt => {
+      if (dt.selected === true) {
+        console.log('MATCH ----');
+        this.setState({ dataSelectedId: dt.data._id });
+      }
+    });
   }
 
   handleStartDateChange = (event, date) => {
@@ -119,10 +125,12 @@ class Data extends Component {
     this.props.setVisibilityFilter('SHOW_ALL')
   }
 
+
+
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('visible data ---');
-    console.log(visibleData);
+    console.log('RENDER DATA ----');
+    console.log(this.state.selectedDataId);
     return (
       <div style={{ textAlign: 'center', width: '80%', margin: 'auto', paddingTop: '20px' }}>
         <h2>Select date range to show record data</h2>
@@ -208,7 +216,7 @@ class Data extends Component {
           </FilterLink>
         </p>*/}
 
-        <Table tableData={visibleData}/>
+        <Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>
       </div>
     );
   }

@@ -61,7 +61,6 @@ export default function(state = initialState, action) {
         if (action.payload !== undefined) {
           nextCategories[action.payload].selected = true;
         }
-
       return { ...state, categories: nextCategories };
     default:
       return state;

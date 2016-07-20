@@ -68,6 +68,14 @@ class DataTable extends React.Component {
     };
   }
 
+  componentWillUpdate() {
+    this.props.tableData.map((td, i) => {
+      if (td.selected == true) {
+        this.setState({ selectedData: i });
+      }
+    });
+  }
+
   handleAmountSort() {
     if (this.state.amountSort.length === 0) {
         this.props.setVisibilityFilter('SORT_DOWN_AMOUNT');
@@ -111,14 +119,18 @@ class DataTable extends React.Component {
     console.log('handle row selection');
     const selectedData = event[0];
     console.log(selectedData);
-    const dataId = this.props.tableData[selectedData].data._id;
-    // console.log(dataSelected);
-    // this.setState({ selectedData: selectedData });
-    this.props.toggleData(dataId);
+    if (selectedData === undefined) {
+        this.props.toggleData(undefined);
+    } else {
+        const dataId = this.props.tableData[selectedData].data._id;
+        this.props.toggleData(dataId);
+    }
   }
 
   render() {
-    console.log(this.state.categorySort);
+    console.log('RENDER ------');
+    console.log(this.state.selectedData);
+    console.log(this.props.selectedDataId);
     return (
       <div style={{ width: '90%', margin: 'auto', paddingTop: '20px' }}>
         <Table

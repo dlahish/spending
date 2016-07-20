@@ -18,13 +18,18 @@ const data = (state = {}, action) => {
       return nextState;
     case TOGGLE_DATA:
       const nextData = state;
-        nextData.map(dt => {
+        nextData.map((dt, i) => {
           if (dt.data._id === action.payload) {
             if (dt.selected == true) {
                 dt.selected = false;
             } else {
                 dt.selected = true;
             }
+          } else {
+              dt.selected = false;
+          }
+          if (action.payload === undefined) {
+            dt.selected = false;
           }
         });
       return nextData;
