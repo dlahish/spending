@@ -284,13 +284,12 @@ export function getUserData(dataLength, startDate, endDate) {
     .then(response => {
       if (response.data.data.length !== dataLength) {
         response.data.data.map((td) => {
-          console.log('DATA TO FETCH ----');
           let parsedDate = moment(td.date).format("DD/MM/YYYY");
-          console.log(td.date);
-          console.log(parsedDate);
-          console.log('AND BACK -------');
+          // console.log(td.date);
+          // console.log(parsedDate);
+          // console.log('AND BACK -------');
           let andBack = moment("26/06/2016", "DD/MM/YYYY");
-          console.log(andBack);
+          // console.log(andBack);
           td.date = parsedDate;
           dataToReducer.push(td);
         });

@@ -51,9 +51,11 @@ class DataTable extends React.Component {
         fixedFooter: false,
         stripedRows: false,
         showRowHover: false,
-        selectable: false,
+        selectable: true,
         multiSelectable: false,
         enableSelectAll: false,
+        displaySelectAll: false,
+        adjustForCheckbox: true,
         deselectOnClickaway: true,
         showCheckboxes: false,
         height: '320px'
@@ -107,7 +109,7 @@ class DataTable extends React.Component {
   render() {
     console.log(this.state.categorySort);
     return (
-      <div style={{ width: '80%', margin: 'auto', paddingTop: '20px' }}>
+      <div style={{ width: '90%', margin: 'auto', paddingTop: '20px' }}>
         <Table
           height={this.state.table.height}
           fixedHeader={this.state.table.fixedHeader}
@@ -117,7 +119,7 @@ class DataTable extends React.Component {
         >
           <TableHeader
             displaySelectAll={this.state.table.showCheckboxes}
-            adjustForCheckbox={this.state.table.showCheckboxes}
+            adjustForCheckbox={this.state.table.adjustForCheckbox}
             enableSelectAll={this.state.table.enableSelectAll}
           >
             {/*<TableRow>
@@ -137,13 +139,18 @@ class DataTable extends React.Component {
                   fontSize: '14px',
                   textAlign: 'left',
                   backgroundColor: cyan800,
-                  fontWeight: '600' } }
+                  fontWeight: '600',
+                  paddingLeft: '50px',
+                  marginRight: '25px'
+                 } }
                 tooltip="The ID">#</TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="date">
-                {/*<SortArrow
-                  sort={ this.state.dateSort }
-                  handleFunction={ this.handleDatetSort }
-                />*/}
+              <TableHeaderColumn
+                style={{
+                  paddingLeft: '44px',
+
+                }} 
+                tooltip="date">
+
                 <span>
                   { this.state.dateSort === 'down' ?
                     <FontIcon
@@ -204,7 +211,7 @@ class DataTable extends React.Component {
             </TableRow>
           </TableHeader>
           <TableBody
-            displayRowCheckbox={this.state.table.showCheckboxes}
+            displayRowCheckbox={true}
             deselectOnClickaway={this.state.table.deselectOnClickaway}
             showRowHover={this.state.table.showRowHover}
             stripedRows={this.state.table.stripedRows}

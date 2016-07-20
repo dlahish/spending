@@ -197,20 +197,6 @@ exports.getMonthsTotal = function(req, res) {
   );
 };
 
-// exports.getMonthsTotal = function(req, res) {
-//   console.log('hello from getMonthsTotal');
-//   const userId = req.user._id;
-//   const ya = getMonthsTotalFunc(userId, 2016);
-//   console.log('yayayayayayayaya');
-//   console.log(ya);
-//   var yearArray;
-//   if (!yearArray) {
-//       res.send({ message: 'Something went wrong.'});
-//   } else {
-//       res.send({ data: yearArray });
-//   }
-// }
-
 exports.getDataByDate = function(req, res) {
   const email = req.user.email;
   const userId = req.user._id;
