@@ -48,7 +48,7 @@ const getVisibleData = (
   }
 };
 
-class Dashboard extends Component {
+class Data extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -121,7 +121,8 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-
+    console.log('visible data ---');
+    console.log(visibleData);
     return (
       <div style={{ textAlign: 'center', width: '80%', margin: 'auto', paddingTop: '20px' }}>
         <h2>Select date range to show record data</h2>
@@ -227,4 +228,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, actions)(Dashboard);
+export default connect(mapStateToProps, actions)(Data);

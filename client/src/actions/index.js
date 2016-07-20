@@ -23,7 +23,8 @@ import {
   FETCH_CATEGORIES,
   DELETE_CATEGORY,
   TOGGLE_CATEGORY,
-  ADD_NEW_RECORD
+  ADD_NEW_RECORD,
+  TOGGLE_DATA
 }
 from './types';
 
@@ -59,6 +60,16 @@ export function addNewRecord(url, data, date, category) {
     .catch(err =>{
       console.log(err);
     })
+  }
+}
+
+export function toggleData(dataId) {
+  return function(dispatch) {
+    // localStorage.removeItem('state');
+    dispatch({
+      type: TOGGLE_DATA,
+      payload: dataId
+    });
   }
 }
 

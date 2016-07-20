@@ -63,7 +63,8 @@ class DataTable extends React.Component {
 
       amountSort: '',
       dateSort: '',
-      categorySort: ''
+      categorySort: '',
+      selectedData: null
     };
   }
 
@@ -106,6 +107,16 @@ class DataTable extends React.Component {
     }
   }
 
+  handleRowSelection = (event) => {
+    console.log('handle row selection');
+    const selectedData = event[0];
+    console.log(selectedData);
+    const dataId = this.props.tableData[selectedData].data._id;
+    // console.log(dataSelected);
+    // this.setState({ selectedData: selectedData });
+    this.props.toggleData(dataId);
+  }
+
   render() {
     console.log(this.state.categorySort);
     return (
@@ -116,6 +127,7 @@ class DataTable extends React.Component {
           fixedFooter={this.state.table.fixedFooter}
           selectable={this.state.table.selectable}
           multiSelectable={this.state.table.multiSelectable}
+          onRowSelection={this.handleRowSelection.bind(this)}
         >
           <TableHeader
             displaySelectAll={this.state.table.showCheckboxes}
@@ -147,8 +159,13 @@ class DataTable extends React.Component {
               <TableHeaderColumn
                 style={{
                   paddingLeft: '44px',
-
-                }} 
+                  height: '10px',
+                  color: 'black',
+                  fontSize: '14px',
+                  textAlign: 'left',
+                  backgroundColor: cyan800,
+                  fontWeight: '600'
+                }}
                 tooltip="date">
 
                 <span>
@@ -217,16 +234,19 @@ class DataTable extends React.Component {
             stripedRows={this.state.table.stripedRows}
             preScanRows={false}
           >
-            {this.props.tableData.map( (row, index) => (
-              <TableRow key={index} selected={row.selected}>
-                <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
-                {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
-                <TableRowColumn style={{ width: '13%' }}>{row.date}</TableRowColumn>
-                <TableRowColumn style={{ width: '13%' }}>{row.category}</TableRowColumn>
-                <TableRowColumn style={{ width: '13%' }}>{row.amount}</TableRowColumn>
-                <TableRowColumn style={{ width: '14%' }}>{row.note}</TableRowColumn>
-              </TableRow>
-              ))}
+            {this.props.tableData.length > 0 ?
+              this.props.tableData.map((row, index) => (
+                <TableRow key={index} selected={row.selected}>
+                  <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
+                  {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
+                  <TableRowColumn style={{ width: '13%' }}>{row.data.date}</TableRowColumn>
+                  <TableRowColumn style={{ width: '13%' }}>{row.data.category}</TableRowColumn>
+                  <TableRowColumn style={{ width: '13%' }}>{row.data.amount}</TableRowColumn>
+                  <TableRowColumn style={{ width: '14%' }}>{row.data.note}</TableRowColumn>
+                </TableRow>
+              )) : ''
+            }
+
           </TableBody>
         </Table>
       </div>

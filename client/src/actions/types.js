@@ -21,5 +21,6 @@ export const FETCH_CATEGORIES = 'fetch_categories';
 export const DELETE_CATEGORY = 'delete_category';
 export const TOGGLE_CATEGORY = 'toggle_category';
 export const ADD_NEW_RECORD = 'add_new_record';
+export const TOGGLE_DATA = 'toggle_data';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';
