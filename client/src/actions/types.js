@@ -24,3 +24,4 @@ export const ADD_NEW_RECORD = 'add_new_record';
 export const TOGGLE_DATA = 'toggle_data';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';
+export const CALL_API = 'call_api';
