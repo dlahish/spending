@@ -2,16 +2,56 @@ const csv = require('fast-csv');
 const fs = require('fs');
 var models = require('../models/user');
 var moment = require('moment');
+const mongoose = require('mongoose');
+var ObjectId = mongoose.Types.ObjectId;
 
 const User = models.User;
 const Data = models.Data;
 
 var existsEntries = 0;
 
+exports.deleteRecord = function(req, res) {
+  const userId = req.user._id;
+  const email = req.user.email;
+  console.log('DELETE RECORD -------');
+  console.log(req.body);
+  Data.findOneAndRemove({ _id: ObjectId(req.body.idToDelete), user: ObjectId(userId) }, function(err, delRecord){
+    if (err) {
+      console.log(err);
+      return res.send({ error: err});
+    }
+    // res.send({ messgae: delRecord + ' was deleted.'});
+    var thisMonth = moment().month();
+    const nextMonth = thisMonth + 1;
+    var thisYear = moment().year();
+    const startMonth = moment('01/'+thisMonth+'/'+thisYear, "DD/M/YYYY");
+    const endMonth = moment('01/'+nextMonth+'/'+thisYear, "DD/M/YYYY");
+    Data.find({ user: userId, date: { $gt: startMonth, $lte: endMonth } }, function(err, data){
+      if (err) { console.log(err); }
+      if (!data) {
+        return res.send('No data found');
+      }
+      var searchTotalIncome = 0;
+      var searchTotalExpenses = 0;
+      data.map((d) => {
+        if (d.amount > 0) {
+          searchTotalIncome += d.amount;
+        } else {
+          searchTotalExpenses += d.amount;
+        }
+      });
+      res.send({
+        data: data,
+        searchTotalIncome: searchTotalIncome,
+        searchTotalExpenses: searchTotalExpenses,
+        messgae: delRecord + ' was deleted.'
+      });
+    });
+  });
+}
+
 exports.addRecord = function(req, res) {
   const userId = req.user._id;
-  // const date = req.body.date;
-  // const category = req.body.category;
   console.log('REQ BODY -----');
   console.log(req.user);
   console.log(req.body);
@@ -202,7 +242,6 @@ exports.getDataByDate = function(req, res) {
   const userId = req.user._id;
   const startDate = req.body.startDate;
   const endDate = req.body.endDate;
-
   Data.find({ user: userId, date: { $gt: startDate, $lte: endDate } }, function(err, data){
     if (err) { console.log(err); }
     if (!data) {

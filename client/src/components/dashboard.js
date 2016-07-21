@@ -75,7 +75,7 @@ class Dashboard extends Component {
         this.setState({ startDate: date, endDateDisabled: false, dateError: '' });
         if (this.state.startDate && this.state.endDate !== null && this.state.dateError.length === 0) {
           // this.setState({ dateReady: true });
-          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+          this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
   }
@@ -87,7 +87,7 @@ class Dashboard extends Component {
         this.setState({ endDate: date, dateError: '' });
         if (this.state.startDate && this.state.endDate && this.state.dateError.length === 0) {
           // this.setState({ dateReady: true });
-          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+          this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
   }
@@ -115,7 +115,7 @@ class Dashboard extends Component {
             Total Expense: {''} {this.props.totalExpense}
           </p>
         </div>
-        <h4 style={{ display: 'inline-block' }}>Start date: </h4>
+        {/*<h4 style={{ display: 'inline-block' }}>Start date: </h4>
         <DatePicker
           hintText="Choose date"
           onChange={this.handleStartDateChange.bind(this)}
@@ -173,7 +173,7 @@ class Dashboard extends Component {
           </FilterLink>
         </p>
 
-        <Table tableData={visibleData}/>
+        {/*<Table tableData={visibleData}/>*/}
       </div>
     );
   }

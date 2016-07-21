@@ -55,6 +55,8 @@ module.exports = function(app) {
 
   app.post('/addrecord', requireAuth, db.addRecord);
 
+  app.post('/deleterecord', requireAuth, db.deleteRecord);
+
   app.post('/signin', function(req, res, next){
     if (!req.body.email) {
       return res.send({ message: 'No user supplied' });

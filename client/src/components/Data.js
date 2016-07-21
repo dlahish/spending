@@ -7,10 +7,10 @@ import TextField from 'material-ui/TextField';
 import moment from 'moment';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-// import PieChart from './pie';
-// import Chart from './chart';
+import SelectField from 'material-ui/SelectField';
 import DatePicker from 'material-ui/DatePicker';
-import { cyan500 } from 'material-ui/styles/colors';
+import { cyan500, red700 } from 'material-ui/styles/colors';
+import MenuItem from 'material-ui/MenuItem';
 
 const getVisibleData = (
   data,
@@ -56,35 +56,42 @@ class Data extends Component {
       endDate: null,
       dateError: '',
       endDateDisabled: true,
-      dataSelectedId: null
+      selectedDataId: null,
+      selectedMonth: null
     }
   }
 
   componentWillMount() {
-    console.log('DAHBOARD component will mount ----');
-    // console.log(this.props.data);
+    console.log(this.props.email);
     if (!this.props.email) {
       this.props.getUserEmail();
     }
-    this.props.getTotal();
-    this.props.getMonthsTotal(2016);
-    this.props.data.map(dt => {
-      if (dt.selected === true) {
-        console.log('MATCH ----');
-        this.setState({ dataSelectedId: dt.data._id });
-      }
-    });
+    let thisMonth = moment().month();
+    if (thisMonth === 12) {
+        let thisYear = moment().year();
+        let nextYear = nextYear + 1;
+        const startMonth = moment('01/'+thisMonth+'/'+thisYear, "DD/M/YYYY");
+        const endMonth = moment(startMonth).endOf('month');
+        this.props.getUserDataByRange(null, startMonth, endMonth);
+    } else {
+        const nextMonth = thisMonth + 1;
+        let thisYear = moment().year();
+        const startMonth = moment('01/'+thisMonth+'/'+thisYear, "DD/M/YYYY");
+        const endMonth = moment(startMonth).endOf('month');
+        this.props.getUserDataByRange(null, startMonth, endMonth);
+    }
   }
 
   handleStartDateChange = (event, date) => {
     console.log('handle start date change');
+    console.log(date);
     if (date > this.state.endDate && this.state.endDate !== null) {
         this.setState({ dateError: 'Start date must be before end date.', startDate: null, dateReady: false });
     } else {
         this.setState({ startDate: date, endDateDisabled: false, dateError: '' });
         if (this.state.startDate && this.state.endDate !== null && this.state.dateError.length === 0) {
           // this.setState({ dateReady: true });
-          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+          this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
   }
@@ -96,7 +103,7 @@ class Data extends Component {
         this.setState({ endDate: date, dateError: '' });
         if (this.state.startDate && this.state.endDate && this.state.dateError.length === 0) {
           // this.setState({ dateReady: true });
-          this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+          this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
   }
@@ -125,12 +132,47 @@ class Data extends Component {
     this.props.setVisibilityFilter('SHOW_ALL')
   }
 
+  handleDeleteButton() {
+    this.props.deleteRecord('http://localhost:3090/deleterecord', this.props.data);
+    // this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
+  }
 
+  handleSelectChange = (event, index, value) => {
+    this.setState({ selectedMonth: value });
+    let thisMonth = value + 1;
+    if (thisMonth === 12) {
+        let thisYear = moment().year();
+        let nextYear = nextYear + 1;
+        const startMonth = moment('01/'+thisMonth+'/'+thisYear, "DD/M/YYYY");
+        const endMonth = moment(startMonth).endOf('month');
+        this.props.getUserDataByRange(null, startMonth, endMonth);
+    } else {
+        const nextMonth = thisMonth + 1;
+        let thisYear = moment().year();
+        const startMonth = moment('01/'+thisMonth+'/'+thisYear, "DD/M/YYYY");
+        const endMonth = moment(startMonth).endOf('month');
+        this.props.getUserDataByRange(null, startMonth, endMonth);
+    }
+  }
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('RENDER DATA ----');
+    console.log('DATA - render ----');
     console.log(this.state.selectedDataId);
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ];
     return (
       <div style={{ textAlign: 'center', width: '80%', margin: 'auto', paddingTop: '20px' }}>
         <h2>Select date range to show record data</h2>
@@ -194,6 +236,29 @@ class Data extends Component {
             style={{ marginLeft: '10px' }}
             onTouchTap={ this.handleShowExpenses.bind(this) }
           />
+          <SelectField
+            style={{
+              width: '200px',
+              // backgroundColor: 'red',
+              marginLeft: '40px',
+              marginTop: '55px',
+              marginBottom: '-20px'
+            }}
+            underlineStyle={{borderColor: 'black' }}
+            hintText="Select Month to Display"
+            hintStyle={{ color: 'black' }}
+            autoWidth={true}
+            value={this.state.selectedMonth}
+            onChange={this.handleSelectChange.bind(this)}
+          >
+            {months.map((month, i) => <MenuItem key={i} value={i} primaryText={month} />) }
+          </SelectField>
+          <RaisedButton
+            label='Delete transaction'
+            style={{ marginLeft: '50px' }}
+            backgroundColor={red700}
+            onTouchTap={ this.handleDeleteButton.bind(this) }
+          />
         </div>
         {/*<p>
           Show:
@@ -216,7 +281,8 @@ class Data extends Component {
           </FilterLink>
         </p>*/}
 
-        <Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>
+        {/*<Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>*/}
+        <Table />
       </div>
     );
   }

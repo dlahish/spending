@@ -30,16 +30,59 @@ from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
-export function addNewRecord(url, data, date, category) {
-  console.log(data);
-  console.log(date);
-  console.log(category);
+export function deleteRecord(url, data) {
   return function(dispatch) {
-    // let formData2  = new FormData();
-    // // formData.append('date', date);
-    // formData2.append('category', category);
-    // formData2.append('amount', data.amount);
-    // formData2.append('notes', data.notes);
+    console.log('deleteRecord action creator');
+    let idToDelete = null;
+    let dataToReducer = [];
+    let serachTotalIncome = 0;
+    let searchTotalExpenses = 0;
+    data.map(dt => {
+      if (dt.selected == true) {
+        console.log(dt);
+        idToDelete = dt.data._id;
+      };
+    });
+
+    let dataToServer = {
+      idToDelete: idToDelete
+    };
+    console.log(url, idToDelete);
+    axios({
+      url: url,
+      method: 'post',
+      data: dataToServer,
+      contentType: 'application/json',
+      headers: { authorization: localStorage.getItem('token') }
+    })
+    .then(response => {
+      console.log('record was deleted');
+      response.data.data.map((td) => {
+        let parsedDate = moment(td.date).format("DD/MM/YYYY");
+        td.date = parsedDate;
+        dataToReducer.push(td);
+        getUserDataByRange
+      });
+      dispatch({
+        type: FETCH_DATA,
+        payload: dataToReducer
+      });
+      dispatch({
+        type: SEARCH_TOTAL,
+        payload: {
+          searchTotalIncome: response.data.searchTotalIncome,
+          searchTotalExpenses: response.data.searchTotalExpenses
+        }
+      })
+    })
+    .catch(err =>{
+      console.log(err);
+    });
+  }
+}
+
+export function addNewRecord(url, data, date, category) {
+  return function(dispatch) {
     data = {
       date: date,
       category: category,
@@ -59,18 +102,15 @@ export function addNewRecord(url, data, date, category) {
     })
     .catch(err =>{
       console.log(err);
-    })
+    });
   }
 }
 
 export function toggleData(dataId) {
-  return function(dispatch) {
-    // localStorage.removeItem('state');
-    dispatch({
-      type: TOGGLE_DATA,
-      payload: dataId
-    });
-  }
+  return {
+    type: TOGGLE_DATA,
+    payload: dataId
+  };
 }
 
 export function toggleCategory(category) {
@@ -266,8 +306,6 @@ export function getMonthsTotal(year) {
       data: { year }
     })
     .then(response => {
-      console.log('GET MONTHS FROM SERVER')
-      console.log(response.data.data);
       dispatch({
         type: FETCH_MONTHS_TOTAL,
         payload: response.data.data
@@ -280,7 +318,7 @@ export function getMonthsTotal(year) {
   }
 }
 
-export function getUserData(dataLength, startDate, endDate) {
+export function getUserDataByRange(dataLength, startDate, endDate) {
   return function(dispatch) {
     let dataToReducer = [];
     let serachTotalIncome = 0;
@@ -293,7 +331,6 @@ export function getUserData(dataLength, startDate, endDate) {
       contentType: 'application/json'
     })
     .then(response => {
-      if (response.data.data.length !== dataLength) {
         response.data.data.map((td) => {
           let parsedDate = moment(td.date).format("DD/MM/YYYY");
           // console.log(td.date);
@@ -303,6 +340,7 @@ export function getUserData(dataLength, startDate, endDate) {
           // console.log(andBack);
           td.date = parsedDate;
           dataToReducer.push(td);
+          getUserDataByRange
         });
         dispatch({
           type: FETCH_DATA,
@@ -315,10 +353,9 @@ export function getUserData(dataLength, startDate, endDate) {
             searchTotalExpenses: response.data.searchTotalExpenses
           }
         })
-      }
     })
     .catch((err) => {
-      dispatch(authError('Something went wrong with GET_DATA'));
+      dispatch(authError('Something went wrong with getUserDataByRange'));
     });
   }
 }

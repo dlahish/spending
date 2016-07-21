@@ -31,19 +31,20 @@ if (process.env.NODE_ENV !== 'production') {
   middlewares.push(createLogger());
 }
 
-const persistedState = loadState();
+// const persistedState = loadState();
 const createStoreWithMiddleware = applyMiddleware(...middlewares)(createStore);
-const store = createStoreWithMiddleware(reducers, persistedState);
+// const store = createStoreWithMiddleware(reducers, persistedState);
+const store = createStoreWithMiddleware(reducers);
 const token = localStorage.getItem('token');
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-store.subscribe(throttle(() => {
-  saveState({
-    data: store.getState().data
-  });
-}, 1000));
+// store.subscribe(throttle(() => {
+//   saveState({
+//     data: store.getState().data
+//   });
+// }, 1000));
 
 if (token) {
   store.dispatch({ type: AUTH_USER });

@@ -10,6 +10,7 @@ import MaterialIcons from 'material-design-icons';
 import FontIcon from 'material-ui/FontIcon';
 import {red500, yellow500, blue500} from 'material-ui/styles/colors';
 import SortArrow from './SortArrow';
+import moment from 'moment';
 
 const iconStyles = {
   marginRight: 54,
@@ -68,14 +69,6 @@ class DataTable extends React.Component {
     };
   }
 
-  componentWillUpdate() {
-    this.props.tableData.map((td, i) => {
-      if (td.selected == true) {
-        this.setState({ selectedData: i });
-      }
-    });
-  }
-
   handleAmountSort() {
     if (this.state.amountSort.length === 0) {
         this.props.setVisibilityFilter('SORT_DOWN_AMOUNT');
@@ -122,15 +115,16 @@ class DataTable extends React.Component {
     if (selectedData === undefined) {
         this.props.toggleData(undefined);
     } else {
-        const dataId = this.props.tableData[selectedData].data._id;
+        const dataId = this.props.data[selectedData].data._id;
+        console.log(dataId);
         this.props.toggleData(dataId);
     }
   }
 
   render() {
-    console.log('RENDER ------');
-    console.log(this.state.selectedData);
-    console.log(this.props.selectedDataId);
+    console.log('TABLE render ------');
+    // console.log(this.state.selectedData);
+    // console.log(this.props.selectedDataId);
     return (
       <div style={{ width: '90%', margin: 'auto', paddingTop: '20px' }}>
         <Table
@@ -246,8 +240,8 @@ class DataTable extends React.Component {
             stripedRows={this.state.table.stripedRows}
             preScanRows={false}
           >
-            {this.props.tableData.length > 0 ?
-              this.props.tableData.map((row, index) => (
+            {this.props.data.length > 0 ?
+              this.props.data.map((row, index) => (
                 <TableRow key={index} selected={row.selected}>
                   <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
                   {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
@@ -266,4 +260,10 @@ class DataTable extends React.Component {
   }
 }
 
-export default connect(null, actions)(DataTable)
+function mapStateToProps(state) {
+  return {
+    data: state.data
+  }
+}
+
+export default connect(mapStateToProps, actions)(DataTable)
