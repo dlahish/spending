@@ -16,33 +16,35 @@ const getVisibleData = (
   data,
   filter
 ) => {
+  console.log('get visible data ----');
+  console.log(data);
   switch (filter) {
     case 'SHOW_ALL':
       return data;
     case 'SHOW_INCOME':
-      return data.filter(d => d.amount > 0);
+      return data.filter(d => d.data.amount > 0);
     case 'SHOW_EXPENSE':
-      return data.filter(d => d.amount < 0);
+      return data.filter(d => d.data.amount < 0);
     case 'SORT_UP_AMOUNT':
-      return data.sort((a,b) => a.amount - b.amount);
+      return data.sort((a,b) => a.data.amount - b.data.amount);
     case 'SORT_DOWN_AMOUNT':
-      return data.sort((a,b) => b.amount - a.amount);
+      return data.sort((a,b) => b.data.amount - a.data.amount);
     case 'SORT_UP_DATE':
       return data.sort((a,b) => {
-        const aDate = moment(a.date, "DD/MM/YYYY");
-        const bDate = moment(b.date, "DD/MM/YYYY");
+        const aDate = moment(a.data.date, "DD/MM/YYYY");
+        const bDate = moment(b.data.date, "DD/MM/YYYY");
         return aDate - bDate;
       });
     case 'SORT_DOWN_DATE':
       return data.sort((a,b) => {
-        const aDate = moment(a.date, "DD/MM/YYYY");
-        const bDate = moment(b.date, "DD/MM/YYYY");
+        const aDate = moment(a.data.date, "DD/MM/YYYY");
+        const bDate = moment(b.data.date, "DD/MM/YYYY");
         return bDate - aDate;
       });
     case 'SORT_UP_CATEGORY':
-      return data.sort((a,b) => a.category > b.category);
+      return data.sort((a,b) => a.data.category.charAt(0).toUpperCase() > b.data.category.charAt(0).toUpperCase());
     case 'SORT_DOWN_CATEGORY':
-      return data.sort((a,b) => a.category < b.category);
+      return data.sort((a,b) => b.data.category.charAt(0).toUpperCase() > a.data.category.charAt(0).toUpperCase());
     default:
       return data;
   }
@@ -134,7 +136,6 @@ class Data extends Component {
 
   handleDeleteButton() {
     this.props.deleteRecord('http://localhost:3090/deleterecord', this.props.data);
-    // this.props.getUserData(this.props.data.length, this.state.startDate, this.state.endDate);
   }
 
   handleSelectChange = (event, index, value) => {
@@ -157,8 +158,8 @@ class Data extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('DATA - render ----');
-    console.log(this.state.selectedDataId);
+    console.log('RENDER data ----');
+    console.log(this.props.visibilityFilter);
     const months = [
       "January",
       "February",
@@ -281,8 +282,8 @@ class Data extends Component {
           </FilterLink>
         </p>*/}
 
-        {/*<Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>*/}
-        <Table />
+        <Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>
+        {/*<Table />*/}
       </div>
     );
   }

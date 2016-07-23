@@ -115,7 +115,7 @@ class DataTable extends React.Component {
     if (selectedData === undefined) {
         this.props.toggleData(undefined);
     } else {
-        const dataId = this.props.data[selectedData].data._id;
+        const dataId = this.props.tableData[selectedData].data._id;
         console.log(dataId);
         this.props.toggleData(dataId);
     }
@@ -240,8 +240,8 @@ class DataTable extends React.Component {
             stripedRows={this.state.table.stripedRows}
             preScanRows={false}
           >
-            {this.props.data.length > 0 ?
-              this.props.data.map((row, index) => (
+            {this.props.tableData.length > 0 ?
+              this.props.tableData.map((row, index) => (
                 <TableRow key={index} selected={row.selected}>
                   <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
                   {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
@@ -266,4 +266,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(DataTable)
+export default connect(null, actions)(DataTable)
