@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import moment from 'moment';
+import fetch from 'isomorphic-fetch'
 import {
   AUTH_USER,
   UNAUTH_USER,
@@ -25,11 +26,73 @@ import {
   TOGGLE_CATEGORY,
   ADD_NEW_RECORD,
   TOGGLE_DATA,
-  CALL_API
+  CALL_API,
+  REQUEST_POSTS,
+  RECEIVE_POSTS,
+  SELECT_SUBREDDIT,
+  INVALIDATE_SUBREDDIT
 }
 from './types';
 
 const ROOT_URL = 'http://localhost:3090';
+
+export function selectSubreddit(subreddit) {
+  return {
+    type: SELECT_SUBREDDIT,
+    subreddit
+  }
+}
+
+export function invalidateSubreddit(subreddit) {
+  return {
+    type: INVALIDATE_SUBREDDIT,
+    subreddit
+  }
+}
+
+function requestPosts(subreddit) {
+  return {
+    type: REQUEST_POSTS,
+    subreddit
+  }
+}
+
+function receivePosts(subreddit, json) {
+  return {
+    type: RECEIVE_POSTS,
+    subreddit,
+    posts: json.data.children.map(child => child.data),
+    received: Date.now()
+  }
+}
+
+function fetchPosts(subreddit) {
+  return dispatch => {
+    dispatch(requestPosts(subreddit))
+    return fetch(`http://www.reddit.com/r/${subreddit}.json`)
+      .then(response => response.json())
+      .then(json => dispatch(receivePosts(subreddit, json)))
+  }
+}
+
+function shouldFetchPosts(state, subreddit) {
+  const posts = state.postsBySubreddit[subreddit]
+  if (!posts) {
+    return true
+  } else if (posts.isFetching) {
+    return false
+  } else {
+    return posts.didInvalidate
+  }
+}
+
+export function fetchPostsIfNeeded(subreddit) {
+  return (dispatch, getState) => {
+    if (shouldFetchPosts(getState(), subreddit)) {
+      return dispatch(fetchPosts(subreddit))
+    }
+  }
+}
 
 export function wafApi() {
   console.log('WAFFFFF');

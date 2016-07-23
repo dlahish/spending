@@ -1,3 +1,5 @@
+import 'babel-polyfill'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -21,6 +23,7 @@ import SigninAttempt from './components/auth/signin_attempt';
 import NewRecord from './components/NewRecord';
 import Categories from './components/Categories';
 import Data from './components/Data';
+import Reddit from './components/Reddit'
 
 import { loadState, saveState } from './localStorage';
 
@@ -54,7 +57,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={Home} />
+        <IndexRoute component={Reddit} />
         <Route path="signup" component={Signup} />
         <Route path="signin" component={Signin} />
         <Route path="signout" component={Signout} />

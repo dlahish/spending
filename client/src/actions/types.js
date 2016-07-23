@@ -25,3 +25,8 @@ export const TOGGLE_DATA = 'toggle_data';
 
 export const SET_VISIBILITY_FILTER = 'set_visibility_filter';
 export const CALL_API = 'call_api';
+
+export const REQUEST_POSTS = 'request_posts'
+export const RECEIVE_POSTS = 'receive_posts'
+export const SELECT_SUBREDDIT = 'select_subreddit'
+export const INVALIDATE_SUBREDDIT = 'invalidate_subreddit'
