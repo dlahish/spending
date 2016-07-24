@@ -3,12 +3,20 @@ import { connect } from 'react-redux'
 import { selectSubreddit, fetchPostsIfNeeded, invalidateSubreddit } from '../actions'
 import Picker from './reddit/Picker'
 import Posts from './reddit/Posts'
+import { getUserEmail} from '../actions';
+import { FormattedDate } from 'react-intl'
 
 class Reddit extends Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
+  }
+
+  componentWillMount() {
+    if (!this.props.userEmail) {
+      this.props.dispatch(getUserEmail());
+    }
   }
 
   componentDidMount() {
@@ -37,10 +45,10 @@ class Reddit extends Component {
 
   render() {
     const { selectedSubreddit, items, isFetching, lastUpdate } = this.props
-    console.log('RENDER posts --');
-    console.log(items);
+
     return (
       <div>
+        <FormattedDate value={Date.now()} locale='fr' />
         <Picker value={selectedSubreddit}
                 onChange={this.handleChange}
                 options={[ 'reactjs', 'frontend', 'israel' ]}
@@ -86,13 +94,10 @@ Reddit.propTypes = {
 function mapStateToProps(state) {
   const { selectedSubreddit } = state
   const postsBySubreddit = state.user[selectedSubreddit] || {};
-  console.log('MAP STATE TO PROPS postsBySubreddit --');
-  console.log(postsBySubreddit.items);
   let items = []
   let isFetching = true
   let lastUpdate = null
   if (postsBySubreddit.items === undefined) {
-    console.log('undefined');
     isFetching = true
     items = []
   } else {
@@ -101,7 +106,6 @@ function mapStateToProps(state) {
     items = postsBySubreddit.items
   }
 
-  console.log(items);
   return {
     selectedSubreddit,
     items,

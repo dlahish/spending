@@ -9,8 +9,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import SelectField from 'material-ui/SelectField';
 import DatePicker from 'material-ui/DatePicker';
-import { cyan500, red700 } from 'material-ui/styles/colors';
+import { cyan500, red700, amber500 } from 'material-ui/styles/colors';
 import MenuItem from 'material-ui/MenuItem';
+import { FormattedNumber } from 'react-intl'
 
 const getVisibleData = (
   data,
@@ -156,10 +157,16 @@ class Data extends Component {
     }
   }
 
+  handleYearButton() {
+    const thisYear = moment().year();
+    const start = moment('01/01/'+thisYear, "DD/M/YYYY");
+    const end = moment('31/12/'+thisYear, "DD/M/YYYY");
+    this.props.getUserDataByRange(null, start, end);
+  }
+
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('RENDER data ----');
-    console.log(this.props.visibilityFilter);
+    let thisYear = moment().year();
     const months = [
       "January",
       "February",
@@ -212,12 +219,14 @@ class Data extends Component {
             />
           </div>
         </div>
-        <div>
-          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
-            Search Income: {''} {this.props.searchTotalIncome}
+        <div  style={{ background: amber500, maxWidth: '80%',margin: 'auto' }}>
+          <p  style={{ display: 'inline-block', marginRight: '80px' }}>
+            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Search Income: </h3>{''}
+            <FormattedNumber value={this.props.searchTotalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
           </p>
           <p  style={{ display: 'inline-block' }}>
-            Search Expense: {''} {this.props.searchTotalExpenses}
+            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Search Expense: </h3>{''}
+            <FormattedNumber value={this.props.searchTotalExpenses} style='currency' currency='SCH' currencyDisplay='name'/>
           </p>
         </div>
         <div>
@@ -255,8 +264,14 @@ class Data extends Component {
             {months.map((month, i) => <MenuItem key={i} value={i} primaryText={month} />) }
           </SelectField>
           <RaisedButton
+            label={thisYear}
+            style={{ marginLeft: '20px' }}
+            //backgroundColor={red700}
+            onTouchTap={ this.handleYearButton.bind(this) }
+          />
+          <RaisedButton
             label='Delete transaction'
-            style={{ marginLeft: '50px' }}
+            style={{ marginLeft: '20px' }}
             backgroundColor={red700}
             onTouchTap={ this.handleDeleteButton.bind(this) }
           />

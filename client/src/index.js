@@ -10,6 +10,12 @@ import createLogger from 'redux-logger';
 import { throttle } from 'lodash';
 import reducers from './reducers';
 import RequireAuth from './components/auth/require_auth';
+import {
+    IntlProvider,
+    FormattedDate,
+    FormattedNumber,
+    FormattedPlural,
+} from 'react-intl';
 
 
 import App from './components/app';
@@ -55,20 +61,22 @@ if (token) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Reddit} />
-        <Route path="signup" component={Signup} />
-        <Route path="signin" component={Signin} />
-        <Route path="signout" component={Signout} />
-        <Route path="signinattempt" component={SigninAttempt} />
-        <Route path="dashboard" component={RequireAuth(Dashboard)} />
-        <Route path="upload" component={RequireAuth(UploadFile)} />
-        <Route path="newrecord" component={RequireAuth(NewRecord)} />
-        <Route path="categories" component={RequireAuth(Categories)} />
-        <Route path="data" component={RequireAuth(Data)} />
-      </Route>
-    </Router>
+    <IntlProvider locale="en-GB">
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Reddit} />
+          <Route path="signup" component={Signup} />
+          <Route path="signin" component={Signin} />
+          <Route path="signout" component={Signout} />
+          <Route path="signinattempt" component={SigninAttempt} />
+          <Route path="dashboard" component={RequireAuth(Dashboard)} />
+          <Route path="upload" component={RequireAuth(UploadFile)} />
+          <Route path="newrecord" component={RequireAuth(NewRecord)} />
+          <Route path="categories" component={RequireAuth(Categories)} />
+          <Route path="data" component={RequireAuth(Data)} />
+        </Route>
+      </Router>
+    </IntlProvider>
   </Provider>
   ,document.getElementById('app')
 );

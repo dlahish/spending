@@ -8,7 +8,8 @@ import moment from 'moment';
 import PieChart from './pie';
 import Chart from './chart';
 import DatePicker from 'material-ui/DatePicker';
-import { cyan500 } from 'material-ui/styles/colors';
+import { cyan500, amber500 } from 'material-ui/styles/colors';
+import { FormattedNumber } from 'react-intl'
 
 const getVisibleData = (
   data,
@@ -101,79 +102,20 @@ class Dashboard extends Component {
     console.log('THIS.PROPS.totalExpense');
     console.log(this.props.totalExpense);
     return (
-      <div style={{ textAlign: 'left' }}>
+      <div>
+        <div  style={{ background: amber500, maxWidth: '50%', margin: 'auto' }}>
+          <p  style={{ display: 'inline-block', marginRight: '80px' }}>
+            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Total Income: </h3>{''} <FormattedNumber value={this.props.totalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
+          </p>
+          <p  style={{ display: 'inline-block' }}>
+            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Total Expense: </h3>{''}<FormattedNumber value={this.props.totalExpense} style='currency' currency='SCH' currencyDisplay='name'/>
+          </p>
+        </div>
         <div>
           <PieChart income={this.props.totalIncome} expenses={this.props.totalExpense}/>
           {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
           {this.props.months2016.length > 0 ? <Chart data={this.props.months2016}/> : ''}
         </div>
-        <div>
-          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
-            Total Income: {''} {this.props.totalIncome}
-          </p>
-          <p  style={{ display: 'inline-block' }}>
-            Total Expense: {''} {this.props.totalExpense}
-          </p>
-        </div>
-        {/*<h4 style={{ display: 'inline-block' }}>Start date: </h4>
-        <DatePicker
-          hintText="Choose date"
-          onChange={this.handleStartDateChange.bind(this)}
-          value={this.state.startDate}
-          formatDate={this.handleDateFormat.bind(this)}
-          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
-          autoOk={true}
-        />
-        <h4 style={{ display: 'inline-block' }}>End date: </h4>
-        <DatePicker
-          hintText="Choose date"
-          onChange={this.handleEndDateChange.bind(this)}
-          value={this.state.endDate}
-          formatDate={this.handleDateFormat.bind(this)}
-          style={{ display: 'inline-block', width: '150px', marginLeft: '10px' }}
-          autoOk={true}
-          disabled={this.state.endDateDisabled}
-        />
-        <div>
-          <p  style={{ display: 'inline-block', marginRight: '20px' }}>
-            Search Income: {''} {this.props.searchTotalIncome}
-          </p>
-          <p  style={{ display: 'inline-block' }}>
-            Search Expense: {''} {this.props.searchTotalExpenses}
-          </p>
-        </div>
-        <p>
-          Show:
-          {' '}
-          <FilterLink
-            filter='SHOW_All'
-          >
-            All
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SHOW_INCOME'
-          >
-            Income
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SHOW_EXPENSE'>
-            Expense
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SORT_UP_AMOUNT'>
-            Amount increasing
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SORT_DOWN_AMOUNT'>
-            Amount decreasing
-          </FilterLink>
-        </p>
-
-        {/*<Table tableData={visibleData}/>*/}
       </div>
     );
   }
