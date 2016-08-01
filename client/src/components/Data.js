@@ -9,7 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import SelectField from 'material-ui/SelectField';
 import DatePicker from 'material-ui/DatePicker';
-import { cyan500, red700, amber500 } from 'material-ui/styles/colors';
+import { cyan500, red700, amber500, grey50, blueGrey500, teal600 } from 'material-ui/styles/colors';
 import MenuItem from 'material-ui/MenuItem';
 import { FormattedNumber } from 'react-intl'
 
@@ -182,123 +182,122 @@ class Data extends Component {
       "December"
     ];
     return (
-      <div style={{ textAlign: 'center', width: '80%', margin: 'auto', paddingTop: '20px' }}>
-        <h2>Select date range to show record data</h2>
-        <div>
-          {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
-          <br/>
-          <div style={{ display: 'inline-block', textAlign: 'center', marginRight: '40px' }}>
+      <div
+        style={{
+          textAlign: 'center',
+          width: '90%',
+          margin: 'auto',
+          marginTop: '-24px',
+          // paddingTop: '1px',
+          background: grey50 }}>
+        <div style={{ background: blueGrey500, color: 'black', paddingBottom: '20px', paddingTop: '20px' }}>
+          <h2>Select date range to show record data</h2>
+          <div>
+            {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
+            <br/>
+            <div style={{ display: 'inline-block', textAlign: 'center', marginRight: '40px' }}>
+              <RaisedButton
+                onTouchTap={this.openStartDatePicker.bind(this)}
+                label='Start Date'
+              /><br />
+              <DatePicker
+                ref='startDate'
+                textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
+                onChange={this.handleStartDateChange.bind(this)}
+                value={this.state.startDate}
+                formatDate={this.handleDateFormat.bind(this)}
+                autoOk={true}
+                underlineShow={false}
+              />
+            </div>
+            <div style={{ display: 'inline-block', textAlign: 'center' }}>
+              <RaisedButton
+                onTouchTap={this.openEndDatePicker.bind(this)}
+                label='End Date'
+                disabled={this.state.endDateDisabled}
+              /><br />
+              <DatePicker
+                ref='endDate'
+                textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
+                onChange={this.handleEndDateChange.bind(this)}
+                value={this.state.endDate}
+                formatDate={this.handleDateFormat.bind(this)}
+                autoOk={true}
+                disabled={this.state.endDateDisabled}
+                underlineShow={false}
+              />
+            </div>
+          </div>
+          <div
+          style={{
+            background: teal600,
+            width: '50%',
+            margin: 'auto',
+            paddingTop: '5px',
+            paddingBottom: '5px',
+            color: 'black',
+            border: '1px solid black',
+            borderRadius: '5px'
+           }}>
+            <p  style={{ display: 'inline', marginRight: '80px' }}>
+              <h3 style={{ display: 'inline', marginRight: '10px' }}>Search Income: </h3>{''}
+              <FormattedNumber value={this.props.searchTotalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
+            </p>
+            <p  style={{ display: 'inline' }}>
+              <h3 style={{ display: 'inline', marginRight: '10px' }}>Search Expense: </h3>{''}
+              <FormattedNumber value={this.props.searchTotalExpenses} style='currency' currency='SCH' currencyDisplay='name'/>
+            </p>
+          </div>
+          <div>
+            <h4 style={{ display: 'inline' }}>Show:</h4>
             <RaisedButton
-              onTouchTap={this.openStartDatePicker.bind(this)}
-              label='Start Date'
-            /><br />
-            <DatePicker
-              ref='startDate'
-              textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
-              onChange={this.handleStartDateChange.bind(this)}
-              value={this.state.startDate}
-              formatDate={this.handleDateFormat.bind(this)}
-              autoOk={true}
+              label='All'
+              style={{ marginLeft: '10px' }}
+              onTouchTap={ this.handleShowAll.bind(this) }
+            />
+            <RaisedButton
+              label='Income'
+              style={{ marginLeft: '10px' }}
+              onTouchTap={ this.handleShowIncome.bind(this) }
+            />
+            <RaisedButton
+              label='Expenses'
+              style={{ marginLeft: '10px' }}
+              onTouchTap={ this.handleShowExpenses.bind(this) }
+            />
+            <SelectField
+              style={{
+                width: '200px',
+                // backgroundColor: 'red',
+                marginLeft: '40px',
+                marginTop: '55px',
+                marginBottom: '-20px'
+              }}
+              underlineStyle={{borderColor: 'black' }}
+              hintText="Select Month to Display"
+              hintStyle={{ color: 'black' }}
+              autoWidth={true}
+              value={this.state.selectedMonth}
+              onChange={this.handleSelectChange.bind(this)}
+            >
+              {months.map((month, i) => <MenuItem key={i} value={i} primaryText={month} />) }
+            </SelectField>
+            <RaisedButton
+              label={thisYear}
+              style={{ marginLeft: '20px' }}
+              //backgroundColor={red700}
+              onTouchTap={ this.handleYearButton.bind(this) }
+            />
+            <RaisedButton
+              label='Delete transaction'
+              style={{ marginLeft: '20px' }}
+              backgroundColor={red700}
+              onTouchTap={ this.handleDeleteButton.bind(this) }
             />
           </div>
-          <div style={{ display: 'inline-block', textAlign: 'center' }}>
-            <RaisedButton
-              onTouchTap={this.openEndDatePicker.bind(this)}
-              label='End Date'
-              disabled={this.state.endDateDisabled}
-            /><br />
-            <DatePicker
-              ref='endDate'
-              textFieldStyle={{ paddingLeft: '18px', width: '100px' }}
-              onChange={this.handleEndDateChange.bind(this)}
-              value={this.state.endDate}
-              formatDate={this.handleDateFormat.bind(this)}
-              autoOk={true}
-              disabled={this.state.endDateDisabled}
-              underlineShow={false}
-            />
-          </div>
         </div>
-        <div  style={{ background: amber500, maxWidth: '80%',margin: 'auto' }}>
-          <p  style={{ display: 'inline-block', marginRight: '80px' }}>
-            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Search Income: </h3>{''}
-            <FormattedNumber value={this.props.searchTotalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
-          </p>
-          <p  style={{ display: 'inline-block' }}>
-            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Search Expense: </h3>{''}
-            <FormattedNumber value={this.props.searchTotalExpenses} style='currency' currency='SCH' currencyDisplay='name'/>
-          </p>
-        </div>
-        <div>
-          <h4 style={{ display: 'inline' }}>Show:</h4>
-          <RaisedButton
-            label='All'
-            style={{ marginLeft: '10px' }}
-            onTouchTap={ this.handleShowAll.bind(this) }
-          />
-          <RaisedButton
-            label='Income'
-            style={{ marginLeft: '10px' }}
-            onTouchTap={ this.handleShowIncome.bind(this) }
-          />
-          <RaisedButton
-            label='Expenses'
-            style={{ marginLeft: '10px' }}
-            onTouchTap={ this.handleShowExpenses.bind(this) }
-          />
-          <SelectField
-            style={{
-              width: '200px',
-              // backgroundColor: 'red',
-              marginLeft: '40px',
-              marginTop: '55px',
-              marginBottom: '-20px'
-            }}
-            underlineStyle={{borderColor: 'black' }}
-            hintText="Select Month to Display"
-            hintStyle={{ color: 'black' }}
-            autoWidth={true}
-            value={this.state.selectedMonth}
-            onChange={this.handleSelectChange.bind(this)}
-          >
-            {months.map((month, i) => <MenuItem key={i} value={i} primaryText={month} />) }
-          </SelectField>
-          <RaisedButton
-            label={thisYear}
-            style={{ marginLeft: '20px' }}
-            //backgroundColor={red700}
-            onTouchTap={ this.handleYearButton.bind(this) }
-          />
-          <RaisedButton
-            label='Delete transaction'
-            style={{ marginLeft: '20px' }}
-            backgroundColor={red700}
-            onTouchTap={ this.handleDeleteButton.bind(this) }
-          />
-        </div>
-        {/*<p>
-          Show:
-          {' '}
-          <FilterLink
-            filter='SHOW_All'
-          >
-            All
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SHOW_INCOME'
-          >
-            Income
-          </FilterLink>
-          {' '}
-          <FilterLink
-            filter='SHOW_EXPENSE'>
-            Expense
-          </FilterLink>
-        </p>*/}
 
         <Table tableData={visibleData} dataSelectedId={this.state.dataSelectedId}/>
-        {/*<Table />*/}
       </div>
     );
   }
