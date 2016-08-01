@@ -19,6 +19,7 @@ import UploadIcon from 'material-ui/svg-icons/file/file-upload';
 import EjectIcon from 'material-ui/svg-icons/action/eject';
 import ControlPoint from 'material-ui/svg-icons/image/control-point';
 import DescriptionIcon from 'material-ui/svg-icons/action/description';
+import Logo from './logo.png';
 
 const styles = {
   toolbartitle: {
@@ -28,18 +29,17 @@ const styles = {
   toolbaruser: {
     cursor: 'pointer',
     fontWeight: '600',
-    marginRight: '-15px',
+    // marginRight: '-15px',
     lineHeight: '25px'
   },
 
   toolbar: {
     backgroundColor: '#464646',
     color: 'white',
-    // position: 'absolute',
     top: 0,
     paddingRight: 20,
     position: 'fixed',
-    width: '98.7%',
+    width: '100%',
     zIndex: 1,
     top: 0
   },
@@ -52,6 +52,11 @@ const styles = {
 
   textfield: {
     marginRight: 5
+  },
+
+  logo: {
+    width: '50px',
+    cursor: 'pointer'
   }
 }
 
@@ -108,36 +113,11 @@ class Header extends Component {
     browserHistory.push('/dashboard');
   }
 
-  // setAnchor = (positionElement, position) => {
-  //   const {anchorOrigin} = this.state;
-  //   anchorOrigin[positionElement] = position;
-  //
-  //   this.setState({
-  //     anchorOrigin: anchorOrigin,
-  //   });
-  // };
-  //
-  // setTarget = (positionElement, position) => {
-  //   const {targetOrigin} = this.state;
-  //   targetOrigin[positionElement] = position;
-  //
-  //   this.setState({
-  //     targetOrigin: targetOrigin,
-  //   });
-  // };
-
   renderLinks() {
     if (this.props.route == '/signinattempt') { return; }
     if (this.props.authenticated) {
       return (
         <ToolbarGroup>
-          {/*<FlatButton
-            style={styles.flatbutton}
-            labelStyle={{color: 'white'}}
-            label="Upload"
-            linkButton={true}
-            containerElement={<Link to="/upload"></Link>}
-          />*/}
           <FlatButton
             style={styles.flatbutton}
             labelStyle={{color: 'white'}}
@@ -159,10 +139,8 @@ class Header extends Component {
             <FontIcon
               className="material-icons"
               style={{ fontSize: '25px', cursor: 'pointer', color: 'white' }}
-              //onTouchTap={this.handleTouchTap}
             >arrow_drop_down
             </FontIcon>
-            {/*<IconButton onTouchTap={this.handleTouchTap}><MoreVertIcon color={'white'}/></IconButton>*/}
             <Popover
               open={this.state.open}
               anchorEl={this.state.anchorEl}
@@ -223,14 +201,16 @@ class Header extends Component {
   }
 
   render() {
+    const imgPath = './spending_logo.png'
     return(
       <div>
         <Toolbar style={styles.toolbar}>
-          <ToolbarTitle
+          {/*<ToolbarTitle
             style={styles.toolbartitle}
             text="Spending"
             onTouchTap={this.handleTitleTouchTap}
-          />
+          />*/}
+          <img src={Logo} style={styles.logo} alt="spengin logo" onTouchTap={this.handleTitleTouchTap} />
             {this.renderLinks()}
         </Toolbar>
       </div>
