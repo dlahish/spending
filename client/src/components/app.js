@@ -20,11 +20,26 @@ class App extends Component {
           </div>
 
           <div className="default-primary-color"
-            style={{ marginTop: '56px' , height: 'auto', minHeight: '450px', padding: 30, textAlign: 'center' }} >
+            style={{
+              // marginTop: '56px' ,
+              paddingTop: '40px',
+              minHeight: '450px',
+              textAlign: 'center',
+              position: 'absolute',
+              display: 'block',
+              top: '48px',
+              width: '100%'
+             }} >
             {this.props.children}
           </div>
 
-          <div style={{height: 45, fontSize: 15, backgroundColor: '#464646', color: 'white'}} className="light-primary-color">
+          <div style={{
+            height: 45,
+            fontSize: 15,
+            backgroundColor: '#464646',
+            color: 'white',
+            display: 'block',
+          }} className="light-primary-color">
             <Footer />
           </div>
         </div>

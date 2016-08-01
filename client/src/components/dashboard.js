@@ -87,7 +87,6 @@ class Dashboard extends Component {
     } else {
         this.setState({ endDate: date, dateError: '' });
         if (this.state.startDate && this.state.endDate && this.state.dateError.length === 0) {
-          // this.setState({ dateReady: true });
           this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
@@ -99,8 +98,7 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    console.log('THIS.PROPS.totalExpense');
-    console.log(this.props.totalExpense);
+    
     return (
       <div>
         <div  style={{ background: amber500, maxWidth: '50%', margin: 'auto' }}>

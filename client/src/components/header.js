@@ -19,7 +19,7 @@ import UploadIcon from 'material-ui/svg-icons/file/file-upload';
 import EjectIcon from 'material-ui/svg-icons/action/eject';
 import ControlPoint from 'material-ui/svg-icons/image/control-point';
 import DescriptionIcon from 'material-ui/svg-icons/action/description';
-import Logo from './logo.png';
+import Logo from '../../../media/logo.png';
 
 const styles = {
   toolbartitle: {
@@ -37,7 +37,6 @@ const styles = {
     backgroundColor: '#464646',
     color: 'white',
     top: 0,
-    paddingRight: 20,
     position: 'fixed',
     width: '100%',
     zIndex: 1,
