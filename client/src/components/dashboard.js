@@ -59,8 +59,6 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    console.log('DAHBOARD component will mount ----');
-    console.log(this.props.email);
     if (!this.props.email) {
       this.props.getUserEmail();
     }
@@ -98,15 +96,25 @@ class Dashboard extends Component {
 
   render() {
     const visibleData = getVisibleData(this.props.data, this.props.visibilityFilter);
-    
+
     return (
       <div>
-        <div  style={{ background: amber500, maxWidth: '50%', margin: 'auto' }}>
-          <p  style={{ display: 'inline-block', marginRight: '80px' }}>
-            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Total Income: </h3>{''} <FormattedNumber value={this.props.totalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
+        <div  style={{
+                background: amber500,
+                // display: 'inline-block',
+                position: 'absolute',
+                top: '56px',
+                left: '25px',
+                height: '30px',
+                width: '450px',
+                border: '1px solid black',
+                paddingTop: '10px'
+               }}>
+          <p  style={{ display: 'inline', marginRight: '20px' }}>
+            <h5 style={{ display: 'inline', marginRight: '5px' }}>Total Income: </h5>{''} <FormattedNumber value={this.props.totalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
           </p>
-          <p  style={{ display: 'inline-block' }}>
-            <h3 style={{ display: 'inline-block', marginRight: '10px' }}>Total Expense: </h3>{''}<FormattedNumber value={this.props.totalExpense} style='currency' currency='SCH' currencyDisplay='name'/>
+          <p  style={{ display: 'inline' }}>
+            <h5 style={{ display: 'inline', marginRight: '5px'  }}>Total Expense: </h5>{''}<FormattedNumber value={this.props.totalExpense} style='currency' currency='SCH' currencyDisplay='name'/>
           </p>
         </div>
         <div>

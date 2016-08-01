@@ -36,11 +36,10 @@ const styles = {
   toolbar: {
     backgroundColor: '#464646',
     color: 'white',
-    top: 0,
-    position: 'fixed',
-    width: '100%',
-    zIndex: 1,
-    top: 0
+    // top: 0,
+    // position: 'fixed',
+    // width: '100%',
+    // zIndex: 1
   },
 
   flatbutton: {

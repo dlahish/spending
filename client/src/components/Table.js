@@ -122,9 +122,6 @@ class DataTable extends React.Component {
   }
 
   render() {
-    console.log('TABLE render ------');
-    // console.log(this.state.selectedData);
-    // console.log(this.props.selectedDataId);
     return (
       <div style={{ width: '90%', margin: 'auto', paddingTop: '20px' }}>
         <Table
@@ -152,7 +149,7 @@ class DataTable extends React.Component {
               <TableHeaderColumn
                 style={ {
                   width: '8%',
-                  height: '10px',
+                  // height: '10px',
                   color: 'black',
                   fontSize: '14px',
                   textAlign: 'left',
@@ -165,7 +162,7 @@ class DataTable extends React.Component {
               <TableHeaderColumn
                 style={{
                   paddingLeft: '44px',
-                  height: '10px',
+                  // height: '10px',
                   color: 'black',
                   fontSize: '14px',
                   textAlign: 'left',
@@ -192,7 +189,17 @@ class DataTable extends React.Component {
                 </span>
                 date
               </TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="category">
+              <TableHeaderColumn
+              style={{
+                paddingLeft: '55px',
+                // height: '10px',
+                color: 'black',
+                fontSize: '14px',
+                textAlign: 'left',
+                backgroundColor: cyan800,
+                fontWeight: '600'
+              }}
+              tooltip="category">
                 <span>
                   { this.state.categorySort === 'down' ?
                     <FontIcon
@@ -211,7 +218,17 @@ class DataTable extends React.Component {
                 </span>
                 category
               </TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn } tooltip="amount">
+              <TableHeaderColumn
+              style={{
+                paddingLeft: '35px',
+                // height: '10px',
+                color: 'black',
+                fontSize: '14px',
+                textAlign: 'left',
+                backgroundColor: cyan800,
+                fontWeight: '600'
+              }}
+              tooltip="amount">
                 <span>
                   { this.state.amountSort === 'down' ?
                     <FontIcon
@@ -230,7 +247,17 @@ class DataTable extends React.Component {
                 </span>
                 amount
               </TableHeaderColumn>
-              <TableHeaderColumn style={ styles.tableHeaderColumn} tooltip="note">note</TableHeaderColumn>
+              <TableHeaderColumn
+              style={{
+                paddingLeft: '10px',
+                // height: '10px',
+                color: 'black',
+                fontSize: '14px',
+                textAlign: 'left',
+                backgroundColor: cyan800,
+                fontWeight: '600'
+              }}
+              tooltip="note">note</TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody
