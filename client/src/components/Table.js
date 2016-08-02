@@ -56,7 +56,7 @@ class DataTable extends React.Component {
         multiSelectable: false,
         enableSelectAll: false,
         displaySelectAll: false,
-        adjustForCheckbox: true,
+        adjustForCheckbox: false,
         deselectOnClickaway: true,
         showCheckboxes: false,
         height: '320px'
@@ -123,7 +123,7 @@ class DataTable extends React.Component {
 
   render() {
     return (
-      <div style={{ width: '90%', margin: 'auto', paddingTop: '20px' }}>
+      <div style={{ width: '90%', margin: 'auto', paddingTop: '20px', border: '1px solid black', borderTop: 'none' }}>
         <Table
           height={this.state.table.height}
           fixedHeader={this.state.table.fixedHeader}
@@ -137,19 +137,21 @@ class DataTable extends React.Component {
             adjustForCheckbox={this.state.table.adjustForCheckbox}
             enableSelectAll={this.state.table.enableSelectAll}
           >
-            {/*<TableRow>
-              <TableHeaderColumn style={{ width: '6%', textAlign: 'left', fontSize: '18px', color: 'black', height: '10px' }} tooltip="Super Header">Your Data</TableHeaderColumn>
-              <TableHeaderColumn style={{ width: '6%' }}></TableHeaderColumn>
-              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
-              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
-              <TableHeaderColumn style={{ width: '13%' }}></TableHeaderColumn>
-              <TableHeaderColumn style={{ width: '14%' }}></TableHeaderColumn>
-            </TableRow>*/}
             <TableRow>
               <TableHeaderColumn
                 style={ {
                   width: '8%',
-                  // height: '10px',
+                  color: 'black',
+                  fontSize: '14px',
+                  textAlign: 'left',
+                  backgroundColor: cyan800,
+                  fontWeight: '600',
+                  paddingLeft: '50px',
+                  marginRight: '25px'
+                 }} ></TableHeaderColumn>
+              <TableHeaderColumn
+                style={ {
+                  width: '8%',
                   color: 'black',
                   fontSize: '14px',
                   textAlign: 'left',
@@ -162,7 +164,6 @@ class DataTable extends React.Component {
               <TableHeaderColumn
                 style={{
                   paddingLeft: '44px',
-                  // height: '10px',
                   color: 'black',
                   fontSize: '14px',
                   textAlign: 'left',
@@ -192,7 +193,6 @@ class DataTable extends React.Component {
               <TableHeaderColumn
               style={{
                 paddingLeft: '55px',
-                // height: '10px',
                 color: 'black',
                 fontSize: '14px',
                 textAlign: 'left',
@@ -221,7 +221,6 @@ class DataTable extends React.Component {
               <TableHeaderColumn
               style={{
                 paddingLeft: '35px',
-                // height: '10px',
                 color: 'black',
                 fontSize: '14px',
                 textAlign: 'left',
@@ -250,7 +249,6 @@ class DataTable extends React.Component {
               <TableHeaderColumn
               style={{
                 paddingLeft: '10px',
-                // height: '10px',
                 color: 'black',
                 fontSize: '14px',
                 textAlign: 'left',
@@ -271,7 +269,6 @@ class DataTable extends React.Component {
               this.props.tableData.map((row, index) => (
                 <TableRow key={index} selected={row.selected}>
                   <TableRowColumn style={{ width: '6%' }}>{index}</TableRowColumn>
-                  {/*<TableRowColumn>{row.fileName}</TableRowColumn>*/}
                   <TableRowColumn style={{ width: '13%' }}>{row.data.date}</TableRowColumn>
                   <TableRowColumn style={{ width: '13%' }}>{row.data.category}</TableRowColumn>
                   <TableRowColumn style={{ width: '13%' }}>{row.data.amount}</TableRowColumn>
