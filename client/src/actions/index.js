@@ -475,7 +475,7 @@ export function getUserDataByRange(dataLength, startDate, endDate) {
           // console.log(andBack);
           td.date = parsedDate;
           dataToReducer.push(td);
-          getUserDataByRange
+          // getUserDataByRange
         });
         dispatch({
           type: FETCH_DATA,

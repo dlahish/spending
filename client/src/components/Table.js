@@ -123,7 +123,7 @@ class DataTable extends React.Component {
 
   render() {
     return (
-      <div style={{ width: '90%', margin: 'auto', paddingTop: '20px', border: '1px solid black', borderTop: 'none' }}>
+      <div style={{ width: '90%', margin: 'auto', border: '1px solid black', borderTop: 'none' }}>
         <Table
           height={this.state.table.height}
           fixedHeader={this.state.table.fixedHeader}

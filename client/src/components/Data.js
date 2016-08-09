@@ -17,8 +17,6 @@ const getVisibleData = (
   data,
   filter
 ) => {
-  console.log('get visible data ----');
-  console.log(data);
   switch (filter) {
     case 'SHOW_ALL':
       return data;
@@ -65,7 +63,7 @@ class Data extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.email);
+    console.log('componentWillMount -------');
     if (!this.props.email) {
       this.props.getUserEmail();
     }
@@ -86,14 +84,11 @@ class Data extends Component {
   }
 
   handleStartDateChange = (event, date) => {
-    console.log('handle start date change');
-    console.log(date);
     if (date > this.state.endDate && this.state.endDate !== null) {
         this.setState({ dateError: 'Start date must be before end date.', startDate: null, dateReady: false });
     } else {
         this.setState({ startDate: date, endDateDisabled: false, dateError: '' });
         if (this.state.startDate && this.state.endDate !== null && this.state.dateError.length === 0) {
-          // this.setState({ dateReady: true });
           this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
@@ -105,7 +100,6 @@ class Data extends Component {
     } else {
         this.setState({ endDate: date, dateError: '' });
         if (this.state.startDate && this.state.endDate && this.state.dateError.length === 0) {
-          // this.setState({ dateReady: true });
           this.props.getUserDataByRange(this.props.data.length, this.state.startDate, this.state.endDate);
         }
     }
@@ -188,10 +182,9 @@ class Data extends Component {
           width: '90%',
           margin: 'auto',
           marginTop: '-24px',
-          // paddingTop: '1px',
           background: grey50 }}>
         <div style={{ background: blueGrey500, color: 'black', paddingBottom: '20px', paddingTop: '20px' }}>
-          <h2>Select date range to show record data</h2>
+          <h2>Date Rage To Display</h2>
           <div>
             {(this.state.dateError.length > 0) ? <div style={{ color: 'red' }}>{this.state.dateError}</div> : '' }
             <br/>
@@ -233,20 +226,21 @@ class Data extends Component {
             background: teal600,
             width: '50%',
             margin: 'auto',
-            paddingTop: '5px',
-            paddingBottom: '5px',
+            // paddingTop: '5px',
+            // paddingBottom: '5px',
+            padding: '5px',
             color: 'black',
             border: '1px solid black',
             borderRadius: '5px'
            }}>
-            <p  style={{ display: 'inline', marginRight: '80px' }}>
+            <div style={{ display: 'inline', marginRight: '80px' }}>
               <h3 style={{ display: 'inline', marginRight: '10px' }}>Search Income: </h3>{''}
               <FormattedNumber value={this.props.searchTotalIncome} style='currency' currency='SCH' currencyDisplay='name'/>
-            </p>
-            <p  style={{ display: 'inline' }}>
+            </div>
+            <div style={{ display: 'inline' }}>
               <h3 style={{ display: 'inline', marginRight: '10px' }}>Search Expense: </h3>{''}
               <FormattedNumber value={this.props.searchTotalExpenses} style='currency' currency='SCH' currencyDisplay='name'/>
-            </p>
+            </div>
           </div>
           <div>
             <h4 style={{ display: 'inline' }}>Show:</h4>
