@@ -2,17 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const Schema = mongoose.Schema;
 
-// const fileDataSchema = new Schema({
-//   date: String,
-//   category: String,
-//   amount: Number,
-//   note: String
-// });
-
 const dataSchema = new Schema({
+  user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   fileName: String,
   uploadDate: Date,
-  date: String,
+  date: Date,
   category: String,
   amount: Number,
   note: String
@@ -21,7 +15,11 @@ const dataSchema = new Schema({
 const userSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
-  data: [dataSchema]
+  username: String,
+  totalIncome: Number,
+  totalExpense: Number,
+  categories: [],
+  data: [{ type: Schema.Types.ObjectId, ref: 'Data' }]
 });
 
 //on save hood , encrypt password
@@ -53,10 +51,10 @@ userSchema.methods.comparePassword = function(candidatePassword, callback) {
   });
 }
 
-const User = mongoose.model('user', userSchema);
-const UserFile = mongoose.model('userfile', dataSchema);
+const User = mongoose.model('User', userSchema);
+const Data = mongoose.model('Data', dataSchema);
 
 module.exports = {
   User: User,
-  UserFile: UserFile
+  Data: Data
 };

@@ -44,13 +44,7 @@ module.exports = function(app) {
   var upload = multer({ storage : storage });
   const fs = require('fs');
 
-<<<<<<< HEAD
   const requireAuth = passport.authenticate('jwt', { session: false });
-=======
-  // const requireAuth = passport.authenticate('jwt', { session: false });
->>>>>>> origin/passportsession
-  // const requireSignin = passport.authenticate('local', { session: false });
-
 
   app.get('/', requireAuth, function(req, res) {
     res.send({ message: 'this is a secure path with a message from the API server' });
@@ -99,35 +93,35 @@ module.exports = function(app) {
     res.send({ email: userEmail });
   });
 
-  app.get('/getdata', requireAuth, function(req, res) {
-    var userData = req.user.data;
-    res.send({ data: userData });
-  });
+  app.post('/getdata', requireAuth, db.getDataByDate);
 
-  app.use('./upload', requireAuth);
-  app.post('/upload', upload.single('file'), db.saveFileToMongo);
+  app.get('/gettotal', requireAuth, db.getTotal);
 
-<<<<<<< HEAD
-  // app.post('/signin', requireSignin, Authentication.signin);
+  app.post('/upload', upload.single('file'), requireAuth, db.saveFileToMongo);
+
+  app.post('/getmonthstotal', requireAuth, db.getMonthsTotal);
+
+  app.post('/addnewcategory', requireAuth, db.newCategory);
+
+  app.get('/fetchcategories', requireAuth, db.fetchCategories);
+
+  app.post('/deletecategory', requireAuth, db.deleteCategory);
+
+  app.post('/addrecord', requireAuth, db.addRecord);
+
+  app.post('/deleterecord', requireAuth, db.deleteRecord);
 
   app.post('/signin', function(req, res, next){
     if (!req.body.email) {
       return res.send({ message: 'No user supplied' });
     }
     passport.authenticate('local', function(err, user, info) {
-      console.log('USER ------');
-      console.log(user);
       if (err) { return (err); }
-      if (!user) { return res.send({ message: 'No user found' }); }
-      if (user && !req.body.email) { return res.send({ message: 'No password supplied' }); }
+      if (!user) { return res.send({ message: 'Bad login info' }); }
       if (user.error) { return res.send({ message: 'Invalid password' }); }
       res.send( { token: tokenForUser(user) });
     })(req, res, next);
   });
 
   app.post('/signup', Authentication.signup);
-=======
-  // app.post('/signin', requireSignin, Authentication.signin)
-  // app.post('/signup', Authentication.signup);
->>>>>>> origin/passportsession
 }

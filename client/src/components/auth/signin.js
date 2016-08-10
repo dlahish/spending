@@ -42,23 +42,29 @@ class Signin extends Component {
           <TextField
             {...email}
             hintText="Email:"
+            hintStyle={{ color: 'white' }}
+            inputStyle={{ color: grey50 }}
             style={styles.textfield}
             autoComplete='on'
           />
           <TextField
             {...password}
             hintText="Password:"
+            hintStyle={{ color: 'white' }}
+            inputStyle={{ color: grey50 }}
             style={styles.textfield}
             type="password"
           />
           <FlatButton
             style={styles.flatbutton}
+            labelStyle={{color: 'white'}}
             label="Sign In"
             type="submit"
             //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
           />
           <FlatButton
             style={styles.flatbutton}
+            labelStyle={{color: 'white'}}
             label="Sign Up"
             onTouchTap={ () => { browserHistory.push('/signup'); }}
             //containerElement={<Link to="/signup"></Link>}
@@ -71,7 +77,8 @@ class Signin extends Component {
 
 function mapStateToProps(state) {
   return {
-    errorMessage: state.auth.error
+    errorMessage: state.auth.error,
+    route: state.auth.currentRoute
   };
 }
 export default reduxForm({

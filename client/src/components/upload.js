@@ -1,62 +1,182 @@
 import React, {Component} from 'react';
 import {reduxForm} from 'redux-form';
 import * as actions from '../actions'
+import RaisedButton from 'material-ui/RaisedButton';
+import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
+import Toggle from 'material-ui/Toggle';
+
+const styles = {
+  exampleImageInput: {
+    cursor: 'pointer',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    width: '100%',
+    opacity: 0
+  },
+
+  paper : {
+    margin: 'auto',
+    textAlign: 'center',
+    marginTop: '30px',
+    width: '40%',
+    backgroundColor: 'white',
+    padding: 20,
+    paddingTop: 25,
+    paddingBottom: '40px'
+  },
+
+  label: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    marginTop: 15
+  },
+
+  divBlock: {
+    marginTop: 20,
+    marginLeft: 120,
+    maxWidth: 250
+  },
+
+  toggle: {
+    marginBottom: 16
+  }
+};
+
 
 class UploadForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fileName: '',
+      toggled: false
+    };
+  }
 
   componentWillMount() {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
+    if (this.props.dateFormat === "eu") {
+        this.setState({
+          toggled: false
+        });
+    } else {
+        this.setState({
+          toggled: true
+        });
+    }
+  }
+
+  componentWillUnmount() {
+    this.props.clearUploadFileMessage();
+  }
+
+  handleFileChange(ev) {
+    this.setState({
+      fileName: ev[0].name
+    });
   }
 
   _handleSubmit(formProps) {
-    console.log('formProps');
-    console.log(formProps.file);
-    console.log('spreadsheet');
-    sendData('http://localhost:3090/upload', formProps, this.props.userEmail);
+    this.setState({
+      fileName: ''
+    });
+    this.props.uploadFile('http://localhost:3090/upload', formProps, this.props.userEmail, this.props.dateFormat);
+  }
+
+  handleToggle() {
+    if (this.props.dateFormat === "eu") {
+        this.setState({
+          toggled: true
+        });
+    } else {
+        this.setState({
+          toggled: false
+        });
+    }
+    this.props.toggleDateFormat();
   }
 
   render() {
     const {fields: {firstName, lastName, email, file}, handleSubmit} = this.props;
-    console.log('this.props.userEmail');
-    console.log(this.props.userEmail);
+    console.log(this.state.toggled);
+    console.log(this.props.dateFormat);
     return (
-      <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
-        <div>
-          <label>First Name</label>
-          <input type="text" placeholder="First Name" {...firstName}/>
-        </div>
-        <div>
-          <label>Last Name</label>
-          <input type="text" placeholder="Last Name" {...lastName}/>
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="email" placeholder="Email" {...email}/>
-        </div>
-        <div>
-          <label>File</label>
-           <p>{file.touched && file.error ? file.error : ''}</p>
-          <input type="file" {...file} value={null} />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <p style={styles.label}>Upload a File</p>
+        <Paper style={styles.paper} zDephth={3} >
+          <form onSubmit={handleSubmit(this._handleSubmit.bind(this))}>
+            <div>
+              <p>{file.touched && file.error ? file.error : ''}</p>
+              {this.props.uploadFileMessage === 'All data already exists' ?
+                <div>
+                  <p>All data already exists</p>
+                </div> : this.props.uploadFileMessage ?
+                <div style={{ color: 'red' }}>
+                  <p>{this.props.uploadFileMessage}</p>
+                </div> : ''}
+              {this.state.fileName.length > 0 ?
+                <div style={{ marginBottom: '40px' }}>
+                {/*<TextField hintText="First name" style={style} underlineShow={false} />*/}
+                  <h3>File chosen:</h3>
+                  <p>{this.state.fileName}</p>
+                  <Divider />
+                </div> : ''}
+            </div>
+            <div style={{ margin: 'auto' }}>
+              <RaisedButton label="Select a file" labelPosition="before" primary={true}>
+                <input {...file}
+                  accept={'text/csv'}
+                  type="file"
+                  value={null}
+                  style={styles.exampleImageInput}
+                  onChange={
+                    ( e ) => {
+                      e.preventDefault();
+                      const { fields } = this.props;
+                      // convert files to an array
+                      const files = [ ...e.target.files ];
+                      this.handleFileChange(files);
+                    }
+                  }
+                />
+              </RaisedButton>
+              <RaisedButton
+                label="Upload"
+                type="submit"
+                style={{ marginLeft: '10px' }}
+              />
+            </div>
+            <div style={styles.divBlock}>
+              <Toggle
+                label="American date format"
+                style={styles.toggle}
+                onToggle={this.handleToggle.bind(this)}
+                toggled={this.state.toggled}
+              />
+            </div>
+          </form>
+        </Paper>
+      </div>
     );
   }
 }
 
 function validate(values) {
   let errors = {};
-  console.log('values ------');
-  console.log(values);
+  // console.log('values ------');
+  // console.log(values);
   if (!values.file) {
-      errors.file = 'Required';
+      errors.file = 'No file was selected.';
   } else {
       let file = values.file[0];
-      console.log(file.type);
-      console.log(file.name.endsWith('.CSV'));
-      console.log(file.name.endsWith('.csv'));
+      // console.log(file.type);
+      // console.log(file.name.endsWith('.CSV'));
+      // console.log(file.name.endsWith('.csv'));
       if (file.type !== 'text/csv') {
           errors.file = 'Scan file must be an .CSV file';
       }
@@ -65,24 +185,23 @@ function validate(values) {
   return errors;
 }
 
-function sendData(url, data, email) {
-  console.log('sendData -------');
-  var formData  = new FormData();
-
-  formData.append('file', data.file[0]);
-  formData.append('email', email);
-
-  console.log('sendData -----');
-  console.log(formData.entries());
-  fetch(url, {
-    method: 'POST',
-    body: formData,
-    contentType: 'multipart/form-data'
-  });
-}
+// function sendData(url, data, email) {
+//   var formData  = new FormData();
+//   formData.append('file', data.file[0]);
+//   formData.append('email', email);
+//   fetch(url, {
+//     method: 'POST',
+//     body: formData,
+//     contentType: 'multipart/form-data'
+//   });
+// }
 
 function mapStateToProps(state) {
-  return { userEmail: state.auth.userEmail };
+  return {
+    userEmail: state.auth.userEmail,
+    uploadFileMessage: state.user.uploadFileMessage,
+    dateFormat: state.user.dateFormat
+  };
 }
 
 UploadForm = reduxForm({

@@ -29,19 +29,10 @@ const styles = {
   },
 
   label: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 25
   }
 }
-
-// const validate = values => {
-//   const errors = {};
-//   if (!values.email) {
-//       errors.email = 'Required'
-//   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//       errors.email = 'Invalid email address'
-//   }
-//
-// }
 
 class Signin extends Component {
 
@@ -50,9 +41,8 @@ class Signin extends Component {
   }
 
   render() {
+
     const { handleSubmit, fields: { email, password }} = this.props;
-    console.log('this.props.errorMessage');
-    console.log(this.props.errorMessage);
 
     return(
       <div>
@@ -63,20 +53,21 @@ class Signin extends Component {
             autoComplete='on'
             floatingLabelText="Email:"
             floatingLabelStyle={{ color: 'black' }}
-            errorText={this.props.errorMessage}
+            errorText={this.props.emailError}
           />
           <TextField
             {...password}
             floatingLabelText="Password:"
             floatingLabelStyle={{ color: 'black' }}
             type="password"
+            errorText={this.props.passwordError}
           /><br /><br />
           <RaisedButton
             primary={true}
             style={styles.flatbutton}
             label="Sign In"
             type="submit"
-            //onTouchTap={ () => { this.handleSigninButton.bind(this) }}
+            //onTouchTap={this.handleSigninButton.bind(this)}
           />
         </form>
       </div>
@@ -86,7 +77,8 @@ class Signin extends Component {
 
 function mapStateToProps(state) {
   return {
-    errorMessage: state.auth.error
+    emailError: state.auth.emailError,
+    passwordError: state.auth.passwordError
   };
 }
 export default reduxForm({

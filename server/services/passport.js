@@ -24,7 +24,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
   User.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
     if (!user) { return done(null, false); }
-    
+
     user.comparePassword(password, function(err, isMatch) {
       if (err) { return done(err); }
       if (!isMatch) {
@@ -64,11 +64,12 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
     if (err) { return done(err, false); }
 
     if (user) {
-        // var logUser = {
-        //   password: user.password,
-        //   email: user.email
-        // };
-        done(null, user);
+        var logUser = {
+          _id: user._id,
+          password: user.password,
+          email: user.email
+        };
+        done(null, logUser);
     } else {
         done(null, false);
     }

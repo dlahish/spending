@@ -1,83 +1,55 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import Signin from './auth/signin';
-import { browserHistory } from 'react-router';
-import * as actions from '../actions';
-import { withRouter } from 'react-router';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
-import TextField from 'material-ui/TextField';
-import FlatButton from 'material-ui/FlatButton';
-import { deepPurple300, grey50, red900 } from 'material-ui/styles/colors';
+import React, { Component } from 'react'
+import Logo from '../../../media/logo.png';
 
 const styles = {
-  toolbartitle: {
-    cursor: 'pointer'
+  header: {
+    height: '100px',
+    width: '100%',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    margin: '20px auto',
+    backgroundColor: 'rgba(0,0,255,0.2)'
   },
-
-  toolbar: {
-    backgroundColor: deepPurple300
+  logo: {
+    position: 'relative',
+    height: '45px',
+    width: 'auto',
+    float: 'left',
+    bottom: '12px'
   },
-
-  flatbutton: {
-    marginRight: -15
+  navUl: {
+    textAlign: 'center',
+    margin: '0 auto',
+    padding: 0
   },
-
-  textfield: {
-    marginRight: 5
+  navLi: {
+    display: 'inline-block',
+    margin: '0 50px 0 50px',
+    fontWeight: '100',
+    letterSpacing: '2px',
+    fontSize: '20px'
+  },
+  hr: {
+    width: '100%'
+    // margin: '10px auto'
   }
 }
 
-class Header extends Component {
-
-  renderLinks() {
-    if (this.props.route == '/signinattempt') { return; }
-    if (this.props.authenticated) {
-      return (
-        <ToolbarGroup>
-          <FlatButton
-            style={styles.flatbutton}
-            label="Sign Out"
-            linkButton={true}
-            containerElement={<Link to="/signout"></Link>}
-          />
-        </ToolbarGroup>
-      );
-    }
-
-    return (
-      <ToolbarGroup>
-        <Signin />
-      </ToolbarGroup>
-    );
-  }
-
-  handleTitleTouchTap() {
-    browserHistory.push('/');
-  }
-
+export default class Header extends Component {
   render() {
-    return(
-      <div>
-        <Toolbar style={styles.toolbar}>
-          <ToolbarTitle
-            style={styles.toolbartitle}
-            text="Spending"
-            onTouchTap={this.handleTitleTouchTap}
-          />
-            {this.renderLinks()}
-        </Toolbar>
+    return (
+      <div style={styles.header}>
+        {/* <img src={Logo} alt="spending logo" style={styles.logo}/> */}
+        <ul style={styles.navUl}>
+          <li style={styles.navLi}>Graphs</li>
+          <li style={styles.navLi}>Data Table</li>
+          <li style={styles.navLi}>Add Record</li>
+          <li style={styles.navLi}>Edit Categories</li>
+        </ul>
+        <hr style={styles.hr} />
       </div>
-    );
+    )
   }
 }
-
-function mapStateToProps(state, location) {
-  return {
-    authenticated: state.auth.authenticated,
-    errorMessage: state.auth.error,
-    route: state.auth.currentRoute
-  };
-}
-
-export default withRouter(connect(mapStateToProps, actions)(Header));

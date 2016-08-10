@@ -10,7 +10,7 @@ import FlatButton from 'material-ui/FlatButton';
 const style = {
   margin: 50,
   textAlign: 'center',
-  marginTop: 100,
+  marginTop: 50,
   margin: 'auto',
   width: '40%',
   backgroundColor: 'white',
@@ -19,13 +19,11 @@ const style = {
 };
 
 class SigninAttempt extends Component {
+
   componentWillUnmount() {
+    this.props.clearAuthError();
     this.props.addRouteToStore('');
   }
-
-  // componentWillUnmount() {
-  //   this.props.clearAuthError();
-  // }
 
   render() {
     return (
@@ -35,6 +33,7 @@ class SigninAttempt extends Component {
             <SigninPage />
             <FlatButton
               style={{ marginTop: 10 }}
+              secondary={true}
               label="Sign Up for Spending"
               containerElement={<Link to="/signup"></Link>}
             />
