@@ -6,7 +6,6 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
 
-<<<<<<< HEAD
 const localOptions = {
   usernameField: 'email',
   passwordField: 'password',
@@ -15,11 +14,6 @@ const localOptions = {
 }
 
 const localLogin = new LocalStrategy(localOptions, function(req, email, password, done) { // done function returns the user in req.user
-=======
-const localOptions = { usernameField: 'email' };
-<<<<<<< HEAD
-const localLogin = new LocalStrategy(localOptions, function(email, password, done) { // done function returns the user in req.user
->>>>>>> origin/master
 
   User.findOne({ email: email }, function(err, user) {
     if (err) { return done(err); }
@@ -36,22 +30,6 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
     });
   });
 });
-=======
-// const localLogin = new LocalStrategy(localOptions, function(email, password, done) { // done function returns the user in req.user
-//
-//   User.findOne({ email: email }, function(err, user) {
-//     if (err) { return done(err); }
-//     if (!user) { return done(null, false); }
-//
-//     user.comparePassword(password, function(err, isMatch) {
-//       if (err) { return done(err); }
-//       if (!isMatch) { return done(null, false); }
-//
-//       return done(null, user);
-//     });
-//   });
-// });
->>>>>>> origin/passportsession
 
 
 const jwtOptions = {
