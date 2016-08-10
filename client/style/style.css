@@ -28,6 +28,18 @@ a.header-link:hover {
   color: #737373;
 }
 
+.popover-icon {
+  float: right;
+  position: relative;;
+  right: 30px;
+  bottom: 45px;
+  cursor: pointer;
+}
+
+.popover {
+  
+}
+
 .error {
   color: red
 }

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import * as Colors from 'material-ui/styles/colors';
+import { withRouter } from 'react-router'
 
 const styles = {
   header: {
@@ -35,7 +36,9 @@ class App extends Component {
       <MuiThemeProvider>
         <div>
           {/* <div style={styles.header}> */}
-            <Header/>
+            <Header
+              authenticated={this.props.authenticated}
+            />
           {/* </div> */}
 
           <div className="default-primary-color" style={styles.mainContect}>
@@ -58,4 +61,13 @@ class App extends Component {
   }
 };
 
-export default connect(null, actions)(App);
+function mapStateToProps(state, location) {
+  return {
+    authenticated: state.auth.authenticated,
+    // errorMessage: state.auth.error,
+    // route: state.auth.currentRoute,
+    // user: state.auth.userEmail
+  };
+}
+
+export default withRouter(connect(mapStateToProps, actions)(App));
