@@ -3,10 +3,14 @@ import Logo from '../../../media/logo.png';
 
 const styles = {
   header: {
-    padding: '20px 40px',
-    height: '110px',
-    backgroundColor: 'white',
-    color: 'grey'
+    height: '100px',
+    width: '100%',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    margin: '20px auto',
+    backgroundColor: 'rgba(0,0,255,0.2)'
   },
   logo: {
     position: 'relative',
@@ -16,26 +20,20 @@ const styles = {
     bottom: '12px'
   },
   navUl: {
-    // display: 'inline-block',
-    // float: 'left',
-    // marginLeft: '11.25em',
     textAlign: 'center',
-    // minWidth: '350px',
     margin: '0 auto',
     padding: 0
   },
   navLi: {
-    display: 'inline',
-    marginLeft: '50px',
+    display: 'inline-block',
+    margin: '0 50px 0 50px',
     fontWeight: '100',
     letterSpacing: '2px',
     fontSize: '20px'
   },
   hr: {
-    width: '90%',
-    textAlign: 'center',
-    margin: '5px auto',
-    display: 'inline-block'
+    width: '100%'
+    // margin: '10px auto'
   }
 }
 
@@ -43,7 +41,7 @@ export default class Header extends Component {
   render() {
     return (
       <div style={styles.header}>
-        <img src={Logo} alt="spending logo" style={styles.logo}/>
+        {/* <img src={Logo} alt="spending logo" style={styles.logo}/> */}
         <ul style={styles.navUl}>
           <li style={styles.navLi}>Graphs</li>
           <li style={styles.navLi}>Data Table</li>

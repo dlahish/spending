@@ -34,9 +34,9 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div>
-          <div style={styles.header}>
+          {/* <div style={styles.header}> */}
             <Header/>
-          </div>
+          {/* </div> */}
 
           <div className="default-primary-color" style={styles.mainContect}>
             {this.props.children}
