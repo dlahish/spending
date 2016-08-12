@@ -19,22 +19,7 @@ app.use(morgan('combined'));
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.json());
-<<<<<<< HEAD
-app.use(bodyParser.urlencoded({ extended: false }));
-app.set('trust proxy', 1);
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(flash());
-
-=======
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -59,7 +44,7 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
->>>>>>> newheader
+
 router(app);
 
 const port = process.env.PORT || 3090;
