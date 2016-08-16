@@ -8,12 +8,11 @@ class Home extends Component {
     if (!this.props.userEmail) {
       this.props.getUserEmail();
     }
-    this.props.wafApi();  
   }
 
   render() {
     return (
-      <p>Hello Home</p>
+      <p style={{paddingTop: '200px'}}>Hello Home</p>
     );
   }
 };

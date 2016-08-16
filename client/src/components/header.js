@@ -1,55 +1,100 @@
-import React, { Component } from 'react'
-import Logo from '../../../media/logo.png';
+import React, { Component, PropTypes } from 'react'
+import PopoverMenu from './headerPopover'
+import Logo from '../../../media/logo.png'
+import { Link } from 'react-router'
 
 const styles = {
   header: {
-    height: '100px',
+    height: '80px',
     width: '100%',
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
-    margin: '20px auto',
-    backgroundColor: 'rgba(0,0,255,0.2)'
+    margin: 'auto',
+    paddingTop: '20px',
+    backgroundColor: '#FFF'
   },
   logo: {
-    position: 'relative',
+    position: 'absolute',
     height: '45px',
     width: 'auto',
-    float: 'left',
-    bottom: '12px'
+    top: '10px',
+    left: '30px'
+
   },
   navUl: {
     textAlign: 'center',
     margin: '0 auto',
-    padding: 0
+    paddingBottom: '10px'
   },
   navLi: {
     display: 'inline-block',
-    margin: '0 50px 0 50px',
-    fontWeight: '100',
-    letterSpacing: '2px',
-    fontSize: '20px'
+    margin: '0 30px 0 30px'
   },
   hr: {
-    width: '100%'
-    // margin: '10px auto'
+    position: 'relative',
+    width: '65%',
+    left: '18px',
+    opacity: '0.3'
   }
 }
 
 export default class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      open: false,
+      anchorOrigin: {
+        horizontal: 'right',
+        vertical: 'bottom',
+      },
+      targetOrigin: {
+        horizontal: 'right',
+        vertical: 'top',
+      },
+    };
+  }
+
+  handleTouchTap = (event) => {
+    event.preventDefault();
+    this.setState({
+      open: true,
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
+
   render() {
     return (
       <div style={styles.header}>
-        {/* <img src={Logo} alt="spending logo" style={styles.logo}/> */}
-        <ul style={styles.navUl}>
-          <li style={styles.navLi}>Graphs</li>
-          <li style={styles.navLi}>Data Table</li>
-          <li style={styles.navLi}>Add Record</li>
-          <li style={styles.navLi}>Edit Categories</li>
-        </ul>
+        {this.props.authenticated ?
+          <ul style={styles.navUl}>
+            <li style={styles.navLi}><Link to="/dashboard" className="header-link">Graphs</Link></li>
+            <li style={styles.navLi}><Link to="/data" className="header-link">Data Table</Link></li>
+            <li style={styles.navLi}><Link to="/upload" className="header-link">Upload File</Link></li>
+            <li style={styles.navLi}><Link to="/newrecord" className="header-link">New Transaction</Link></li>
+            <li style={styles.navLi}><Link to="/categories" className="header-link">Edit Categories</Link></li>
+          </ul> :
+          <div>
+            <input type="text" />
+          </div>
+        }
         <hr style={styles.hr} />
+        <img src={Logo} alt="spending logo" style={styles.logo}/>
+        <i className="fa fa-bars fa-lg popover-icon" aria-hidden="true" onTouchTap={this.handleTouchTap.bind(this)}></i>
+        <PopoverMenu state={this.state} handleRequestClose={this.handleRequestClose}/>
       </div>
     )
   }
+}
+
+Header.propTypes = {
+  authenticated: PropTypes.bool.isRequired
 }

@@ -64,7 +64,7 @@ ReactDOM.render(
     <IntlProvider locale="en-GB">
       <Router history={browserHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={Reddit} />
+          <IndexRoute component={Home} />
           <Route path="signup" component={Signup} />
           <Route path="signin" component={Signin} />
           <Route path="signout" component={Signout} />
