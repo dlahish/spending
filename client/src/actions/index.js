@@ -322,7 +322,6 @@ export function signupUser({ email, password }) {
   return function(dispatch) {
     axios.post(`${ROOT_URL}/signup`, { email, password })
       .then(response => {
-<<<<<<< HEAD
         if (response.data.message === 'User Already Exists') {
             dispatch(authError(response.data.error))
         } else {
@@ -333,14 +332,6 @@ export function signupUser({ email, password }) {
             localStorage.setItem('token', response.data.token);
             browserHistory.push('/securepage');
         }
-=======
-        dispatch({
-          type: AUTH_USER,
-          payload: email
-        });
-        localStorage.setItem('token', response.data.token);
-        browserHistory.push('/dashboard');
->>>>>>> newheader
       })
       .catch(response => dispatch(authError(response.data.error)));
   }
