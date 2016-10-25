@@ -6,20 +6,12 @@ const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const passport = require('passport');
-const flash = require('connect-flash');
 
 mongoose.connect('mongodb://localhost:spending/spending');
 
-
-
 app.use(morgan('combined'));
 app.use(cors());
-app.use(cookieParser());
 app.use(bodyParser.json());
-
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -44,7 +36,6 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
-
 router(app);
 
 const port = process.env.PORT || 3090;
